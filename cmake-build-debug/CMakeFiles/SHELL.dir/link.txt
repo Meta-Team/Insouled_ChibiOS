@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSHELL.a  CMakeFiles/SHELL.dir/os/various/shell/shell.c.o CMakeFiles/SHELL.dir/os/various/evtimer.c.o CMakeFiles/SHELL.dir/os/various/syscalls.c.o CMakeFiles/SHELL.dir/os/hal/lib/streams/memstreams.c.o CMakeFiles/SHELL.dir/os/hal/lib/streams/chprintf.c.o
+/usr/bin/ranlib libSHELL.a
