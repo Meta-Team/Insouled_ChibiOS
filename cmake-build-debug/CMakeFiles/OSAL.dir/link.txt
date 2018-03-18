@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libOSAL.a  CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libOSAL.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libOSAL.a  CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libOSAL.a

@@ -48,24 +48,13 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/anita/Downloads/Insouled_ChibiOS
+CMAKE_SOURCE_DIR = /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,6 +124,19 @@ PORT/fast:
 .PHONY : PORT/fast
 
 #=============================================================================
+# Target rules for targets named STARTUP
+
+# Build rule for target.
+STARTUP: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 STARTUP
+.PHONY : STARTUP
+
+# fast build rule for target.
+STARTUP/fast:
+	$(MAKE) -f CMakeFiles/STARTUP.dir/build.make CMakeFiles/STARTUP.dir/build
+.PHONY : STARTUP/fast
+
+#=============================================================================
 # Target rules for targets named OSAL
 
 # Build rule for target.
@@ -135,45 +148,6 @@ OSAL: cmake_check_build_system
 OSAL/fast:
 	$(MAKE) -f CMakeFiles/OSAL.dir/build.make CMakeFiles/OSAL.dir/build
 .PHONY : OSAL/fast
-
-#=============================================================================
-# Target rules for targets named RTOS
-
-# Build rule for target.
-RTOS: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RTOS
-.PHONY : RTOS
-
-# fast build rule for target.
-RTOS/fast:
-	$(MAKE) -f CMakeFiles/RTOS.dir/build.make CMakeFiles/RTOS.dir/build
-.PHONY : RTOS/fast
-
-#=============================================================================
-# Target rules for targets named Ozone
-
-# Build rule for target.
-Ozone: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Ozone
-.PHONY : Ozone
-
-# fast build rule for target.
-Ozone/fast:
-	$(MAKE) -f CMakeFiles/Ozone.dir/build.make CMakeFiles/Ozone.dir/build
-.PHONY : Ozone/fast
-
-#=============================================================================
-# Target rules for targets named BOARD
-
-# Build rule for target.
-BOARD: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BOARD
-.PHONY : BOARD
-
-# fast build rule for target.
-BOARD/fast:
-	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/build
-.PHONY : BOARD/fast
 
 #=============================================================================
 # Target rules for targets named HAL
@@ -202,19 +176,6 @@ SHELL/fast:
 .PHONY : SHELL/fast
 
 #=============================================================================
-# Target rules for targets named STARTUP
-
-# Build rule for target.
-STARTUP: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 STARTUP
-.PHONY : STARTUP
-
-# fast build rule for target.
-STARTUP/fast:
-	$(MAKE) -f CMakeFiles/STARTUP.dir/build.make CMakeFiles/STARTUP.dir/build
-.PHONY : STARTUP/fast
-
-#=============================================================================
 # Target rules for targets named STLink
 
 # Build rule for target.
@@ -226,6 +187,112 @@ STLink: cmake_check_build_system
 STLink/fast:
 	$(MAKE) -f CMakeFiles/STLink.dir/build.make CMakeFiles/STLink.dir/build
 .PHONY : STLink/fast
+
+#=============================================================================
+# Target rules for targets named USER
+
+# Build rule for target.
+USER: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 USER
+.PHONY : USER
+
+# fast build rule for target.
+USER/fast:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/build
+.PHONY : USER/fast
+
+#=============================================================================
+# Target rules for targets named Ozone
+
+# Build rule for target.
+Ozone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Ozone
+.PHONY : Ozone
+
+# fast build rule for target.
+Ozone/fast:
+	$(MAKE) -f CMakeFiles/Ozone.dir/build.make CMakeFiles/Ozone.dir/build
+.PHONY : Ozone/fast
+
+#=============================================================================
+# Target rules for targets named RTOS
+
+# Build rule for target.
+RTOS: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RTOS
+.PHONY : RTOS
+
+# fast build rule for target.
+RTOS/fast:
+	$(MAKE) -f CMakeFiles/RTOS.dir/build.make CMakeFiles/RTOS.dir/build
+.PHONY : RTOS/fast
+
+#=============================================================================
+# Target rules for targets named BOARD
+
+# Build rule for target.
+BOARD: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BOARD
+.PHONY : BOARD
+
+# fast build rule for target.
+BOARD/fast:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/build
+.PHONY : BOARD/fast
+
+dev/chassis.o: dev/chassis.c.o
+
+.PHONY : dev/chassis.o
+
+# target to build an object file
+dev/chassis.c.o:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/dev/chassis.c.o
+.PHONY : dev/chassis.c.o
+
+dev/chassis.i: dev/chassis.c.i
+
+.PHONY : dev/chassis.i
+
+# target to preprocess a source file
+dev/chassis.c.i:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/dev/chassis.c.i
+.PHONY : dev/chassis.c.i
+
+dev/chassis.s: dev/chassis.c.s
+
+.PHONY : dev/chassis.s
+
+# target to generate assembly for a file
+dev/chassis.c.s:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/dev/chassis.c.s
+.PHONY : dev/chassis.c.s
+
+dev/main.o: dev/main.c.o
+
+.PHONY : dev/main.o
+
+# target to build an object file
+dev/main.c.o:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/dev/main.c.o
+.PHONY : dev/main.c.o
+
+dev/main.i: dev/main.c.i
+
+.PHONY : dev/main.i
+
+# target to preprocess a source file
+dev/main.c.i:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/dev/main.c.i
+.PHONY : dev/main.c.i
+
+dev/main.s: dev/main.c.s
+
+.PHONY : dev/main.s
+
+# target to generate assembly for a file
+dev/main.c.s:
+	$(MAKE) -f CMakeFiles/USER.dir/build.make CMakeFiles/USER.dir/dev/main.c.s
+.PHONY : dev/main.c.s
 
 hw/board.o: hw/board.c.o
 
@@ -1637,17 +1704,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... PORT"
+	@echo "... STARTUP"
 	@echo "... OSAL"
-	@echo "... rebuild_cache"
-	@echo "... RTOS"
-	@echo "... Ozone"
-	@echo "... BOARD"
 	@echo "... HAL"
 	@echo "... SHELL"
-	@echo "... STARTUP"
 	@echo "... STLink"
+	@echo "... USER"
+	@echo "... Ozone"
+	@echo "... RTOS"
+	@echo "... BOARD"
+	@echo "... dev/chassis.o"
+	@echo "... dev/chassis.i"
+	@echo "... dev/chassis.s"
+	@echo "... dev/main.o"
+	@echo "... dev/main.i"
+	@echo "... dev/main.s"
 	@echo "... hw/board.o"
 	@echo "... hw/board.i"
 	@echo "... hw/board.s"

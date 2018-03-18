@@ -4,21 +4,21 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chcond.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdebug.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdynamic.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chevents.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmsg.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmtx.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chregistry.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chschd.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsem.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chstats.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsys.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chthreads.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtm.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtrace.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chvt.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chcond.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdebug.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdynamic.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chevents.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmsg.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmtx.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chregistry.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chschd.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsem.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chstats.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsys.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chthreads.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtm.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtrace.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chvt.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

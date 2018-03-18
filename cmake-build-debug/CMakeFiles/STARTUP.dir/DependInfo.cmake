@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC/crt1.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/crt1.c.o"
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC/vectors.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/vectors.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC/crt1.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/crt1.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC/vectors.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/vectors.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

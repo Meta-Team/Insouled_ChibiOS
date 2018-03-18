@@ -1,4 +1,4 @@
-# Install script for directory: /Users/anita/Downloads/Insouled_ChibiOS
+# Install script for directory: /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

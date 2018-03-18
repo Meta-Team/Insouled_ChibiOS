@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/anita/Downloads/Insouled_ChibiOS
+CMAKE_SOURCE_DIR = /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PORT.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/PORT.dir/flags.make
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o: CMakeFiles/PORT.dir/flags.make
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o: ../os/common/ports/ARMCMx/chcore.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c > CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c > CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.i
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.s
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o.provides.build: CMakeFiles
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o: CMakeFiles/PORT.dir/flags.make
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o: ../os/common/ports/ARMCMx/chcore_v7m.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c > CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c > CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.i
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c -o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.s
 
 CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o.requires:
 
@@ -117,7 +117,7 @@ libPORT.a: CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o
 libPORT.a: CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o
 libPORT.a: CMakeFiles/PORT.dir/build.make
 libPORT.a: CMakeFiles/PORT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libPORT.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libPORT.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/PORT.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PORT.dir/link.txt --verbose=$(VERBOSE)
 
@@ -136,6 +136,6 @@ CMakeFiles/PORT.dir/clean:
 .PHONY : CMakeFiles/PORT.dir/clean
 
 CMakeFiles/PORT.dir/depend:
-	cd /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/PORT.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/PORT.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PORT.dir/depend
 

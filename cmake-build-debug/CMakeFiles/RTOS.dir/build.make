@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/anita/Downloads/Insouled_ChibiOS
+CMAKE_SOURCE_DIR = /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RTOS.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/RTOS.dir/flags.make
 
 CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o: ../os/rt/src/chcond.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chcond.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chcond.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chcond.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chcond.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chcond.c > CMakeFiles/RTOS.dir/os/rt/src/chcond.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chcond.c > CMakeFiles/RTOS.dir/os/rt/src/chcond.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chcond.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chcond.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chcond.c -o CMakeFiles/RTOS.dir/os/rt/src/chcond.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chcond.c -o CMakeFiles/RTOS.dir/os/rt/src/chcond.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o.provides.build: CMakeFiles/RTOS.dir/os/
 
 CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o: ../os/rt/src/chdebug.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdebug.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdebug.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdebug.c > CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdebug.c > CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdebug.c -o CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdebug.c -o CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o.provides.build: CMakeFiles/RTOS.dir/os
 
 CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o: ../os/rt/src/chdynamic.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdynamic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdynamic.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdynamic.c > CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdynamic.c > CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chdynamic.c -o CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chdynamic.c -o CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o.provides.build: CMakeFiles/RTOS.dir/
 
 CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o: ../os/rt/src/chevents.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chevents.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chevents.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chevents.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chevents.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chevents.c > CMakeFiles/RTOS.dir/os/rt/src/chevents.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chevents.c > CMakeFiles/RTOS.dir/os/rt/src/chevents.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chevents.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chevents.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chevents.c -o CMakeFiles/RTOS.dir/os/rt/src/chevents.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chevents.c -o CMakeFiles/RTOS.dir/os/rt/src/chevents.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o.provides.build: CMakeFiles/RTOS.dir/o
 
 CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o: ../os/rt/src/chmsg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmsg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmsg.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmsg.c > CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmsg.c > CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmsg.c -o CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmsg.c -o CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o.provides.build: CMakeFiles/RTOS.dir/os/r
 
 CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o: ../os/rt/src/chmtx.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmtx.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmtx.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmtx.c > CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmtx.c > CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chmtx.c -o CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chmtx.c -o CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o.provides.build: CMakeFiles/RTOS.dir/os/r
 
 CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o: ../os/rt/src/chregistry.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chregistry.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chregistry.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chregistry.c > CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chregistry.c > CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chregistry.c -o CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chregistry.c -o CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o.provides.build: CMakeFiles/RTOS.dir
 
 CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o: ../os/rt/src/chschd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chschd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chschd.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chschd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chschd.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chschd.c > CMakeFiles/RTOS.dir/os/rt/src/chschd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chschd.c > CMakeFiles/RTOS.dir/os/rt/src/chschd.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chschd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chschd.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chschd.c -o CMakeFiles/RTOS.dir/os/rt/src/chschd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chschd.c -o CMakeFiles/RTOS.dir/os/rt/src/chschd.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o.provides.build: CMakeFiles/RTOS.dir/os/
 
 CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o: ../os/rt/src/chsem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsem.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chsem.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chsem.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsem.c > CMakeFiles/RTOS.dir/os/rt/src/chsem.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsem.c > CMakeFiles/RTOS.dir/os/rt/src/chsem.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chsem.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chsem.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsem.c -o CMakeFiles/RTOS.dir/os/rt/src/chsem.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsem.c -o CMakeFiles/RTOS.dir/os/rt/src/chsem.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o.provides.build: CMakeFiles/RTOS.dir/os/r
 
 CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o: ../os/rt/src/chstats.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chstats.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chstats.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chstats.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chstats.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chstats.c > CMakeFiles/RTOS.dir/os/rt/src/chstats.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chstats.c > CMakeFiles/RTOS.dir/os/rt/src/chstats.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chstats.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chstats.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chstats.c -o CMakeFiles/RTOS.dir/os/rt/src/chstats.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chstats.c -o CMakeFiles/RTOS.dir/os/rt/src/chstats.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o.provides.build: CMakeFiles/RTOS.dir/os
 
 CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o: ../os/rt/src/chsys.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsys.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsys.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chsys.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chsys.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsys.c > CMakeFiles/RTOS.dir/os/rt/src/chsys.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsys.c > CMakeFiles/RTOS.dir/os/rt/src/chsys.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chsys.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chsys.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chsys.c -o CMakeFiles/RTOS.dir/os/rt/src/chsys.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chsys.c -o CMakeFiles/RTOS.dir/os/rt/src/chsys.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o.provides.build: CMakeFiles/RTOS.dir/os/r
 
 CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o: ../os/rt/src/chthreads.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chthreads.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chthreads.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chthreads.c > CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chthreads.c > CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chthreads.c -o CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chthreads.c -o CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o.provides.build: CMakeFiles/RTOS.dir/
 
 CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o: ../os/rt/src/chtm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtm.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chtm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chtm.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtm.c > CMakeFiles/RTOS.dir/os/rt/src/chtm.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtm.c > CMakeFiles/RTOS.dir/os/rt/src/chtm.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chtm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chtm.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtm.c -o CMakeFiles/RTOS.dir/os/rt/src/chtm.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtm.c -o CMakeFiles/RTOS.dir/os/rt/src/chtm.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o.provides.build: CMakeFiles/RTOS.dir/os/rt
 
 CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o: ../os/rt/src/chtrace.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtrace.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtrace.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtrace.c > CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtrace.c > CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chtrace.c -o CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chtrace.c -o CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o.provides.build: CMakeFiles/RTOS.dir/os
 
 CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o: CMakeFiles/RTOS.dir/flags.make
 CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o: ../os/rt/src/chvt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chvt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o   -c /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chvt.c
 
 CMakeFiles/RTOS.dir/os/rt/src/chvt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTOS.dir/os/rt/src/chvt.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chvt.c > CMakeFiles/RTOS.dir/os/rt/src/chvt.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chvt.c > CMakeFiles/RTOS.dir/os/rt/src/chvt.c.i
 
 CMakeFiles/RTOS.dir/os/rt/src/chvt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTOS.dir/os/rt/src/chvt.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/rt/src/chvt.c -o CMakeFiles/RTOS.dir/os/rt/src/chvt.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/rt/src/chvt.c -o CMakeFiles/RTOS.dir/os/rt/src/chvt.c.s
 
 CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o.requires:
 
@@ -455,7 +455,7 @@ libRTOS.a: CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o
 libRTOS.a: CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o
 libRTOS.a: CMakeFiles/RTOS.dir/build.make
 libRTOS.a: CMakeFiles/RTOS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C static library libRTOS.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C static library libRTOS.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/RTOS.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RTOS.dir/link.txt --verbose=$(VERBOSE)
 
@@ -487,6 +487,6 @@ CMakeFiles/RTOS.dir/clean:
 .PHONY : CMakeFiles/RTOS.dir/clean
 
 CMakeFiles/RTOS.dir/depend:
-	cd /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug /Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RTOS.dir/depend
 

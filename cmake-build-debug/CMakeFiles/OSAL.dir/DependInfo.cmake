@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/anita/Downloads/Insouled_ChibiOS/os/hal/osal/rt/osal.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/hal/osal/rt/osal.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

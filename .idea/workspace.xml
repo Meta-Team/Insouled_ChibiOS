@@ -2,15 +2,16 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Insouled" targetName="STLink" />
+      <config projectName="Insouled" targetName="BOARD" />
+      <config projectName="Insouled" targetName="PORT" />
+      <config projectName="Insouled" targetName="RTOS" />
       <config projectName="Insouled" targetName="HAL" />
       <config projectName="Insouled" targetName="STARTUP" />
       <config projectName="Insouled" targetName="Ozone" />
-      <config projectName="Insouled" targetName="RTOS" />
-      <config projectName="Insouled" targetName="BOARD" />
       <config projectName="Insouled" targetName="SHELL" />
+      <config projectName="Insouled" targetName="USER" />
+      <config projectName="Insouled" targetName="STLink" />
       <config projectName="Insouled" targetName="OSAL" />
-      <config projectName="Insouled" targetName="PORT" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -20,15 +21,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cfb5ee-fe99-4cbe-9fe9-646db837c5b9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/dev/chassis.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/dev/chassis.h" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dev/global.h" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_C.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_C.bin" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_CXX.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_CXX.bin" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/flags.make" />
@@ -64,17 +63,72 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/flags.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/link.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STLink.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STLink.dir/build.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STLink.dir/depend.internal" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STLink.dir/depend.make" afterPath="" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Insouled.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Insouled.cbp" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
+      <change beforePath="$PROJECT_DIR$/dev/Makefile" afterPath="$PROJECT_DIR$/dev/Makefile" />
+      <change beforePath="$PROJECT_DIR$/dev/build/ch.bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/ch.elf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/ch.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/board.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/ch_test.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcond.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcore.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcore_v7m.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcoreasm_v7m.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chdebug.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chdynamic.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chevents.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chheap.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmboxes.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmemcore.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmempools.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmsg.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmtx.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chregistry.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chschd.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chsem.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chsys.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chthreads.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chtm.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chtrace.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/chvt.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/crt0_v7m.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/crt1.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_buffers.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_lld.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_mmcsd.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_pal.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_pal_lld.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_queues.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_serial.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_serial_lld.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_st.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_st_lld.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/main.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/nvic.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/osal.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/stm32_dma.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_root.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_001.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_002.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_003.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_004.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_005.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_006.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_007.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_008.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_009.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_010.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_011.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_012.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/build/lst/vectors.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dev/chassis.c" afterPath="$PROJECT_DIR$/dev/chassis.c" />
+      <change beforePath="$PROJECT_DIR$/dev/chassis.h" afterPath="$PROJECT_DIR$/dev/chassis.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,11 +141,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="102" column="3" lean-forward="false" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="72" column="40" lean-forward="true" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+            <state relative-caret-position="149">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -100,9 +164,11 @@
       <file leaf-file-name="chassis.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/chassis.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+              <folding>
+                <element signature="e#38#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +176,38 @@
       <file leaf-file-name="chassis.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/chassis.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+            <state relative-caret-position="-351">
+              <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/global.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="115" column="23" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/hal/testbuild/main.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,28 +224,56 @@
       <find>os/hal/boards/ST_STM32F427_RM</find>
       <find>RTOS_SRC</find>
       <find>PROJECT</find>
+      <find>PAL_MODE_ALTERNATE</find>
+      <find>ch_test.h</find>
+      <find>chassis_motor_current</find>
+      <find>wheel_speed</find>
+      <find>GLOBAL_</find>
+      <find>abs</find>
+      <find>arm_math.h</find>
     </findStrings>
     <replaceStrings>
       <replace>/os/hal/boards/ST_STM32F4_DISCOVERY</replace>
+      <replace>chassis.motor_current</replace>
+      <replace>motor_speed</replace>
+      <replace>GLOBAL_MODE_</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/chassis" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/testhal/STM32/STM32F4xx/DAC_DUAL/Makefile" />
         <option value="$PROJECT_DIR$/hw/board.mk" />
-        <option value="$PROJECT_DIR$/dev/Makefile" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/dev/main.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/dev/global.h" />
         <option value="$PROJECT_DIR$/dev/chassis.c" />
+        <option value="$PROJECT_DIR$/dev/Makefile" />
         <option value="$PROJECT_DIR$/dev/chassis.h" />
       </list>
     </option>
@@ -160,10 +284,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+    <option name="width" value="1440" />
+    <option name="height" value="809" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -192,6 +320,34 @@
               <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
               <item name="dev" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
+              <item name="os" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
+              <item name="os" type="462c0819:PsiDirectoryNode" />
+              <item name="hal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="rt" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -202,8 +358,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="SearchEverywhereHistoryKey" value=".dep/&#9;FILE&#9;file:///Users/liuzikai/Files/RoboMaster/Insouled/dev/.dep" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="arm_math.h&#9;FILE&#9;file:///Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include/arm_math.h&#10;MakeFile&#9;FILE&#9;file:///Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/test/hal/testbuild/Makefile&#10;.dep/&#9;FILE&#9;file:///Users/liuzikai/Files/RoboMaster/Insouled/dev/.dep" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -248,10 +404,13 @@
     <configuration name="STLink" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Insouled" TARGET_NAME="STLink" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/../RMdevBoard_ChibiOS-master/STlink.sh">
       <envs />
     </configuration>
+    <configuration name="USER" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Insouled" TARGET_NAME="USER" CONFIG_NAME="Debug">
+      <envs />
+    </configuration>
     <configuration default="true" type="elmot.embedded.openocd.conf.type" factoryName="elmot.embedded.openocd.conf.factory" singleton="false" PASS_PARENT_ENVS_2="true">
       <envs />
     </configuration>
-    <list size="10">
+    <list size="11">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.BOARD" />
       <item index="2" class="java.lang.String" itemvalue="Application.HAL" />
@@ -262,6 +421,7 @@
       <item index="7" class="java.lang.String" itemvalue="Application.SHELL" />
       <item index="8" class="java.lang.String" itemvalue="Application.STARTUP" />
       <item index="9" class="java.lang.String" itemvalue="Application.STLink" />
+      <item index="10" class="java.lang.String" itemvalue="Application.USER" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -283,19 +443,22 @@
       <workItem from="1521297712903" duration="85000" />
       <workItem from="1521297838940" duration="73000" />
       <workItem from="1521298116780" duration="276000" />
-      <workItem from="1521351818366" duration="6828000" />
+      <workItem from="1521352604849" duration="5582000" />
+      <workItem from="1521360309493" duration="1717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11094000" />
+    <option name="totallyTimeSpent" value="11565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22222222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19236112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -304,7 +467,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -320,14 +482,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="450">
+          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -336,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -348,18 +511,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw/board.mk">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -376,7 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -401,7 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -417,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -458,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -475,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -499,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -508,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -532,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -546,39 +699,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/.dep/board.o.d" />
     <entry file="file://$PROJECT_DIR$/documentation.html" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/hw/board.mk">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="60">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/build/ch.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="1068" column="6" lean-forward="false" selection-start-line="1068" selection-start-column="6" selection-end-line="1068" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testhal/STM32/STM32F4xx/DAC_DUAL/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
+        <state relative-caret-position="795">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/Makefile">
+    <entry file="file://$PROJECT_DIR$/test/hal/testbuild/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="179" column="0" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="3030">
+          <caret line="202" column="0" lean-forward="true" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw/board.mk">
+    <entry file="file://$PROJECT_DIR$/testhal/STM32/STM32F4xx/CAN/chconf.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="-7371">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/chassis.cpp">
+    <entry file="file://$PROJECT_DIR$/testhal/STM32/STM32F4xx/CAN/halconf.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1008">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testhal/STM32/STM32F4xx/UART/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1619">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/hal/testbuild/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -586,26 +759,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/chassis.c">
+    <entry file="file://$PROJECT_DIR$/test/lib/ch_test.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="1178">
+          <caret line="94" column="31" lean-forward="true" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/chassis.h">
+    <entry file="file://$PROJECT_DIR$/test/lib/ch_test.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+        <state relative-caret-position="181">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="102" column="3" lean-forward="false" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/os/common/ext/CMSIS/include/arm_math.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1463">
+          <caret line="2563" column="25" lean-forward="false" selection-start-line="2563" selection-start-column="22" selection-end-line="2563" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="115" column="23" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testhal/STM32/STM32F4xx/CAN/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="72" column="40" lean-forward="true" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+        <state relative-caret-position="149">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/chassis.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#38#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/chassis.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351">
+          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/global.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
