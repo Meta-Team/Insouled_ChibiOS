@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/anita/Downloads/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HAL.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/HAL.dir/flags.make
 
 CMakeFiles/HAL.dir/os/hal/src/hal.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal.c.o: ../os/hal/src/hal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal.c" > CMakeFiles/HAL.dir/os/hal/src/hal.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal.c > CMakeFiles/HAL.dir/os/hal/src/hal.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal.c" -o CMakeFiles/HAL.dir/os/hal/src/hal.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal.c -o CMakeFiles/HAL.dir/os/hal/src/hal.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal.c.o.provides.build: CMakeFiles/HAL.dir/os/hal/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o: ../os/hal/src/hal_adc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_adc.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_adc.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_adc.c" > CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_adc.c > CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_adc.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_adc.c -o CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_adc.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o: ../os/hal/src/hal_buffers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_buffers.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_buffers.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_buffers.c" > CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_buffers.c > CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_buffers.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_buffers.c -o CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_buffers.c.o.provides.build: CMakeFiles/HAL.dir
 
 CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o: ../os/hal/src/hal_can.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_can.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_can.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_can.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_can.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_can.c" > CMakeFiles/HAL.dir/os/hal/src/hal_can.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_can.c > CMakeFiles/HAL.dir/os/hal/src/hal_can.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_can.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_can.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_can.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_can.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_can.c -o CMakeFiles/HAL.dir/os/hal/src/hal_can.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_can.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o: ../os/hal/src/hal_dac.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_dac.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_dac.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_dac.c" > CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_dac.c > CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_dac.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_dac.c -o CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_dac.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o: ../os/hal/src/hal_ext.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_ext.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_ext.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_ext.c" > CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_ext.c > CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_ext.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_ext.c -o CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_ext.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o: ../os/hal/src/hal_gpt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_gpt.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_gpt.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_gpt.c" > CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_gpt.c > CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_gpt.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_gpt.c -o CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_gpt.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o: ../os/hal/src/hal_i2c.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_i2c.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_i2c.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_i2c.c" > CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_i2c.c > CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_i2c.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_i2c.c -o CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_i2c.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o: ../os/hal/src/hal_i2s.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_i2s.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_i2s.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_i2s.c" > CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_i2s.c > CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_i2s.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_i2s.c -o CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_i2s.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o: ../os/hal/src/hal_icu.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_icu.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_icu.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_icu.c" > CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_icu.c > CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_icu.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_icu.c -o CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_icu.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o: ../os/hal/src/hal_mac.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mac.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mac.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mac.c" > CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mac.c > CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mac.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mac.c -o CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_mac.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o: ../os/hal/src/hal_mmc_spi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mmc_spi.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mmc_spi.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mmc_spi.c" > CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mmc_spi.c > CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mmc_spi.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mmc_spi.c -o CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_mmc_spi.c.o.provides.build: CMakeFiles/HAL.dir
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o: ../os/hal/src/hal_mmcsd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mmcsd.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mmcsd.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mmcsd.c" > CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mmcsd.c > CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_mmcsd.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_mmcsd.c -o CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_mmcsd.c.o.provides.build: CMakeFiles/HAL.dir/o
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o: ../os/hal/src/hal_pal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_pal.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_pal.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_pal.c" > CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_pal.c > CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_pal.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_pal.c -o CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_pal.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o: ../os/hal/src/hal_pwm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_pwm.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_pwm.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_pwm.c" > CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_pwm.c > CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_pwm.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_pwm.c -o CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o.requires:
 
@@ -419,16 +419,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_pwm.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o: ../os/hal/src/hal_qspi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_qspi.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_qspi.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_qspi.c" > CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_qspi.c > CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_qspi.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_qspi.c -o CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o.requires:
 
@@ -443,16 +443,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_qspi.c.o.provides.build: CMakeFiles/HAL.dir/os
 
 CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o: ../os/hal/src/hal_queues.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_queues.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_queues.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_queues.c" > CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_queues.c > CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_queues.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_queues.c -o CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o.requires:
 
@@ -467,16 +467,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_queues.c.o.provides.build: CMakeFiles/HAL.dir/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o: ../os/hal/src/hal_rtc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_rtc.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_rtc.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_rtc.c" > CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_rtc.c > CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_rtc.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_rtc.c -o CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o.requires:
 
@@ -491,16 +491,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_rtc.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o: ../os/hal/src/hal_sdc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_sdc.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_sdc.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_sdc.c" > CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_sdc.c > CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_sdc.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_sdc.c -o CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o.requires:
 
@@ -515,16 +515,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_sdc.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o: ../os/hal/src/hal_serial.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_serial.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_serial.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_serial.c" > CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_serial.c > CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_serial.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_serial.c -o CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o.requires:
 
@@ -539,16 +539,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_serial.c.o.provides.build: CMakeFiles/HAL.dir/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o: ../os/hal/src/hal_serial_usb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_serial_usb.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_serial_usb.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_serial_usb.c" > CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_serial_usb.c > CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_serial_usb.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_serial_usb.c -o CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o.requires:
 
@@ -563,16 +563,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_serial_usb.c.o.provides.build: CMakeFiles/HAL.
 
 CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o: ../os/hal/src/hal_spi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_spi.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_spi.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_spi.c" > CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_spi.c > CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_spi.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_spi.c -o CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o.requires:
 
@@ -587,16 +587,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_spi.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o: ../os/hal/src/hal_st.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_st.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_st.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_st.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_st.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_st.c" > CMakeFiles/HAL.dir/os/hal/src/hal_st.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_st.c > CMakeFiles/HAL.dir/os/hal/src/hal_st.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_st.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_st.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_st.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_st.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_st.c -o CMakeFiles/HAL.dir/os/hal/src/hal_st.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o.requires:
 
@@ -611,16 +611,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_st.c.o.provides.build: CMakeFiles/HAL.dir/os/h
 
 CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o: ../os/hal/src/hal_uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_uart.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_uart.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_uart.c" > CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_uart.c > CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_uart.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_uart.c -o CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o.requires:
 
@@ -635,16 +635,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_uart.c.o.provides.build: CMakeFiles/HAL.dir/os
 
 CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o: ../os/hal/src/hal_usb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_usb.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_usb.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_usb.c" > CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_usb.c > CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_usb.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_usb.c -o CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o.requires:
 
@@ -659,16 +659,16 @@ CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o.provides.build: CMakeFiles/HAL.dir/os/
 
 CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o: CMakeFiles/HAL.dir/flags.make
 CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o: ../os/hal/src/hal_wdg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_wdg.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_wdg.c
 
 CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_wdg.c" > CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_wdg.c > CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.i
 
 CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/src/hal_wdg.c" -o CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/os/hal/src/hal_wdg.c -o CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.s
 
 CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o.requires:
 
@@ -741,7 +741,7 @@ libHAL.a: CMakeFiles/HAL.dir/os/hal/src/hal_usb.c.o
 libHAL.a: CMakeFiles/HAL.dir/os/hal/src/hal_wdg.c.o
 libHAL.a: CMakeFiles/HAL.dir/build.make
 libHAL.a: CMakeFiles/HAL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Linking C static library libHAL.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C static library libHAL.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/HAL.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HAL.dir/link.txt --verbose=$(VERBOSE)
 
@@ -784,6 +784,6 @@ CMakeFiles/HAL.dir/clean:
 .PHONY : CMakeFiles/HAL.dir/clean
 
 CMakeFiles/HAL.dir/depend:
-	cd "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/HAL.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/HAL.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/HAL.dir/depend
 

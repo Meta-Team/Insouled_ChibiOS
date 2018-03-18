@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/hw/board.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/BOARD.dir/hw/board.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/hw/board.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/BOARD.dir/hw/board.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/anita/Downloads/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/BOARD.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/BOARD.dir/flags.make
 
 CMakeFiles/BOARD.dir/hw/board.c.o: CMakeFiles/BOARD.dir/flags.make
 CMakeFiles/BOARD.dir/hw/board.c.o: ../hw/board.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/BOARD.dir/hw/board.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BOARD.dir/hw/board.c.o   -c "/Users/lantian/Downloads/Insouled 2/hw/board.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/BOARD.dir/hw/board.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BOARD.dir/hw/board.c.o   -c /Users/anita/Downloads/Insouled_ChibiOS/hw/board.c
 
 CMakeFiles/BOARD.dir/hw/board.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BOARD.dir/hw/board.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/hw/board.c" > CMakeFiles/BOARD.dir/hw/board.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/anita/Downloads/Insouled_ChibiOS/hw/board.c > CMakeFiles/BOARD.dir/hw/board.c.i
 
 CMakeFiles/BOARD.dir/hw/board.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BOARD.dir/hw/board.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/hw/board.c" -o CMakeFiles/BOARD.dir/hw/board.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/anita/Downloads/Insouled_ChibiOS/hw/board.c -o CMakeFiles/BOARD.dir/hw/board.c.s
 
 CMakeFiles/BOARD.dir/hw/board.c.o.requires:
 
@@ -91,7 +91,7 @@ BOARD_EXTERNAL_OBJECTS =
 libBOARD.a: CMakeFiles/BOARD.dir/hw/board.c.o
 libBOARD.a: CMakeFiles/BOARD.dir/build.make
 libBOARD.a: CMakeFiles/BOARD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libBOARD.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libBOARD.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/BOARD.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BOARD.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/BOARD.dir/clean:
 .PHONY : CMakeFiles/BOARD.dir/clean
 
 CMakeFiles/BOARD.dir/depend:
-	cd "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/BOARD.dir/depend
 

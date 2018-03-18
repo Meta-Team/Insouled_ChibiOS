@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/anita/Downloads/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
 
 # Utility rule file for Ozone.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
 include CMakeFiles/Ozone.dir/progress.make
 
 CMakeFiles/Ozone:
-	make -C /Users/lantian/Downloads/Insouled\ 2/dev CLION_EXE_DIR=/Users/lantian/Downloads/Insouled\ 2/cmake-build-debug
+	make -C /Users/anita/Downloads/Insouled_ChibiOS/dev CLION_EXE_DIR=/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug
 
 Ozone: CMakeFiles/Ozone
 Ozone: CMakeFiles/Ozone.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/Ozone.dir/clean:
 .PHONY : CMakeFiles/Ozone.dir/clean
 
 CMakeFiles/Ozone.dir/depend:
-	cd "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/Ozone.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug /Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/Ozone.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Ozone.dir/depend
 

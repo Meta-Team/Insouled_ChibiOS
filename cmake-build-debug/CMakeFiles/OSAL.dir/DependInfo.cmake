@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/os/hal/osal/rt/osal.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/hal/osal/rt/osal.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

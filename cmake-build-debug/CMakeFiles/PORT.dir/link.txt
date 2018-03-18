@@ -1,2 +1,2 @@
-/usr/bin/ar qc libPORT.a  CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o
-/usr/bin/ranlib libPORT.a
+/Library/Developer/CommandLineTools/usr/bin/ar qc libPORT.a  CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libPORT.a

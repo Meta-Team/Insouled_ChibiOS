@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/os/hal/lib/streams/chprintf.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/SHELL.dir/os/hal/lib/streams/chprintf.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/hal/lib/streams/memstreams.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/SHELL.dir/os/hal/lib/streams/memstreams.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/various/evtimer.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/evtimer.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/various/shell/shell.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/shell/shell.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/various/syscalls.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/syscalls.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/hal/lib/streams/chprintf.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/hal/lib/streams/chprintf.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/hal/lib/streams/memstreams.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/hal/lib/streams/memstreams.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/various/evtimer.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/evtimer.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/various/shell/shell.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/shell/shell.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/various/syscalls.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/syscalls.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

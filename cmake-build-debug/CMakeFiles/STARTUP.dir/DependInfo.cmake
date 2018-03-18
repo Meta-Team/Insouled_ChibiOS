@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/os/common/startup/ARMCMx/compilers/GCC/crt1.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/crt1.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/common/startup/ARMCMx/compilers/GCC/vectors.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/vectors.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC/crt1.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/crt1.c.o"
+  "/Users/anita/Downloads/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC/vectors.c" "/Users/anita/Downloads/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/vectors.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
