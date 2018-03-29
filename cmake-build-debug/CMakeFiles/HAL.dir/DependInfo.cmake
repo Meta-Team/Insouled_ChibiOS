@@ -36,7 +36,6 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../dev"
-  "../dev/inc"
   "../os/common/startup/ARMCMx/compilers/GCC"
   "../os/common/startup/ARMCMx/devices/STM32F4xx"
   "../os/common/ext/CMSIS/include"

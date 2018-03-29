@@ -4,11 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/hal/lib/streams/chprintf.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/hal/lib/streams/chprintf.c.o"
-  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/hal/lib/streams/memstreams.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/hal/lib/streams/memstreams.c.o"
-  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/various/evtimer.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/evtimer.c.o"
-  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/various/shell/shell.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/shell/shell.c.o"
-  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/various/syscalls.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/SHELL.dir/os/various/syscalls.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/chassis.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/USER.dir/dev/chassis.c.o"
+  "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/main.c" "/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/USER.dir/dev/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

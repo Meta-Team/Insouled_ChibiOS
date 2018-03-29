@@ -14,7 +14,7 @@ add_custom_target(Ozone COMMAND make -C ${Insouled_SOURCE_DIR}/dev
 
 
 include_directories(dev)
-include_directories(dev/inc)
+#include_directories(dev/inc)
 file(GLOB_RECURSE USER_SRC "dev/*.c")
 
 # include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk

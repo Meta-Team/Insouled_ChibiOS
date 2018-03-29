@@ -45,7 +45,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -97,7 +96,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -149,7 +147,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -201,7 +198,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -253,7 +249,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -305,7 +300,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -357,7 +351,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -409,7 +402,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -461,7 +453,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -513,7 +504,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -575,7 +565,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -627,7 +616,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -689,7 +677,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -741,7 +728,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -793,7 +779,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>
@@ -845,7 +830,6 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev"/>
-					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/dev/inc"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/compilers/GCC"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx"/>
 					<Add directory="/Users/liuzikai/Files/RoboMaster/Insouled_ChibiOS/os/common/ext/CMSIS/include"/>

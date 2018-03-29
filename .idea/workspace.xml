@@ -2,16 +2,16 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Insouled" targetName="BOARD" />
-      <config projectName="Insouled" targetName="PORT" />
-      <config projectName="Insouled" targetName="RTOS" />
+      <config projectName="Insouled" targetName="STLink" />
+      <config projectName="Insouled" targetName="USER" />
       <config projectName="Insouled" targetName="HAL" />
       <config projectName="Insouled" targetName="STARTUP" />
       <config projectName="Insouled" targetName="Ozone" />
+      <config projectName="Insouled" targetName="RTOS" />
+      <config projectName="Insouled" targetName="BOARD" />
       <config projectName="Insouled" targetName="SHELL" />
-      <config projectName="Insouled" targetName="USER" />
-      <config projectName="Insouled" targetName="STLink" />
       <config projectName="Insouled" targetName="OSAL" />
+      <config projectName="Insouled" targetName="PORT" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -21,114 +21,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5cfb5ee-fe99-4cbe-9fe9-646db837c5b9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/dev/global.h" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/BOARD.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HAL.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OSAL.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Ozone.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Ozone.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PORT.dir/link.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTOS.dir/link.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SHELL.dir/link.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/build.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STARTUP.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STLink.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/STLink.dir/build.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Insouled.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Insouled.cbp" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
-      <change beforePath="$PROJECT_DIR$/dev/Makefile" afterPath="$PROJECT_DIR$/dev/Makefile" />
-      <change beforePath="$PROJECT_DIR$/dev/build/ch.bin" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/ch.elf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/ch.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/board.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/ch_test.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcond.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcore.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcore_v7m.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chcoreasm_v7m.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chdebug.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chdynamic.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chevents.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chheap.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmboxes.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmemcore.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmempools.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmsg.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chmtx.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chregistry.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chschd.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chsem.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chsys.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chthreads.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chtm.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chtrace.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/chvt.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/crt0_v7m.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/crt1.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_buffers.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_lld.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_mmcsd.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_pal.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_pal_lld.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_queues.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_serial.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_serial_lld.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_st.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/hal_st_lld.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/main.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/nvic.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/osal.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/stm32_dma.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_root.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_001.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_002.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_003.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_004.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_005.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_006.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_007.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_008.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_009.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_010.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_011.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/test_sequence_012.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/build/lst/vectors.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dev/chassis.c" afterPath="$PROJECT_DIR$/dev/chassis.c" />
-      <change beforePath="$PROJECT_DIR$/dev/chassis.h" afterPath="$PROJECT_DIR$/dev/chassis.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,8 +53,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="102" column="3" lean-forward="false" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
+            <state relative-caret-position="264">
+              <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -154,8 +63,8 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="165">
+              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -164,21 +73,11 @@
       <file leaf-file-name="chassis.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/chassis.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="180">
+              <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
               <folding>
                 <element signature="e#38#57#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chassis.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/chassis.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-351">
-              <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -187,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/dev/global.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -196,7 +95,7 @@
       <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="1725">
               <caret line="115" column="23" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
               <folding />
             </state>
@@ -270,11 +169,11 @@
         <option value="$PROJECT_DIR$/testhal/STM32/STM32F4xx/DAC_DUAL/Makefile" />
         <option value="$PROJECT_DIR$/hw/board.mk" />
         <option value="$PROJECT_DIR$/dev/main.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/dev/global.h" />
         <option value="$PROJECT_DIR$/dev/chassis.c" />
         <option value="$PROJECT_DIR$/dev/Makefile" />
         <option value="$PROJECT_DIR$/dev/chassis.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -285,7 +184,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="809" />
@@ -319,34 +218,6 @@
               <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
               <item name="dev" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
-              <item name="os" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
-              <item name="os" type="462c0819:PsiDirectoryNode" />
-              <item name="hal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Insouled" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="Insouled_ChibiOS" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="rt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -444,29 +315,40 @@
       <workItem from="1521297838940" duration="73000" />
       <workItem from="1521298116780" duration="276000" />
       <workItem from="1521352604849" duration="5582000" />
-      <workItem from="1521360309493" duration="1717000" />
+      <workItem from="1521360309493" duration="2672000" />
+      <workItem from="1521366526329" duration="65000" />
+      <workItem from="1521543885532" duration="586000" />
+      <workItem from="1521733037434" duration="258000" />
     </task>
+    <task id="LOCAL-00001" summary="Write chassis_task() for GLOBAL_MODE_REMOTE_CHASSIS.">
+      <created>1521362138848</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521362138848</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11565000" />
+    <option name="totallyTimeSpent" value="13429000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="809" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19236112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31922612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282353" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -480,6 +362,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Write chassis_task() for GLOBAL_MODE_REMOTE_CHASSIS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Write chassis_task() for GLOBAL_MODE_REMOTE_CHASSIS." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -731,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7371">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1008">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,7 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1619">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1178">
           <caret line="94" column="31" lean-forward="true" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,15 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="102" column="3" lean-forward="false" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,13 +660,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1463">
           <caret line="2563" column="25" lean-forward="false" selection-start-line="2563" selection-start-column="22" selection-end-line="2563" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="1725">
           <caret line="115" column="23" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
           <folding />
         </state>
@@ -803,40 +675,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
           <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/chassis.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="165">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/chassis.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state relative-caret-position="180">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding>
             <element signature="e#38#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/chassis.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-351">
-          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/global.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
