@@ -87,6 +87,7 @@ static THD_FUNCTION(can_tx, p) {
 
   while (true) {
     setMotorSpeed(400, 400, 400, 400);
+chThdSleepMilliseconds(200);
   }
 }
 
