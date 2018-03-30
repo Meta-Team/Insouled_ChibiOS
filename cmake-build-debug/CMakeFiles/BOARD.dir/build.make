@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/lantian/Projects/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/BOARD.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/BOARD.dir/flags.make
 
 CMakeFiles/BOARD.dir/hw/board.c.o: CMakeFiles/BOARD.dir/flags.make
 CMakeFiles/BOARD.dir/hw/board.c.o: ../hw/board.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/BOARD.dir/hw/board.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BOARD.dir/hw/board.c.o   -c "/Users/lantian/Downloads/Insouled 2/hw/board.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/BOARD.dir/hw/board.c.o"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BOARD.dir/hw/board.c.o   -c /Users/lantian/Projects/Insouled_ChibiOS/hw/board.c
 
 CMakeFiles/BOARD.dir/hw/board.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BOARD.dir/hw/board.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/hw/board.c" > CMakeFiles/BOARD.dir/hw/board.c.i
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lantian/Projects/Insouled_ChibiOS/hw/board.c > CMakeFiles/BOARD.dir/hw/board.c.i
 
 CMakeFiles/BOARD.dir/hw/board.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BOARD.dir/hw/board.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/hw/board.c" -o CMakeFiles/BOARD.dir/hw/board.c.s
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lantian/Projects/Insouled_ChibiOS/hw/board.c -o CMakeFiles/BOARD.dir/hw/board.c.s
 
 CMakeFiles/BOARD.dir/hw/board.c.o.requires:
 
@@ -81,17 +81,69 @@ CMakeFiles/BOARD.dir/hw/board.c.o.provides: CMakeFiles/BOARD.dir/hw/board.c.o.re
 CMakeFiles/BOARD.dir/hw/board.c.o.provides.build: CMakeFiles/BOARD.dir/hw/board.c.o
 
 
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.o: CMakeFiles/BOARD.dir/flags.make
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.o: ../dev/hardware/remote.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/BOARD.dir/dev/hardware/remote.c.o"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BOARD.dir/dev/hardware/remote.c.o   -c /Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/remote.c
+
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BOARD.dir/dev/hardware/remote.c.i"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/remote.c > CMakeFiles/BOARD.dir/dev/hardware/remote.c.i
+
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BOARD.dir/dev/hardware/remote.c.s"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/remote.c -o CMakeFiles/BOARD.dir/dev/hardware/remote.c.s
+
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.requires:
+
+.PHONY : CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.requires
+
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.provides: CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.requires
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.provides.build
+.PHONY : CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.provides
+
+CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.provides.build: CMakeFiles/BOARD.dir/dev/hardware/remote.c.o
+
+
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o: CMakeFiles/BOARD.dir/flags.make
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o: ../dev/hardware/usbSerial.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o   -c /Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/usbSerial.c
+
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.i"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/usbSerial.c > CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.i
+
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.s"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/usbSerial.c -o CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.s
+
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.requires:
+
+.PHONY : CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.requires
+
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.provides: CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.requires
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.provides.build
+.PHONY : CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.provides
+
+CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.provides.build: CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o
+
+
 # Object files for target BOARD
 BOARD_OBJECTS = \
-"CMakeFiles/BOARD.dir/hw/board.c.o"
+"CMakeFiles/BOARD.dir/hw/board.c.o" \
+"CMakeFiles/BOARD.dir/dev/hardware/remote.c.o" \
+"CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o"
 
 # External object files for target BOARD
 BOARD_EXTERNAL_OBJECTS =
 
 libBOARD.a: CMakeFiles/BOARD.dir/hw/board.c.o
+libBOARD.a: CMakeFiles/BOARD.dir/dev/hardware/remote.c.o
+libBOARD.a: CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o
 libBOARD.a: CMakeFiles/BOARD.dir/build.make
 libBOARD.a: CMakeFiles/BOARD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libBOARD.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libBOARD.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/BOARD.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BOARD.dir/link.txt --verbose=$(VERBOSE)
 
@@ -101,6 +153,8 @@ CMakeFiles/BOARD.dir/build: libBOARD.a
 .PHONY : CMakeFiles/BOARD.dir/build
 
 CMakeFiles/BOARD.dir/requires: CMakeFiles/BOARD.dir/hw/board.c.o.requires
+CMakeFiles/BOARD.dir/requires: CMakeFiles/BOARD.dir/dev/hardware/remote.c.o.requires
+CMakeFiles/BOARD.dir/requires: CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o.requires
 
 .PHONY : CMakeFiles/BOARD.dir/requires
 
@@ -109,6 +163,6 @@ CMakeFiles/BOARD.dir/clean:
 .PHONY : CMakeFiles/BOARD.dir/clean
 
 CMakeFiles/BOARD.dir/depend:
-	cd "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lantian/Projects/Insouled_ChibiOS /Users/lantian/Projects/Insouled_ChibiOS /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/BOARD.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/BOARD.dir/depend
 

@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/lantian/Projects/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OSAL.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/OSAL.dir/flags.make
 
 CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o: CMakeFiles/OSAL.dir/flags.make
 CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o: ../os/hal/osal/rt/osal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o   -c "/Users/lantian/Downloads/Insouled 2/os/hal/osal/rt/osal.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o"
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o   -c /Users/lantian/Projects/Insouled_ChibiOS/os/hal/osal/rt/osal.c
 
 CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.i"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/lantian/Downloads/Insouled 2/os/hal/osal/rt/osal.c" > CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.i
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lantian/Projects/Insouled_ChibiOS/os/hal/osal/rt/osal.c > CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.i
 
 CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.s"
-	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/lantian/Downloads/Insouled 2/os/hal/osal/rt/osal.c" -o CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.s
+	/usr/local/bin/gcc-7 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lantian/Projects/Insouled_ChibiOS/os/hal/osal/rt/osal.c -o CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.s
 
 CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o.requires:
 
@@ -91,7 +91,7 @@ OSAL_EXTERNAL_OBJECTS =
 libOSAL.a: CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o
 libOSAL.a: CMakeFiles/OSAL.dir/build.make
 libOSAL.a: CMakeFiles/OSAL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libOSAL.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libOSAL.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/OSAL.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OSAL.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +109,6 @@ CMakeFiles/OSAL.dir/clean:
 .PHONY : CMakeFiles/OSAL.dir/clean
 
 CMakeFiles/OSAL.dir/depend:
-	cd "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/OSAL.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lantian/Projects/Insouled_ChibiOS /Users/lantian/Projects/Insouled_ChibiOS /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/OSAL.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OSAL.dir/depend
 

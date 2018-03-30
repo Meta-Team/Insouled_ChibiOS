@@ -4,21 +4,21 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chcond.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chdebug.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chdynamic.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chevents.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chmsg.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chmtx.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chregistry.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chschd.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chsem.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chstats.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chsys.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chthreads.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chtm.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chtrace.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/rt/src/chvt.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chcond.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chcond.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chdebug.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdebug.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chdynamic.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chdynamic.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chevents.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chevents.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chmsg.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmsg.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chmtx.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chmtx.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chregistry.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chregistry.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chschd.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chschd.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chsem.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsem.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chstats.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chstats.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chsys.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chsys.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chthreads.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chthreads.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chtm.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtm.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chtrace.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chtrace.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/rt/src/chvt.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/RTOS.dir/os/rt/src/chvt.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

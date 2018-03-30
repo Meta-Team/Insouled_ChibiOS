@@ -22,8 +22,8 @@ static UARTConfig remoteUartConfig = {
         NULL,
         NULL,
         100000,
+        USART_CR1_PCE,
         0,
-        USART_CR2_LINEN,
         0,
 };
 

@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/lantian/Projects/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug
 
 # Utility rule file for STLink.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
 include CMakeFiles/STLink.dir/progress.make
 
 CMakeFiles/STLink:
-	make upload -C /Users/lantian/Downloads/Insouled\ 2/dev CLION_EXE_DIR=/Users/lantian/Downloads/Insouled\ 2/cmake-build-debug
+	make upload -C /Users/lantian/Projects/Insouled_ChibiOS/dev CLION_EXE_DIR=/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug
 
 STLink: CMakeFiles/STLink
 STLink: CMakeFiles/STLink.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/STLink.dir/clean:
 .PHONY : CMakeFiles/STLink.dir/clean
 
 CMakeFiles/STLink.dir/depend:
-	cd "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/STLink.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lantian/Projects/Insouled_ChibiOS /Users/lantian/Projects/Insouled_ChibiOS /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/STLink.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/STLink.dir/depend
 

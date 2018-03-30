@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/hw/board.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/BOARD.dir/hw/board.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/remote.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/BOARD.dir/dev/hardware/remote.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/dev/hardware/usbSerial.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/hw/board.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/BOARD.dir/hw/board.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

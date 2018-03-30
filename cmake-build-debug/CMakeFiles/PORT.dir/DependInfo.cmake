@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lantian/Downloads/Insouled 2/os/common/ports/ARMCMx/chcore.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o"
-  "/Users/lantian/Downloads/Insouled 2/os/common/ports/ARMCMx/chcore_v7m.c" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore.c.o"
+  "/Users/lantian/Projects/Insouled_ChibiOS/os/common/ports/ARMCMx/chcore_v7m.c" "/Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/PORT.dir/os/common/ports/ARMCMx/chcore_v7m.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

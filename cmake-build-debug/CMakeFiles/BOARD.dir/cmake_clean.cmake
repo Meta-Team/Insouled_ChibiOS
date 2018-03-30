@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/BOARD.dir/hw/board.c.o"
+  "CMakeFiles/BOARD.dir/dev/hardware/remote.c.o"
+  "CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o"
   "libBOARD.pdb"
   "libBOARD.a"
 )

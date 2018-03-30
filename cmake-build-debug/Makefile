@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lantian/Downloads/Insouled 2"
+CMAKE_SOURCE_DIR = /Users/lantian/Projects/Insouled_ChibiOS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lantian/Downloads/Insouled 2/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lantian/Downloads/Insouled 2/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lantian/Projects/Insouled_ChibiOS/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -226,6 +226,60 @@ STLink: cmake_check_build_system
 STLink/fast:
 	$(MAKE) -f CMakeFiles/STLink.dir/build.make CMakeFiles/STLink.dir/build
 .PHONY : STLink/fast
+
+dev/hardware/remote.o: dev/hardware/remote.c.o
+
+.PHONY : dev/hardware/remote.o
+
+# target to build an object file
+dev/hardware/remote.c.o:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/remote.c.o
+.PHONY : dev/hardware/remote.c.o
+
+dev/hardware/remote.i: dev/hardware/remote.c.i
+
+.PHONY : dev/hardware/remote.i
+
+# target to preprocess a source file
+dev/hardware/remote.c.i:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/remote.c.i
+.PHONY : dev/hardware/remote.c.i
+
+dev/hardware/remote.s: dev/hardware/remote.c.s
+
+.PHONY : dev/hardware/remote.s
+
+# target to generate assembly for a file
+dev/hardware/remote.c.s:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/remote.c.s
+.PHONY : dev/hardware/remote.c.s
+
+dev/hardware/usbSerial.o: dev/hardware/usbSerial.c.o
+
+.PHONY : dev/hardware/usbSerial.o
+
+# target to build an object file
+dev/hardware/usbSerial.c.o:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o
+.PHONY : dev/hardware/usbSerial.c.o
+
+dev/hardware/usbSerial.i: dev/hardware/usbSerial.c.i
+
+.PHONY : dev/hardware/usbSerial.i
+
+# target to preprocess a source file
+dev/hardware/usbSerial.c.i:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.i
+.PHONY : dev/hardware/usbSerial.c.i
+
+dev/hardware/usbSerial.s: dev/hardware/usbSerial.c.s
+
+.PHONY : dev/hardware/usbSerial.s
+
+# target to generate assembly for a file
+dev/hardware/usbSerial.c.s:
+	$(MAKE) -f CMakeFiles/BOARD.dir/build.make CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.s
+.PHONY : dev/hardware/usbSerial.c.s
 
 hw/board.o: hw/board.c.o
 
@@ -1648,6 +1702,12 @@ help:
 	@echo "... SHELL"
 	@echo "... STARTUP"
 	@echo "... STLink"
+	@echo "... dev/hardware/remote.o"
+	@echo "... dev/hardware/remote.i"
+	@echo "... dev/hardware/remote.s"
+	@echo "... dev/hardware/usbSerial.o"
+	@echo "... dev/hardware/usbSerial.i"
+	@echo "... dev/hardware/usbSerial.s"
 	@echo "... hw/board.o"
 	@echo "... hw/board.i"
 	@echo "... hw/board.s"
