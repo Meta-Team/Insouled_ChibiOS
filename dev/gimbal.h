@@ -11,8 +11,7 @@
 struct gimbal_motor_t
 {
     int angle;
-
-
-}
+    int current;
+} gimbal[2];
 
 #endif //INSOULED_CHIBIOS_GIMBAL_H
