@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 1
 
 
    1              		.syntax unified
@@ -18,14 +18,14 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   15              		.file	"hal.c"
   16              		.text
   17              	.Ltext0:
-  18              		.section	.gnu.lto_.profile.514939e5d4aef67a,"",%progbits
+  18              		.section	.gnu.lto_.profile.2a25907286ba23cc,"",%progbits
   19 0000 789C6361 		.ascii	"x\234ca`d`a`\000\222\246\354\000\000\333\000G"
   19      60646061 
   19      600092A6 
   19      EC0000DB 
   19      0047
   20              		.text
-  21              		.section	.gnu.lto_.icf.514939e5d4aef67a,"",%progbits
+  21              		.section	.gnu.lto_.icf.2a25907286ba23cc,"",%progbits
   22 0000 789C6361 		.ascii	"x\234ca`d\000\001\016\006\004`d\370\334qw\026\013\003"
   22      60640001 
   22      0E060460 
@@ -34,7 +34,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   23 0014 000EF203 		.ascii	"\000\016\362\003\005"
   23      05
   24              		.text
-  25              		.section	.gnu.lto_.jmpfuncs.514939e5d4aef67a,"",%progbits
+  25              		.section	.gnu.lto_.jmpfuncs.2a25907286ba23cc,"",%progbits
   26 0000 789C6361 		.ascii	"x\234ca`d\000\001-\006\004\200\210001\376ebl\376\265"
   26      60640001 
   26      2D060480 
@@ -49,7 +49,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   28      401600F5 
   28      150A56
   29              		.text
-  30              		.section	.gnu.lto_.inline.514939e5d4aef67a,"",%progbits
+  30              		.section	.gnu.lto_.inline.2a25907286ba23cc,"",%progbits
   31 0000 789C6361 		.ascii	"x\234ca`d\000\001=\006\004\000\212p\232220\001\231l"
   31      60640001 
   31      3D060400 
@@ -58,21 +58,21 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   32 0015 0BE499C0 		.ascii	"\013\344\231\300B\\(\004\0237H\025\230\311\000\0004"
   32      425C2804 
   32      13374815 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 2
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 2
 
 
   32      98C90000 
   32      34
   33 0026 AA0177   		.ascii	"\252\001w"
   34              		.text
-  35              		.section	.gnu.lto_.pureconst.514939e5d4aef67a,"",%progbits
+  35              		.section	.gnu.lto_.pureconst.2a25907286ba23cc,"",%progbits
   36 0000 789C6361 		.ascii	"x\234ca`d`f`\000\222\022\000\000p\000\""
   36      60646066 
   36      60009212 
   36      00007000 
   36      22
   37              		.text
-  38              		.section	.gnu.lto_halInit.514939e5d4aef67a,"",%progbits
+  38              		.section	.gnu.lto_halInit.2a25907286ba23cc,"",%progbits
   39 0000 789C7590 		.ascii	"x\234u\220=K\003A\020\206\347\335\275\334E!b!\"hac\221"
   39      3D4B0341 
   39      1086E7DD 
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   47      072F1826 
   47      8416
   48 00ad 9D4EE7F9 		.ascii	"\235N\347\371\336q\207f\333\230I_#T,\201\032\\\362\265"
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 3
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 3
 
 
   48      DE718766 
@@ -161,7 +161,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   56 0143 5486BE00 		.ascii	"T\206\276\000Ds\240u"
   56      4473A075 
   57              		.text
-  58              		.section	.gnu.lto_.symbol_nodes.514939e5d4aef67a,"",%progbits
+  58              		.section	.gnu.lto_.symbol_nodes.2a25907286ba23cc,"",%progbits
   59 0000 789C55C9 		.ascii	"x\234U\311\261\021\3020\020D\321\177+\211:L\245\247"
   59      B111C230 
   59      1044D17F 
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   61      08B67A86 
   61      3289211E 
   62 003b 1EA8358A 		.ascii	"\036\2505\212=\344\352\302,O]\030\345\271\013wy\371"
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 4
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 4
 
 
   62      3DE4EAC2 
@@ -193,14 +193,14 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   64      BE332624 
   64      AC
   65              		.text
-  66              		.section	.gnu.lto_.refs.514939e5d4aef67a,"",%progbits
+  66              		.section	.gnu.lto_.refs.2a25907286ba23cc,"",%progbits
   67 0000 789C6361 		.ascii	"x\234ca`d`c`\000\222L\214L\014\000\000\243\000\022"
   67      60646063 
   67      6000924C 
   67      8C4C0C00 
   67      00A30012 
   68              		.text
-  69              		.section	.gnu.lto_.decls.514939e5d4aef67a,"",%progbits
+  69              		.section	.gnu.lto_.decls.2a25907286ba23cc,"",%progbits
   70 0000 789CAD56 		.ascii	"x\234\255V{LSW\030\277\247\247\024(\005\215\230\315"
   70      7B4C5357 
   70      18BFA7A7 
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   77      1889B671 
   77      EC52813D 
   77      07EB00EB 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 5
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 5
 
 
   77      02
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
   89      5B0561A3 
   89      90E41026 
   89      15877028 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 6
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 6
 
 
   89      0385
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  101      EC26D835 
  101      A4A5ABCA 
  101      F4EA24BD 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 7
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 7
 
 
  101      CB
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  112      37312767 
  113 030a 0AB731A7 		.ascii	"\012\2671\247\304\325\367\300\237e\015\221b\036\357"
  113      C4D5F7C0 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 8
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 8
 
 
  113      9F650D91 
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  125 03dc 07FF654F 		.ascii	"\007\377eO\260\012\272+\351\211\375\013\010\036I'\326"
  125      B00ABA2B 
  125      E989FD0B 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 9
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 9
 
 
  125      081E4927 
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  136      CA7B56EF 
  136      878F
  137 04b6 32C9D69D 		.ascii	"2\311\326\235M\005*\240i\200\337\021G\016|\266!msQ\022"
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 10
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 10
 
 
  137      4D052AA0 
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  148      89BAFD
  149 0588 ED4E61EB 		.ascii	"\355Na\353$zR\206\030\301\250\177\011C\204\007\271\321"
  149      247A5286 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 11
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 11
 
 
  149      18C1A87F 
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  160      7C44046F 
  160      B1F1B120 
  160      1A6FB1DA 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 12
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 12
 
 
  160      6DFC
@@ -707,7 +707,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  169      27F63767 
  169      DE3803
  170              		.text
- 171              		.section	.gnu.lto_.symtab.514939e5d4aef67a,"",%progbits
+ 171              		.section	.gnu.lto_.symtab.2a25907286ba23cc,"",%progbits
  172 0000 68616C49 		.ascii	"halInit\000"
  172      6E697400 
  173 0008 00       		.ascii	"\000"
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  177 0013 EF000000 		.ascii	"\357\000\000\000"
  178 0017 70616C5F 		.ascii	"pal_default_config\000"
  178      64656661 
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 13
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 13
 
 
  178      756C745F 
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  214              		.text
  215              		.section	.gnu.lto_.opts,"",%progbits
  216 0000 272D666D 		.ascii	"'-fmath-errno' '-fsigned-zeros' '-ftrapping-math' '"
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 14
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 14
 
 
  216      6174682D 
@@ -812,7 +812,7 @@ ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 1
  223              		.comm	__gnu_lto_v1,1,1
  224              		.comm	__gnu_lto_slim,1,1
  225              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160919 (release) [ARM/embedded-5-bran
-ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccz4ScKI.s 			page 15
+ARM GAS  /var/folders/m7/41pr8n2n6xb_qvh8c7kb1tth0000gn/T//ccV83fv2.s 			page 15
 
 
 DEFINED SYMBOLS

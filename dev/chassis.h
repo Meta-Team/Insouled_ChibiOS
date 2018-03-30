@@ -35,10 +35,10 @@ typedef enum
 } global_mode_e;
 global_mode_e global_mode;
 
-#define CHASSIS_MOTOR_FR 0u
-#define CHASSIS_MOTOR_BR 1u
-#define CHASSIS_MOTOR_FL 2u
-#define CHASSIS_MOTOR_BL 3u
+#define CHASSIS_MOTOR_FR 0
+#define CHASSIS_MOTOR_BR 1
+#define CHASSIS_MOTOR_FL 2
+#define CHASSIS_MOTOR_BL 3
 
 typedef struct
 {
