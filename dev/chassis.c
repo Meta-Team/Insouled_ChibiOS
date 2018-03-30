@@ -33,10 +33,10 @@ void chassis_ctrl() {
 
             float rotate_ratio = ((CHASSIS_WHEELBASE + CHASSIS_WHEELTRACK) / 2.0f) / CHASSIS_RADIAN_COEF;
             float rpm_ratio = (60.0f / (CHASSIS_WHEEL_PERIMETER * CHASSIS_DECELE_RATIO));
-            chassis.motor_speed[0] = int((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-            chassis.motor_speed[1] = int((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-            chassis.motor_speed[2] = int((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-            chassis.motor_speed[3] = int((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[0] = (int)((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[1] = (int)((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[2] = (int)((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[3] = (int)((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
 
 
             int max_motor_speed = 0;

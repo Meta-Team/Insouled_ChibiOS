@@ -31,6 +31,8 @@
 #define CHASSIS_RADIAN_COEF 57.3f
 
 
+void chassis_ctrl();
+
 
 #endif //INSOULED_CHASSIS_H
 
