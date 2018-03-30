@@ -32,9 +32,9 @@ static const struct can_instance can2 = {&CAND2, GPIOD_LED3};
  */
 
 static const CANConfig cancfg = {
-  CAN_MCR_ABOM | CAN_MCR_TXFP,
-  CAN_BTR_SJW(1) | CAN_BTR_TS2(5) |
-  CAN_BTR_TS1(3) | CAN_BTR_BRP(5)
+        CAN_MCR_ABOM | CAN_MCR_AWUM | CAN_MCR_TXFP,
+        CAN_BTR_SJW(0) | CAN_BTR_TS2(3) |
+        CAN_BTR_TS1(8) | CAN_BTR_BRP(2)
 };
 
 static THD_WORKING_AREA(can_rx1_wa, 256);
@@ -62,23 +62,34 @@ static THD_FUNCTION(can_rx, p) {
   chEvtUnregister(&CAND1.rxfull_event, &el);
 }
 
-static THD_FUNCTION(can_tx, p) {
-  CANTxFrame txmsg;
 
-  (void)p;
-  chRegSetThreadName("transmitter");
+void setMotorSpeed(int16_t ch1, int16_t ch2, int16_t ch3, int16_t ch4) {
+  CANTxFrame txmsg;
   txmsg.IDE = CAN_IDE_STD;
   txmsg.SID = 0x200;
   txmsg.RTR = CAN_RTR_DATA;
-  txmsg.DLC = 8;
-  txmsg.data32[0] = 0x00FF00FF;
-  txmsg.data32[1] = 0x00FF00FF;
+  txmsg.DLC = 0x08;
+  txmsg.data8[0] = (uint8_t) (ch1 >> 8);
+  txmsg.data8[1] = (uint8_t) ch1;
+  txmsg.data8[2] = (uint8_t) (ch2 >> 8);
+  txmsg.data8[3] = (uint8_t) ch2;
+  txmsg.data8[4] = (uint8_t) (ch3 >> 8);
+  txmsg.data8[5] = (uint8_t) ch3;
+  txmsg.data8[6] = (uint8_t) (ch4 >> 8);
+  txmsg.data8[7] = (uint8_t) ch4;
+  canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+}
+
+static THD_FUNCTION(can_tx, p) {
+
+  (void)p;
+  chRegSetThreadName("transmitter");
 
   while (true) {
-    canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
-    //canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+    setMotorSpeed(400, 400, 400, 400);
   }
 }
+
 
 /*
  * Application entry point.
@@ -116,6 +127,7 @@ int main(void) {
   /*
    * Normal main() thread activity, in this demo it does nothing.
    */
+
     sdStart(&SD2, NULL);
     palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
     palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));

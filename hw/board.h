@@ -41,7 +41,7 @@
 #endif
 
 #if !defined(STM32_HSECLK)
-#define STM32_HSECLK                8000000U
+#define STM32_HSECLK                12000000U
 #endif
 
 /*
@@ -54,6 +54,8 @@
  * MCU type as defined in the ST header.
  */
 #define STM32F427xx
+#define BOARD_OTG_NOVBUSSENS
+#include "stm32f4xx.h"
 
 /*
  * IO pins assignments.

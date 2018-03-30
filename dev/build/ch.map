@@ -5,9 +5,9 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/obj/crt0_v7m.o
  .data          0x0000000000000000        0x0 build/obj/chcoreasm_v7m.o
  .bss           0x0000000000000000        0x0 build/obj/chcoreasm_v7m.o
- .text          0x0000000000000000        0x0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .data          0x0000000000000000        0x0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss           0x0000000000000000        0x0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+ .text          0x0000000000000000        0x0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss           0x0000000000000000        0x0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
 Memory Configuration
 
@@ -34,7 +34,7 @@ Linker script and memory map
 
 LOAD build/obj/crt0_v7m.o
 LOAD build/obj/chcoreasm_v7m.o
-LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
 .mstack         0x0000000020000000      0x400
                 0x0000000020000000                . = ALIGN (0x8)
@@ -55,7 +55,7 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
 
 .vectors        0x0000000008000000      0x1c0
  *(.vectors)
- .vectors       0x0000000008000000      0x1c0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+ .vectors       0x0000000008000000      0x1c0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                 0x0000000008000000                _vectors
 
 .xtors          0x00000000080001c0        0x0
@@ -68,7 +68,7 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
  *(SORT_BY_NAME(.fini_array.*))
                 0x00000000080001c0                __fini_array_end = .
 
-.text           0x00000000080001c0     0x29e4
+.text           0x00000000080001c0     0x1d84
  *(.text)
  .text          0x00000000080001c0       0xd4 build/obj/crt0_v7m.o
                 0x00000000080001c0                Reset_Handler
@@ -79,308 +79,262 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x00000000080002b8                _port_exit_from_isr
  *(.text.*)
  *fill*         0x00000000080002bc        0x4 
- .text.chTMStartMeasurementX.constprop.32
-                0x00000000080002c0        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+ .text.chTMStartMeasurementX.constprop.30
+                0x00000000080002c0        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  *fill*         0x00000000080002cc        0x4 
- .text.chSysPolledDelayX.constprop.31
-                0x00000000080002d0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080002e4        0xc 
- .text.usb_lld_start_out.constprop.3
-                0x00000000080002f0       0x68 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000358        0x8 
  .text.chCoreAllocAligned
-                0x0000000008000360       0x40 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .text.notify2  0x00000000080003a0       0x10 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .text.usb_lld_start_in
-                0x00000000080003b0       0xa8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000458        0x8 
- .text.otg_epout_handler
-                0x0000000008000460       0x98 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080004f8        0x8 
+                0x00000000080002d0       0x40 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .text.notify2  0x0000000008000310       0x10 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .text._pal_lld_setgroupmode
-                0x0000000008000500       0xb0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .text._usb_ep0out
-                0x00000000080005b0       0x90 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .text._usb_ep0in
-                0x0000000008000640       0xc8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000708        0x8 
+                0x0000000008000320       0xb0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .text._port_irq_epilogue
-                0x0000000008000710       0x5c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x000000000800076c        0x4 
+                0x00000000080003d0       0x5c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800042c        0x4 
  .text.VectorD4
-                0x0000000008000770       0x7c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080007ec        0x4 
+                0x0000000008000430       0x7c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080004ac        0x4 
  .text.VectorB0
-                0x00000000080007f0       0x94 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000884        0xc 
+                0x00000000080004b0       0x94 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000544        0xc 
  .text.Vector158
-                0x0000000008000890       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080008bc        0x4 
+                0x0000000008000550       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800057c        0x4 
  .text.Vector154
-                0x00000000080008c0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080008ec        0x4 
+                0x0000000008000580       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080005ac        0x4 
  .text.Vector150
-                0x00000000080008f0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x000000000800091c        0x4 
+                0x00000000080005b0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080005dc        0x4 
  .text.Vector130
-                0x0000000008000920       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000948        0x8 
+                0x00000000080005e0       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000608        0x8 
  .text.Vector12C
-                0x0000000008000950       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x000000000800097c        0x4 
+                0x0000000008000610       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800063c        0x4 
  .text.Vector128
-                0x0000000008000980       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080009ac        0x4 
+                0x0000000008000640       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800066c        0x4 
  .text.Vector124
-                0x00000000080009b0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080009dc        0x4 
+                0x0000000008000670       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800069c        0x4 
  .text.Vector120
-                0x00000000080009e0       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000a08        0x8 
+                0x00000000080006a0       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080006c8        0x8 
  .text.VectorFC
-                0x0000000008000a10       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000a3c        0x4 
+                0x00000000080006d0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080006fc        0x4 
  .text.Vector84
-                0x0000000008000a40       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000a6c        0x4 
+                0x0000000008000700       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800072c        0x4 
  .text.Vector80
-                0x0000000008000a70       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000a9c        0x4 
+                0x0000000008000730       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800075c        0x4 
  .text.Vector7C
-                0x0000000008000aa0       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000ac8        0x8 
+                0x0000000008000760       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000788        0x8 
  .text.Vector78
-                0x0000000008000ad0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000afc        0x4 
+                0x0000000008000790       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080007bc        0x4 
  .text.Vector74
-                0x0000000008000b00       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000b2c        0x4 
+                0x00000000080007c0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080007ec        0x4 
  .text.Vector70
-                0x0000000008000b30       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000b5c        0x4 
+                0x00000000080007f0       0x2c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800081c        0x4 
  .text.Vector6C
-                0x0000000008000b60       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000b88        0x8 
+                0x0000000008000820       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000848        0x8 
  .text.SVC_Handler
-                0x0000000008000b90       0x1c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000bac        0x4 
+                0x0000000008000850       0x1c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800086c        0x4 
  .text.chTMStopMeasurementX
-                0x0000000008000bb0       0x44 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000bf4        0xc 
- .text.wakeup   0x0000000008000c00       0x70 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008000870       0x44 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080008b4        0xc 
+ .text.wakeup   0x00000000080008c0       0x70 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .text.chSchReadyI
-                0x0000000008000c70       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000c98        0x8 
+                0x0000000008000930       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000958        0x8 
  .text.chThdDequeueAllI.constprop.26
-                0x0000000008000ca0       0x24 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000cc4        0xc 
- .text.otg_epin_handler
-                0x0000000008000cd0       0xb8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008000d88        0x8 
- .text.usb_lld_serve_interrupt
-                0x0000000008000d90      0x3b4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001144        0xc 
- .text.Vector174
-                0x0000000008001150       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001164        0xc 
- .text.Vector14C
-                0x0000000008001170       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001184        0xc 
+                0x0000000008000960       0x24 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000984        0xc 
  .text.chEvtBroadcastFlagsI
-                0x0000000008001190       0x58 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080011e8        0x8 
+                0x0000000008000990       0x58 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080009e8        0x8 
  .text.VectorD8
-                0x00000000080011f0      0x1cc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080013bc        0x4 
+                0x00000000080009f0      0x1cc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000bbc        0x4 
  .text.can_lld_sce_handler
-                0x00000000080013c0       0x50 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008000bc0       0x50 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .text.Vector148
-                0x0000000008001410       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001424        0xc 
+                0x0000000008000c10       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000c24        0xc 
  .text.Vector98
-                0x0000000008001430       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001444        0xc 
+                0x0000000008000c30       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000c44        0xc 
  .text.can_lld_rx1_handler
-                0x0000000008001450       0x54 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080014a4        0xc 
+                0x0000000008000c50       0x54 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000ca4        0xc 
  .text.Vector144
-                0x00000000080014b0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080014c4        0xc 
+                0x0000000008000cb0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000cc4        0xc 
  .text.Vector94
-                0x00000000080014d0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080014e4        0xc 
+                0x0000000008000cd0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000ce4        0xc 
  .text.can_lld_rx0_handler
-                0x00000000080014f0       0x54 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001544        0xc 
+                0x0000000008000cf0       0x54 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000d44        0xc 
  .text.Vector140
-                0x0000000008001550       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001564        0xc 
+                0x0000000008000d50       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000d64        0xc 
  .text.Vector90
-                0x0000000008001570       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001584        0xc 
+                0x0000000008000d70       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000d84        0xc 
  .text.can_lld_tx_handler
-                0x0000000008001590       0x60 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008000d90       0x60 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .text.Vector13C
-                0x00000000080015f0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001604        0xc 
+                0x0000000008000df0       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000e04        0xc 
  .text.Vector8C
-                0x0000000008001610       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001624        0xc 
+                0x0000000008000e10       0x14 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000e24        0xc 
  .text._idle_thread
-                0x0000000008001630        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001634        0xc 
+                0x0000000008000e30        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000e34        0xc 
  .text._unhandled_exception
-                0x0000000008001640        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001644        0xc 
- .text.chSchWakeupS.constprop.37
-                0x0000000008001650       0x5c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080016ac        0x4 
- .text.chThdCreateStatic.constprop.29
-                0x00000000080016b0       0x8c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x000000000800173c        0x4 
+                0x0000000008000e40        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000e44        0xc 
+ .text.chSchWakeupS.constprop.35
+                0x0000000008000e50       0x5c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000eac        0x4 
+ .text.chThdCreateStatic.constprop.28
+                0x0000000008000eb0       0x8c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000f3c        0x4 
  .text.chSchGoSleepS
-                0x0000000008001740       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001768        0x8 
+                0x0000000008000f40       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008000f68        0x8 
  .text.chSchGoSleepTimeoutS
-                0x0000000008001770      0x114 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001884        0xc 
+                0x0000000008000f70      0x114 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008001084        0xc 
  .text.chThdEnqueueTimeoutS
-                0x0000000008001890       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x00000000080018b8        0x8 
- .text.can_tx   0x00000000080018c0       0xb0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008001090       0x28 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080010b8        0x8 
+ .text.can_tx   0x00000000080010c0       0xbc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800117c        0x4 
  .text.oqWriteTimeout
-                0x0000000008001970       0xac /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001a1c        0x4 
- .text._writet  0x0000000008001a20        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001a28        0x8 
- .text._write   0x0000000008001a30        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001a3c        0x4 
+                0x0000000008001180       0xac /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800122c        0x4 
+ .text._writet  0x0000000008001230        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008001238        0x8 
+ .text._write   0x0000000008001240        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800124c        0x4 
  .text.oqPutTimeout
-                0x0000000008001a40       0x50 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .text._putt    0x0000000008001a90        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001a98        0x8 
- .text._put     0x0000000008001aa0        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001aac        0x4 
+                0x0000000008001250       0x50 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .text._putt    0x00000000080012a0        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080012a8        0x8 
+ .text._put     0x00000000080012b0        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080012bc        0x4 
  .text.iqReadTimeout
-                0x0000000008001ab0       0xac /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001b5c        0x4 
- .text._readt   0x0000000008001b60        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001b68        0x8 
- .text._read    0x0000000008001b70        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001b7c        0x4 
+                0x00000000080012c0       0xac /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800136c        0x4 
+ .text._readt   0x0000000008001370        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008001378        0x8 
+ .text._read    0x0000000008001380        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800138c        0x4 
  .text.iqGetTimeout
-                0x0000000008001b80       0x54 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001bd4        0xc 
- .text._gett    0x0000000008001be0        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001be8        0x8 
- .text._get     0x0000000008001bf0        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001bfc        0x4 
+                0x0000000008001390       0x54 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080013e4        0xc 
+ .text._gett    0x00000000080013f0        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080013f8        0x8 
+ .text._get     0x0000000008001400        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800140c        0x4 
  .text.can_lld_start
-                0x0000000008001c00       0xdc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001cdc        0x4 
- .text.can_rx   0x0000000008001ce0      0x12c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008001e0c        0x4 
- .text._usb_ep0setup
-                0x0000000008001e10      0x3e0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008001410       0xdc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x00000000080014ec        0x4 
+ .text.can_rx   0x00000000080014f0      0x12c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800161c        0x4 
  .text.startup.main
-                0x00000000080021f0      0x794 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x00000000080021f0                main
- *fill*         0x0000000008002984        0xc 
+                0x0000000008001620      0x710 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001620                main
  .text.__early_init
-                0x0000000008002990       0xf0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002990                __early_init
+                0x0000000008001d30       0xf0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001d30                __early_init
  .text.chThdExit
-                0x0000000008002a80       0x50 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002a80                chThdExit
+                0x0000000008001e20       0x50 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001e20                chThdExit
  .text.chSchDoReschedule
-                0x0000000008002ad0       0x40 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002ad0                chSchDoReschedule
+                0x0000000008001e70       0x40 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001e70                chSchDoReschedule
  .text.__init_ram_areas
-                0x0000000008002b10       0x68 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002b10                __init_ram_areas
- *fill*         0x0000000008002b78        0x8 
+                0x0000000008001eb0       0x68 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001eb0                __init_ram_areas
+ *fill*         0x0000000008001f18        0x8 
  .text.__default_exit
-                0x0000000008002b80        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002b80                __default_exit
- *fill*         0x0000000008002b84        0xc 
+                0x0000000008001f20        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001f20                __default_exit
+ *fill*         0x0000000008001f24        0xc 
  .text.__late_init
-                0x0000000008002b90        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002b90                __late_init
- *fill*         0x0000000008002b94        0xc 
+                0x0000000008001f30        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001f30                __late_init
+ *fill*         0x0000000008001f34        0xc 
  .text.__core_init
-                0x0000000008002ba0        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002ba0                __core_init
+                0x0000000008001f40        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x0000000008001f40                __core_init
  *(.glue_7t)
- .glue_7t       0x0000000008002ba4        0x0 linker stubs
+ .glue_7t       0x0000000008001f44        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000008002ba4        0x0 linker stubs
+ .glue_7        0x0000000008001f44        0x0 linker stubs
  *(.gcc*)
 
-.vfp11_veneer   0x0000000008002ba4        0x0
- .vfp11_veneer  0x0000000008002ba4        0x0 linker stubs
+.vfp11_veneer   0x0000000008001f44        0x0
+ .vfp11_veneer  0x0000000008001f44        0x0 linker stubs
 
-.v4_bx          0x0000000008002ba4        0x0
- .v4_bx         0x0000000008002ba4        0x0 linker stubs
+.v4_bx          0x0000000008001f44        0x0
+ .v4_bx         0x0000000008001f44        0x0 linker stubs
 
-.iplt           0x0000000008002ba4        0x0
- .iplt          0x0000000008002ba4        0x0 build/obj/crt0_v7m.o
+.iplt           0x0000000008001f44        0x0
+ .iplt          0x0000000008001f44        0x0 build/obj/crt0_v7m.o
 
-.rodata         0x0000000008002ba4      0x200
-                0x0000000008002ba4                . = ALIGN (0x4)
-                0x0000000008002ba4                __rodata_base__ = .
+.rodata         0x0000000008001f44      0x1b8
+                0x0000000008001f44                . = ALIGN (0x4)
+                0x0000000008001f44                __rodata_base__ = .
  *(.rodata)
  *(.rodata.*)
  .rodata._stm32_dma_streams
-                0x0000000008002ba4       0xc0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.active_status
-                0x0000000008002c64        0x2 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008002c66        0x2 
- .rodata.can1   0x0000000008002c68        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.can2   0x0000000008002c70        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008001f44       0xc0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .rodata.can1   0x0000000008002004        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .rodata.can2   0x000000000800200c        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .rodata.can_rx.str1.4
-                0x0000000008002c78        0x9 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008002c81        0x3 
+                0x0000000008002014        0x9 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800201d        0x3 
  .rodata.can_tx.str1.4
-                0x0000000008002c84        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008002020        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .rodata.cancfg
-                0x0000000008002c90        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.chThdCreateStatic.constprop.29.str1.4
-                0x0000000008002c98        0x7 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008002c9f        0x1 
+                0x000000000800202c        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .rodata.chThdCreateStatic.constprop.28.str1.4
+                0x0000000008002034        0x7 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x000000000800203b        0x1 
  .rodata.ch_debug
-                0x0000000008002ca0       0x16 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008002cb6        0x2 
- .rodata.ep0config
-                0x0000000008002cb8       0x24 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.fsparams
-                0x0000000008002cdc        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.halted_status
-                0x0000000008002ce8        0x2 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- *fill*         0x0000000008002cea        0x2 
- .rodata.hsparams
-                0x0000000008002cec        0xc /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x000000000800203c       0x16 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ *fill*         0x0000000008002052        0x2 
  .rodata.main.str1.4
-                0x0000000008002cf8        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000008002054        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                           0x5 (size before relaxing)
  .rodata.ram_areas
-                0x0000000008002d00       0x80 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.vmt    0x0000000008002d80       0x20 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .rodata.zero_status
-                0x0000000008002da0        0x2 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                0x0000000008002da4                . = ALIGN (0x4)
- *fill*         0x0000000008002da2        0x2 
-                0x0000000008002da4                __rodata_end__ = .
+                0x000000000800205c       0x80 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .rodata.vmt    0x00000000080020dc       0x20 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                0x00000000080020fc                . = ALIGN (0x4)
+                0x00000000080020fc                __rodata_end__ = .
 
-.rel.dyn        0x0000000008002da4        0x0
- .rel.iplt      0x0000000008002da4        0x0 build/obj/crt0_v7m.o
+.rel.dyn        0x00000000080020fc        0x0
+ .rel.iplt      0x00000000080020fc        0x0 build/obj/crt0_v7m.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM.exidx      0x0000000008002da4        0x0
-                0x0000000008002da4                __exidx_start = .
+.ARM.exidx      0x00000000080020fc        0x0
+                0x00000000080020fc                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000008002da4                __exidx_end = .
+                0x00000000080020fc                __exidx_end = .
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
@@ -412,11 +366,11 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000000000000                __ram7_size__ = LENGTH (ram7)
                 0x0000000000000000                __ram7_end__ = (__ram7_start__ + __ram7_size__)
 
-.data           0x0000000020000800        0x0 load address 0x0000000008002da4
+.data           0x0000000020000800        0x0 load address 0x00000000080020fc
                 0x0000000020000800                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_textdata, LOADADDR (.data))
                 [!provide]                        PROVIDE (_data, .)
-                0x0000000008002da4                _textdata_start = LOADADDR (.data)
+                0x00000000080020fc                _textdata_start = LOADADDR (.data)
                 0x0000000020000800                _data_start = .
  *(.data)
  *(.data.*)
@@ -425,73 +379,67 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 [!provide]                        PROVIDE (_edata, .)
                 0x0000000020000800                _data_end = .
 
-.igot.plt       0x0000000020000800        0x0 load address 0x0000000008002da4
+.igot.plt       0x0000000020000800        0x0 load address 0x00000000080020fc
  .igot.plt      0x0000000020000800        0x0 build/obj/crt0_v7m.o
 
-.bss            0x0000000020000800      0xc00 load address 0x0000000008002da4
+.bss            0x0000000020000800      0x848 load address 0x00000000080020fc
                 0x0000000020000800                . = ALIGN (0x4)
                 0x0000000020000800                _bss_start = .
  *(.bss)
  *(.bss.*)
- .bss.CAND1     0x0000000020000800       0x30 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.CAND2     0x0000000020000830       0x30 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.SD2       0x0000000020000860       0x7c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.UARTD1    0x00000000200008dc       0x1c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.USBD1     0x00000000200008f8      0x1d0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.USBD2     0x0000000020000ac8      0x1d0 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+ .bss.CAND1     0x0000000020000800       0x30 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss.CAND2     0x0000000020000830       0x30 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss.SD2       0x0000000020000860       0x7c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss.UARTD1    0x00000000200008dc       0x1c /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .bss.can_rx1_wa
-                0x0000000020000c98      0x1c8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x00000000200008f8      0x1c8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .bss.can_rx2_wa
-                0x0000000020000e60      0x1c8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000020000ac0      0x1c8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .bss.can_tx_wa
-                0x0000000020001028      0x1c8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.ch        0x00000000200011f0       0x78 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000020000c88      0x1c8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss.ch        0x0000000020000e50       0x78 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .bss.ch_idle_thread_wa
-                0x0000000020001268       0xd8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000020000ec8       0xd8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .bss.default_heap
-                0x0000000020001340       0x20 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000020000fa0       0x20 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  .bss.dma_isr_redir
-                0x0000000020001360       0x80 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.endmem    0x00000000200013e0        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.ep0_state
-                0x00000000200013e4       0x10 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.ep0setup_buffer
-                0x00000000200013f4        0x8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
- .bss.nextmem   0x00000000200013fc        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000020000fc0       0x80 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss.endmem    0x0000000020001040        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+ .bss.nextmem   0x0000000020001044        0x4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
  *(COMMON)
-                0x0000000020001400                . = ALIGN (0x4)
-                0x0000000020001400                _bss_end = .
+                0x0000000020001048                . = ALIGN (0x4)
+                0x0000000020001048                _bss_end = .
                 [!provide]                        PROVIDE (end, .)
 
-.ram0_init      0x0000000020001400        0x0 load address 0x0000000008002da4
-                0x0000000020001400                . = ALIGN (0x4)
-                0x0000000008002da4                __ram0_init_text__ = LOADADDR (.ram0_init)
-                0x0000000020001400                __ram0_init__ = .
+.ram0_init      0x0000000020001048        0x0 load address 0x00000000080020fc
+                0x0000000020001048                . = ALIGN (0x4)
+                0x00000000080020fc                __ram0_init_text__ = LOADADDR (.ram0_init)
+                0x0000000020001048                __ram0_init__ = .
  *(.ram0_init)
  *(.ram0_init.*)
-                0x0000000020001400                . = ALIGN (0x4)
+                0x0000000020001048                . = ALIGN (0x4)
 
-.ram0           0x0000000020001400        0x0 load address 0x0000000008002da4
-                0x0000000020001400                . = ALIGN (0x4)
-                0x0000000020001400                __ram0_clear__ = .
+.ram0           0x0000000020001048        0x0 load address 0x00000000080020fc
+                0x0000000020001048                . = ALIGN (0x4)
+                0x0000000020001048                __ram0_clear__ = .
  *(.ram0_clear)
  *(.ram0_clear.*)
-                0x0000000020001400                . = ALIGN (0x4)
-                0x0000000020001400                __ram0_noinit__ = .
+                0x0000000020001048                . = ALIGN (0x4)
+                0x0000000020001048                __ram0_noinit__ = .
  *(.ram0)
  *(.ram0.*)
-                0x0000000020001400                . = ALIGN (0x4)
-                0x0000000020001400                __ram0_free__ = .
+                0x0000000020001048                . = ALIGN (0x4)
+                0x0000000020001048                __ram0_free__ = .
 
-.ram1_init      0x0000000020000000        0x0 load address 0x0000000008002da4
+.ram1_init      0x0000000020000000        0x0 load address 0x00000000080020fc
                 0x0000000020000000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram1_init_text__ = LOADADDR (.ram1_init)
+                0x00000000080020fc                __ram1_init_text__ = LOADADDR (.ram1_init)
                 0x0000000020000000                __ram1_init__ = .
  *(.ram1_init)
  *(.ram1_init.*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.ram1           0x0000000020000000        0x0 load address 0x0000000008002da4
+.ram1           0x0000000020000000        0x0 load address 0x00000000080020fc
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                __ram1_clear__ = .
  *(.ram1_clear)
@@ -503,15 +451,15 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                __ram1_free__ = .
 
-.ram2_init      0x000000002001c000        0x0 load address 0x0000000008002da4
+.ram2_init      0x000000002001c000        0x0 load address 0x00000000080020fc
                 0x000000002001c000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram2_init_text__ = LOADADDR (.ram2_init)
+                0x00000000080020fc                __ram2_init_text__ = LOADADDR (.ram2_init)
                 0x000000002001c000                __ram2_init__ = .
  *(.ram2_init)
  *(.ram2_init.*)
                 0x000000002001c000                . = ALIGN (0x4)
 
-.ram2           0x000000002001c000        0x0 load address 0x0000000008002da4
+.ram2           0x000000002001c000        0x0 load address 0x00000000080020fc
                 0x000000002001c000                . = ALIGN (0x4)
                 0x000000002001c000                __ram2_clear__ = .
  *(.ram2_clear)
@@ -523,15 +471,15 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x000000002001c000                . = ALIGN (0x4)
                 0x000000002001c000                __ram2_free__ = .
 
-.ram3_init      0x0000000020020000        0x0 load address 0x0000000008002da4
+.ram3_init      0x0000000020020000        0x0 load address 0x00000000080020fc
                 0x0000000020020000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram3_init_text__ = LOADADDR (.ram3_init)
+                0x00000000080020fc                __ram3_init_text__ = LOADADDR (.ram3_init)
                 0x0000000020020000                __ram3_init__ = .
  *(.ram3_init)
  *(.ram3_init.*)
                 0x0000000020020000                . = ALIGN (0x4)
 
-.ram3           0x0000000020020000        0x0 load address 0x0000000008002da4
+.ram3           0x0000000020020000        0x0 load address 0x00000000080020fc
                 0x0000000020020000                . = ALIGN (0x4)
                 0x0000000020020000                __ram3_clear__ = .
  *(.ram3_clear)
@@ -543,15 +491,15 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000020020000                . = ALIGN (0x4)
                 0x0000000020020000                __ram3_free__ = .
 
-.ram4_init      0x0000000010000000        0x0 load address 0x0000000008002da4
+.ram4_init      0x0000000010000000        0x0 load address 0x00000000080020fc
                 0x0000000010000000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram4_init_text__ = LOADADDR (.ram4_init)
+                0x00000000080020fc                __ram4_init_text__ = LOADADDR (.ram4_init)
                 0x0000000010000000                __ram4_init__ = .
  *(.ram4_init)
  *(.ram4_init.*)
                 0x0000000010000000                . = ALIGN (0x4)
 
-.ram4           0x0000000010000000        0x0 load address 0x0000000008002da4
+.ram4           0x0000000010000000        0x0 load address 0x00000000080020fc
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                __ram4_clear__ = .
  *(.ram4_clear)
@@ -563,15 +511,15 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                __ram4_free__ = .
 
-.ram5_init      0x0000000040024000        0x0 load address 0x0000000008002da4
+.ram5_init      0x0000000040024000        0x0 load address 0x00000000080020fc
                 0x0000000040024000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram5_init_text__ = LOADADDR (.ram5_init)
+                0x00000000080020fc                __ram5_init_text__ = LOADADDR (.ram5_init)
                 0x0000000040024000                __ram5_init__ = .
  *(.ram5_init)
  *(.ram5_init.*)
                 0x0000000040024000                . = ALIGN (0x4)
 
-.ram5           0x0000000040024000        0x0 load address 0x0000000008002da4
+.ram5           0x0000000040024000        0x0 load address 0x00000000080020fc
                 0x0000000040024000                . = ALIGN (0x4)
                 0x0000000040024000                __ram5_clear__ = .
  *(.ram5_clear)
@@ -583,15 +531,15 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000040024000                . = ALIGN (0x4)
                 0x0000000040024000                __ram5_free__ = .
 
-.ram6_init      0x0000000000000000        0x0 load address 0x0000000008002da4
+.ram6_init      0x0000000000000000        0x0 load address 0x00000000080020fc
                 0x0000000000000000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram6_init_text__ = LOADADDR (.ram6_init)
+                0x00000000080020fc                __ram6_init_text__ = LOADADDR (.ram6_init)
                 0x0000000000000000                __ram6_init__ = .
  *(.ram6_init)
  *(.ram6_init.*)
                 0x0000000000000000                . = ALIGN (0x4)
 
-.ram6           0x0000000000000000        0x0 load address 0x0000000008002da4
+.ram6           0x0000000000000000        0x0 load address 0x00000000080020fc
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __ram6_clear__ = .
  *(.ram6_clear)
@@ -603,15 +551,15 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __ram6_free__ = .
 
-.ram7_init      0x0000000000000000        0x0 load address 0x0000000008002da4
+.ram7_init      0x0000000000000000        0x0 load address 0x00000000080020fc
                 0x0000000000000000                . = ALIGN (0x4)
-                0x0000000008002da4                __ram7_init_text__ = LOADADDR (.ram7_init)
+                0x00000000080020fc                __ram7_init_text__ = LOADADDR (.ram7_init)
                 0x0000000000000000                __ram7_init__ = .
  *(.ram7_init)
  *(.ram7_init.*)
                 0x0000000000000000                . = ALIGN (0x4)
 
-.ram7           0x0000000000000000        0x0 load address 0x0000000008002da4
+.ram7           0x0000000000000000        0x0 load address 0x00000000080020fc
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __ram7_clear__ = .
  *(.ram7_clear)
@@ -623,11 +571,11 @@ LOAD /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __ram7_free__ = .
 
-.heap           0x0000000020001400    0x2ec00
-                0x0000000020001400                . = ALIGN (0x8)
-                0x0000000020001400                __heap_base__ = .
+.heap           0x0000000020001048    0x2efb8
+                0x0000000020001048                . = ALIGN (0x8)
+                0x0000000020001048                __heap_base__ = .
                 0x0000000020030000                . = (ORIGIN (HEAP_RAM) + LENGTH (HEAP_RAM))
- *fill*         0x0000000020001400    0x2ec00 
+ *fill*         0x0000000020001048    0x2efb8 
                 0x0000000020030000                __heap_end__ = .
                 0x0000000000000400                __process_stack_size__ = 0x400
                 0x0000000000000400                __main_stack_size__ = 0x400
@@ -645,37 +593,37 @@ OUTPUT(build/ch.elf elf32-littlearm)
  .ARM.attributes
                 0x0000000000000021       0x21 build/obj/chcoreasm_v7m.o
  .ARM.attributes
-                0x0000000000000042       0x31 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000000000042       0x31 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
 .comment        0x0000000000000000       0x7e
- .comment       0x0000000000000000       0x7e /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+ .comment       0x0000000000000000       0x7e /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                          0x7f (size before relaxing)
 
-.debug_info     0x0000000000000000     0xb09d
- .debug_info    0x0000000000000000     0xb09d /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+.debug_info     0x0000000000000000     0x854d
+ .debug_info    0x0000000000000000     0x854d /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
-.debug_abbrev   0x0000000000000000      0x806
- .debug_abbrev  0x0000000000000000      0x806 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+.debug_abbrev   0x0000000000000000      0x779
+ .debug_abbrev  0x0000000000000000      0x779 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
-.debug_loc      0x0000000000000000     0x413f
- .debug_loc     0x0000000000000000     0x413f /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+.debug_loc      0x0000000000000000     0x2f4d
+ .debug_loc     0x0000000000000000     0x2f4d /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
-.debug_aranges  0x0000000000000000      0x2a8
+.debug_aranges  0x0000000000000000      0x250
  .debug_aranges
-                0x0000000000000000      0x2a8 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                0x0000000000000000      0x250 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
-.debug_ranges   0x0000000000000000     0x1878
- .debug_ranges  0x0000000000000000     0x1878 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+.debug_ranges   0x0000000000000000     0x1538
+ .debug_ranges  0x0000000000000000     0x1538 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
-.debug_line     0x0000000000000000     0x2325
- .debug_line    0x0000000000000000     0x2325 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+.debug_line     0x0000000000000000     0x1bd7
+ .debug_line    0x0000000000000000     0x1bd7 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
-.debug_str      0x0000000000000000     0x2c35
- .debug_str     0x0000000000000000     0x2c35 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
-                                       0x2db9 (size before relaxing)
+.debug_str      0x0000000000000000     0x22c1
+ .debug_str     0x0000000000000000     0x22c1 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
+                                       0x2403 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x978
- .debug_frame   0x0000000000000000      0x978 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+.debug_frame    0x0000000000000000      0x7e4
+ .debug_frame   0x0000000000000000      0x7e4 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
 
 Cross Reference Table
 
@@ -691,7 +639,7 @@ MemManage_Handler                                 build/obj/vectors.o (symbol fr
 NMI_Handler                                       build/obj/vectors.o (symbol from plugin)
 PendSV_Handler                                    build/obj/vectors.o (symbol from plugin)
 Reset_Handler                                     build/obj/crt0_v7m.o
-                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/vectors.o (symbol from plugin)
 SD2                                               build/obj/hal_serial_lld.o (symbol from plugin)
                                                   build/obj/main.o (symbol from plugin)
@@ -700,8 +648,6 @@ SVC_Handler                                       build/obj/chcore_v7m.o (symbol
 SysTick_Handler                                   build/obj/vectors.o (symbol from plugin)
 SystemCoreClock                                   build/obj/hal_lld.o (symbol from plugin)
 UARTD1                                            build/obj/hal_uart_lld.o (symbol from plugin)
-USBD1                                             build/obj/hal_usb_lld.o (symbol from plugin)
-USBD2                                             build/obj/hal_usb_lld.o (symbol from plugin)
 UsageFault_Handler                                build/obj/vectors.o (symbol from plugin)
 Vector100                                         build/obj/vectors.o (symbol from plugin)
 Vector104                                         build/obj/vectors.o (symbol from plugin)
@@ -731,8 +677,7 @@ Vector144                                         build/obj/hal_can_lld.o (symbo
                                                   build/obj/vectors.o (symbol from plugin)
 Vector148                                         build/obj/hal_can_lld.o (symbol from plugin)
                                                   build/obj/vectors.o (symbol from plugin)
-Vector14C                                         build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/vectors.o (symbol from plugin)
+Vector14C                                         build/obj/vectors.o (symbol from plugin)
 Vector150                                         build/obj/stm32_dma.o (symbol from plugin)
                                                   build/obj/vectors.o (symbol from plugin)
 Vector154                                         build/obj/stm32_dma.o (symbol from plugin)
@@ -745,8 +690,7 @@ Vector164                                         build/obj/vectors.o (symbol fr
 Vector168                                         build/obj/vectors.o (symbol from plugin)
 Vector16C                                         build/obj/vectors.o (symbol from plugin)
 Vector170                                         build/obj/vectors.o (symbol from plugin)
-Vector174                                         build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/vectors.o (symbol from plugin)
+Vector174                                         build/obj/vectors.o (symbol from plugin)
 Vector178                                         build/obj/vectors.o (symbol from plugin)
 Vector17C                                         build/obj/vectors.o (symbol from plugin)
 Vector180                                         build/obj/vectors.o (symbol from plugin)
@@ -833,99 +777,99 @@ VectorF4                                          build/obj/vectors.o (symbol fr
 VectorF8                                          build/obj/vectors.o (symbol from plugin)
 VectorFC                                          build/obj/stm32_dma.o (symbol from plugin)
                                                   build/obj/vectors.o (symbol from plugin)
-__core_init                                       /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__core_init                                       /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
-__default_exit                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__default_exit                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
-__early_init                                      /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__early_init                                      /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/board.o (symbol from plugin)
                                                   build/obj/crt1.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
 __fini_array_end                                  build/obj/crt0_v7m.o
 __fini_array_start                                build/obj/crt0_v7m.o
-__heap_base__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__heap_base__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chmemcore.o (symbol from plugin)
-__heap_end__                                      /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__heap_end__                                      /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chmemcore.o (symbol from plugin)
 __init_array_end                                  build/obj/crt0_v7m.o
 __init_array_start                                build/obj/crt0_v7m.o
-__init_ram_areas                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__init_ram_areas                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
-__late_init                                       /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__late_init                                       /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
 __main_stack_base__                               build/obj/crt0_v7m.o
-__main_stack_end__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__main_stack_end__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/vectors.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
 __process_stack_base__                            build/obj/crt0_v7m.o
 __process_stack_end__                             build/obj/crt0_v7m.o
-__ram0_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram0_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram0_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram0_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram0_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram0_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram0_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram0_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram1_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram1_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram1_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram1_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram1_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram1_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram1_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram1_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram2_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram2_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram2_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram2_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram2_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram2_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram2_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram2_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram3_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram3_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram3_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram3_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram3_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram3_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram3_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram3_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram4_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram4_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram4_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram4_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram4_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram4_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram4_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram4_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram5_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram5_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram5_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram5_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram5_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram5_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram5_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram5_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram6_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram6_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram6_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram6_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram6_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram6_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram6_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram6_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram7_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram7_clear__                                    /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram7_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram7_init__                                     /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram7_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram7_init_text__                                /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
-__ram7_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+__ram7_noinit__                                   /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/crt1.o (symbol from plugin)
 _bss_end                                          build/obj/crt0_v7m.o
 _bss_start                                        build/obj/crt0_v7m.o
@@ -941,23 +885,22 @@ _pal_lld_setgroupmode                             build/obj/hal_pal_lld.o (symbo
                                                   build/obj/main.o (symbol from plugin)
                                                   build/obj/hal_pal.o (symbol from plugin)
 _port_exit_from_isr                               build/obj/chcoreasm_v7m.o
-                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chcore_v7m.o (symbol from plugin)
 _port_irq_epilogue                                build/obj/chcore_v7m.o (symbol from plugin)
                                                   build/obj/hal_uart_lld.o (symbol from plugin)
                                                   build/obj/hal_serial_lld.o (symbol from plugin)
                                                   build/obj/hal_st_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
                                                   build/obj/stm32_dma.o (symbol from plugin)
                                                   build/obj/hal_can_lld.o (symbol from plugin)
 _port_switch                                      build/obj/chcoreasm_v7m.o
-                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chschd.o (symbol from plugin)
 _port_switch_from_isr                             build/obj/chcoreasm_v7m.o
-                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chcore_v7m.o (symbol from plugin)
 _port_thread_start                                build/obj/chcoreasm_v7m.o
-                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+                                                  /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chthreads.o (symbol from plugin)
 _scheduler_init                                   build/obj/chschd.o (symbol from plugin)
                                                   build/obj/chsys.o (symbol from plugin)
@@ -994,19 +937,7 @@ _thread_init                                      build/obj/chthreads.o (symbol 
 _tm_init                                          build/obj/chtm.o (symbol from plugin)
                                                   build/obj/chsys.o (symbol from plugin)
 _unhandled_exception                              build/obj/vectors.o (symbol from plugin)
-_usb_ep0in                                        build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-_usb_ep0out                                       build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-_usb_ep0setup                                     build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-_usb_reset                                        build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-_usb_suspend                                      build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-_usb_wakeup                                       build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-_vectors                                          /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+_vectors                                          /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/vectors.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
 _vt_init                                          build/obj/chvt.o (symbol from plugin)
@@ -1093,7 +1024,6 @@ chEvtBroadcastFlags                               build/obj/chevents.o (symbol f
 chEvtBroadcastFlagsI                              build/obj/chevents.o (symbol from plugin)
                                                   build/obj/hal_serial_lld.o (symbol from plugin)
                                                   build/obj/hal_can_lld.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
                                                   build/obj/hal_serial.o (symbol from plugin)
                                                   build/obj/hal_can.o (symbol from plugin)
 chEvtDispatch                                     build/obj/chevents.o (symbol from plugin)
@@ -1219,7 +1149,7 @@ chRegFindThreadByPointer                          build/obj/chregistry.o (symbol
 chRegFindThreadByWorkingArea                      build/obj/chregistry.o (symbol from plugin)
 chRegFirstThread                                  build/obj/chregistry.o (symbol from plugin)
 chRegNextThread                                   build/obj/chregistry.o (symbol from plugin)
-chSchDoReschedule                                 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+chSchDoReschedule                                 /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chschd.o (symbol from plugin)
                                                   build/obj/chcoreasm_v7m.o
 chSchDoRescheduleAhead                            build/obj/chschd.o (symbol from plugin)
@@ -1253,9 +1183,6 @@ chSchRescheduleS                                  build/obj/chschd.o (symbol fro
                                                   build/obj/test_sequence_005.o (symbol from plugin)
                                                   build/obj/test_sequence_004.o (symbol from plugin)
                                                   build/obj/test_sequence_003.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
                                                   build/obj/hal_serial.o (symbol from plugin)
                                                   build/obj/hal_can.o (symbol from plugin)
                                                   build/obj/chmempools.o (symbol from plugin)
@@ -1309,7 +1236,6 @@ chSysIntegrityCheckI                              build/obj/chsys.o (symbol from
                                                   build/obj/test_sequence_001.o (symbol from plugin)
 chSysIsCounterWithinX                             build/obj/chsys.o (symbol from plugin)
 chSysPolledDelayX                                 build/obj/chsys.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
 chSysRestoreStatusX                               build/obj/chsys.o (symbol from plugin)
                                                   build/obj/test_sequence_001.o (symbol from plugin)
 chSysTimerHandlerI                                build/obj/chsys.o (symbol from plugin)
@@ -1326,7 +1252,6 @@ chThdCreateFromHeap                               build/obj/chdynamic.o (symbol 
 chThdCreateFromMemoryPool                         build/obj/chdynamic.o (symbol from plugin)
                                                   build/obj/test_sequence_011.o (symbol from plugin)
 chThdCreateI                                      build/obj/chthreads.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
 chThdCreateStatic                                 build/obj/chthreads.o (symbol from plugin)
                                                   build/obj/main.o (symbol from plugin)
                                                   build/obj/test_sequence_012.o (symbol from plugin)
@@ -1341,7 +1266,6 @@ chThdCreateSuspendedI                             build/obj/chthreads.o (symbol 
                                                   build/obj/chdynamic.o (symbol from plugin)
 chThdDequeueAllI                                  build/obj/chthreads.o (symbol from plugin)
                                                   build/obj/hal_can_lld.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
                                                   build/obj/hal_can.o (symbol from plugin)
                                                   build/obj/hal_queues.o (symbol from plugin)
                                                   build/obj/hal_buffers.o (symbol from plugin)
@@ -1355,7 +1279,7 @@ chThdEnqueueTimeoutS                              build/obj/chthreads.o (symbol 
                                                   build/obj/hal_queues.o (symbol from plugin)
                                                   build/obj/hal_buffers.o (symbol from plugin)
                                                   build/obj/chmboxes.o (symbol from plugin)
-chThdExit                                         /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+chThdExit                                         /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/chthreads.o (symbol from plugin)
                                                   build/obj/test_sequence_012.o (symbol from plugin)
                                                   build/obj/chcoreasm_v7m.o
@@ -1366,7 +1290,6 @@ chThdRelease                                      build/obj/chthreads.o (symbol 
 chThdResume                                       build/obj/chthreads.o (symbol from plugin)
 chThdResumeI                                      build/obj/chthreads.o (symbol from plugin)
                                                   build/obj/test_sequence_003.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
 chThdResumeS                                      build/obj/chthreads.o (symbol from plugin)
 chThdSetPriority                                  build/obj/chthreads.o (symbol from plugin)
                                                   build/obj/test_sequence_002.o (symbol from plugin)
@@ -1384,7 +1307,6 @@ chThdSleepUntil                                   build/obj/chthreads.o (symbol 
 chThdSleepUntilWindowed                           build/obj/chthreads.o (symbol from plugin)
 chThdStart                                        build/obj/chthreads.o (symbol from plugin)
 chThdSuspendS                                     build/obj/chthreads.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
 chThdSuspendTimeoutS                              build/obj/chthreads.o (symbol from plugin)
                                                   build/obj/test_sequence_003.o (symbol from plugin)
 chThdTerminate                                    build/obj/chthreads.o (symbol from plugin)
@@ -1416,21 +1338,15 @@ halInit                                           build/obj/hal.o (symbol from p
 hal_lld_init                                      build/obj/hal_lld.o (symbol from plugin)
                                                   build/obj/hal.o (symbol from plugin)
 ibqGetEmptyBufferI                                build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 ibqGetFullBufferTimeout                           build/obj/hal_buffers.o (symbol from plugin)
 ibqGetFullBufferTimeoutS                          build/obj/hal_buffers.o (symbol from plugin)
 ibqGetTimeout                                     build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 ibqObjectInit                                     build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 ibqPostFullBufferI                                build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 ibqReadTimeout                                    build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 ibqReleaseEmptyBuffer                             build/obj/hal_buffers.o (symbol from plugin)
 ibqReleaseEmptyBufferS                            build/obj/hal_buffers.o (symbol from plugin)
 ibqResetI                                         build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 iqGetTimeout                                      build/obj/hal_queues.o (symbol from plugin)
                                                   build/obj/hal_serial.o (symbol from plugin)
 iqObjectInit                                      build/obj/hal_queues.o (symbol from plugin)
@@ -1441,21 +1357,19 @@ iqReadTimeout                                     build/obj/hal_queues.o (symbol
                                                   build/obj/hal_serial.o (symbol from plugin)
 iqResetI                                          build/obj/hal_queues.o (symbol from plugin)
                                                   build/obj/hal_serial.o (symbol from plugin)
-main                                              /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccXFDsQe.ltrans0.ltrans.o
+main                                              /var/folders/1z/0c84_lc574z3v3cssbkvvzmw0000gn/T//ccQgjFON.ltrans0.ltrans.o
                                                   build/obj/main.o (symbol from plugin)
                                                   build/obj/crt0_v7m.o
 nvicClearPending                                  build/obj/nvic.o (symbol from plugin)
 nvicDisableVector                                 build/obj/nvic.o (symbol from plugin)
                                                   build/obj/hal_uart_lld.o (symbol from plugin)
                                                   build/obj/hal_serial_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
                                                   build/obj/stm32_dma.o (symbol from plugin)
                                                   build/obj/hal_can_lld.o (symbol from plugin)
 nvicEnableVector                                  build/obj/nvic.o (symbol from plugin)
                                                   build/obj/hal_uart_lld.o (symbol from plugin)
                                                   build/obj/hal_serial_lld.o (symbol from plugin)
                                                   build/obj/hal_st_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
                                                   build/obj/stm32_dma.o (symbol from plugin)
                                                   build/obj/hal_can_lld.o (symbol from plugin)
 nvicSetSystemHandlerPriority                      build/obj/nvic.o (symbol from plugin)
@@ -1463,21 +1377,14 @@ obqFlush                                          build/obj/hal_buffers.o (symbo
 obqGetEmptyBufferTimeout                          build/obj/hal_buffers.o (symbol from plugin)
 obqGetEmptyBufferTimeoutS                         build/obj/hal_buffers.o (symbol from plugin)
 obqGetFullBufferI                                 build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 obqObjectInit                                     build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 obqPostFullBuffer                                 build/obj/hal_buffers.o (symbol from plugin)
 obqPostFullBufferS                                build/obj/hal_buffers.o (symbol from plugin)
 obqPutTimeout                                     build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 obqReleaseEmptyBufferI                            build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 obqResetI                                         build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 obqTryFlushI                                      build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 obqWriteTimeout                                   build/obj/hal_buffers.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
 oqGetI                                            build/obj/hal_queues.o (symbol from plugin)
                                                   build/obj/hal_serial_lld.o (symbol from plugin)
                                                   build/obj/hal_serial.o (symbol from plugin)
@@ -1512,19 +1419,7 @@ sd_lld_start                                      build/obj/hal_serial_lld.o (sy
                                                   build/obj/hal_serial.o (symbol from plugin)
 sd_lld_stop                                       build/obj/hal_serial_lld.o (symbol from plugin)
                                                   build/obj/hal_serial.o (symbol from plugin)
-sduConfigureHookI                                 build/obj/hal_serial_usb.o (symbol from plugin)
-sduDataReceived                                   build/obj/hal_serial_usb.o (symbol from plugin)
-sduDataTransmitted                                build/obj/hal_serial_usb.o (symbol from plugin)
-sduInit                                           build/obj/hal_serial_usb.o (symbol from plugin)
-                                                  build/obj/hal.o (symbol from plugin)
-sduInterruptTransmitted                           build/obj/hal_serial_usb.o (symbol from plugin)
-sduObjectInit                                     build/obj/hal_serial_usb.o (symbol from plugin)
-sduRequestsHook                                   build/obj/hal_serial_usb.o (symbol from plugin)
-sduSOFHookI                                       build/obj/hal_serial_usb.o (symbol from plugin)
-sduStart                                          build/obj/hal_serial_usb.o (symbol from plugin)
-sduStop                                           build/obj/hal_serial_usb.o (symbol from plugin)
-sduSuspendHookI                                   build/obj/hal_serial_usb.o (symbol from plugin)
-sduWakeupHookI                                    build/obj/hal_serial_usb.o (symbol from plugin)
+setMotorSpeed                                     build/obj/main.o (symbol from plugin)
 stGetAlarm                                        build/obj/hal_st.o (symbol from plugin)
 stInit                                            build/obj/hal_st.o (symbol from plugin)
                                                   build/obj/hal.o (symbol from plugin)
@@ -1653,53 +1548,6 @@ uart_lld_stop_receive                             build/obj/hal_uart_lld.o (symb
                                                   build/obj/hal_uart.o (symbol from plugin)
 uart_lld_stop_send                                build/obj/hal_uart_lld.o (symbol from plugin)
                                                   build/obj/hal_uart.o (symbol from plugin)
-usbDisableEndpointsI                              build/obj/hal_usb.o (symbol from plugin)
-usbInit                                           build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal.o (symbol from plugin)
-usbInitEndpointI                                  build/obj/hal_usb.o (symbol from plugin)
-usbObjectInit                                     build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_usb_lld.o (symbol from plugin)
-usbStallReceiveI                                  build/obj/hal_usb.o (symbol from plugin)
-usbStallTransmitI                                 build/obj/hal_usb.o (symbol from plugin)
-usbStart                                          build/obj/hal_usb.o (symbol from plugin)
-usbStartReceiveI                                  build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
-usbStartTransmitI                                 build/obj/hal_usb.o (symbol from plugin)
-                                                  build/obj/hal_serial_usb.o (symbol from plugin)
-usbStop                                           build/obj/hal_usb.o (symbol from plugin)
-usb_lld_clear_in                                  build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_clear_out                                 build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_disable_endpoints                         build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_get_status_in                             build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_get_status_out                            build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_init                                      build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_init_endpoint                             build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_pump                                      build/obj/hal_usb_lld.o (symbol from plugin)
-usb_lld_read_setup                                build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_reset                                     build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_set_address                               build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_stall_in                                  build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_stall_out                                 build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_start                                     build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_start_in                                  build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_start_out                                 build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
-usb_lld_stop                                      build/obj/hal_usb_lld.o (symbol from plugin)
-                                                  build/obj/hal_usb.o (symbol from plugin)
 wa                                                build/obj/test_root.o (symbol from plugin)
                                                   build/obj/test_sequence_012.o (symbol from plugin)
                                                   build/obj/test_sequence_011.o (symbol from plugin)
