@@ -5,11 +5,11 @@
 #ifndef INSOULED_GLOBAL_H
 #define INSOULED_GLOBAL_H
 
-enum lever_state {
+typedef enum  {
     LEVER_UP = 1, //up
     LEVER_MD = 0, //middle
     LEVER_DW = -1, //down
-};
+} lever_state;
 
 struct remote_info_t {
     lever_state left_lever;
@@ -49,11 +49,11 @@ struct gimbal_t {
     int motor_current[2];
 } gimbal;
 
-struct gimbal_motor {
+typedef struct  {
     float present_angle;
     float delta_angle;
     float target_angle;
-};
+} gimbal_motor;
 gimbal_motor yaw;
 gimbal_motor pit;
 
