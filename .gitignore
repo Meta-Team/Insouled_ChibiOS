@@ -31,10 +31,10 @@
 *.out
 *.app
 
-dev/build
-cmake-build-debug
-
-.DS_Store
+dev/build/
+cmake-build-debug/
+.idea/
+.metadata/
 
 CMakeCache.txt
 CMakeFiles
