@@ -5,22 +5,9 @@
 #ifndef INSOULED_GLOBAL_H
 #define INSOULED_GLOBAL_H
 
-typedef enum  {
-    LEVER_UP = 1, //up
-    LEVER_MD = 0, //middle
-    LEVER_DW = -1, //down
-} lever_state;
 
-struct remote_info_t {
-    lever_state left_lever;
-    lever_state right_lever;
 
-    float ch0; //right horizontal
-    float ch1; //right vertical
-    float ch2; //left horizontal
-    float ch3; //left vertical
 
-} remote;
 
 enum global_mode_e {
     GLOBAL_MODE_SAFETY = 0,
