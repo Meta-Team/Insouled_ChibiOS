@@ -93,7 +93,7 @@ static THD_WORKING_AREA(wa_lwip_thread, LWIP_THREAD_STACK_SIZE);
  * Initialization.
  */
 static void low_level_init(struct netif *netif) {
-  /* set MAC hardware address length */
+  /* set MAC info_interaction address length */
   netif->hwaddr_len = ETHARP_HWADDR_LEN;
 
   /* maximum transfer unit */
@@ -207,7 +207,7 @@ static err_t ethernetif_init(struct netif *netif) {
   netif->output = etharp_output;
   netif->linkoutput = low_level_output;
 
-  /* initialize the hardware */
+  /* initialize the info_interaction */
   low_level_init(netif);
 
   return ERR_OK;

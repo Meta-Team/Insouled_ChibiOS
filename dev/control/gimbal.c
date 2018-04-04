@@ -3,7 +3,7 @@
 //
 
 #include "gimbal.h"
-#include "global.h"
+#include "../global.h"
 #include "pid.h"
 
 struct pid_t pid_pitch;

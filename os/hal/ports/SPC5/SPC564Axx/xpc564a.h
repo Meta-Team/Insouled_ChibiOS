@@ -190,7 +190,7 @@ extern "C" {
             vuint16_t SMLOE:1;  /* Source minor loop offset enable */
             vuint16_t DMLOE:1;  /* Destination minor loop offset enable */
             vuint32_t MLOFF:20; /* Minor loop Offset */
-            vuint16_t NBYTES:10;        /* inner (“minor”) byte count */
+            vuint16_t NBYTES:10;        /* inner (ï¿½minorï¿½) byte count */
 
             vint32_t SLAST;     /* last destination address adjustment, or
 
@@ -672,7 +672,7 @@ extern "C" {
                 vuint32_t HRS33:1;
                 vuint32_t HRS32:1;
             } B;
-        } HRSH;               /* hardware request status high @baseaddress + 0x30 */
+        } HRSH;               /* info_interaction request status high @baseaddress + 0x30 */
 
         union {
             vuint32_t R;
@@ -710,7 +710,7 @@ extern "C" {
                 vuint32_t HRS01:1;
                 vuint32_t HRS00:1;
             } B;
-        } HRSL;               /* hardware request status low @baseaddress + 0x34 */
+        } HRSL;               /* info_interaction request status low @baseaddress + 0x34 */
 
         uint32_t eDMA_reserved0038[50];  /* 0x0038-0x00FF */
 

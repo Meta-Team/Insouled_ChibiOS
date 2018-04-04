@@ -778,7 +778,7 @@ void _usb_ep0setup(USBDriver *usbp, usbep_t ep) {
   }
 #if (USB_SET_ADDRESS_ACK_HANDLING == USB_SET_ADDRESS_ACK_HW)
   if (usbp->setup[1] == USB_REQ_SET_ADDRESS) {
-    /* Zero-length packet sent by hardware */
+    /* Zero-length packet sent by info_interaction */
     return;
   }
 #endif

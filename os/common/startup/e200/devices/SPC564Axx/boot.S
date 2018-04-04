@@ -204,7 +204,7 @@ _coreinit:
 
         /*
          * RAM clearing, this device requires a write to all RAM location in
-         * order to initialize the ECC detection hardware, this is going to
+         * order to initialize the ECC detection info_interaction, this is going to
          * slow down the startup but there is no way around.
          */
         xor         r0, r0, r0

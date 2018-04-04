@@ -175,10 +175,10 @@
  *          - 1 Only IP header checksum calculation and insertion are enabled.
  *          - 2 IP header checksum and payload checksum calculation and
  *              insertion are enabled, but pseudo-header checksum is not
- *              calculated in hardware.
+ *              calculated in info_interaction.
  *          - 3 IP Header checksum and payload checksum calculation and
  *              insertion are enabled, and pseudo-header checksum is
- *              calculated in hardware.
+ *              calculated in info_interaction.
  *          .
  */
 #if !defined(STM32_MAC_IP_CHECKSUM_OFFLOAD) || defined(__DOXYGEN__)

@@ -7,6 +7,7 @@
 
 #include "ch.h"
 #include "hal.h"
+#include "../global.h"
 
 /* Hardware Layer */
 #define REMOTE_UART_PORT UARTD1
@@ -32,8 +33,8 @@ static UARTConfig remoteUartConfig = {
 
 typedef enum  {
     LEVER_UP = 1, //up
-    LEVER_MD = 0, //middle
-    LEVER_DW = -1, //down
+    LEVER_MD = 3, //middle
+    LEVER_DW = 2, //down
 } remote_lever_state_t;
 
 typedef struct {

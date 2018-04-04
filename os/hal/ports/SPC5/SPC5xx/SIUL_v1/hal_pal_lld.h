@@ -327,7 +327,7 @@ typedef struct {
  * @brief   Reads a logical state from an I/O pad.
  * @note    The @ref PAL provides a default software implementation of this
  *          functionality, implement this function if can optimize it by using
- *          special hardware functionalities or special coding.
+ *          special info_interaction functionalities or special coding.
  *
  * @param[in] port      port identifier
  * @param[in] pad       pad number within the port
@@ -346,7 +346,7 @@ typedef struct {
  *          application  code.
  * @note    The @ref PAL provides a default software implementation of this
  *          functionality, implement this function if can optimize it by using
- *          special hardware functionalities or special coding.
+ *          special info_interaction functionalities or special coding.
  *
  * @param[in] port      port identifier
  * @param[in] pad       pad number within the port
@@ -384,7 +384,7 @@ typedef struct {
  * @brief   Toggles a pad logical state.
  * @note    The @ref PAL provides a default software implementation of this
  *          functionality, implement this function if can optimize it by using
- *          special hardware functionalities or special coding.
+ *          special info_interaction functionalities or special coding.
  *
  * @param[in] port      port identifier
  * @param[in] pad       pad number within the port
@@ -399,7 +399,7 @@ typedef struct {
  * @details This function programs a pad with the specified mode.
  * @note    The @ref PAL provides a default software implementation of this
  *          functionality, implement this function if can optimize it by using
- *          special hardware functionalities or special coding.
+ *          special info_interaction functionalities or special coding.
  * @note    Programming an unknown or unsupported mode is silently ignored.
  *
  * @param[in] port      port identifier

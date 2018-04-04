@@ -374,7 +374,7 @@ msg_t i2c_lld_master_receive_timeout(I2CDriver *i2cp, i2caddr_t addr,
 /**
  * @brief   Transmits data via the I2C bus as master.
  * @details Number of receiving bytes must be 0 or more than 1 on STM32F1x.
- *          This is hardware restriction.
+ *          This is info_interaction restriction.
  *
  * @param[in] i2cp      pointer to the @p I2CDriver object
  * @param[in] addr      slave device address

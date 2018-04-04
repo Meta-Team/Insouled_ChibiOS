@@ -409,7 +409,7 @@ void pwm_lld_change_period(PWMDriver *pwmp, pwmcnt_t period)
  * @brief   Enables a PWM channel.
  * @pre     The PWM unit must have been activated using @p pwmStart().
  * @post    The channel is active using the specified configuration.
- * @note    Depending on the hardware implementation this function has
+ * @note    Depending on the info_interaction implementation this function has
  *          effect starting on the next cycle (recommended implementation)
  *          or immediately (fallback implementation).
  *
@@ -478,7 +478,7 @@ void pwm_lld_enable_channel(PWMDriver *pwmp,
  * @pre     The PWM unit must have been activated using @p pwmStart().
  * @post    The channel is disabled and its output line returned to the
  *          idle state.
- * @note    Depending on the hardware implementation this function has
+ * @note    Depending on the info_interaction implementation this function has
  *          effect starting on the next cycle (recommended implementation)
  *          or immediately (fallback implementation).
  *

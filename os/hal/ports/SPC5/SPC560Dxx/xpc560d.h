@@ -4499,7 +4499,7 @@ struct ECSM_tag{
         vuint16_t ACTIVE:1; /* Channel active                         */
         vuint16_t MAJORE_LINK:1; /* Enable ch-to-ch link on major complete */
         vuint16_t E_SG:1; /* Enable scatter/gather processing       */
-        vuint16_t D_REQ:1; /* Disable hardware request (ERQRL bit)   */
+        vuint16_t D_REQ:1; /* Disable info_interaction request (ERQRL bit)   */
         vuint16_t INT_HALF:1; /* interrupt on Major loop half complete  */
         vuint16_t INT_MAJ:1; /* interrupt on major loop complete       */
         vuint16_t START:1; /* Chanel start                           */
@@ -4542,7 +4542,7 @@ struct ECSM_tag{
         vuint16_t ACTIVE:1; /* Channel active                         */
         vuint16_t MAJORE_LINK:1; /* Enable ch-to-ch link on major complete */
         vuint16_t E_SG:1; /* Enable scatter/gather processing       */
-        vuint16_t D_REQ:1; /* Disable hardware request (ERQRL bit)   */
+        vuint16_t D_REQ:1; /* Disable info_interaction request (ERQRL bit)   */
         vuint16_t INT_HALF:1; /* interrupt on Major loop half complete  */
         vuint16_t INT_MAJ:1; /* interrupt on major loop complete       */
         vuint16_t START:1; /* Chanel start                           */
@@ -4584,7 +4584,7 @@ struct ECSM_tag{
         vuint16_t ACTIVE:1; /* Channel active                         */
         vuint16_t MAJORE_LINK:1; /* Enable ch-to-ch link on major complete */
         vuint16_t E_SG:1; /* Enable scatter/gather processing       */
-        vuint16_t D_REQ:1; /* Disable hardware request (ERQRL bit)   */
+        vuint16_t D_REQ:1; /* Disable info_interaction request (ERQRL bit)   */
         vuint16_t INT_HALF:1; /* interrupt on Major loop half complete  */
         vuint16_t INT_MAJ:1; /* interrupt on major loop complete       */
         vuint16_t START:1; /* Chanel start                           */
@@ -4628,7 +4628,7 @@ struct ECSM_tag{
         vuint16_t ACTIVE:1; /* Channel active                         */
         vuint16_t MAJORE_LINK:1; /* Enable ch-to-ch link on major complete */
         vuint16_t E_SG:1; /* Enable scatter/gather processing       */
-        vuint16_t D_REQ:1; /* Disable hardware request (ERQRL bit)   */
+        vuint16_t D_REQ:1; /* Disable info_interaction request (ERQRL bit)   */
         vuint16_t INT_HALF:1; /* interrupt on Major loop half complete  */
         vuint16_t INT_MAJ:1; /* interrupt on major loop complete       */
         vuint16_t START:1; /* Chanel start                           */

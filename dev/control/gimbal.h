@@ -4,6 +4,8 @@
 #ifndef INSOULED_GIMBAL_H
 #define INSOULED_GIMBAL_H
 
+#include "../global.h"
+
 #define YAW_MAX_ANGLE  90
 #define YAW_MIN_ANGLE -90
 #define PIT_MAX_ANGLE  10

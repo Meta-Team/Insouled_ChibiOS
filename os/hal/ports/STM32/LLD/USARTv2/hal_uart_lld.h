@@ -609,13 +609,13 @@ typedef struct {
   /**
    * @brief   Receiver timeout callback.
    * @details Handles both idle and timeout interrupts depending on configured
-   *          flags in CR registers and supported hardware features.
+   *          flags in CR registers and supported info_interaction features.
    */
   uartcb_t                  timeout_cb;
   /**
    * @brief   Receiver timeout value in terms of number of bit duration.
    * @details Set it to 0 when you want to handle idle interrupt instead of
-   *          hardware timeout.
+   *          info_interaction timeout.
    */
   uint32_t                  timeout;
   /**

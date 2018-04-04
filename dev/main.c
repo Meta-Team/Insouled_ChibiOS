@@ -16,6 +16,7 @@
 
 #include "ch.h"
 #include "hal.h"
+#include "info_interaction/remote.c"
 
 struct can_instance {
   CANDriver     *canp;
@@ -55,8 +56,8 @@ static THD_FUNCTION(can_rx, p) {
     while (canReceive(cip->canp, CAN_ANY_MAILBOX,
                       &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
       // Process message.
-      palTogglePad(GPIOF, GPIOF_LED_G);       /* Yellow.  */
-      palTogglePad(GPIOE, GPIOE_LED_R);       /* Yellow.  */
+      //palTogglePad(GPIOF, GPIOF_LED_G);       /* Yellow.  */
+      //palTogglePad(GPIOE, GPIOE_LED_R);       /* Yellow.  */
     }
   }
   chEvtUnregister(&CAND1.rxfull_event, &el);
@@ -86,7 +87,7 @@ static THD_FUNCTION(can_tx, p) {
   chRegSetThreadName("transmitter");
 
   while (true) {
-    setMotorSpeed(400, 400, 400, 400);
+    //setMotorSpeed(300, 300, 300, 300);
 chThdSleepMilliseconds(200);
   }
 }
@@ -106,6 +107,8 @@ int main(void) {
    */
   halInit();
   chSysInit();
+
+
 
   /*
    * Activates the CAN drivers 1 and 2.
@@ -132,6 +135,8 @@ int main(void) {
     sdStart(&SD2, NULL);
     palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
     palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
+
+    remoteInit();
 
     while (true) {
         /*palSetPad(GPIOF, GPIOF_LED_G);

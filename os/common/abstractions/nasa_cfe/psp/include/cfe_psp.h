@@ -140,9 +140,9 @@ extern void          CFE_PSP_Main(int ModeId, char *StartupFilePath);
 */
 
 extern void         CFE_PSP_GetTime(OS_time_t *LocalTime);
-/* This call gets the local time from the hardware on the Vxworks system
+/* This call gets the local time from the info_interaction on the Vxworks system
  * on the mcp750s
- * on the other os/hardware setup, it will get the time the normal way */
+ * on the other os/info_interaction setup, it will get the time the normal way */
 
 
 extern void          CFE_PSP_Restart(uint32 resetType);

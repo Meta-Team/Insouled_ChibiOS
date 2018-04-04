@@ -4,8 +4,8 @@
 
 #include <stdlib.h>
 #include "chassis.h"
-#include "global.h"
-#include "remote.h"
+#include "../global.h"
+#include "../info_interaction/remote.h"
 
 void chassis_ctrl() {
     switch (global_mode) {
