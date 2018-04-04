@@ -16,26 +16,81 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "ch_test.h"
+
+struct can_instance {
+  CANDriver     *canp;
+  uint32_t      led;
+};
+
+static const struct can_instance can1 = {&CAND1, GPIOD_LED5};
+static const struct can_instance can2 = {&CAND2, GPIOD_LED3};
 
 /*
- * This is a periodic thread that does absolutely nothing except flashing
- * a LED.
+ * Internal loopback mode, 500KBaud, automatic wakeup, automatic recover
+ * from abort mode.
+ * See section 22.7.7 on the STM32 reference manual.
  */
-static THD_WORKING_AREA(waThread1, 128);
-static THD_FUNCTION(Thread1, arg) {
 
-  (void)arg;
-  chRegSetThreadName("blinker");
+static const CANConfig cancfg = {
+        CAN_MCR_ABOM | CAN_MCR_AWUM | CAN_MCR_TXFP,
+        CAN_BTR_SJW(0) | CAN_BTR_TS2(3) |
+        CAN_BTR_TS1(8) | CAN_BTR_BRP(2)
+};
+
+static THD_WORKING_AREA(can_rx1_wa, 256);
+static THD_WORKING_AREA(can_rx2_wa, 256);
+static THD_WORKING_AREA(can_tx_wa, 256);
+
+static THD_FUNCTION(can_rx, p) {
+  struct can_instance *cip = p;
+  event_listener_t el;
+  CANRxFrame rxmsg;
+
+  (void)p;
+  chRegSetThreadName("receiver");
+  chEvtRegister(&cip->canp->rxfull_event, &el, 0);
   while (true) {
-    palSetPad(GPIOF, GPIOF_LED_G);       /* Yellow.  */
-    palSetPad(GPIOE, GPIOE_LED_R);       /* Yellow.  */
-    chThdSleepMilliseconds(500);
-    palClearPad(GPIOF, GPIOF_LED_G);     /* Yellow.  */
-    palClearPad(GPIOE, GPIOE_LED_R);     /* Yellow.  */
-    chThdSleepMilliseconds(500);
+    if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0)
+      continue;
+    while (canReceive(cip->canp, CAN_ANY_MAILBOX,
+                      &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
+      // Process message.
+      palTogglePad(GPIOF, GPIOF_LED_G);       /* Yellow.  */
+      palTogglePad(GPIOE, GPIOE_LED_R);       /* Yellow.  */
+    }
+  }
+  chEvtUnregister(&CAND1.rxfull_event, &el);
+}
+
+
+void setMotorSpeed(int16_t ch1, int16_t ch2, int16_t ch3, int16_t ch4) {
+  CANTxFrame txmsg;
+  txmsg.IDE = CAN_IDE_STD;
+  txmsg.SID = 0x200;
+  txmsg.RTR = CAN_RTR_DATA;
+  txmsg.DLC = 0x08;
+  txmsg.data8[0] = (uint8_t) (ch1 >> 8);
+  txmsg.data8[1] = (uint8_t) ch1;
+  txmsg.data8[2] = (uint8_t) (ch2 >> 8);
+  txmsg.data8[3] = (uint8_t) ch2;
+  txmsg.data8[4] = (uint8_t) (ch3 >> 8);
+  txmsg.data8[5] = (uint8_t) ch3;
+  txmsg.data8[6] = (uint8_t) (ch4 >> 8);
+  txmsg.data8[7] = (uint8_t) ch4;
+  canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+}
+
+static THD_FUNCTION(can_tx, p) {
+
+  (void)p;
+  chRegSetThreadName("transmitter");
+
+  while (true) {
+    setMotorSpeed(400, 400, 400, 400);
+chThdSleepMilliseconds(200);
   }
 }
+
 
 /*
  * Application entry point.
@@ -53,25 +108,38 @@ int main(void) {
   chSysInit();
 
   /*
-   * Activates the serial driver 2 using the driver default configuration.
-   * PA2(TX) and PA3(RX) are routed to USART2.
+   * Activates the CAN drivers 1 and 2.
    */
-  sdStart(&SD2, NULL);
-  palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
-  palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
+  palSetPadMode(GPIOD, 0, PAL_MODE_ALTERNATE(9));
+  palSetPadMode(GPIOD, 1, PAL_MODE_ALTERNATE(9));
+  canStart(&CAND1, &cancfg);
+  canStart(&CAND2, &cancfg);
 
   /*
-   * Creates the example thread.
+   * Starting the transmitter and receiver threads.
    */
-  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+  chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
+                    can_rx, (void *)&can1);
+  chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
+                    can_rx, (void *)&can2);
+  chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
+                    can_tx, NULL);
 
   /*
-   * Normal main() thread activity, in this demo it does nothing except
-   * sleeping in a loop and check the button state.
+   * Normal main() thread activity, in this demo it does nothing.
    */
-  while (true) {
-    if (palReadPad(GPIOA, GPIOA_BUTTON))
-      test_execute((BaseSequentialStream *)&SD2);
-    chThdSleepMilliseconds(500);
+
+    sdStart(&SD2, NULL);
+    palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
+    palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
+
+    while (true) {
+        /*palSetPad(GPIOF, GPIOF_LED_G);
+        palSetPad(GPIOE, GPIOE_LED_R);
+        chThdSleepMilliseconds(500);
+        palClearPad(GPIOF, GPIOF_LED_G);
+        palClearPad(GPIOE, GPIOE_LED_R);
+        chThdSleepMilliseconds(500);*/
   }
+  return 0;
 }
