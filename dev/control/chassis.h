@@ -5,8 +5,8 @@
 #ifndef INSOULED_CHASSIS_H
 #define INSOULED_CHASSIS_H
 
-#include "global.h"
-#include "remote.h"
+#include "../global.h"
+#include "../info_interaction/remote.h"
 
 /* Chassis move speed (mm/s) */
 #define CHASSIS_RC_MAX_SPEED_X  2000.0f //3300.0f

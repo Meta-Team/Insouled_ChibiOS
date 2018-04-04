@@ -9,6 +9,8 @@ char remoteData[REMOTE_DATA_SIZE];
 remote_info_t remote;
 
 void remoteInit(void) {
+    palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
+    palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
     uartStart(&REMOTE_UART_PORT, &remoteUartConfig);
     palSetPadMode(GPIOB, 7, PAL_MODE_ALTERNATE(7));
     uartStartReceive(&REMOTE_UART_PORT, REMOTE_DATA_SIZE, remoteData);
@@ -29,12 +31,14 @@ void remoteReceived(UARTDriver *uartp) {
     remote.left_lever = ((remoteData[5] >> 4) & 0x000C) >> 2;
     remote.right_lever = (remoteData[5] >> 4) & 0x0003;
 
-    if(remote.ch0 > 0.5f) {
+    mode_handle();
+
+    if(global_mode == GLOBAL_MODE_REMOTE_CHASSIS) {
         LED_G_ON();
     } else {
         LED_G_OFF();
     }
-    if(remote.ch0 < -0.5f) {
+    if(global_mode == GLOBAL_MODE_REMOTE_GIMBAL) {
         LED_R_ON();
     } else {
         LED_R_OFF();

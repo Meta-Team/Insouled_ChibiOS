@@ -5,7 +5,7 @@
 #ifndef INSOULED_CHIBIOS_MODE_HANDLE_H
 #define INSOULED_CHIBIOS_MODE_HANDLE_H
 
-#include "global.h"
+#include "../global.h"
 
 typedef enum {
     GLOBAL_MODE_SAFETY = 0,
@@ -15,5 +15,7 @@ typedef enum {
 
 } global_mode_t;
 extern global_mode_t global_mode;
+
+void mode_handle(void);
 
 #endif //INSOULED_CHIBIOS_MODE_HANDLE_H
