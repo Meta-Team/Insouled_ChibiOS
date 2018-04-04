@@ -113,8 +113,8 @@ CSRC = $(STARTUPSRC) \
        $(PLATFORMSRC) \
        $(BOARDSRC) \
        $(TESTSRC) \
-       main.c \
-       info_interaction/remote.c
+       $(CHIBIOS)/dev/main.c \
+       $(CHIBIOS)/dev/info_interaction/remote.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -147,7 +147,10 @@ ASMXSRC = $(STARTUPASM) $(PORTASM) $(OSALASM)
 INCDIR = $(CHIBIOS)/os/license \
          $(STARTUPINC) $(KERNINC) $(PORTINC) $(OSALINC) \
          $(HALINC) $(PLATFORMINC) $(BOARDINC) $(TESTINC) \
-         $(CHIBIOS)/os/various
+         $(CHIBIOS)/os/various \
+         $(CHIBIOS)/dev/control \
+         $(CHIBIOS)/dev/info_interaction
+
 
 #
 # Project, sources and paths

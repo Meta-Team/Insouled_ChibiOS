@@ -4,6 +4,10 @@
 
 #include "remote.h"
 
+char remoteData[REMOTE_DATA_SIZE];
+
+remote_info_t remote;
+
 void remoteInit(void) {
     uartStart(&REMOTE_UART_PORT, &remoteUartConfig);
     palSetPadMode(GPIOB, 7, PAL_MODE_ALTERNATE(7));

@@ -14,9 +14,7 @@
     limitations under the License.
 */
 
-#include "ch.h"
-#include "hal.h"
-#include "info_interaction/remote.c"
+#include "main.h"
 
 struct can_instance {
   CANDriver     *canp;

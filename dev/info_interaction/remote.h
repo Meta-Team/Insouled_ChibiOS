@@ -7,12 +7,11 @@
 
 #include "ch.h"
 #include "hal.h"
-#include "../global.h"
+#include "global.h"
 
 /* Hardware Layer */
 #define REMOTE_UART_PORT UARTD1
 #define REMOTE_DATA_SIZE 18
-char remoteData[REMOTE_DATA_SIZE];
 
 void remoteInit(void);
 static void remoteReceived(UARTDriver *uartp);
@@ -47,6 +46,6 @@ typedef struct {
     float ch3; //left vertical
 
 } remote_info_t;
-remote_info_t remote;
+extern remote_info_t remote;
 
 #endif //INSOULED_REMOTE_H

@@ -3,3 +3,5 @@
 //
 
 #include "mode_handle.h"
+
+global_mode_t global_mode;

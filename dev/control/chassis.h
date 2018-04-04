@@ -5,7 +5,8 @@
 #ifndef INSOULED_CHASSIS_H
 #define INSOULED_CHASSIS_H
 
-#include "../global.h"
+#include "global.h"
+#include "remote.h"
 
 /* Chassis move speed (mm/s) */
 #define CHASSIS_RC_MAX_SPEED_X  2000.0f //3300.0f
@@ -30,6 +31,22 @@
 
 /* radian coefficient */
 #define CHASSIS_RADIAN_COEF 57.3f
+
+
+
+#define CHASSIS_MOTOR_FR 0
+#define CHASSIS_MOTOR_BR 1
+#define CHASSIS_MOTOR_FL 2
+#define CHASSIS_MOTOR_BL 3
+
+typedef struct {
+    float vx;
+    float vy;
+    float w;
+    int motor_speed[4];
+    int motor_current[4];
+} chassis_t;
+extern chassis_t chassis;
 
 
 void chassis_ctrl();

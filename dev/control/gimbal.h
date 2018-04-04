@@ -19,6 +19,26 @@
 #define GIMBAL_MOTOR_MAX_CURRENT 2000 //5000
 
 
+
+#define GIMBAL_MOTOR_YAW 0
+#define GIMBAL_MOTOR_PIT 1
+
+typedef struct {
+    int motor_current[2];
+} gimbal_t;
+gimbal_t gimbal;
+
+typedef struct {
+    float present_angle;
+    float delta_angle;
+    float target_angle;
+} gimbal_motor;
+extern gimbal_motor yaw;
+extern gimbal_motor pit;
+
+
+
+
 void gimbal_init();
 void gimbal_ctrl();
 

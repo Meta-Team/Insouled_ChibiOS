@@ -8,6 +8,9 @@
 
 struct pid_t pid_pitch;
 
+gimbal_motor yaw;
+gimbal_motor pit;
+
 void gimbal_init() {
     pid_init(&pid_pitch, GIMBAL_PITCH_CURRENT_ANGLE_RATIO, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
 }

@@ -2,10 +2,9 @@
 // Created by 岑帜 on 2018/3/18.
 //
 
-#include <stdlib.h>
 #include "chassis.h"
-#include "../global.h"
-#include "../info_interaction/remote.h"
+
+chassis_t chassis;
 
 void chassis_ctrl() {
     switch (global_mode) {
