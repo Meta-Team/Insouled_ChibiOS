@@ -49,7 +49,9 @@ typedef struct {
 extern chassis_t chassis;
 
 
-void chassis_ctrl();
+void chassis_calculate(void);
+
+void chassisCalcInit(void);
 
 
 #endif //INSOULED_CHASSIS_H

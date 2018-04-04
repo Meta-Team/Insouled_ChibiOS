@@ -74,7 +74,7 @@ static THD_FUNCTION(can_tx, p) {
   chRegSetThreadName("transmitter");
 
   while (true) {
-    //setMotorSpeed(300, 300, 300, 300);
+    setMotorSpeed(300, 300, 300, 300);
     chThdSleepMilliseconds(200);
   }
 }

@@ -183,7 +183,7 @@ void sduInit(void) {
 /**
  * @brief   Initializes a generic full duplex driver object.
  * @details The HW dependent part of the initialization has to be performed
- *          outside, usually in the hardware initialization code.
+ *          outside, usually in the board initialization code.
  *
  * @param[out] sdup     pointer to a @p SerialUSBDriver structure
  *

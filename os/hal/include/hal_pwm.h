@@ -103,7 +103,7 @@ typedef void (*pwmcallback_t)(PWMDriver *pwmp);
  * @brief   Converts from fraction to pulse width.
  * @note    Be careful with rounding errors, this is integer math not magic.
  *          You can specify tenths of thousandth but make sure you have the
- *          proper hardware resolution by carefully choosing the clock source
+ *          proper board resolution by carefully choosing the clock source
  *          and prescaler settings, see @p PWM_COMPUTE_PSC.
  *
  * @param[in] pwmp      pointer to a @p PWMDriver object
@@ -121,7 +121,7 @@ typedef void (*pwmcallback_t)(PWMDriver *pwmp);
  * @brief   Converts from degrees to pulse width.
  * @note    Be careful with rounding errors, this is integer math not magic.
  *          You can specify hundredths of degrees but make sure you have the
- *          proper hardware resolution by carefully choosing the clock source
+ *          proper board resolution by carefully choosing the clock source
  *          and prescaler settings, see @p PWM_COMPUTE_PSC.
  *
  * @param[in] pwmp      pointer to a @p PWMDriver object
@@ -137,7 +137,7 @@ typedef void (*pwmcallback_t)(PWMDriver *pwmp);
  * @brief   Converts from percentage to pulse width.
  * @note    Be careful with rounding errors, this is integer math not magic.
  *          You can specify tenths of thousandth but make sure you have the
- *          proper hardware resolution by carefully choosing the clock source
+ *          proper board resolution by carefully choosing the clock source
  *          and prescaler settings, see @p PWM_COMPUTE_PSC.
  *
  * @param[in] pwmp      pointer to a @p PWMDriver object
@@ -178,7 +178,7 @@ typedef void (*pwmcallback_t)(PWMDriver *pwmp);
  * @brief   Enables a PWM channel.
  * @pre     The PWM unit must have been activated using @p pwmStart().
  * @post    The channel is active using the specified configuration.
- * @note    Depending on the hardware implementation this function has
+ * @note    Depending on the board implementation this function has
  *          effect starting on the next cycle (recommended implementation)
  *          or immediately (fallback implementation).
  *
@@ -198,7 +198,7 @@ typedef void (*pwmcallback_t)(PWMDriver *pwmp);
  * @pre     The PWM unit must have been activated using @p pwmStart().
  * @post    The channel is disabled and its output line returned to the
  *          idle state.
- * @note    Depending on the hardware implementation this function has
+ * @note    Depending on the board implementation this function has
  *          effect starting on the next cycle (recommended implementation)
  *          or immediately (fallback implementation).
  *

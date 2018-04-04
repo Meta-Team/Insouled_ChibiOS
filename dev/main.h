@@ -9,7 +9,7 @@
 #include "hal.h"
 
 #include "global.h"
-#include "info_interaction/remote.h"
-#include "info_interaction/motor_interaction.h"
+#include "remote.h"
+#include "motor_interaction.h"
 
 #endif //INSOULED_CHIBIOS_MAIN_H

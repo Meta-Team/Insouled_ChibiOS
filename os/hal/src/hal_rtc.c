@@ -72,7 +72,7 @@ void rtcInit(void) {
 /**
  * @brief   Initializes a generic RTC driver object.
  * @details The HW dependent part of the initialization has to be performed
- *          outside, usually in the hardware initialization code.
+ *          outside, usually in the board initialization code.
  *
  * @param[out] rtcp     pointer to RTC driver structure
  *

@@ -6,7 +6,7 @@
 
 chassis_t chassis;
 
-void chassis_ctrl() {
+void chassis_calculate(void) {
     switch (global_mode) {
         case
 
@@ -67,5 +67,35 @@ void chassis_ctrl() {
 
     }
 
+}
 
+static THD_FUNCTION(chassis_control, p) {
+
+  (void)p;
+  chRegSetThreadName("chassis_control");
+
+  while (true) {
+    chassis_calculate();
+    chThdSleepMilliseconds(200);
+  }
+}
+
+void chassisCalcInit(void) {
+    /*
+   * Activates the CAN drivers 1 and 2.
+   */
+    palSetPadMode(GPIOD, 0, PAL_MODE_ALTERNATE(9));
+    palSetPadMode(GPIOD, 1, PAL_MODE_ALTERNATE(9));
+    canStart(&CAND1, &cancfg);
+    canStart(&CAND2, &cancfg);
+
+    /*
+     * Starting the transmitter and receiver threads.
+     */
+    chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
+                      can_rx, (void *)&can1);
+    chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
+                      can_rx, (void *)&can2);
+    chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
+                      can_tx, NULL);
 }

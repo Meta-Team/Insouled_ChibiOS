@@ -92,13 +92,13 @@ include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.m
 # HAL-OSAL files (optional).
 include $(CHIBIOS)/os/hal/hal.mk
 include $(CHIBIOS)/os/hal/ports/STM32/STM32F4xx/platform.mk
-include $(CHIBIOS)/hardware/board.mk
+include $(CHIBIOS)/board/board.mk
 include $(CHIBIOS)/os/hal/osal/rt/osal.mk
 # RTOS files (optional).
 include $(CHIBIOS)/os/rt/rt.mk
 include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/port_v7m.mk
 # Other files (optional).
-include $(CHIBIOS)/test/rt/test.mk
+include $(CHIBIOS)/dev/dev.mk
 
 # Define linker script file here
 LDSCRIPT= $(STARTUPLD)/STM32F429xI.ld
@@ -112,11 +112,7 @@ CSRC = $(STARTUPSRC) \
        $(HALSRC) \
        $(PLATFORMSRC) \
        $(BOARDSRC) \
-       $(TESTSRC) \
-       $(CHIBIOS)/dev/main.c \
-       $(CHIBIOS)/dev/info_interaction/remote.c \
-       $(CHIBIOS)/dev/info_interaction/motor_interaction.c \
-       $(CHIBIOS)/dev/control/mode_handle.c
+       $(DEVSRC)
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -149,9 +145,7 @@ ASMXSRC = $(STARTUPASM) $(PORTASM) $(OSALASM)
 INCDIR = $(CHIBIOS)/os/license \
          $(STARTUPINC) $(KERNINC) $(PORTINC) $(OSALINC) \
          $(HALINC) $(PLATFORMINC) $(BOARDINC) $(TESTINC) \
-         $(CHIBIOS)/os/various \
-         $(CHIBIOS)/dev/control \
-         $(CHIBIOS)/dev/info_interaction
+         $(DEVINC)
 
 
 #
@@ -226,8 +220,8 @@ include $(RULESPATH)/rules.mk
 build/$(PROJECT).bin: build/$(PROJECT).elf
 	$(BIN) build/$(PROJECT).elf build/$(PROJECT).bin
 
-# Program
-upload: build/$(PROJECT).bin
-	#qstlink2 --cli --erase --write build/$(PROJECT).bin
-	#openocd -f interface/stlink-v2.cfg -c "set WORKAREASIZE 0x2000" -f target/stm32f4x_stlink.cfg -c "program build/$(PROJECT).elf verify reset" # Older openocd
-	openocd -f board/RM2018.cfg -c "reset_config trst_only combined" -c "program build/$(PROJECT).elf verify reset exit" # For openocd 0.9
+upload-stlink: build/$(PROJECT).bin
+	openocd -f $(CHIBIOS)/configurations/stlink-v2.cfg -f $(CHIBIOS)/configurations/RM2018.cfg -f $(CHIBIOS)/configurations/stm32f4x.cfg  -c "reset_config trst_only combined" -c "program build/$(PROJECT).elf verify reset exit"
+
+upload-jlink: build/$(PROJECT).bin
+	openocd -f $(CHIBIOS)/configurations/jlink.cfg -f $(CHIBIOS)/configurations/RM2018.cfg -f $(CHIBIOS)/configurations/stm32f4x.cfg  -c "reset_config trst_only combined" -c "program build/$(PROJECT).elf verify reset exit"

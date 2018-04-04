@@ -7,18 +7,9 @@ brew install OpenOCD
 
 ### 下载此工程
 
-### 将文件RM2018.cfg放入：
-
-Finder
-
-Command+Shift+G
-
-```bash
-/usr/local/Cellar/open-ocd/0.10.0/share/openocd/scripts/board
-```
 ### 用CLion打开工程，右上角选择“STLink | Debug”
 
-### 点击左侧按钮Build或者右边的运行都可以
+### 点击左侧按钮Build编译并上传程序
 
 不用ST-Link的请自行购买 ┐(ﾟ～ﾟ)┌
 

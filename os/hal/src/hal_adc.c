@@ -264,7 +264,7 @@ void adcStopConversionI(ADCDriver *adcp) {
  * @retval MSG_RESET    The conversion has been stopped using
  *                      @p acdStopConversion() or @p acdStopConversionI(),
  *                      the result buffer may contain incorrect data.
- * @retval MSG_TIMEOUT  The conversion has been stopped because an hardware
+ * @retval MSG_TIMEOUT  The conversion has been stopped because an board
  *                      error.
  *
  * @api
