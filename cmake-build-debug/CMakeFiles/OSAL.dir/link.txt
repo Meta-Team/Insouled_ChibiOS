@@ -1,2 +1,0 @@
-/usr/bin/ar qc libOSAL.a  CMakeFiles/OSAL.dir/os/hal/osal/rt/osal.c.o
-/usr/bin/ranlib libOSAL.a

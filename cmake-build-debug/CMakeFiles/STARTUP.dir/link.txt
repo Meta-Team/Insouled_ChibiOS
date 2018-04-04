@@ -1,2 +1,0 @@
-/usr/bin/ar qc libSTARTUP.a  CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/crt1.c.o CMakeFiles/STARTUP.dir/os/common/startup/ARMCMx/compilers/GCC/vectors.c.o
-/usr/bin/ranlib libSTARTUP.a

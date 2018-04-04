@@ -1,2 +1,0 @@
-/usr/bin/ar qc libBOARD.a  CMakeFiles/BOARD.dir/hw/board.c.o CMakeFiles/BOARD.dir/dev/hardware/remote.c.o CMakeFiles/BOARD.dir/dev/hardware/usbSerial.c.o
-/usr/bin/ranlib libBOARD.a
