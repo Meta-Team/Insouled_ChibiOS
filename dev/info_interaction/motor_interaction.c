@@ -2,6 +2,7 @@
 // Created by liuzikai on 2018/4/4.
 //
 
+#include <control/chassis.h>
 #include "motor_interaction.h"
 
 struct can_instance {
@@ -35,7 +36,7 @@ static THD_FUNCTION(can_rx, p) {
   CANRxFrame rxmsg;
 
   (void)p;
-  chRegSetThreadName("receiver");
+  chRegSetThreadName("can_receiver");
   chEvtRegister(&cip->canp->rxfull_event, &el, 0);
   while (true) {
     if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0)
@@ -51,30 +52,43 @@ static THD_FUNCTION(can_rx, p) {
 }
 
 
-void setMotorSpeed(int16_t ch1, int16_t ch2, int16_t ch3, int16_t ch4) {
+void set_chassis_currents(void) {
+
+#ifndef MANUAL_DEBUG
+  ABS_LIMIT_FEEDBACK(chassis.motor_current[0], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.motor_current[1], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.motor_current[2], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.motor_current[3], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+#else
+  ABS_LIMIT(chassis.motor_current[0], CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor_current[1], CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor_current[2], CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor_current[3], CHASSIS_MOTOR_MAX_CURRENT);
+#endif
+
   CANTxFrame txmsg;
   txmsg.IDE = CAN_IDE_STD;
   txmsg.SID = 0x200;
   txmsg.RTR = CAN_RTR_DATA;
   txmsg.DLC = 0x08;
-  txmsg.data8[0] = (uint8_t) (ch1 >> 8);
-  txmsg.data8[1] = (uint8_t) ch1;
-  txmsg.data8[2] = (uint8_t) (ch2 >> 8);
-  txmsg.data8[3] = (uint8_t) ch2;
-  txmsg.data8[4] = (uint8_t) (ch3 >> 8);
-  txmsg.data8[5] = (uint8_t) ch3;
-  txmsg.data8[6] = (uint8_t) (ch4 >> 8);
-  txmsg.data8[7] = (uint8_t) ch4;
+  txmsg.data8[0] = (uint8_t) (chassis.motor_current[0] >> 8);
+  txmsg.data8[1] = (uint8_t) chassis.motor_current[0];
+  txmsg.data8[2] = (uint8_t) (chassis.motor_current[1] >> 8);
+  txmsg.data8[3] = (uint8_t) chassis.motor_current[1];
+  txmsg.data8[4] = (uint8_t) (chassis.motor_current[2] >> 8);
+  txmsg.data8[5] = (uint8_t) chassis.motor_current[2];
+  txmsg.data8[6] = (uint8_t) (chassis.motor_current[3] >> 8);
+  txmsg.data8[7] = (uint8_t) chassis.motor_current[3];
   canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
 static THD_FUNCTION(can_tx, p) {
 
   (void)p;
-  chRegSetThreadName("transmitter");
+  chRegSetThreadName("can_transmitter");
 
   while (true) {
-    setMotorSpeed(300, 300, 300, 300);
+    set_chassis_currents();
     chThdSleepMilliseconds(200);
   }
 }
@@ -91,6 +105,8 @@ void motorCanInit(void) {
     /*
      * Starting the transmitter and receiver threads.
      */
+
+  //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
                       can_rx, (void *)&can1);
     chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,

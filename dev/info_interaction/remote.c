@@ -2,6 +2,7 @@
 // Created by Lan Tian on 18/03/2018.
 //
 
+#include <main.h>
 #include "remote.h"
 
 char remoteData[REMOTE_DATA_SIZE];
@@ -14,6 +15,9 @@ void remoteInit(void) {
     uartStart(&REMOTE_UART_PORT, &remoteUartConfig);
     palSetPadMode(GPIOB, 7, PAL_MODE_ALTERNATE(7));
     uartStartReceive(&REMOTE_UART_PORT, REMOTE_DATA_SIZE, remoteData);
+
+    remote.right_lever = remote.left_lever = 0;
+    remote.ch0 = remote.ch1 = remote.ch2 = remote.ch3 = 0.0f;
 }
 
 void remoteReceived(UARTDriver *uartp) {
@@ -32,17 +36,6 @@ void remoteReceived(UARTDriver *uartp) {
     remote.right_lever = (remoteData[5] >> 4) & 0x0003;
 
     mode_handle();
-
-    if(global_mode == GLOBAL_MODE_REMOTE_CHASSIS) {
-        LED_G_ON();
-    } else {
-        LED_G_OFF();
-    }
-    if(global_mode == GLOBAL_MODE_REMOTE_GIMBAL) {
-        LED_R_ON();
-    } else {
-        LED_R_OFF();
-    }
 
     uartStartReceive(&REMOTE_UART_PORT, REMOTE_DATA_SIZE, remoteData);
 }

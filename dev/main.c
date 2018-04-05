@@ -17,38 +17,32 @@
 #include "main.h"
 
 
-
-
-
-
-
 /*
  * Application entry point.
  */
 int main(void) {
 
-  /*
-   * System initializations.
-   * - HAL initialization, this also initializes the configured device drivers
-   *   and performs the board-specific initializations.
-   * - Kernel initialization, the main() function becomes a thread and the
-   *   RTOS is active.
-   */
-  halInit();
-  chSysInit();
+    /*
+     * System initializations.
+     * - HAL initialization, this also initializes the configured device drivers
+     *   and performs the board-specific initializations.
+     * - Kernel initialization, the main() function becomes a thread and the
+     *   RTOS is active.
+     */
+    halInit();
+    chSysInit();
 
-
-
-
-
-  /*
-   * Normal main() thread activity, in this demo it does nothing.
-   */
 
     sdStart(&SD2, NULL);
 
 
+    LED_R_OFF();
+    LED_G_OFF();
+
     remoteInit();
+
+    chassisCalcInit();
+
     motorCanInit();
 
     while (true) {
@@ -58,6 +52,6 @@ int main(void) {
         palClearPad(GPIOF, GPIOF_LED_G);
         palClearPad(GPIOE, GPIOE_LED_R);
         chThdSleepMilliseconds(500);*/
-  }
-  return 0;
+    }
+    return 0;
 }

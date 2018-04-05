@@ -4,7 +4,10 @@
 #ifndef INSOULED_GIMBAL_H
 #define INSOULED_GIMBAL_H
 
-#include "../global.h"
+#include "global.h"
+#include "pid.h"
+
+#include "remote.h"
 
 #define YAW_MAX_ANGLE  90
 #define YAW_MIN_ANGLE -90

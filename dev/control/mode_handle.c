@@ -3,7 +3,6 @@
 //
 
 #include "mode_handle.h"
-#include "../info_interaction/remote.h"
 
 global_mode_t global_mode;
 
@@ -20,5 +19,12 @@ void mode_handle(void) {
         global_mode = transistion_rules[remote.left_lever - 1][remote.right_lever - 1];
     } else {
         global_mode = GLOBAL_MODE_SAFETY;
+    }
+
+    // Quick Action
+    if (global_mode == GLOBAL_MODE_SAFETY) {
+        CHASSIS_ZERO_CURRENT();
+
+        set_chassis_currents();
     }
 }

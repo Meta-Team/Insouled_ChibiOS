@@ -5,7 +5,13 @@
 #ifndef INSOULED_CHIBIOS_MODE_HANDLE_H
 #define INSOULED_CHIBIOS_MODE_HANDLE_H
 
-#include "../global.h"
+#include "global.h"
+
+#include "remote.h"
+
+#include "chassis.h"
+
+#include "motor_interaction.h"
 
 typedef enum {
     GLOBAL_MODE_SAFETY = 0,

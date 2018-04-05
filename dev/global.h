@@ -5,11 +5,26 @@
 #ifndef INSOULED_GLOBAL_H
 #define INSOULED_GLOBAL_H
 
+#include "hal.h"
+#include "ch.h"
+
 #include <stdlib.h>
+
+//#define MANUAL_DEBUG
 
 #define ABS_LIMIT(n, limit) { \
     if (n > limit) n = limit; \
-    if (n < -limit) n = -limit; \
+    if (n < -(limit)) n = -(limit); \
+}
+
+#define ABS_LIMIT_FEEDBACK(n, limit, in_command, out_command) { \
+    if (n <= limit && n >= -(limit)) { \
+        in_command; \
+    } else { \
+        if (n > limit) n = limit; \
+        else if (n < -(limit)) n = -(limit); \
+        out_command; \
+    } \
 }
 
 #define LED_G_ON() palClearPad(GPIOF, GPIOF_LED_G)

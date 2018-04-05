@@ -31,6 +31,7 @@
 *.out
 *.app
 
+dev/.dep/
 dev/build/
 cmake-build-debug/
 .idea/
@@ -45,3 +46,5 @@ cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
+
+.DS_Store

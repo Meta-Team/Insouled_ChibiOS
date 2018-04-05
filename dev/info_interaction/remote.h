@@ -5,11 +5,9 @@
 #ifndef INSOULED_REMOTE_H
 #define INSOULED_REMOTE_H
 
-#include "ch.h"
-#include "hal.h"
-#include "../global.h"
+#include "global.h"
 
-#include "../control/mode_handle.h"
+#include "mode_handle.h"
 
 /* Hardware Layer */
 #define REMOTE_UART_PORT UARTD1

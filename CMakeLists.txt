@@ -3,11 +3,20 @@ set(CMAKE_CXX_STANDARD 11)
 cmake_minimum_required(VERSION 3.8)
 project(Insouled_ChibiOS)
 
+### Use make to build target STLink
 add_custom_target(STLink COMMAND make upload-stlink -C ${Insouled_ChibiOS_SOURCE_DIR}/dev
         CLION_EXE_DIR=${PROJECT_BINARY_DIR})
 
 add_custom_target(JLink COMMAND make upload-jlink -C ${Insouled_ChibiOS_SOURCE_DIR}/dev
         CLION_EXE_DIR=${PROJECT_BINARY_DIR})
+
+### Append new source files to dev/dev.mk
+
+
+
+
+
+### Following commands are only used to allow CLion work properly
 
 include_directories(dev dev/control dev/info_interaction)
 file(GLOB_RECURSE USER_SRC "dev/*.c" "dev/control/*.c" "dev/info_interaction/*.c")

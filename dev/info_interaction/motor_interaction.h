@@ -5,11 +5,12 @@
 #ifndef INSOULED_CHIBIOS_MOTOR_INTERACTION_H
 #define INSOULED_CHIBIOS_MOTOR_INTERACTION_H
 
-#include "ch.h"
-#include "hal.h"
-
 #include "global.h"
 
+#include "chassis.h"
+
 void motorCanInit(void);
+
+void set_chassis_currents(void);
 
 #endif //INSOULED_CHIBIOS_MOTOR_INTERACTION_H

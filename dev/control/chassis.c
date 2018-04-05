@@ -8,37 +8,32 @@ chassis_t chassis;
 
 void chassis_calculate(void) {
     switch (global_mode) {
-        case
-
-            GLOBAL_MODE_SAFETY: {
-            chassis.motor_current[0] = 0;
-            chassis.motor_current[1] = 0;
-            chassis.motor_current[2] = 0;
-            chassis.motor_current[3] = 0;
+        case GLOBAL_MODE_SAFETY: {
+            CHASSIS_ZERO_CURRENT();
         }
 
-        case
+        case GLOBAL_MODE_PC: {
 
-            GLOBAL_MODE_PC: {
+            CHASSIS_ZERO_CURRENT();
 
         }
 
-        case
+        case GLOBAL_MODE_REMOTE_CHASSIS: {
 
-            GLOBAL_MODE_REMOTE_CHASSIS: {
-
+            // Calculate car speeds
             chassis.vx = remote.ch0 * CHASSIS_RC_MAX_SPEED_X;
             chassis.vy = remote.ch1 * CHASSIS_RC_MAX_SPEED_Y;
             chassis.w = remote.ch2 * CHASSIS_RC_MAX_W;
 
+            //Calculate speeds of each wheel
             float rotate_ratio = ((CHASSIS_WHEELBASE + CHASSIS_WHEELTRACK) / 2.0f) / CHASSIS_RADIAN_COEF;
             float rpm_ratio = (60.0f / (CHASSIS_WHEEL_PERIMETER * CHASSIS_DECELE_RATIO));
-            chassis.motor_speed[0] = (int)((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-            chassis.motor_speed[1] = (int)((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-            chassis.motor_speed[2] = (int)((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-            chassis.motor_speed[3] = (int)((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[0] = (int) ((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[1] = (int) ((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[2] = (int) ((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+            chassis.motor_speed[3] = (int) ((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
 
-
+            // Limit the max wheel speeds
             int max_motor_speed = 0;
             for (int i = 0; i < 4; i++) {
                 if (abs(chassis.motor_speed[i]) > max_motor_speed)
@@ -46,56 +41,40 @@ void chassis_calculate(void) {
             }
 
             if (max_motor_speed > CHASSIS_MOTOE_MAX_SPEED) {
-                float rate = CHASSIS_MOTOE_MAX_SPEED / max_motor_speed;
+                float rate = (float) CHASSIS_MOTOE_MAX_SPEED / max_motor_speed;
                 for (int i = 0; i < 4; i++)
                     chassis.motor_speed[i] *= rate;
             }
 
             for (int i = 0; i < 4; i++) {
-                chassis.motor_current[i] = chassis.motor_speed[i] / CHASSIS_MOTOE_MAX_SPEED * CHASSIS_MOTOR_MAX_CURRENT;
+                chassis.motor_current[i] = (int16_t) (chassis.motor_speed[i] / CHASSIS_MOTOE_MAX_SPEED * CHASSIS_MOTOR_MAX_CURRENT);
             }
         }
 
-        case
-
-            GLOBAL_MODE_REMOTE_GIMBAL: {
-            chassis.motor_current[0] = 0;
-            chassis.motor_current[1] = 0;
-            chassis.motor_current[2] = 0;
-            chassis.motor_current[3] = 0;
+        case GLOBAL_MODE_REMOTE_GIMBAL: {
+            CHASSIS_ZERO_CURRENT();
         }
 
     }
 
 }
 
-static THD_FUNCTION(chassis_control, p) {
+static THD_WORKING_AREA(chassis_calc_wa, 256);
 
-  (void)p;
-  chRegSetThreadName("chassis_control");
+static THD_FUNCTION(chassis_calc, p) {
 
-  while (true) {
-    chassis_calculate();
-    chThdSleepMilliseconds(200);
-  }
+    (void) p;
+    chRegSetThreadName("chassis_calc");
+
+    while (true) {
+        chassis_calculate();
+        //TODO: Modify the time interval
+        chThdSleepMilliseconds(200);
+    }
 }
 
 void chassisCalcInit(void) {
-    /*
-   * Activates the CAN drivers 1 and 2.
-   */
-    palSetPadMode(GPIOD, 0, PAL_MODE_ALTERNATE(9));
-    palSetPadMode(GPIOD, 1, PAL_MODE_ALTERNATE(9));
-    canStart(&CAND1, &cancfg);
-    canStart(&CAND2, &cancfg);
-
-    /*
-     * Starting the transmitter and receiver threads.
-     */
-    chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
-                      can_rx, (void *)&can1);
-    chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
-                      can_rx, (void *)&can2);
-    chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
-                      can_tx, NULL);
+    //TODO: Understand and modify the priority of the thread.
+    chThdCreateStatic(chassis_calc_wa, sizeof(chassis_calc_wa), NORMALPRIO + 6,
+                      chassis_calc, NULL);
 }

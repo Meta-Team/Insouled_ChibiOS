@@ -5,7 +5,7 @@
 #ifndef INSOULED_CHIBIOS_PID_H
 #define INSOULED_CHIBIOS_PID_H
 
-#include "../global.h"
+#include "global.h"
 
 struct pid_t
 {

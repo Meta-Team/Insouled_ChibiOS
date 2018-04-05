@@ -5,8 +5,8 @@
 #ifndef INSOULED_CHASSIS_H
 #define INSOULED_CHASSIS_H
 
-#include "../global.h"
-#include "../info_interaction/remote.h"
+#include "global.h"
+#include "remote.h"
 
 /* Chassis move speed (mm/s) */
 #define CHASSIS_RC_MAX_SPEED_X  2000.0f //3300.0f
@@ -44,9 +44,16 @@ typedef struct {
     float vy;
     float w;
     int motor_speed[4];
-    int motor_current[4];
+    int16_t motor_current[4];
 } chassis_t;
 extern chassis_t chassis;
+
+#define CHASSIS_ZERO_CURRENT() { \
+    chassis.motor_current[0] = 0; \
+    chassis.motor_current[1] = 0; \
+    chassis.motor_current[2] = 0; \
+    chassis.motor_current[3] = 0; \
+}
 
 
 void chassis_calculate(void);
