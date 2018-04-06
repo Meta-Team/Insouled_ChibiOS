@@ -76,7 +76,7 @@ static THD_FUNCTION(chassis_calc, p) {
     }
 }
 
-void chassisCalcInit(void) {
+void chassis_calc_init(void) {
     //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(chassis_calc_wa, sizeof(chassis_calc_wa), NORMALPRIO + 6,
                       chassis_calc, NULL);

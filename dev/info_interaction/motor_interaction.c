@@ -3,7 +3,13 @@
 //
 
 #include <control/gimbal.h>
+#include <hal_can_lld.h>
 #include "motor_interaction.h"
+
+
+
+
+/* CAN Configurations */
 
 struct can_instance {
     CANDriver     *canp;
@@ -26,9 +32,19 @@ static const CANConfig cancfg = {
         CAN_BTR_TS1(8) | CAN_BTR_BRP(2)
 };
 
+
+
+
+/* Receive */
+
+void process_gimbal_feedback(CANRxFrame* rxmsg) {
+    int motor_id =rxmsg->SID - 0x205;
+    gimbal.motor->present_angle = (float)(rxmsg->data8[0] << 8 | rxmsg->data8[1]) / 0x1FFF * 360
+
+}
+
 static THD_WORKING_AREA(can_rx1_wa, 256);
 static THD_WORKING_AREA(can_rx2_wa, 256);
-static THD_WORKING_AREA(can_tx_wa, 256);
 
 static THD_FUNCTION(can_rx, p) {
   struct can_instance *cip = p;
@@ -46,11 +62,24 @@ static THD_FUNCTION(can_rx, p) {
       // Process message.
       //palTogglePad(GPIOF, GPIOF_LED_G);       /* Yellow.  */
       //palTogglePad(GPIOE, GPIOE_LED_R);       /* Yellow.  */
+        switch (rxmsg.SID) {
+            case 0x205:
+            case 0x206:
+                process_gimbal_feedback(&rxmsg);
+            break;
+        }
     }
   }
   chEvtUnregister(&CAND1.rxfull_event, &el);
 }
 
+
+
+
+
+
+
+/* Transmit */
 
 void send_chassis_currents(void) {
 
@@ -89,8 +118,8 @@ void send_gimbal_currents(void) {
   ABS_LIMIT_FEEDBACK(gimbal.motor_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
 
 #else
-  ABS_LIMIT(gimbal.motor_current[GIMBAL_MOTOR_YAW], GIMBAL_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(gimbal.motor_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_PIT].target_current, GIMBAL_MOTOR_MAX_CURRENT);
 #endif
 
   int16_t zero_current = 0;
@@ -100,8 +129,8 @@ void send_gimbal_currents(void) {
   txmsg.SID = 0x1FF;
   txmsg.RTR = CAN_RTR_DATA;
   txmsg.DLC = 0x08;
-  txmsg.data8[0] = (uint8_t) (gimbal.motor_current[GIMBAL_MOTOR_YAW] >> 8);
-  txmsg.data8[1] = (uint8_t) gimbal.motor_current[GIMBAL_MOTOR_YAW];
+  txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
+  txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
   txmsg.data8[2] = (uint8_t) (zero_current >> 8);
   txmsg.data8[3] = (uint8_t) zero_current;
   txmsg.data8[4] = (uint8_t) (zero_current >> 8);
@@ -110,6 +139,8 @@ void send_gimbal_currents(void) {
   txmsg.data8[7] = (uint8_t) zero_current;
   canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
+
+static THD_WORKING_AREA(can_tx_wa, 256);
 
 static THD_FUNCTION(can_tx, p) {
 
@@ -123,7 +154,13 @@ static THD_FUNCTION(can_tx, p) {
   }
 }
 
-void motorCanInit(void) {
+
+
+
+
+/* Initialization */
+
+void motor_can_init(void) {
     /*
    * Activates the CAN drivers 1 and 2.
    */

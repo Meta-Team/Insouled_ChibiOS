@@ -9,10 +9,10 @@
 
 #include "remote.h"
 
-#define YAW_MAX_ANGLE  90
-#define YAW_MIN_ANGLE -90
-#define PIT_MAX_ANGLE  10
-#define PIT_MIN_ANGLE -10
+#define GIMBAL_YAW_MAX_ANGLE  90.0f
+#define GIMBAL_YAW_MIN_ANGLE (-90.0f)
+#define GIMBAL_PIT_MAX_ANGLE  10.0f
+#define GIMBAL_PIT_MIN_ANGLE (-10.0f)
 
 #define GIMBAL_ANGLE_REMOTE_RATIO 10
 
@@ -22,31 +22,30 @@
 #define GIMBAL_MOTOR_MAX_CURRENT 2000 //5000
 
 
-
 #define GIMBAL_MOTOR_YAW 0
 #define GIMBAL_MOTOR_PIT 1
-
-typedef struct {
-    int16_t motor_current[2];
-} gimbal_t;
-gimbal_t gimbal;
 
 typedef struct {
     float present_angle;
     float delta_angle;
     float target_angle;
+    int16_t target_current;
 } gimbal_motor;
-extern gimbal_motor yaw;
-extern gimbal_motor pit;
+
+typedef struct {
+    gimbal_motor motor[2];
+} gimbal_t;
+extern gimbal_t gimbal;
+
 
 #define GIMBAL_ZERO_CURRENT() { \
-gimbal.motor_current[0] = 0; \
-gimbal.motor_current[1] = 0; \
+    gimbal.motor[GIMBAL_MOTOR_YAW].target_current = 0; \
+    gimbal.motor[GIMBAL_MOTOR_PIT].target_current = 0; \
 }
 
 
-void gimbal_init();
-void gimbal_ctrl();
+void gimbal_calc_init(void);
+void gimbal_calculate(void);
 
 #endif //INSOULED_GIMBAL_H
 

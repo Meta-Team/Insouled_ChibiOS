@@ -13,7 +13,7 @@
 #define REMOTE_UART_PORT UARTD1
 #define REMOTE_DATA_SIZE 18
 
-void remoteInit(void);
+void remote_init(void);
 static void remoteReceived(UARTDriver *uartp);
 
 static UARTConfig remoteUartConfig = {

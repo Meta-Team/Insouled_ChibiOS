@@ -9,7 +9,7 @@ char remoteData[REMOTE_DATA_SIZE];
 
 remote_info_t remote;
 
-void remoteInit(void) {
+void remote_init(void) {
     palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
     palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
     uartStart(&REMOTE_UART_PORT, &remoteUartConfig);

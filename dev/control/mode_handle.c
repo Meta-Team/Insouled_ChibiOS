@@ -21,7 +21,7 @@ void mode_handle(void) {
         global_mode = GLOBAL_MODE_SAFETY;
     }
 
-    if (global_mode == GLOBAL_MODE_REMOTE_CHASSIS) {
+    if (global_mode == GLOBAL_MODE_REMOTE_GIMBAL) {
         LED_G_ON();
     } else {
         LED_G_OFF();
@@ -30,8 +30,10 @@ void mode_handle(void) {
     // Quick Action
     if (global_mode == GLOBAL_MODE_SAFETY) {
         CHASSIS_ZERO_CURRENT();
+        GIMBAL_ZERO_CURRENT();
 
         send_chassis_currents();
+        send_gimbal_currents();
     }
 }
 

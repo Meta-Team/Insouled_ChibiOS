@@ -59,7 +59,7 @@ extern chassis_t chassis;
 
 void chassis_calculate(void);
 
-void chassisCalcInit(void);
+void chassis_calc_init(void);
 
 
 #endif //INSOULED_CHASSIS_H

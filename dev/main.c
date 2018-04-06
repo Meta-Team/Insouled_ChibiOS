@@ -39,12 +39,13 @@ int main(void) {
     LED_R_OFF();
     LED_G_OFF();
 
-    remoteInit();
+    remote_init();
     mode_handle_init();
 
-    chassisCalcInit();
+    chassis_calc_init();
+    gimbal_calc_init();
 
-    motorCanInit();
+    motor_can_init();
 
     while (true) {
         /*palSetPad(GPIOF, GPIOF_LED_G);

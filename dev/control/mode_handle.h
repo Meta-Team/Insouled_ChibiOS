@@ -10,6 +10,7 @@
 #include "remote.h"
 
 #include "chassis.h"
+#include "gimbal.h"
 
 #include "motor_interaction.h"
 
