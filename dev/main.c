@@ -40,6 +40,7 @@ int main(void) {
     LED_G_OFF();
 
     remoteInit();
+    mode_handle_init();
 
     chassisCalcInit();
 

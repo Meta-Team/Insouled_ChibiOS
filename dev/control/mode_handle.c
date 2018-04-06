@@ -21,10 +21,20 @@ void mode_handle(void) {
         global_mode = GLOBAL_MODE_SAFETY;
     }
 
+    if (global_mode == GLOBAL_MODE_REMOTE_CHASSIS) {
+        LED_G_ON();
+    } else {
+        LED_G_OFF();
+    }
+
     // Quick Action
     if (global_mode == GLOBAL_MODE_SAFETY) {
         CHASSIS_ZERO_CURRENT();
 
-        set_chassis_currents();
+        send_chassis_currents();
     }
+}
+
+void mode_handle_init(void) {
+    global_mode = GLOBAL_MODE_SAFETY;
 }

@@ -2,7 +2,7 @@
 // Created by liuzikai on 2018/4/4.
 //
 
-#include <control/chassis.h>
+#include <control/gimbal.h>
 #include "motor_interaction.h"
 
 struct can_instance {
@@ -52,7 +52,7 @@ static THD_FUNCTION(can_rx, p) {
 }
 
 
-void set_chassis_currents(void) {
+void send_chassis_currents(void) {
 
 #ifndef MANUAL_DEBUG
   ABS_LIMIT_FEEDBACK(chassis.motor_current[0], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
@@ -82,13 +82,43 @@ void set_chassis_currents(void) {
   canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
+void send_gimbal_currents(void) {
+
+#ifndef MANUAL_DEBUG
+  ABS_LIMIT_FEEDBACK(gimbal.motor_current[GIMBAL_MOTOR_YAW], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(gimbal.motor_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
+
+#else
+  ABS_LIMIT(gimbal.motor_current[GIMBAL_MOTOR_YAW], GIMBAL_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(gimbal.motor_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT);
+#endif
+
+  int16_t zero_current = 0;
+
+  CANTxFrame txmsg;
+  txmsg.IDE = CAN_IDE_STD;
+  txmsg.SID = 0x1FF;
+  txmsg.RTR = CAN_RTR_DATA;
+  txmsg.DLC = 0x08;
+  txmsg.data8[0] = (uint8_t) (gimbal.motor_current[GIMBAL_MOTOR_YAW] >> 8);
+  txmsg.data8[1] = (uint8_t) gimbal.motor_current[GIMBAL_MOTOR_YAW];
+  txmsg.data8[2] = (uint8_t) (zero_current >> 8);
+  txmsg.data8[3] = (uint8_t) zero_current;
+  txmsg.data8[4] = (uint8_t) (zero_current >> 8);
+  txmsg.data8[5] = (uint8_t) zero_current;
+  txmsg.data8[6] = (uint8_t) (zero_current >> 8);
+  txmsg.data8[7] = (uint8_t) zero_current;
+  canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+}
+
 static THD_FUNCTION(can_tx, p) {
 
   (void)p;
   chRegSetThreadName("can_transmitter");
 
   while (true) {
-    set_chassis_currents();
+    send_chassis_currents();
+    send_gimbal_currents;
     chThdSleepMilliseconds(200);
   }
 }

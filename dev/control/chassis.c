@@ -7,22 +7,22 @@
 chassis_t chassis;
 
 void chassis_calculate(void) {
+
     switch (global_mode) {
         case GLOBAL_MODE_SAFETY: {
             CHASSIS_ZERO_CURRENT();
+            break;
         }
-
         case GLOBAL_MODE_PC: {
-
             CHASSIS_ZERO_CURRENT();
-
+            break;
         }
 
         case GLOBAL_MODE_REMOTE_CHASSIS: {
 
             // Calculate car speeds
-            chassis.vx = remote.ch0 * CHASSIS_RC_MAX_SPEED_X;
-            chassis.vy = remote.ch1 * CHASSIS_RC_MAX_SPEED_Y;
+            chassis.vx = remote.ch1 * CHASSIS_RC_MAX_SPEED_X;
+            chassis.vy = -remote.ch0 * CHASSIS_RC_MAX_SPEED_Y;
             chassis.w = remote.ch2 * CHASSIS_RC_MAX_W;
 
             //Calculate speeds of each wheel
@@ -41,18 +41,21 @@ void chassis_calculate(void) {
             }
 
             if (max_motor_speed > CHASSIS_MOTOE_MAX_SPEED) {
+                LED_R_TOGGLE();
                 float rate = (float) CHASSIS_MOTOE_MAX_SPEED / max_motor_speed;
                 for (int i = 0; i < 4; i++)
                     chassis.motor_speed[i] *= rate;
             }
 
             for (int i = 0; i < 4; i++) {
-                chassis.motor_current[i] = (int16_t) (chassis.motor_speed[i] / CHASSIS_MOTOE_MAX_SPEED * CHASSIS_MOTOR_MAX_CURRENT);
+                chassis.motor_current[i] = (int16_t) ((float) chassis.motor_speed[i] / CHASSIS_MOTOE_MAX_SPEED * CHASSIS_MOTOR_MAX_CURRENT);
             }
+            break;
         }
 
         case GLOBAL_MODE_REMOTE_GIMBAL: {
             CHASSIS_ZERO_CURRENT();
+            break;
         }
 
     }
@@ -69,7 +72,7 @@ static THD_FUNCTION(chassis_calc, p) {
     while (true) {
         chassis_calculate();
         //TODO: Modify the time interval
-        chThdSleepMilliseconds(200);
+        chThdSleepMilliseconds(20);
     }
 }
 

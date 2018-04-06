@@ -10,7 +10,7 @@
 
 #include <stdlib.h>
 
-//#define MANUAL_DEBUG
+#define MANUAL_DEBUG
 
 #define ABS_LIMIT(n, limit) { \
     if (n > limit) n = limit; \
@@ -29,8 +29,10 @@
 
 #define LED_G_ON() palClearPad(GPIOF, GPIOF_LED_G)
 #define LED_G_OFF() palSetPad(GPIOF, GPIOF_LED_G)
+#define LED_G_TOGGLE() palTogglePad(GPIOF, GPIOF_LED_G)
 #define LED_R_ON() palClearPad(GPIOE, GPIOE_LED_R)
 #define LED_R_OFF() palSetPad(GPIOE, GPIOE_LED_R)
+#define LED_R_TOGGLE() palTogglePad(GPIOE, GPIOE_LED_R)
 
 
 #endif //INSOULED_GLOBAL_H

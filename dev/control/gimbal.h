@@ -27,7 +27,7 @@
 #define GIMBAL_MOTOR_PIT 1
 
 typedef struct {
-    int motor_current[2];
+    int16_t motor_current[2];
 } gimbal_t;
 gimbal_t gimbal;
 
@@ -39,7 +39,10 @@ typedef struct {
 extern gimbal_motor yaw;
 extern gimbal_motor pit;
 
-
+#define GIMBAL_ZERO_CURRENT() { \
+gimbal.motor_current[0] = 0; \
+gimbal.motor_current[1] = 0; \
+}
 
 
 void gimbal_init();

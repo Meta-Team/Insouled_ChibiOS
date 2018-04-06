@@ -13,7 +13,7 @@
 
 #include "motor_interaction.h"
 
-typedef enum {
+typedef enum _global_mode_t {
     GLOBAL_MODE_SAFETY = 0,
     GLOBAL_MODE_PC = 1,
     GLOBAL_MODE_REMOTE_CHASSIS = 2,
@@ -23,5 +23,6 @@ typedef enum {
 extern global_mode_t global_mode;
 
 void mode_handle(void);
+void mode_handle_init(void);
 
 #endif //INSOULED_CHIBIOS_MODE_HANDLE_H

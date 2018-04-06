@@ -9,6 +9,7 @@
 
 #include "remote.h"
 
+#include "mode_handle.h"
 #include "chassis.h"
 
 #include "motor_interaction.h"

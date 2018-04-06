@@ -8,9 +8,10 @@
 #include "global.h"
 
 #include "chassis.h"
+#include "gimbal.h"
 
 void motorCanInit(void);
 
-void set_chassis_currents(void);
+void send_chassis_currents(void);
 
 #endif //INSOULED_CHIBIOS_MOTOR_INTERACTION_H
