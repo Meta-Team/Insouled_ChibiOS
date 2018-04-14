@@ -38,8 +38,35 @@ static const CANConfig cancfg = {
 /* Receive */
 
 void process_gimbal_feedback(CANRxFrame* rxmsg) {
-    int motor_id =rxmsg->SID - 0x205;
-    gimbal.motor->present_angle = (float)(rxmsg->data8[0] << 8 | rxmsg->data8[1]) / 0x1FFF * 360
+    int motor_id;
+    
+    if (rxmsg->SID == 0x205) motor_id = GIMBAL_MOTOR_YAW;
+    else motor_id = GIMBAL_MOTOR_PIT;
+
+    int new_angle = (int)((rxmsg->data8[0] << 8 | rxmsg->data8[1]));
+    /*if (gimbal.motor[motor_id].default_angle < -365) {
+        gimbal.motor[motor_id].target_angle = gimbal.motor[motor_id].default_angle = new_angle;
+    } else {
+        new_angle -= gimbal.motor[motor_id].default_angle;
+
+        int pre_angle = gimbal.motor[motor_id].present_angle % 360;
+        if
+        if ( > 340.0f && new_angle < 20.0f) new_angle += 360.0f;
+    }
+     */
+    //gimbal.motor[motor_id].present_angle = new_angle;
+
+    if (motor_id == GIMBAL_MOTOR_YAW) {
+        if (new_angle <= 3300) gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle - 35.0);
+        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 325);
+
+        /*
+        if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 90) LED_G_ON();
+        else LED_G_OFF();
+
+        if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > -90) LED_R_ON();
+        else LED_R_OFF();*/
+    }
 
 }
 
@@ -60,12 +87,13 @@ static THD_FUNCTION(can_rx, p) {
     while (canReceive(cip->canp, CAN_ANY_MAILBOX,
                       &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
       // Process message.
-      //palTogglePad(GPIOF, GPIOF_LED_G);       /* Yellow.  */
-      //palTogglePad(GPIOE, GPIOE_LED_R);       /* Yellow.  */
+
         switch (rxmsg.SID) {
             case 0x205:
             case 0x206:
+            {
                 process_gimbal_feedback(&rxmsg);
+            }
             break;
         }
     }
@@ -121,7 +149,6 @@ void send_gimbal_currents(void) {
   ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
   ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_PIT].target_current, GIMBAL_MOTOR_MAX_CURRENT);
 #endif
-
   int16_t zero_current = 0;
 
   CANTxFrame txmsg;
@@ -149,7 +176,7 @@ static THD_FUNCTION(can_tx, p) {
 
   while (true) {
     send_chassis_currents();
-    send_gimbal_currents;
+    send_gimbal_currents();
     chThdSleepMilliseconds(200);
   }
 }

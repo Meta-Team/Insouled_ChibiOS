@@ -21,11 +21,6 @@ void mode_handle(void) {
         global_mode = GLOBAL_MODE_SAFETY;
     }
 
-    if (global_mode == GLOBAL_MODE_REMOTE_GIMBAL) {
-        LED_G_ON();
-    } else {
-        LED_G_OFF();
-    }
 
     // Quick Action
     if (global_mode == GLOBAL_MODE_SAFETY) {

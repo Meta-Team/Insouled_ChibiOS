@@ -23,6 +23,7 @@ void remote_init(void) {
 void remoteReceived(UARTDriver *uartp) {
     (void) uartp;
 
+    chSysLock();
     remote.ch0 = (((remoteData[0] | remoteData[1] << 8) & 0x07FF) - 1024.0f) / 660.0f;
     ABS_LIMIT(remote.ch0, 1.0f);
     remote.ch1 = (((remoteData[1] >> 3 | remoteData[2] << 5) & 0x07FF) - 1024.0f) / 660.0f;
@@ -34,6 +35,8 @@ void remoteReceived(UARTDriver *uartp) {
 
     remote.left_lever = ((remoteData[5] >> 4) & 0x000C) >> 2;
     remote.right_lever = (remoteData[5] >> 4) & 0x0003;
+    chSysUnlock();
+
 
     mode_handle();
 

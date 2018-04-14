@@ -48,4 +48,6 @@ typedef struct {
 } remote_info_t;
 extern remote_info_t remote;
 
+#define MAX_VALID_CHANGE 0.3f
+
 #endif //INSOULED_REMOTE_H

@@ -34,5 +34,8 @@
 #define LED_R_OFF() palSetPad(GPIOE, GPIOE_LED_R)
 #define LED_R_TOGGLE() palTogglePad(GPIOE, GPIOE_LED_R)
 
+extern int _led_debug_index;
+#define LED_DEBUG_TRANSMIT(n) _led_debug_index = n
+
 
 #endif //INSOULED_GLOBAL_H

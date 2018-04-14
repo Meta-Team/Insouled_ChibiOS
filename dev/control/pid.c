@@ -14,6 +14,8 @@ void pid_init(struct pid_t *pid, float kp, float ki, float kd, float i_limit, fl
     pid->out_limit = out_limit;
 
     pid->p_out = pid->i_out = pid->d_out = pid->out = 0;
+
+    pid->error[0] = pid->error[1] = 0.0;
 }
 
 void pid_calc(struct pid_t *pid, float now, float target) {
@@ -27,7 +29,7 @@ void pid_calc(struct pid_t *pid, float now, float target) {
     pid->i_out += pid->ki * pid->error[0];
     pid->d_out = pid->kd * (pid->error[0] - pid->error[1]);
 
-    ABS_LIMIT(pid->i_out, pid->out_limit);
+    ABS_LIMIT(pid->i_out, pid->i_limit);
     pid->out = pid->p_out + pid->i_out +pid->d_out;
     ABS_LIMIT(pid->out, pid->out_limit);
 }
