@@ -39,7 +39,7 @@ static const CANConfig cancfg = {
 
 void process_gimbal_feedback(CANRxFrame* rxmsg) {
     int motor_id;
-    
+
     if (rxmsg->SID == 0x205) motor_id = GIMBAL_MOTOR_YAW;
     else motor_id = GIMBAL_MOTOR_PIT;
 
@@ -58,7 +58,7 @@ void process_gimbal_feedback(CANRxFrame* rxmsg) {
 
     if (motor_id == GIMBAL_MOTOR_YAW) {
         if (new_angle <= 3300) gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle - 35.0);
-        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 325);
+        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 325.0);
 
         /*
         if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 90) LED_G_ON();
@@ -66,6 +66,24 @@ void process_gimbal_feedback(CANRxFrame* rxmsg) {
 
         if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > -90) LED_R_ON();
         else LED_R_OFF();*/
+    } else if (motor_id == GIMBAL_MOTOR_PIT) {
+        gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle + 304.0);
+
+        /*
+        if (new_angle > 7000 && new_angle < 7100) LED_R_ON();
+        else LED_R_OFF();
+
+        if (new_angle > 6900 && new_angle < 7000) LED_G_ON();
+        else LED_G_OFF();
+        */
+
+        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < gimbal.motor[GIMBAL_MOTOR_PIT].target_angle){
+            LED_R_ON();
+            LED_G_OFF();
+        } else {
+            LED_R_OFF();
+            LED_G_ON();
+        }
     }
 
 }
@@ -158,8 +176,8 @@ void send_gimbal_currents(void) {
   txmsg.DLC = 0x08;
   txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
   txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
-  txmsg.data8[2] = (uint8_t) (zero_current >> 8);
-  txmsg.data8[3] = (uint8_t) zero_current;
+  txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_PIT].target_current >> 8);
+  txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
   txmsg.data8[4] = (uint8_t) (zero_current >> 8);
   txmsg.data8[5] = (uint8_t) zero_current;
   txmsg.data8[6] = (uint8_t) (zero_current >> 8);
@@ -177,7 +195,7 @@ static THD_FUNCTION(can_tx, p) {
   while (true) {
     send_chassis_currents();
     send_gimbal_currents();
-    chThdSleepMilliseconds(200);
+    chThdSleepMilliseconds(10);
   }
 }
 
