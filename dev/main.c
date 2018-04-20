@@ -40,17 +40,16 @@ int main(void) {
     remote_init();
     motor_can_init();
 
-    // Parameter calculation intiialization
+    // Parameter calculation initialization
     chassis_calc_init();
     gimbal_calc_init();
 
-    /* Main calculation thread
-     * Mode handle should be initialized after chassis & gimbal
-     * as it depends on them
-     */
+    // Mode handle state machine initialization
     mode_handle_init();
 
     while (true) {
-        chThdSleepMilliseconds(1000);
+        // Main loop, runs mode handle state machine
+        mode_handle_calculate();
+        chThdSleepMilliseconds(10);
     }
 }

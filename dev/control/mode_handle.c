@@ -22,36 +22,20 @@ void mode_handle_calculate(void) {
     }
 
     switch (global_mode) {
-        case GLOBAL_MODE_REMOTE_CHASSIS:
+        case GLOBAL_MODE_REMOTE_CHASSIS: GIMBAL_ZERO_CURRENT();
             chassis_calculate();
             break;
-        case GLOBAL_MODE_REMOTE_GIMBAL:
+        case GLOBAL_MODE_REMOTE_GIMBAL: CHASSIS_ZERO_CURRENT();
             gimbal_calculate();
             break;
         default: CHASSIS_ZERO_CURRENT();
             GIMBAL_ZERO_CURRENT();
-
-            send_chassis_currents();
-            send_gimbal_currents();
     }
-}
 
-
-static THD_WORKING_AREA(mode_handle_wa, 256);
-
-static THD_FUNCTION(mode_handle, p) {
-    (void) p;
-    chRegSetThreadName("mode_handle");
-
-    while (true) {
-        mode_handle_calculate();
-        //TODO: Modify the time interval
-        chThdSleepMilliseconds(20);
-    }
+    send_chassis_currents();
+    send_gimbal_currents();
 }
 
 void mode_handle_init(void) {
     global_mode = GLOBAL_MODE_SAFETY;
-    chThdCreateStatic(mode_handle_wa, sizeof(mode_handle_wa), NORMALPRIO,
-                      mode_handle, NULL);
 }
