@@ -31,6 +31,9 @@ void gimbal_calculate(void) {
         }
         case GLOBAL_MODE_REMOTE_GIMBAL: {
 
+
+
+
             chSysLock();
             if (!EQUAL_ZERO(remote.ch0)) {
 
@@ -86,6 +89,6 @@ void gimbal_calc_init(void) {
         gimbal.motor[i].delta_angle = 0;
     }
 
-    pid_init(&pid_yaw, 15.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
-    pid_init(&pid_pitch, 100.0, 10.0, 0, 500.0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_yaw, 8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_pitch, 20.0, 0.3, 0, 1500.0, GIMBAL_MOTOR_MAX_CURRENT);
 }
