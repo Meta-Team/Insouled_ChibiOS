@@ -9,19 +9,21 @@
 
 #include "remote.h"
 
-#define EQUAL_ZERO(n) (n < 0.000001f && n > -0.000001f)
+#define EQUAL_ZERO(n) (n < 0.001f && n > -0.001f)
 
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
-#define GIMBAL_PIT_MAX_ANGLE  10
+#define GIMBAL_PIT_MAX_ANGLE  20
 #define GIMBAL_PIT_MIN_ANGLE (-10)
 
-#define GIMBAL_ANGLE_REMOTE_RATIO 35
+#define GIMBAL_ANGLE_REMOTE_RATIO_YAW 30
+#define GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP 10
+#define GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN 10
 
 #define GIMBAL_YAW_CURRENT_ANGLE_RATIO 10
 #define GIMBAL_PITCH_CURRENT_ANGLE_RATIO 1.5
 
-#define GIMBAL_MOTOR_MAX_CURRENT 3000 //5000
+#define GIMBAL_MOTOR_MAX_CURRENT 4000 //5000
 
 //FIXME: This is a temporary for the first vehicle which swap two gimbal motors errorly  (╯°□°）╯︵┻━┻
 #define GIMBAL_MOTOR_YAW 1

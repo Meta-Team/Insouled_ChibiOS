@@ -14,26 +14,16 @@
 #define REMOTE_DATA_SIZE 18
 
 void remote_init(void);
-static void remoteReceived(UARTDriver *uartp);
 
-static UARTConfig remoteUartConfig = {
-        NULL,
-        NULL,
-        remoteReceived,
-        NULL,
-        NULL,
-        100000,
-        USART_CR1_PCE,
-        0,
-        0,
-};
+void remoteReceived(UARTDriver *uartp);
 
 /* Info Layer */
 
 typedef enum  {
-    LEVER_UP = 1, //up
-    LEVER_MD = 3, //middle
-    LEVER_DW = 2, //down
+    LEVER_NULL = 0, // Uninitialized state
+    LEVER_UP = 1,   // Up
+    LEVER_MD = 3,   // Middle
+    LEVER_DW = 2,   // Down
 } remote_lever_state_t;
 
 typedef struct {

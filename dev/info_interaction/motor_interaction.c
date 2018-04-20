@@ -3,43 +3,20 @@
 //
 
 #include <control/gimbal.h>
-#include <hal_can_lld.h>
-#include "motor_interaction.h"
-
-
 
 
 /* CAN Configurations */
-
-struct can_instance {
-    CANDriver     *canp;
-    uint32_t      led;
-};
-
-static const struct can_instance can1 = {&CAND1, GPIOD_LED5};
-static const struct can_instance can2 = {&CAND2, GPIOD_LED3};
-
-
-/*
- * Internal loopback mode, 500KBaud, automatic wakeup, automatic recover
- * from abort mode.
- * See section 22.7.7 on the STM32 reference manual.
- */
-
 static const CANConfig cancfg = {
         CAN_MCR_ABOM | CAN_MCR_AWUM | CAN_MCR_TXFP,
         CAN_BTR_SJW(0) | CAN_BTR_TS2(3) |
         CAN_BTR_TS1(8) | CAN_BTR_BRP(2)
 };
 
-
-
-
 /* Receive */
 
 void process_gimbal_feedback(CANRxFrame* rxmsg) {
     int motor_id;
-    
+
     if (rxmsg->SID == 0x205) motor_id = GIMBAL_MOTOR_YAW;
     else motor_id = GIMBAL_MOTOR_PIT;
 
@@ -58,7 +35,7 @@ void process_gimbal_feedback(CANRxFrame* rxmsg) {
 
     if (motor_id == GIMBAL_MOTOR_YAW) {
         if (new_angle <= 3300) gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle - 35.0);
-        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 325);
+        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 325.0);
 
         /*
         if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 90) LED_G_ON();
@@ -66,6 +43,24 @@ void process_gimbal_feedback(CANRxFrame* rxmsg) {
 
         if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > -90) LED_R_ON();
         else LED_R_OFF();*/
+    } else if (motor_id == GIMBAL_MOTOR_PIT) {
+        gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle + 304.0);
+
+        /*
+        if (new_angle > 7000 && new_angle < 7100) LED_R_ON();
+        else LED_R_OFF();
+
+        if (new_angle > 6900 && new_angle < 7000) LED_G_ON();
+        else LED_G_OFF();
+        */
+
+        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < gimbal.motor[GIMBAL_MOTOR_PIT].target_angle){
+            LED_R_ON();
+            LED_G_OFF();
+        } else {
+            LED_R_OFF();
+            LED_G_ON();
+        }
     }
 
 }
@@ -74,41 +69,28 @@ static THD_WORKING_AREA(can_rx1_wa, 256);
 static THD_WORKING_AREA(can_rx2_wa, 256);
 
 static THD_FUNCTION(can_rx, p) {
-  struct can_instance *cip = p;
-  event_listener_t el;
-  CANRxFrame rxmsg;
+    CANDriver *canp = p;
+    event_listener_t el;
+    CANRxFrame rxmsg;
 
-  (void)p;
-  chRegSetThreadName("can_receiver");
-  chEvtRegister(&cip->canp->rxfull_event, &el, 0);
-  while (true) {
-    if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0)
-      continue;
-    while (canReceive(cip->canp, CAN_ANY_MAILBOX,
-                      &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
-      // Process message.
+    chRegSetThreadName("can_receiver");
+    chEvtRegister(&canp->rxfull_event, &el, 0);
+    while (true) {
+        if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0) continue;
+        while (canReceive(canp, CAN_ANY_MAILBOX, &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
+            // Process message.
 
-        switch (rxmsg.SID) {
-            case 0x205:
-            case 0x206:
-            {
-                process_gimbal_feedback(&rxmsg);
+            switch (rxmsg.SID) {
+                case 0x205:
+                case 0x206:
+                    process_gimbal_feedback(&rxmsg);
+                    break;
             }
-            break;
         }
     }
-  }
-  chEvtUnregister(&CAND1.rxfull_event, &el);
 }
 
-
-
-
-
-
-
 /* Transmit */
-
 void send_chassis_currents(void) {
 
 #ifndef MANUAL_DEBUG
@@ -158,8 +140,8 @@ void send_gimbal_currents(void) {
   txmsg.DLC = 0x08;
   txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
   txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
-  txmsg.data8[2] = (uint8_t) (zero_current >> 8);
-  txmsg.data8[3] = (uint8_t) zero_current;
+  txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_PIT].target_current >> 8);
+  txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
   txmsg.data8[4] = (uint8_t) (zero_current >> 8);
   txmsg.data8[5] = (uint8_t) zero_current;
   txmsg.data8[6] = (uint8_t) (zero_current >> 8);
@@ -167,7 +149,7 @@ void send_gimbal_currents(void) {
   canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
-static THD_WORKING_AREA(can_tx_wa, 256);
+/*static THD_WORKING_AREA(can_tx_wa, 256);
 
 static THD_FUNCTION(can_tx, p) {
 
@@ -177,9 +159,9 @@ static THD_FUNCTION(can_tx, p) {
   while (true) {
     send_chassis_currents();
     send_gimbal_currents();
-    chThdSleepMilliseconds(200);
+    chThdSleepMilliseconds(10);
   }
-}
+}*/
 
 
 
@@ -202,9 +184,9 @@ void motor_can_init(void) {
 
   //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
-                      can_rx, (void *)&can1);
+                      can_rx, &CAND1);
     chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
-                      can_rx, (void *)&can2);
-    chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
-                      can_tx, NULL);
+                      can_rx, &CAND2);
+    /*chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
+                      can_tx, NULL);*/
 }

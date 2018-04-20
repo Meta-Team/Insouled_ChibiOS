@@ -7,6 +7,7 @@
 
 #include "global.h"
 
+#include "led_debug.h"
 #include "remote.h"
 
 #include "mode_handle.h"

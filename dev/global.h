@@ -27,6 +27,8 @@
     } \
 }
 
+#define SIGN(n) (n == 0 ? 0 : (n > 0 ? 1 : -1))
+
 #define LED_G_ON() palClearPad(GPIOF, GPIOF_LED_G)
 #define LED_G_OFF() palSetPad(GPIOF, GPIOF_LED_G)
 #define LED_G_TOGGLE() palTogglePad(GPIOF, GPIOF_LED_G)
