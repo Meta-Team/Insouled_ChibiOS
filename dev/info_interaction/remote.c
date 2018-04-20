@@ -2,12 +2,24 @@
 // Created by Lan Tian on 18/03/2018.
 //
 
-#include <main.h>
+#include "global.h"
 #include "remote.h"
 
 char remoteData[REMOTE_DATA_SIZE];
 
 remote_info_t remote;
+
+static UARTConfig remoteUartConfig = {
+        NULL,
+        NULL,
+        remoteReceived,
+        NULL,
+        NULL,
+        100000,
+        USART_CR1_PCE,
+        0,
+        0,
+};
 
 void remote_init(void) {
     palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
@@ -33,12 +45,9 @@ void remoteReceived(UARTDriver *uartp) {
     remote.ch3 = (((remoteData[4] >> 1 | remoteData[5] << 7) & 0x07FF) - 1024.0f) / 660.0f;
     ABS_LIMIT(remote.ch3, 1.0f);
 
-    remote.left_lever = ((remoteData[5] >> 4) & 0x000C) >> 2;
-    remote.right_lever = (remoteData[5] >> 4) & 0x0003;
+    remote.left_lever = (remote_lever_state_t) ((remoteData[5] >> 4) & 0x000C) >> 2;
+    remote.right_lever = (remote_lever_state_t) (remoteData[5] >> 4) & 0x0003;
     chSysUnlock();
-
-
-    mode_handle();
 
     uartStartReceive(&REMOTE_UART_PORT, REMOTE_DATA_SIZE, remoteData);
 }

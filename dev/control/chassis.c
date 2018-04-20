@@ -62,22 +62,6 @@ void chassis_calculate(void) {
 
 }
 
-static THD_WORKING_AREA(chassis_calc_wa, 256);
-
-static THD_FUNCTION(chassis_calc, p) {
-
-    (void) p;
-    chRegSetThreadName("chassis_calc");
-
-    while (true) {
-        chassis_calculate();
-        //TODO: Modify the time interval
-        chThdSleepMilliseconds(10);
-    }
-}
-
 void chassis_calc_init(void) {
-    //TODO: Understand and modify the priority of the thread.
-    chThdCreateStatic(chassis_calc_wa, sizeof(chassis_calc_wa), NORMALPRIO + 6,
-                      chassis_calc, NULL);
+    // Do nothing at this moment
 }

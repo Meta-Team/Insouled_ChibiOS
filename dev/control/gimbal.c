@@ -32,12 +32,9 @@ void gimbal_calculate(void) {
         case GLOBAL_MODE_REMOTE_GIMBAL: {
 
 
-
-
             chSysLock();
             if (!EQUAL_ZERO(remote.ch0)) {
-
-                gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int)(SIGN(remote.ch0) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
+                gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int) (SIGN(remote.ch0) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
                 gimbal.motor[GIMBAL_MOTOR_YAW].target_angle =
                         gimbal.motor[GIMBAL_MOTOR_YAW].present_angle + gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle;
             } else {
@@ -45,7 +42,9 @@ void gimbal_calculate(void) {
                         gimbal.motor[GIMBAL_MOTOR_YAW].target_angle - gimbal.motor[GIMBAL_MOTOR_YAW].present_angle;
             }
             if (!EQUAL_ZERO(remote.ch1)) {
-                gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int)(SIGN(remote.ch1) * (remote.ch1 > 0 ? GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP : GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN));
+                gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int) (SIGN(remote.ch1) *
+                                                                    (remote.ch1 > 0 ? GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP
+                                                                                    : GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN));
                 gimbal.motor[GIMBAL_MOTOR_PIT].target_angle =
                         gimbal.motor[GIMBAL_MOTOR_PIT].present_angle + gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle;
             } else {
@@ -80,20 +79,6 @@ void gimbal_calculate(void) {
     }
 }
 
-static THD_WORKING_AREA(gimbal_calc_wa, 256);
-
-static THD_FUNCTION(gimbal_calc, p) {
-
-    (void) p;
-    chRegSetThreadName("gimbal_calc");
-
-    while (true) {
-        gimbal_calculate();
-        //TODO: Modify the time interval
-        chThdSleepMilliseconds(10);
-    }
-}
-
 void gimbal_calc_init(void) {
 
     for (int i = 0; i < 2; ++i) {
@@ -104,9 +89,5 @@ void gimbal_calc_init(void) {
     }
 
     pid_init(&pid_yaw, 8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
-    pid_init(&pid_pitch, 50.0, 1.2, 0, 1800.0, GIMBAL_MOTOR_MAX_CURRENT);
-
-    //TODO: Understand and modify the priority of the thread.
-    chThdCreateStatic(gimbal_calc_wa, sizeof(gimbal_calc_wa), NORMALPRIO + 6,
-                      gimbal_calc, NULL);
+    pid_init(&pid_pitch, 20.0, 0.3, 0, 1500.0, GIMBAL_MOTOR_MAX_CURRENT);
 }
