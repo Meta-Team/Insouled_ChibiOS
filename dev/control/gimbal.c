@@ -104,7 +104,7 @@ void gimbal_calc_init(void) {
     }
 
     pid_init(&pid_yaw, 8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
-    pid_init(&pid_pitch, 20.0, 0.3, 0, 1500.0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_pitch, 50.0, 1.2, 0, 1800.0, GIMBAL_MOTOR_MAX_CURRENT);
 
     //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(gimbal_calc_wa, sizeof(gimbal_calc_wa), NORMALPRIO + 6,
