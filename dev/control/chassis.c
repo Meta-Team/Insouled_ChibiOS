@@ -72,7 +72,7 @@ static THD_FUNCTION(chassis_calc, p) {
     while (true) {
         chassis_calculate();
         //TODO: Modify the time interval
-        chThdSleepMilliseconds(20);
+        chThdSleepMilliseconds(10);
     }
 }
 

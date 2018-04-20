@@ -37,7 +37,7 @@ void gimbal_calculate(void) {
             chSysLock();
             if (!EQUAL_ZERO(remote.ch0)) {
 
-                gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int)(remote.ch0 * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
+                gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int)(SIGN(remote.ch0) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
                 gimbal.motor[GIMBAL_MOTOR_YAW].target_angle =
                         gimbal.motor[GIMBAL_MOTOR_YAW].present_angle + gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle;
             } else {
@@ -45,7 +45,7 @@ void gimbal_calculate(void) {
                         gimbal.motor[GIMBAL_MOTOR_YAW].target_angle - gimbal.motor[GIMBAL_MOTOR_YAW].present_angle;
             }
             if (!EQUAL_ZERO(remote.ch1)) {
-                gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int)(remote.ch1 * GIMBAL_ANGLE_REMOTE_RATIO_PIT);
+                gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int)(SIGN(remote.ch1) * (remote.ch1 > 0 ? GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP : GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN));
                 gimbal.motor[GIMBAL_MOTOR_PIT].target_angle =
                         gimbal.motor[GIMBAL_MOTOR_PIT].present_angle + gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle;
             } else {
@@ -103,8 +103,8 @@ void gimbal_calc_init(void) {
         gimbal.motor[i].delta_angle = 0;
     }
 
-    pid_init(&pid_yaw, 15.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
-    pid_init(&pid_pitch, 100.0, 10.0, 0, 500.0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_yaw, 8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_pitch, 20.0, 0.3, 0, 1500.0, GIMBAL_MOTOR_MAX_CURRENT);
 
     //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(gimbal_calc_wa, sizeof(gimbal_calc_wa), NORMALPRIO + 6,
