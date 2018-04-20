@@ -23,7 +23,7 @@ typedef enum _global_mode_t {
 } global_mode_t;
 extern global_mode_t global_mode;
 
-void mode_handle(void);
+void mode_handle_calculate(void);
 void mode_handle_init(void);
 
 #endif //INSOULED_CHIBIOS_MODE_HANDLE_H

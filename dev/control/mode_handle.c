@@ -13,7 +13,7 @@ global_mode_t transistion_rules[3][3] = {
 };
 
 
-void mode_handle(void) {
+void mode_handle_calculate(void) {
     if(remote.left_lever >= 1 && remote.left_lever <= 3 &&
             remote.right_lever >= 1 && remote.right_lever <=3) {
         global_mode = transistion_rules[remote.left_lever - 1][remote.right_lever - 1];
@@ -21,17 +21,37 @@ void mode_handle(void) {
         global_mode = GLOBAL_MODE_SAFETY;
     }
 
+    switch (global_mode) {
+        case GLOBAL_MODE_REMOTE_CHASSIS:
+            chassis_calculate();
+            break;
+        case GLOBAL_MODE_REMOTE_GIMBAL:
+            gimbal_calculate();
+            break;
+        default: CHASSIS_ZERO_CURRENT();
+            GIMBAL_ZERO_CURRENT();
 
-    // Quick Action
-    if (global_mode == GLOBAL_MODE_SAFETY) {
-        CHASSIS_ZERO_CURRENT();
-        GIMBAL_ZERO_CURRENT();
+            send_chassis_currents();
+            send_gimbal_currents();
+    }
+}
 
-        send_chassis_currents();
-        send_gimbal_currents();
+
+static THD_WORKING_AREA(mode_handle_wa, 256);
+
+static THD_FUNCTION(mode_handle, p) {
+    (void) p;
+    chRegSetThreadName("mode_handle");
+
+    while (true) {
+        mode_handle_calculate();
+        //TODO: Modify the time interval
+        chThdSleepMilliseconds(20);
     }
 }
 
 void mode_handle_init(void) {
     global_mode = GLOBAL_MODE_SAFETY;
+    chThdCreateStatic(mode_handle_wa, sizeof(mode_handle_wa), NORMALPRIO,
+                      mode_handle, NULL);
 }
