@@ -69,41 +69,28 @@ static THD_WORKING_AREA(can_rx1_wa, 256);
 static THD_WORKING_AREA(can_rx2_wa, 256);
 
 static THD_FUNCTION(can_rx, p) {
-    //struct can_instance *cip = p;
     CANDriver *canp = p;
-  event_listener_t el;
-  CANRxFrame rxmsg;
+    event_listener_t el;
+    CANRxFrame rxmsg;
 
-  (void)p;
-  chRegSetThreadName("can_receiver");
+    chRegSetThreadName("can_receiver");
     chEvtRegister(&canp->rxfull_event, &el, 0);
-  while (true) {
-    if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0)
-      continue;
-      while (canReceive(canp, CAN_ANY_MAILBOX,
-                        &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
-      // Process message.
+    while (true) {
+        if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0) continue;
+        while (canReceive(canp, CAN_ANY_MAILBOX, &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
+            // Process message.
 
-        switch (rxmsg.SID) {
-            case 0x205:
-            case 0x206:
-            {
-                process_gimbal_feedback(&rxmsg);
+            switch (rxmsg.SID) {
+                case 0x205:
+                case 0x206:
+                    process_gimbal_feedback(&rxmsg);
+                    break;
             }
-            break;
         }
     }
-  }
 }
 
-
-
-
-
-
-
 /* Transmit */
-
 void send_chassis_currents(void) {
 
 #ifndef MANUAL_DEBUG
@@ -197,9 +184,9 @@ void motor_can_init(void) {
 
   //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
-                      can_rx, (void *) &CAND1);
+                      can_rx, &CAND1);
     chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
-                      can_rx, (void *) &CAND2);
+                      can_rx, &CAND2);
     /*chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
                       can_tx, NULL);*/
 }
