@@ -93,7 +93,7 @@ static THD_FUNCTION(gimbal_calc, p) {
         chThdSleepMilliseconds(10);
     }
 }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 void gimbal_calc_init(void) {
 
     for (int i = 0; i < 2; ++i) {

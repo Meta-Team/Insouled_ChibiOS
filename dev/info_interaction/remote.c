@@ -42,3 +42,23 @@ void remoteReceived(UARTDriver *uartp) {
 
     uartStartReceive(&REMOTE_UART_PORT, REMOTE_DATA_SIZE, remoteData);
 }
+
+void pcReceived(UARTDriver *uartp) {
+    (void) uartp;
+
+    chSysLock();
+    mouse.x = (remoteData[6] | (remoteData[7] << 8)) / 32768.0f;
+    mouse.y = (remoteData[8] | (remoteData[9] << 8)) / 32768.0f;
+    mouse.z = (remoteData[10] | (remoteData[11] << 8)) / 32768.0f;
+
+    mouse.press_left = remoteData[12];
+    mouse.press_right = remoteData[13];
+
+    keyboard = remoteData[14] | remoteData[15] << 8;
+    chSysUnlock();
+
+
+    mode_handle();
+
+    uartStartReceive(&REMOTE_UART_PORT, REMOTE_DATA_SIZE, remoteData);
+}

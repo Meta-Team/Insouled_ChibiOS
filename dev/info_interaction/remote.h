@@ -48,6 +48,19 @@ typedef struct {
 } remote_info_t;
 extern remote_info_t remote;
 
+
+typedef struct {
+    float x;
+    float y;
+    float z;
+    int press_left;
+    int press_right;
+} mouse_info_t;
+
+mouse_info_t mouse;
+
+uint16_t keyboard;
+
 #define MAX_VALID_CHANGE 0.3f
 
 #endif //INSOULED_REMOTE_H
