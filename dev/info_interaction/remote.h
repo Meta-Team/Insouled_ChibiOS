@@ -43,14 +43,22 @@ typedef struct {
     float x;
     float y;
     float z;
-    int press_left;
-    int press_right;
+    bool press_left;
+    bool press_right;
 } mouse_info_t;
+extern mouse_info_t mouse;
 
-mouse_info_t mouse;
+typedef struct {
+    bool press_w;
+    bool press_s;
+    bool press_a;
+    bool press_d;
+    bool press_q;
+    bool press_e;
+    bool press_shift;
+    bool press_ctrl;
+} keyboard_info_t;
+extern keyboard_info_t keyboard;
 
-uint16_t keyboard;
-
-#define MAX_VALID_CHANGE 0.3f
 
 #endif //INSOULED_REMOTE_H
