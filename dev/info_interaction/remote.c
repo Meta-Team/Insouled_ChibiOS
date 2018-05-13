@@ -51,24 +51,27 @@ void remoteReceived(UARTDriver *uartp) {
     remote.left_lever = (remote_lever_state_t) ((remoteData[5] >> 4) & 0x000C) >> 2;
     remote.right_lever = (remote_lever_state_t) (remoteData[5] >> 4) & 0x0003;
 
-    mouse.x = (remoteData[6] | (remoteData[7] << 8)) / 32768.0f;
+    mouse.x = (int16_t)(remoteData[6] | ((int16_t)remoteData[7] << 8)) / 32768.0f;
     ABS_LIMIT(mouse.x, 1.0f);
-    mouse.y = (remoteData[8] | (remoteData[9] << 8)) / 32768.0f;
+    mouse.y = (int16_t)(remoteData[8] | ((int16_t)remoteData[9] << 8)) / 32768.0f;
     ABS_LIMIT(mouse.y, 1.0f);
-    mouse.z = (remoteData[10] | (remoteData[11] << 8)) / 32768.0f;
+    mouse.z = (int16_t)(remoteData[10] | ((int16_t)remoteData[11] << 8)) / 32768.0f;
     ABS_LIMIT(mouse.z, 1.0f);
 
     mouse.press_left = (bool)remoteData[12];
     mouse.press_right = (bool)remoteData[13];
 
-    keyboard.press_w = (bool)((remoteData[14]) & 1);
-    keyboard.press_s = (bool)((remoteData[14] >> 1) & 1);
-    keyboard.press_a = (bool)((remoteData[14] >> 2) & 1);
-    keyboard.press_d = (bool)((remoteData[14] >> 3) & 1);
-    keyboard.press_q = (bool)((remoteData[14] >> 4) & 1);
-    keyboard.press_e = (bool)((remoteData[14] >> 5) & 1);
-    keyboard.press_shift = (bool)((remoteData[14] >> 6) & 1);
-    keyboard.press_ctrl = (bool)((remoteData[14] >> 7) & 1);
+
+    uint16_t keycode = (remoteData[14] | ((uint16_t)remoteData[15] << 8));
+    keyboard.press_w = (bool)((keycode) & 1);
+    keyboard.press_s = (bool)((keycode >> 1) & 1);
+    keyboard.press_a = (bool)((keycode >> 2) & 1);
+    keyboard.press_d = (bool)((keycode >> 3) & 1);
+    keyboard.press_q = (bool)((keycode >> 4) & 1);
+    if (keyboard.press_q) LED_R_TOGGLE();
+    keyboard.press_e = (bool)((keycode >> 5) & 1);
+    keyboard.press_shift = (bool)((keycode >> 6) & 1);
+    keyboard.press_ctrl = (bool)((keycode >> 7) & 1);
 
     chSysUnlock();
 

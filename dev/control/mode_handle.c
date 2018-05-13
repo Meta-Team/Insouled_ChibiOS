@@ -22,13 +22,20 @@ void mode_handle_calculate(void) {
     }
 
     switch (global_mode) {
-        case GLOBAL_MODE_REMOTE_CHASSIS: GIMBAL_ZERO_CURRENT();
+        case GLOBAL_MODE_REMOTE_CHASSIS:
+            GIMBAL_ZERO_CURRENT();
             chassis_calculate();
             break;
-        case GLOBAL_MODE_REMOTE_GIMBAL: CHASSIS_ZERO_CURRENT();
+        case GLOBAL_MODE_REMOTE_GIMBAL:
+            CHASSIS_ZERO_CURRENT();
             gimbal_calculate();
             break;
-        default: CHASSIS_ZERO_CURRENT();
+        case GLOBAL_MODE_PC:
+            gimbal_calculate();
+            chassis_calculate();
+            break;
+        default:
+            CHASSIS_ZERO_CURRENT();
             GIMBAL_ZERO_CURRENT();
     }
 

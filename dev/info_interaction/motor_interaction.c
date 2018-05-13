@@ -2,7 +2,7 @@
 // Created by liuzikai on 2018/4/4.
 //
 
-#include <control/gimbal.h>
+#include <motor_interaction.h>
 
 
 /* CAN Configurations */
@@ -54,13 +54,13 @@ void process_gimbal_feedback(CANRxFrame* rxmsg) {
         else LED_G_OFF();
         */
 
-        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < gimbal.motor[GIMBAL_MOTOR_PIT].target_angle){
+        /*if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < gimbal.motor[GIMBAL_MOTOR_PIT].target_angle){
             LED_R_ON();
             LED_G_OFF();
         } else {
             LED_R_OFF();
             LED_G_ON();
-        }
+        }*/
     }
 
 }

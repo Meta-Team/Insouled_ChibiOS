@@ -13,8 +13,12 @@
 #define CHASSIS_RC_MAX_SPEED_X  2000.0f //3300.0f
 #define CHASSIS_RC_MAX_SPEED_Y  2000.0f //3300.0f
 
+#define CHASSIS_PC_MAX_SPEED_X  2000.0f //3300.0f
+#define CHASSIS_PC_MAX_SPEED_Y  2000.0f //3300.0f
+
 /* Chassis rotation speed (deg/s) */
 #define CHASSIS_RC_MAX_W 200.0f //300.0f
+#define CHASSIS_PC_MAX_W 200.0f //300.0f
 
 #define CHASSIS_MOTOE_MAX_SPEED 5000 //8500
 #define CHASSIS_MOTOR_MAX_CURRENT 5000 //20000
