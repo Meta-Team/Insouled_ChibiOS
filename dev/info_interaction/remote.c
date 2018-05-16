@@ -62,16 +62,27 @@ void remoteReceived(UARTDriver *uartp) {
     mouse.press_right = (bool)remoteData[13];
 
 
-    uint16_t keycode = (remoteData[14] | ((uint16_t)remoteData[15] << 8));
-    keyboard.press_w = (bool)((keycode) & 1);
-    keyboard.press_s = (bool)((keycode >> 1) & 1);
-    keyboard.press_a = (bool)((keycode >> 2) & 1);
-    keyboard.press_d = (bool)((keycode >> 3) & 1);
-    keyboard.press_q = (bool)((keycode >> 4) & 1);
+    uint16_t keycode = ((uint16_t) remoteData[14] | ((uint16_t)remoteData[15] << 8));
+    /*keyboard.press_w = (bool)(keycode & ((uint16_t)0x01 << 0));
+    keyboard.press_s = (bool)(keycode & ((uint16_t)0x01 << 1));
+    keyboard.press_a = (bool)(keycode & ((uint16_t)0x01 << 2));
+    keyboard.press_d = (bool)(keycode & ((uint16_t)0x01 << 3));
+    keyboard.press_q = (bool)(keycode & ((uint16_t)0x01 << 4));
     if (keyboard.press_q) LED_R_TOGGLE();
-    keyboard.press_e = (bool)((keycode >> 5) & 1);
-    keyboard.press_shift = (bool)((keycode >> 6) & 1);
-    keyboard.press_ctrl = (bool)((keycode >> 7) & 1);
+    keyboard.press_e = (bool)(keycode & ((uint16_t)0x01 << 5));
+    keyboard.press_shift = (bool)(keycode & ((uint16_t)0x01 << 6));
+    keyboard.press_ctrl = (bool)(keycode & ((uint16_t)0x01 << 7));*/
+
+    keyboard.press_w = (bool)(keycode >> 0 & 0x01);
+    keyboard.press_s = (bool)(keycode >> 1 & 0x01);
+    keyboard.press_a = (bool)(keycode >> 2 & 0x01);
+    keyboard.press_d = (bool)(keycode >> 3 & 0x01);
+    keyboard.press_ctrl = (bool)(keycode >> 4 & 0x01);
+    keyboard.press_shift = (bool)(keycode >> 5 & 0x01);
+    keyboard.press_e = (bool)(keycode >> 6 & 0x01);
+    keyboard.press_q = (bool)(keycode >> 7 & 0x01);
+
+
 
     chSysUnlock();
 

@@ -15,52 +15,33 @@ static const CANConfig cancfg = {
 /* Receive */
 
 void process_gimbal_feedback(CANRxFrame* rxmsg) {
-    int motor_id;
+    int motor_id = -1;
 
-    if (rxmsg->SID == 0x205) motor_id = GIMBAL_MOTOR_YAW;
-    else motor_id = GIMBAL_MOTOR_PIT;
+//    if (rxmsg->SID == 0x205) motor_id = GIMBAL_MOTOR_YAW;
+//    else if(rxmsg->SID == 0x206) motor_id = GIMBAL_MOTOR_PIT;
+    motor_id = rxmsg->SID - 0x205;
 
     int new_angle = (int)((rxmsg->data8[0] << 8 | rxmsg->data8[1]));
-    /*if (gimbal.motor[motor_id].default_angle < -365) {
-        gimbal.motor[motor_id].target_angle = gimbal.motor[motor_id].default_angle = new_angle;
-    } else {
-        new_angle -= gimbal.motor[motor_id].default_angle;
-
-        int pre_angle = gimbal.motor[motor_id].present_angle % 360;
-        if
-        if ( > 340.0f && new_angle < 20.0f) new_angle += 360.0f;
-    }
-     */
-    //gimbal.motor[motor_id].present_angle = new_angle;
 
     if (motor_id == GIMBAL_MOTOR_YAW) {
-        if (new_angle <= 3300) gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle - 35.0);
-        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 325.0);
 
-        /*
-        if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 90) LED_G_ON();
-        else LED_G_OFF();
+        if (new_angle <= 5000) gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 40);
+        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 400);
 
-        if (gimbal.motor[GIMBAL_MOTOR_YAW].present_angle < 0 && gimbal.motor[GIMBAL_MOTOR_YAW].present_angle > -90) LED_R_ON();
-        else LED_R_OFF();*/
+
     } else if (motor_id == GIMBAL_MOTOR_PIT) {
+
+        if (new_angle <= 3004) gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle - 48);
+        else gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle + 312);
+
         gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle + 304.0);
 
-        /*
-        if (new_angle > 7000 && new_angle < 7100) LED_R_ON();
-        else LED_R_OFF();
+//        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle > 0 && gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < 2) LED_G_ON();
+//        else LED_G_OFF();
+//
+//        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle > -2 && gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < 0) LED_R_ON();
+//        else LED_R_OFF();
 
-        if (new_angle > 6900 && new_angle < 7000) LED_G_ON();
-        else LED_G_OFF();
-        */
-
-        /*if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < gimbal.motor[GIMBAL_MOTOR_PIT].target_angle){
-            LED_R_ON();
-            LED_G_OFF();
-        } else {
-            LED_R_OFF();
-            LED_G_ON();
-        }*/
     }
 
 }

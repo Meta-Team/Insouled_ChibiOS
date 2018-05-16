@@ -10,7 +10,7 @@ struct pid_t pid_pitch;
 
 gimbal_t gimbal;
 
-void calculate_gimbal(float yaw, float pitch) {
+static void calculate_gimbal(float yaw, float pitch) {
     chSysLock();
     if (!EQUAL_ZERO(yaw)) {
                 gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int) (SIGN(yaw) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);

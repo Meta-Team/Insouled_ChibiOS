@@ -30,9 +30,9 @@
 #define CHASSIS_DECELE_RATIO (1.0f/19.0f)
 
 /* wheel track distance(mm) */
-#define CHASSIS_WHEELTRACK 403
+#define CHASSIS_WHEELTRACK 358
 /* wheelbase distance(mm) */
-#define CHASSIS_WHEELBASE  385
+#define CHASSIS_WHEELBASE  358
 
 /* radian coefficient */
 #define CHASSIS_RADIAN_COEF 57.3f
@@ -40,9 +40,9 @@
 
 
 #define CHASSIS_MOTOR_FR 0
-#define CHASSIS_MOTOR_BR 1
-#define CHASSIS_MOTOR_FL 2
-#define CHASSIS_MOTOR_BL 3
+#define CHASSIS_MOTOR_FL 1
+#define CHASSIS_MOTOR_BL 2
+#define CHASSIS_MOTOR_BR 3
 
 typedef struct {
     float vx;

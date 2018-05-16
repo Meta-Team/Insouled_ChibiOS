@@ -25,9 +25,8 @@
 
 #define GIMBAL_MOTOR_MAX_CURRENT 4000 //5000
 
-//FIXME: This is a temporary for the first vehicle which swap two gimbal motors errorly  (╯°□°）╯︵┻━┻
-#define GIMBAL_MOTOR_YAW 1
-#define GIMBAL_MOTOR_PIT 0
+#define GIMBAL_MOTOR_YAW 0
+#define GIMBAL_MOTOR_PIT 1
 
 typedef struct {
     int default_angle;
