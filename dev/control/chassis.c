@@ -6,6 +6,7 @@
 #include "chassis.h"
 
 chassis_t chassis;
+struct pid_t chassis_pid;
 
 static void calculate_current(void) {
     //Calculate speeds of each wheel
@@ -95,5 +96,5 @@ void chassis_calculate(void) {
 }
 
 void chassis_calc_init(void) {
-    // Do nothing at this moment
+    pid_init(&chassis_pid, 1.50, 0.0, 0.0, 0.0, 3000.0);
 }
