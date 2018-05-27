@@ -17,14 +17,6 @@ static void calculate_current(void) {
     chassis.motor[2].target_rpm = (int) (( chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
     chassis.motor[3].target_rpm = (int) ((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
 
-    if (abs(chassis.motor[0].actual_rpm) > 7000) {
-        LED_R_ON();
-        LED_G_OFF();
-    } else {
-        LED_R_OFF();
-        LED_G_ON();
-    }
-
     // Limit the max wheel speeds
     int max_motor_speed = 0;
     for (int i = 0; i < 4; i++) {
@@ -33,7 +25,7 @@ static void calculate_current(void) {
     }
 
     if (max_motor_speed > CHASSIS_MOTOE_MAX_SPEED) {
-        LED_R_TOGGLE();
+        //LED_R_TOGGLE();
         float rate = (float) CHASSIS_MOTOE_MAX_SPEED / max_motor_speed;
         for (int i = 0; i < 4; i++)
             chassis.motor[i].target_rpm *= rate;
@@ -108,6 +100,6 @@ void chassis_calculate(void) {
 
 void chassis_calc_init(void) {
     for (int i = 0; i < 4; i++) {
-        pid_init(&chassis_pid[i], 2.0, 0.0, 0.0, 0.0, 2000.0);
+        pid_init(&chassis_pid[i], 1.0, 0.0, 0.0, 0.0, 2000.0);
     }
 }

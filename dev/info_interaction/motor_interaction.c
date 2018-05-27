@@ -4,6 +4,7 @@
 
 #include <motor_interaction.h>
 #include <main.h>
+#include <control/chassis.h>
 
 
 /* CAN Configurations */
@@ -18,9 +19,10 @@ void process_chassis_feedback(CANRxFrame* rxmsg) {
     int motor_id = rxmsg->SID - 0x201;
     uint16_t report_angle = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
     chassis.motor[motor_id].actual_angle = report_angle / 8192;
-    chassis.motor[motor_id].actual_rpm = -(int)(rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+    chassis.motor[motor_id].actual_rpm = (int16_t)(rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+//    if(motor_id == 0 || motor_id == 3) chassis.motor[motor_id].actual_rpm = -chassis.motor[motor_id].actual_rpm;
 
-//    if (motor_id == 0) {
+//    if (motor_id == 1) {
 //        if ((rxmsg->data8[2] >> 7) & 1) {
 //            LED_R_ON();
 //            LED_G_OFF();

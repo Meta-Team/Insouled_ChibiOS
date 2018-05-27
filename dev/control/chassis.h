@@ -46,10 +46,10 @@
 #define CHASSIS_MOTOR_BR 3
 
 typedef struct {
-    int target_rpm;
+    int16_t target_rpm;
     int16_t target_current;
     uint16_t actual_angle;
-    int actual_rpm;
+    int16_t actual_rpm;
     int16_t actual_current;
     uint8_t actual_temperature;
 } motor_t;
