@@ -45,11 +45,19 @@
 #define CHASSIS_MOTOR_BR 3
 
 typedef struct {
+    int motor_speed;
+    uint16_t motor_current;
+    uint16_t actual_angle;
+    uint16_t actual_rpm;
+    uint16_t actual_current;
+    uint8_t actual_temperature;
+} motor_t;
+
+typedef struct {
     float vx;
     float vy;
     float w;
-    int motor_speed[4];
-    int16_t motor_current[4];
+    motor_t motor[4];
 } chassis_t;
 extern chassis_t chassis;
 
