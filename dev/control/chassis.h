@@ -47,10 +47,10 @@
 
 typedef struct {
     int target_rpm;
-    uint16_t target_current;
+    int16_t target_current;
     uint16_t actual_angle;
     uint16_t actual_rpm;
-    uint16_t actual_current;
+    int16_t actual_current;
     uint8_t actual_temperature;
 } motor_t;
 
@@ -63,10 +63,10 @@ typedef struct {
 extern chassis_t chassis;
 
 #define CHASSIS_ZERO_CURRENT() { \
-    chassis.motor_current[0] = 0; \
-    chassis.motor_current[1] = 0; \
-    chassis.motor_current[2] = 0; \
-    chassis.motor_current[3] = 0; \
+    chassis.motor[0].target_current = 0; \
+    chassis.motor[1].target_current = 0; \
+    chassis.motor[2].target_current = 0; \
+    chassis.motor[3].target_current = 0; \
 }
 
 

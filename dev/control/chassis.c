@@ -32,7 +32,7 @@ static void calculate_current(void) {
     }
 
     for (int i = 0; i < 4; i++) {
-        chassis.motor[i].target_current = chassis_pid.calc(chassis.motor[i].actual_rpm, chassis.motor[i].target_rpm);
+        chassis.motor[i].target_current = (int16_t) pid_calc(&chassis_pid, chassis.motor[i].actual_rpm, chassis.motor[i].target_rpm);
     }
 }
 
@@ -96,5 +96,5 @@ void chassis_calculate(void) {
 }
 
 void chassis_calc_init(void) {
-    chassis_pid.init(1.50, 0.0, 0.0, 0.0, 3000.0);
+    pid_init(&chassis_pid, 1.50, 0.0, 0.0, 0.0, 3000.0);
 }

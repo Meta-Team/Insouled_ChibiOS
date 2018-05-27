@@ -96,10 +96,10 @@ void send_chassis_currents(void) {
   ABS_LIMIT_FEEDBACK(chassis.target_current[2], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
   ABS_LIMIT_FEEDBACK(chassis.target_current[3], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
 #else
-  ABS_LIMIT(chassis.motor[0].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor[1].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor[2].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor[3].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[0].target_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[1].target_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[2].target_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[3].target_current, CHASSIS_MOTOR_MAX_CURRENT);
 #endif
 
   CANTxFrame txmsg;
@@ -107,14 +107,14 @@ void send_chassis_currents(void) {
   txmsg.SID = 0x200;
   txmsg.RTR = CAN_RTR_DATA;
   txmsg.DLC = 0x08;
-  txmsg.data8[0] = (uint8_t) (chassis.motor[0].motor_current >> 8);
-  txmsg.data8[1] = (uint8_t) chassis.motor[0].motor_current;
-  txmsg.data8[2] = (uint8_t) (chassis.motor[1].motor_current >> 8);
-  txmsg.data8[3] = (uint8_t) chassis.motor[1].motor_current;
-  txmsg.data8[4] = (uint8_t) (chassis.motor[2].motor_current >> 8);
-  txmsg.data8[5] = (uint8_t) chassis.motor[2].motor_current;
-  txmsg.data8[6] = (uint8_t) (chassis.motor[3].motor_current >> 8);
-  txmsg.data8[7] = (uint8_t) chassis.motor[3].motor_current;
+  txmsg.data8[0] = (uint8_t) (chassis.motor[0].target_current >> 8);
+  txmsg.data8[1] = (uint8_t) chassis.motor[0].target_current;
+  txmsg.data8[2] = (uint8_t) (chassis.motor[1].target_current >> 8);
+  txmsg.data8[3] = (uint8_t) chassis.motor[1].target_current;
+  txmsg.data8[4] = (uint8_t) (chassis.motor[2].target_current >> 8);
+  txmsg.data8[5] = (uint8_t) chassis.motor[2].target_current;
+  txmsg.data8[6] = (uint8_t) (chassis.motor[3].target_current >> 8);
+  txmsg.data8[7] = (uint8_t) chassis.motor[3].target_current;
   canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 

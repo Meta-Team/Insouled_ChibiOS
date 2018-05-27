@@ -26,37 +26,9 @@ struct pid_t
     float out_limit;
 
     float out;
-
-    void init(float p, float i, float d, float i_lim, float out_lim) {
-        kp = p;
-        ki = i;
-        kd = d;
-
-        i_limit = i_lim;
-        out_limit = out_lim;
-
-        p_out = i_out = d_out = out = 0;
-
-        error[0] = error[1] = 0.0;
-    }
-
-    float calc(float now_value, float target_value) {
-        now = now_value;
-        target = target_value;
-        error[1] = error[0];
-        error[0] = target - now;
-
-        //Position PID
-        p_out = kp * error[0];
-        i_out += ki * error[0];
-        d_out = kd * (error[0] - error[1]);
-
-        ABS_LIMIT(i_out, i_limit);
-        out = p_out + i_out +d_out;
-        ABS_LIMIT(out, out_limit);
-
-        return calc
-    }
 };
+
+void pid_init(struct pid_t *pid, float kp, float ki, float kd, float i_limit, float out_limit);
+float pid_calc(struct pid_t *pid, float now, float target);
 
 #endif //INSOULED_CHIBIOS_PID_H
