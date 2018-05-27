@@ -3,6 +3,7 @@
 //
 
 #include <motor_interaction.h>
+#include <main.h>
 
 
 /* CAN Configurations */
@@ -13,7 +14,16 @@ static const CANConfig cancfg = {
 };
 
 /* Receive */
+void process_chassis_feedback(CANRxFrame* rxmsg) {
+    int motor_id = rxmsg->SID - 0x201;
+    uint16_t report_angle = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
+    chassis.motor[motor_id].actual_angle = report_angle / 8192;
+    chassis.motor[motor_id].actual_rpm = (rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+    chassis.motor[motor_id].actual_current = (rxmsg->data8[4] << 8 | rxmsg->data8[5]);
+    chassis.motor[motor_id].actual_temperature = rxmsg->data8[6];
+}
 
+/* Receive */
 void process_gimbal_feedback(CANRxFrame* rxmsg) {
     int motor_id = -1;
 
@@ -62,6 +72,12 @@ static THD_FUNCTION(can_rx, p) {
             // Process message.
 
             switch (rxmsg.SID) {
+                case 0x201:
+                case 0x202:
+                case 0x203:
+                case 0x204:
+                    process_chassis_feedback(&rxmsg);
+                    break;
                 case 0x205:
                 case 0x206:
                     process_gimbal_feedback(&rxmsg);
@@ -80,10 +96,10 @@ void send_chassis_currents(void) {
   ABS_LIMIT_FEEDBACK(chassis.target_current[2], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
   ABS_LIMIT_FEEDBACK(chassis.target_current[3], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
 #else
-  ABS_LIMIT(chassis.motor_current[0], CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor_current[1], CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor_current[2], CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor_current[3], CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[0].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[1].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[2].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
+  ABS_LIMIT(chassis.motor[3].motor_current, CHASSIS_MOTOR_MAX_CURRENT);
 #endif
 
   CANTxFrame txmsg;
@@ -91,14 +107,14 @@ void send_chassis_currents(void) {
   txmsg.SID = 0x200;
   txmsg.RTR = CAN_RTR_DATA;
   txmsg.DLC = 0x08;
-  txmsg.data8[0] = (uint8_t) (chassis.motor_current[0] >> 8);
-  txmsg.data8[1] = (uint8_t) chassis.motor_current[0];
-  txmsg.data8[2] = (uint8_t) (chassis.motor_current[1] >> 8);
-  txmsg.data8[3] = (uint8_t) chassis.motor_current[1];
-  txmsg.data8[4] = (uint8_t) (chassis.motor_current[2] >> 8);
-  txmsg.data8[5] = (uint8_t) chassis.motor_current[2];
-  txmsg.data8[6] = (uint8_t) (chassis.motor_current[3] >> 8);
-  txmsg.data8[7] = (uint8_t) chassis.motor_current[3];
+  txmsg.data8[0] = (uint8_t) (chassis.motor[0].motor_current >> 8);
+  txmsg.data8[1] = (uint8_t) chassis.motor[0].motor_current;
+  txmsg.data8[2] = (uint8_t) (chassis.motor[1].motor_current >> 8);
+  txmsg.data8[3] = (uint8_t) chassis.motor[1].motor_current;
+  txmsg.data8[4] = (uint8_t) (chassis.motor[2].motor_current >> 8);
+  txmsg.data8[5] = (uint8_t) chassis.motor[2].motor_current;
+  txmsg.data8[6] = (uint8_t) (chassis.motor[3].motor_current >> 8);
+  txmsg.data8[7] = (uint8_t) chassis.motor[3].motor_current;
   canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
