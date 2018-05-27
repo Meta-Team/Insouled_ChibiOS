@@ -6,16 +6,24 @@
 #include "chassis.h"
 
 chassis_t chassis;
-struct pid_t chassis_pid;
+struct pid_t chassis_pid[4];
 
 static void calculate_current(void) {
     //Calculate speeds of each wheel
     float rotate_ratio = ((CHASSIS_WHEELBASE + CHASSIS_WHEELTRACK) / 2.0f) / CHASSIS_RADIAN_COEF;
     float rpm_ratio = (60.0f / (CHASSIS_WHEEL_PERIMETER * CHASSIS_DECELE_RATIO));
     chassis.motor[0].target_rpm = (int) ((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-    chassis.motor[1].target_rpm = (int) ((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-    chassis.motor[2].target_rpm = (int) ((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+    chassis.motor[1].target_rpm = (int) (( chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+    chassis.motor[2].target_rpm = (int) (( chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
     chassis.motor[3].target_rpm = (int) ((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+
+    if (abs(chassis.motor[0].actual_rpm) > 7000) {
+        LED_R_ON();
+        LED_G_OFF();
+    } else {
+        LED_R_OFF();
+        LED_G_ON();
+    }
 
     // Limit the max wheel speeds
     int max_motor_speed = 0;
@@ -32,7 +40,10 @@ static void calculate_current(void) {
     }
 
     for (int i = 0; i < 4; i++) {
-        chassis.motor[i].target_current = (int16_t) pid_calc(&chassis_pid, chassis.motor[i].actual_rpm, chassis.motor[i].target_rpm);
+        chSysLock();
+        pid_calc(&chassis_pid[i], (float)chassis.motor[i].actual_rpm, (float)chassis.motor[i].target_rpm);
+        chassis.motor[i].target_current = (int16_t)chassis_pid[i].out;
+        chSysUnlock();
     }
 }
 
@@ -96,5 +107,7 @@ void chassis_calculate(void) {
 }
 
 void chassis_calc_init(void) {
-    pid_init(&chassis_pid, 1.50, 0.0, 0.0, 0.0, 3000.0);
+    for (int i = 0; i < 4; i++) {
+        pid_init(&chassis_pid[i], 2.0, 0.0, 0.0, 0.0, 2000.0);
+    }
 }

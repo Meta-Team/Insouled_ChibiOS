@@ -18,7 +18,18 @@ void process_chassis_feedback(CANRxFrame* rxmsg) {
     int motor_id = rxmsg->SID - 0x201;
     uint16_t report_angle = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
     chassis.motor[motor_id].actual_angle = report_angle / 8192;
-    chassis.motor[motor_id].actual_rpm = (rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+    chassis.motor[motor_id].actual_rpm = -(int)(rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+
+//    if (motor_id == 0) {
+//        if ((rxmsg->data8[2] >> 7) & 1) {
+//            LED_R_ON();
+//            LED_G_OFF();
+//        }
+//        else {
+//            LED_R_OFF();
+//            LED_G_ON();
+//        }
+//    }
     chassis.motor[motor_id].actual_current = (rxmsg->data8[4] << 8 | rxmsg->data8[5]);
     chassis.motor[motor_id].actual_temperature = rxmsg->data8[6];
 }

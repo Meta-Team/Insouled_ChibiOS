@@ -6,7 +6,6 @@
 #define INSOULED_CHIBIOS_PID_H
 
 #include "global.h"
-// DO NOT DELETE ME
 
 struct pid_t
 {
@@ -29,6 +28,6 @@ struct pid_t
 };
 
 void pid_init(struct pid_t *pid, float kp, float ki, float kd, float i_limit, float out_limit);
-float pid_calc(struct pid_t *pid, float now, float target);
+void pid_calc(struct pid_t *pid, float now, float target);
 
 #endif //INSOULED_CHIBIOS_PID_H

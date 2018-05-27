@@ -44,9 +44,10 @@ static void calculate_gimbal(float yaw, float pitch) {
     if (gimbal.motor[GIMBAL_MOTOR_PIT].target_angle< GIMBAL_PIT_MIN_ANGLE) {
                 gimbal.motor[GIMBAL_MOTOR_PIT].target_angle = GIMBAL_PIT_MIN_ANGLE;
             }
-
-    gimbal.motor[GIMBAL_MOTOR_YAW].target_current = (int16_t)(pid_calc(&pid_yaw, (float)gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle, (float)gimbal.motor[GIMBAL_MOTOR_YAW].target_angle));
-    gimbal.motor[GIMBAL_MOTOR_PIT].target_current = (int16_t)(pid_calc(&pid_pitch, (float)gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle, (float)gimbal.motor[GIMBAL_MOTOR_PIT].target_angle));
+    pid_calc(&pid_yaw, (float)gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle, (float)gimbal.motor[GIMBAL_MOTOR_YAW].target_angle);
+    gimbal.motor[GIMBAL_MOTOR_YAW].target_current = (int16_t)pid_yaw.out;
+    pid_calc(&pid_pitch, (float)gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle, (float)gimbal.motor[GIMBAL_MOTOR_PIT].target_angle);
+    gimbal.motor[GIMBAL_MOTOR_PIT].target_current = (int16_t)pid_pitch.out;
 
     chSysUnlock();
 }
