@@ -47,7 +47,7 @@
 typedef struct {
     int motor_speed;
     uint16_t motor_current;
-    uint16_t actual_angle;
+    float actual_angle;
     uint16_t actual_rpm;
     uint16_t actual_current;
     uint8_t actual_temperature;
