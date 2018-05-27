@@ -6,6 +6,7 @@
 #define INSOULED_CHIBIOS_PID_H
 
 #include "global.h"
+// DO NOT DELETE ME
 
 struct pid_t
 {
