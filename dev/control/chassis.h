@@ -38,6 +38,7 @@
 #define CHASSIS_RADIAN_COEF 57.3f
 
 
+// These IDs are corresponding to motor IDs
 
 #define CHASSIS_MOTOR_FR 0
 #define CHASSIS_MOTOR_FL 1
@@ -45,8 +46,8 @@
 #define CHASSIS_MOTOR_BR 3
 
 typedef struct {
-    int motor_speed;
-    uint16_t motor_current;
+    int target_rpm;
+    uint16_t target_current;
     uint16_t actual_angle;
     uint16_t actual_rpm;
     uint16_t actual_current;

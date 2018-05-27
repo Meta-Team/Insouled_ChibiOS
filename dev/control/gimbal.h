@@ -30,7 +30,7 @@
 
 typedef struct {
     int default_angle;
-    int present_angle;
+    int actual_angle;
     int delta_angle;
     int target_angle;
     int16_t target_current;

@@ -15,20 +15,20 @@ static void calculate_gimbal(float yaw, float pitch) {
     if (!EQUAL_ZERO(yaw)) {
                 gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int) (SIGN(yaw) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
                 gimbal.motor[GIMBAL_MOTOR_YAW].target_angle =
-                        gimbal.motor[GIMBAL_MOTOR_YAW].present_angle + gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle;
+                        gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle + gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle;
             } else {
                 gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle =
-                        gimbal.motor[GIMBAL_MOTOR_YAW].target_angle - gimbal.motor[GIMBAL_MOTOR_YAW].present_angle;
+                        gimbal.motor[GIMBAL_MOTOR_YAW].target_angle - gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle;
             }
     if (!EQUAL_ZERO(pitch)) {
                 gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int) (SIGN(pitch) *
                                                                     (pitch > 0 ? GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP
                                                                                     : GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN));
                 gimbal.motor[GIMBAL_MOTOR_PIT].target_angle =
-                        gimbal.motor[GIMBAL_MOTOR_PIT].present_angle + gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle;
+                        gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle + gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle;
             } else {
                 gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle =
-                        gimbal.motor[GIMBAL_MOTOR_PIT].target_angle - gimbal.motor[GIMBAL_MOTOR_PIT].present_angle;
+                        gimbal.motor[GIMBAL_MOTOR_PIT].target_angle - gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle;
             }
 
 
@@ -45,11 +45,8 @@ static void calculate_gimbal(float yaw, float pitch) {
                 gimbal.motor[GIMBAL_MOTOR_PIT].target_angle = GIMBAL_PIT_MIN_ANGLE;
             }
 
-    pid_calc(&pid_yaw, (float)gimbal.motor[GIMBAL_MOTOR_YAW].present_angle, (float)gimbal.motor[GIMBAL_MOTOR_YAW].target_angle);
-    gimbal.motor[GIMBAL_MOTOR_YAW].target_current = (int16_t)(pid_yaw.out);
-
-    pid_calc(&pid_pitch, (float)gimbal.motor[GIMBAL_MOTOR_PIT].present_angle, (float)gimbal.motor[GIMBAL_MOTOR_PIT].target_angle);
-    gimbal.motor[GIMBAL_MOTOR_PIT].target_current = (int16_t)(pid_pitch.out);
+    gimbal.motor[GIMBAL_MOTOR_YAW].target_current = (int16_t)(pid_yaw.calc((float)gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle, (float)gimbal.motor[GIMBAL_MOTOR_YAW].target_angle));
+    gimbal.motor[GIMBAL_MOTOR_PIT].target_current = (int16_t)(pid_pitch.calc((float)gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle, (float)gimbal.motor[GIMBAL_MOTOR_PIT].target_angle));
 
     chSysUnlock();
 }
@@ -87,11 +84,11 @@ void gimbal_calc_init(void) {
 
     for (int i = 0; i < 2; ++i) {
         gimbal.motor[i].default_angle = -1000;
-        gimbal.motor[i].present_angle = 0;
+        gimbal.motor[i].actual_angle = 0;
         gimbal.motor[i].target_angle = 0;
         gimbal.motor[i].delta_angle = 0;
     }
 
-    pid_init(&pid_yaw, 8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
-    pid_init(&pid_pitch, 280.0, 2, 0, 1000.0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_yaw.init(8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_pitch.init(280.0, 2, 0, 1000.0, GIMBAL_MOTOR_MAX_CURRENT);
 }

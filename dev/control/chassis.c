@@ -12,27 +12,27 @@ static void calculate_current(void) {
     //Calculate speeds of each wheel
     float rotate_ratio = ((CHASSIS_WHEELBASE + CHASSIS_WHEELTRACK) / 2.0f) / CHASSIS_RADIAN_COEF;
     float rpm_ratio = (60.0f / (CHASSIS_WHEEL_PERIMETER * CHASSIS_DECELE_RATIO));
-    chassis.motor_speed[0] = (int) ((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-    chassis.motor_speed[1] = (int) ((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-    chassis.motor_speed[2] = (int) ((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
-    chassis.motor_speed[3] = (int) ((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+    chassis.motor[0].target_rpm = (int) ((-chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+    chassis.motor[1].target_rpm = (int) ((chassis.vx - chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+    chassis.motor[2].target_rpm = (int) ((chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
+    chassis.motor[3].target_rpm = (int) ((-chassis.vx + chassis.vy + chassis.w * rotate_ratio) * rpm_ratio);
 
     // Limit the max wheel speeds
     int max_motor_speed = 0;
     for (int i = 0; i < 4; i++) {
-        if (abs(chassis.motor_speed[i]) > max_motor_speed)
-            max_motor_speed = abs(chassis.motor_speed[i]);
+        if (abs(chassis.motor[i].target_rpm) > max_motor_speed)
+            max_motor_speed = abs(chassis.motor[i].target_rpm);
     }
 
     if (max_motor_speed > CHASSIS_MOTOE_MAX_SPEED) {
         LED_R_TOGGLE();
         float rate = (float) CHASSIS_MOTOE_MAX_SPEED / max_motor_speed;
         for (int i = 0; i < 4; i++)
-            chassis.motor_speed[i] *= rate;
+            chassis.motor[i].target_rpm *= rate;
     }
 
     for (int i = 0; i < 4; i++) {
-        chassis.motor_current[i] = (int16_t) ((float) chassis.motor_speed[i] / CHASSIS_MOTOE_MAX_SPEED * CHASSIS_MOTOR_MAX_CURRENT);
+        chassis.motor[i].target_current = chassis_pid.calc(chassis.motor[i].actual_rpm, chassis.motor[i].target_rpm);
     }
 }
 
@@ -96,5 +96,5 @@ void chassis_calculate(void) {
 }
 
 void chassis_calc_init(void) {
-    pid_init(&chassis_pid, 1.50, 0.0, 0.0, 0.0, 3000.0);
+    chassis_pid.init(1.50, 0.0, 0.0, 0.0, 3000.0);
 }

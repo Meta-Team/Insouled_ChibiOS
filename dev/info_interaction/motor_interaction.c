@@ -25,21 +25,21 @@ void process_gimbal_feedback(CANRxFrame* rxmsg) {
 
     if (motor_id == GIMBAL_MOTOR_YAW) {
 
-        if (new_angle <= 5000) gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 40);
-        else gimbal.motor[GIMBAL_MOTOR_YAW].present_angle = (int)(-0.044 * new_angle + 400);
+        if (new_angle <= 5000) gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * new_angle + 40);
+        else gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * new_angle + 400);
 
 
     } else if (motor_id == GIMBAL_MOTOR_PIT) {
 
-        if (new_angle <= 3004) gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle - 48);
-        else gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle + 312);
+        if (new_angle <= 3004) gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * new_angle - 48);
+        else gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * new_angle + 312);
 
-        gimbal.motor[GIMBAL_MOTOR_PIT].present_angle = (int)(-0.044 * new_angle + 304.0);
+        gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * new_angle + 304.0);
 
-//        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle > 0 && gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < 2) LED_G_ON();
+//        if (gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle > 0 && gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle < 2) LED_G_ON();
 //        else LED_G_OFF();
 //
-//        if (gimbal.motor[GIMBAL_MOTOR_PIT].present_angle > -2 && gimbal.motor[GIMBAL_MOTOR_PIT].present_angle < 0) LED_R_ON();
+//        if (gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle > -2 && gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle < 0) LED_R_ON();
 //        else LED_R_OFF();
 
     }
@@ -75,10 +75,10 @@ static THD_FUNCTION(can_rx, p) {
 void send_chassis_currents(void) {
 
 #ifndef MANUAL_DEBUG
-  ABS_LIMIT_FEEDBACK(chassis.motor_current[0], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(chassis.motor_current[1], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(chassis.motor_current[2], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(chassis.motor_current[3], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.target_current[0], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.target_current[1], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.target_current[2], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(chassis.target_current[3], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
 #else
   ABS_LIMIT(chassis.motor_current[0], CHASSIS_MOTOR_MAX_CURRENT);
   ABS_LIMIT(chassis.motor_current[1], CHASSIS_MOTOR_MAX_CURRENT);
@@ -105,8 +105,8 @@ void send_chassis_currents(void) {
 void send_gimbal_currents(void) {
 
 #ifndef MANUAL_DEBUG
-  ABS_LIMIT_FEEDBACK(gimbal.motor_current[GIMBAL_MOTOR_YAW], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(gimbal.motor_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(gimbal.target_current[GIMBAL_MOTOR_YAW], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
+  ABS_LIMIT_FEEDBACK(gimbal.target_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
 
 #else
   ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
