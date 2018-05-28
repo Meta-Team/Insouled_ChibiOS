@@ -11,6 +11,7 @@
 #include "gimbal.h"
 
 #include "remote.h"
+#include "mode_handle.h"
 
 void process_chassis_feedback(CANRxFrame* rxmsg);
 void process_gimbal_feedback(CANRxFrame* rxmsg);

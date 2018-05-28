@@ -3,8 +3,7 @@
 //
 
 #include <motor_interaction.h>
-#include <main.h>
-#include <control/chassis.h>
+#include <control/gimbal.h>
 
 
 /* CAN Configurations */
@@ -20,44 +19,32 @@ void process_chassis_feedback(CANRxFrame* rxmsg) {
     uint16_t report_angle = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
     chassis.motor[motor_id].actual_angle = report_angle / 8192;
     chassis.motor[motor_id].actual_rpm = (int16_t)(rxmsg->data8[2] << 8 | rxmsg->data8[3]);
-//    if(motor_id == 0 || motor_id == 3) chassis.motor[motor_id].actual_rpm = -chassis.motor[motor_id].actual_rpm;
-
-//    if (motor_id == 1) {
-//        if ((rxmsg->data8[2] >> 7) & 1) {
-//            LED_R_ON();
-//            LED_G_OFF();
-//        }
-//        else {
-//            LED_R_OFF();
-//            LED_G_ON();
-//        }
-//    }
     chassis.motor[motor_id].actual_current = (rxmsg->data8[4] << 8 | rxmsg->data8[5]);
     chassis.motor[motor_id].actual_temperature = rxmsg->data8[6];
 }
 
 /* Receive */
 void process_gimbal_feedback(CANRxFrame* rxmsg) {
-    int motor_id = -1;
 
-//    if (rxmsg->SID == 0x205) motor_id = GIMBAL_MOTOR_YAW;
-//    else if(rxmsg->SID == 0x206) motor_id = GIMBAL_MOTOR_PIT;
-    motor_id = rxmsg->SID - 0x205;
+    int motor_id = rxmsg->SID - 0x205;
+    uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
 
-    int new_angle = (int)((rxmsg->data8[0] << 8 | rxmsg->data8[1]));
+//    if (global_mode == GLOBAL_MODE_INIT) {
+//        gimbal.motor[motor_id].default_angle_orig = feedback_angle_orig;
+//    } else {
+//
+//    }
 
     if (motor_id == GIMBAL_MOTOR_YAW) {
 
-        if (new_angle <= 5000) gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * new_angle + 40);
-        else gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * new_angle + 400);
+        if (feedback_angle_orig <= 5000) gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * feedback_angle_orig + 40);
+        else gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * feedback_angle_orig + 400);
 
 
     } else if (motor_id == GIMBAL_MOTOR_PIT) {
 
-        if (new_angle <= 3004) gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * new_angle - 48);
-        else gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * new_angle + 312);
-
-        gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * new_angle + 304.0);
+        if (feedback_angle_orig <= 3004) gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * feedback_angle_orig - 52);
+        else gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * feedback_angle_orig + 308);
 
 //        if (gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle > 0 && gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle < 2) LED_G_ON();
 //        else LED_G_OFF();

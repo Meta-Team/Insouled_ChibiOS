@@ -13,8 +13,8 @@
 
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
-#define GIMBAL_PIT_MAX_ANGLE  3
-#define GIMBAL_PIT_MIN_ANGLE (-10)
+#define GIMBAL_PIT_MAX_ANGLE  5
+#define GIMBAL_PIT_MIN_ANGLE (-15)
 
 #define GIMBAL_ANGLE_REMOTE_RATIO_YAW 30
 #define GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP 2
@@ -29,10 +29,10 @@
 #define GIMBAL_MOTOR_PIT 1
 
 typedef struct {
-    int default_angle;
-    int actual_angle;
-    int delta_angle;
-    int target_angle;
+    uint16_t default_angle_orig;
+    int16_t actual_angle;
+    int16_t delta_angle;
+    int16_t target_angle;
     int16_t target_current;
 } gimbal_motor;
 

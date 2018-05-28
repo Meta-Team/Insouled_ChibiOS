@@ -42,29 +42,35 @@ static void calculate_current(void) {
 void chassis_calculate(void) {
 
     switch (global_mode) {
+        case GLOBAL_MODE_INIT: {
+            CHASSIS_ZERO_CURRENT();
+
+            break;
+        }
         case GLOBAL_MODE_SAFETY: {
             CHASSIS_ZERO_CURRENT();
+
             break;
         }
         case GLOBAL_MODE_PC: {
 
             if (keyboard.press_a ^ keyboard.press_d) {
-                if(keyboard.press_a) chassis.vy = 0.3f * CHASSIS_PC_MAX_SPEED_Y;
-                else if(keyboard.press_d) chassis.vy = -0.3f * CHASSIS_PC_MAX_SPEED_Y;
+                if(keyboard.press_a) chassis.vy =  CHASSIS_PC_MAX_SPEED_Y;
+                else if(keyboard.press_d) chassis.vy = -CHASSIS_PC_MAX_SPEED_Y;
             } else {
                 chassis.vy = 0.0f;
             }
 
             if (keyboard.press_w ^ keyboard.press_s) {
-                if(keyboard.press_w) chassis.vx = 0.3f * CHASSIS_PC_MAX_SPEED_X;
-                else if(keyboard.press_s) chassis.vx = -0.3f * CHASSIS_PC_MAX_SPEED_X;
+                if(keyboard.press_w) chassis.vx = CHASSIS_PC_MAX_SPEED_X;
+                else if(keyboard.press_s) chassis.vx = -CHASSIS_PC_MAX_SPEED_X;
             } else {
                 chassis.vx = 0.0f;
             }
 
             if (keyboard.press_q ^ keyboard.press_e) {
-                if (keyboard.press_q) chassis.w = 0.5f * CHASSIS_PC_MAX_W;
-                else if(keyboard.press_e) chassis.w = -0.5f * CHASSIS_PC_MAX_W;
+                if (keyboard.press_q) chassis.w = CHASSIS_PC_MAX_W;
+                else if(keyboard.press_e) chassis.w = -CHASSIS_PC_MAX_W;
             } else {
                 chassis.w = 0.0f;
             }
@@ -91,6 +97,7 @@ void chassis_calculate(void) {
 
         case GLOBAL_MODE_REMOTE_GIMBAL: {
             CHASSIS_ZERO_CURRENT();
+
             break;
         }
 

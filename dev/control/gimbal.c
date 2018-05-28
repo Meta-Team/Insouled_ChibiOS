@@ -13,7 +13,7 @@ gimbal_t gimbal;
 static void calculate_gimbal(float yaw, float pitch) {
     chSysLock();
     if (!EQUAL_ZERO(yaw)) {
-                gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int) (SIGN(yaw) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
+                gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle = (int16_t) (SIGN(yaw) * GIMBAL_ANGLE_REMOTE_RATIO_YAW);
                 gimbal.motor[GIMBAL_MOTOR_YAW].target_angle =
                         gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle + gimbal.motor[GIMBAL_MOTOR_YAW].delta_angle;
             } else {
@@ -21,7 +21,7 @@ static void calculate_gimbal(float yaw, float pitch) {
                         gimbal.motor[GIMBAL_MOTOR_YAW].target_angle - gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle;
             }
     if (!EQUAL_ZERO(pitch)) {
-                gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int) (SIGN(pitch) *
+                gimbal.motor[GIMBAL_MOTOR_PIT].delta_angle = (int16_t) (SIGN(pitch) *
                                                                     (pitch > 0 ? GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP
                                                                                     : GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN));
                 gimbal.motor[GIMBAL_MOTOR_PIT].target_angle =
@@ -53,10 +53,13 @@ static void calculate_gimbal(float yaw, float pitch) {
 }
 
 void gimbal_calculate(void) {
-    /*if (global_mode == GLOBAL_MODE_REMOTE_GIMBAL) LED_G_ON();
-    else LED_G_OFF();*/
 
     switch (global_mode) {
+        case GLOBAL_MODE_INIT: {
+            GIMBAL_ZERO_CURRENT();
+
+            break;
+        }
         case GLOBAL_MODE_SAFETY: {
             GIMBAL_ZERO_CURRENT();
 
@@ -84,12 +87,11 @@ void gimbal_calculate(void) {
 void gimbal_calc_init(void) {
 
     for (int i = 0; i < 2; ++i) {
-        gimbal.motor[i].default_angle = -1000;
         gimbal.motor[i].actual_angle = 0;
         gimbal.motor[i].target_angle = 0;
         gimbal.motor[i].delta_angle = 0;
     }
 
-    pid_init(&pid_yaw, 8.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
-    pid_init(&pid_pitch, 280.0, 2, 0, 1000.0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_yaw, 5.0, 0, 0, 0, GIMBAL_MOTOR_MAX_CURRENT);
+    pid_init(&pid_pitch, 300.0, 1.0, 0, 1000.0, GIMBAL_MOTOR_MAX_CURRENT);
 }

@@ -15,11 +15,11 @@
 #include "motor_interaction.h"
 
 typedef enum _global_mode_t {
+    GLOBAL_MODE_INIT = 9,
     GLOBAL_MODE_SAFETY = 0,
     GLOBAL_MODE_PC = 1,
     GLOBAL_MODE_REMOTE_CHASSIS = 2,
     GLOBAL_MODE_REMOTE_GIMBAL = 3,
-
 } global_mode_t;
 extern global_mode_t global_mode;
 
