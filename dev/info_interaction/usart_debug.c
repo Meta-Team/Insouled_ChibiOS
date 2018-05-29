@@ -50,17 +50,18 @@ static THD_FUNCTION(debug_usart, p) {
     size_t sz = 12;
 
     while (true) {
-        uartSendTimeout(&DEBUG_UART_PORT, &sz, teststr, TIME_INFINITE);
+        uartStartSend(&DEBUG_UART_PORT, sz, teststr);
         chThdSleepMilliseconds(1000);
+        LED_R_TOGGLE();
     }
 }
 
 void usart_debug_init() {
-    palSetPadMode(GPIOG, 14, PAL_MODE_ALTERNATE(7));
-    palSetPadMode(GPIOG, 9, PAL_MODE_ALTERNATE(7));
+    palSetPadMode(GPIOG, 14, PAL_MODE_ALTERNATE(8));
+    palSetPadMode(GPIOG, 9, PAL_MODE_ALTERNATE(8));
     uartStart(&DEBUG_UART_PORT, &debugUsartConfig);
     //uartStartReceive(&DEBUG_UART_PORT, REMOTE_DATA_SIZE, remoteData);
 
-    chThdCreateStatic(debug_usart_wa, sizeof(debug_usart_wa), LOWPRIO,
+    chThdCreateStatic(debug_usart_wa, sizeof(debug_usart_wa), HIGHPRIO,
                       debug_usart, NULL);
 }

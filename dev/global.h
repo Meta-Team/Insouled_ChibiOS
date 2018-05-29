@@ -7,6 +7,7 @@
 
 #include "hal.h"
 #include "ch.h"
+#include "chprintf.h"
 
 #include <stdlib.h>
 

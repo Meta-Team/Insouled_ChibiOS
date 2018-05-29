@@ -15,5 +15,6 @@
 #include "gimbal.h"
 
 #include "motor_interaction.h"
+#include "usart_debug.h"
 
 #endif //INSOULED_CHIBIOS_MAIN_H
