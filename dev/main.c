@@ -50,6 +50,7 @@ int main(void) {
     while (true) {
         // Main loop, runs mode handle state machine
         mode_handle_calculate();
-        chThdSleepMilliseconds(10);
+        print("Hello World\n");
+        chThdSleepMilliseconds(100);
     }
 }

@@ -8,6 +8,7 @@
 #include "hal.h"
 #include "ch.h"
 #include "chprintf.h"
+#include "serial_debug.h"
 
 #include <stdlib.h>
 
