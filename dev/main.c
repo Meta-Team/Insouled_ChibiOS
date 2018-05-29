@@ -47,6 +47,8 @@ int main(void) {
     // Mode handle state machine initialization
     mode_handle_init();
 
+    usart_debug_init();
+
     while (true) {
         // Main loop, runs mode handle state machine
         mode_handle_calculate();

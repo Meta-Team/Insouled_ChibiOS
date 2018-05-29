@@ -115,7 +115,8 @@ void send_chassis_currents(void) {
   txmsg.data8[5] = (uint8_t) chassis.motor[2].target_current;
   txmsg.data8[6] = (uint8_t) (chassis.motor[3].target_current >> 8);
   txmsg.data8[7] = (uint8_t) chassis.motor[3].target_current;
-  canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+    canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+    canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
 void send_gimbal_currents(void) {
@@ -143,7 +144,8 @@ void send_gimbal_currents(void) {
   txmsg.data8[5] = (uint8_t) zero_current;
   txmsg.data8[6] = (uint8_t) (zero_current >> 8);
   txmsg.data8[7] = (uint8_t) zero_current;
-  canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+    canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
+    canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
 /*static THD_WORKING_AREA(can_tx_wa, 256);
@@ -170,8 +172,10 @@ void motor_can_init(void) {
     /*
    * Activates the CAN drivers 1 and 2.
    */
-    palSetPadMode(GPIOD, 0, PAL_MODE_ALTERNATE(9));
+    /*palSetPadMode(GPIOD, 0, PAL_MODE_ALTERNATE(9));
     palSetPadMode(GPIOD, 1, PAL_MODE_ALTERNATE(9));
+    palSetPadMode(GPIOB, 12, PAL_MODE_ALTERNATE(9));
+    palSetPadMode(GPIOB, 13, PAL_MODE_ALTERNATE(9));*/
     canStart(&CAND1, &cancfg);
     canStart(&CAND2, &cancfg);
 
