@@ -31,8 +31,6 @@ int main(void) {
     halInit();
     chSysInit();
 
-    sdStart(&SD2, NULL);
-
     // Debug initialization
     led_debug_init();
 
