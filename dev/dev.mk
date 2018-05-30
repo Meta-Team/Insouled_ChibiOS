@@ -7,7 +7,8 @@ DEVSRC = $(CHIBIOS)/dev/main.c \
 		 $(CHIBIOS)/dev/info_interaction/led_debug.c \
 		 $(CHIBIOS)/dev/info_interaction/motor_interaction.c \
 		 $(CHIBIOS)/dev/info_interaction/remote.c \
-		 $(CHIBIOS)/dev/info_interaction/serial_debug.c
+		 $(CHIBIOS)/dev/info_interaction/serial_debug.c \
+		 $(CHIBIOS)/dev/info_interaction/pwm.c
 
 DEVINC = $(CHIBIOS)/dev \
          $(CHIBIOS)/dev/control \

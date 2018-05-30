@@ -45,7 +45,9 @@ int main(void) {
     // Mode handle state machine initialization
     mode_handle_init();
 
-    usart_debug_init();
+    serial_debug_init();
+
+    pwm_init();
 
     while (true) {
         // Main loop, runs mode handle state machine

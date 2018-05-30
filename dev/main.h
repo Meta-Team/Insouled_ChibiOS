@@ -13,6 +13,7 @@
 #include "mode_handle.h"
 #include "chassis.h"
 #include "gimbal.h"
+#include "pwm.h"
 
 #include "motor_interaction.h"
 #include "serial_debug.h"
