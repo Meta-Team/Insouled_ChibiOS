@@ -61,8 +61,8 @@ void remoteReceived(UARTDriver *uartp) {
     mouse.press_left = (bool)remoteData[12];
     mouse.press_right = (bool)remoteData[13];
 
-    pwmEnableChannel(&PWMD8, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD8, (remote.ch3 + 1) * 5000));
-    pwmEnableChannel(&PWMD8, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD8, (remote.ch3 + 1) * 5000));
+    pwmEnableChannel(&PWMD8, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD8, (remote.ch3 + 1) * 250 + 500));
+    pwmEnableChannel(&PWMD8, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD8, (remote.ch3 + 1) * 250 + 500));
 
 
     uint16_t keycode = ((uint16_t) remoteData[14] | ((uint16_t)remoteData[15] << 8));
