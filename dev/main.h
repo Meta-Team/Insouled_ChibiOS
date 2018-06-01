@@ -11,13 +11,12 @@
 #include "serial_debug.h"
 
 #include "remote.h"
+#include "can.h"
 
 #include "mode_handle.h"
 #include "chassis.h"
 #include "gimbal.h"
 
-#include "pwm.h"
-#include "motor_interaction.h"
-
+#include "main_control_loop.h"
 
 #endif //INSOULED_CHIBIOS_MAIN_H

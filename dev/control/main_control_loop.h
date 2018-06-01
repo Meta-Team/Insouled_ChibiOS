@@ -11,8 +11,9 @@
 
 #include "chassis.h"
 #include "gimbal.h"
+#include "shoot.h"
 
-#include "motor_interaction.h"
+#include "can.h"
 
 void main_control_loop(void);
 

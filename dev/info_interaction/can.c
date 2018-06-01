@@ -2,7 +2,7 @@
 // Created by liuzikai on 2018/4/4.
 //
 
-#include <motor_interaction.h>
+#include <can.h>
 
 /* CAN Configurations */
 static const CANConfig cancfg = {

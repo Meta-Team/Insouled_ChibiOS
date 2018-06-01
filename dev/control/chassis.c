@@ -44,11 +44,8 @@ static void calculate_current(void) {
 void chassis_calculate(void) {
 
     switch (global_mode) {
-        case GLOBAL_MODE_INIT: {
-            CHASSIS_ZERO_CURRENT();
 
-            break;
-        }
+        case GLOBAL_MODE_INIT:
         case GLOBAL_MODE_SAFETY: {
             CHASSIS_ZERO_CURRENT();
 
