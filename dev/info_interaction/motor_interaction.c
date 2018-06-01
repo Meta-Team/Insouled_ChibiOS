@@ -3,8 +3,6 @@
 //
 
 #include <motor_interaction.h>
-#include <control/gimbal.h>
-
 
 /* CAN Configurations */
 static const CANConfig cancfg = {
@@ -14,45 +12,29 @@ static const CANConfig cancfg = {
 };
 
 /* Receive */
-void process_chassis_feedback(CANRxFrame* rxmsg) {
+void process_chassis_feedback(CANRxFrame *rxmsg) {
     int motor_id = rxmsg->SID - 0x201;
-    uint16_t report_angle = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
-    chassis.motor[motor_id].actual_angle = report_angle / 8192;
-    chassis.motor[motor_id].actual_rpm = (int16_t)(rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+    uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
+    chassis.motor[motor_id].actual_angle = feedback_angle_orig / 8192;
+    chassis.motor[motor_id].actual_rpm = (int16_t) (rxmsg->data8[2] << 8 | rxmsg->data8[3]);
     chassis.motor[motor_id].actual_current = (rxmsg->data8[4] << 8 | rxmsg->data8[5]);
     chassis.motor[motor_id].actual_temperature = rxmsg->data8[6];
 }
 
 /* Receive */
-void process_gimbal_feedback(CANRxFrame* rxmsg) {
+void process_gimbal_feedback(CANRxFrame *rxmsg) {
 
     int motor_id = rxmsg->SID - 0x205;
     uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
 
-//    if (global_mode == GLOBAL_MODE_INIT) {
-//        gimbal.motor[motor_id].default_angle_orig = feedback_angle_orig;
-//    } else {
-//
-//    }
+    float angle = ((float) feedback_angle_orig - (float) gimbal_fi_orig[motor_id]) * 360.0f / 8192.0f;
 
-    if (motor_id == GIMBAL_MOTOR_YAW) {
+    if (gimbal_fi_orig[motor_id] > 4096 && feedback_angle_orig < gimbal_fi_orig[motor_id] - 4096) //Case I, Red Range
+        angle += 360.0f;
+    if (gimbal_fi_orig[motor_id] < 4096 && feedback_angle_orig > gimbal_fi_orig[motor_id] + 4096) //Case II, Red Range
+        angle -= 360.0f;
 
-        if (feedback_angle_orig <= 5000) gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * feedback_angle_orig + 40);
-        else gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle = (int)(-0.044 * feedback_angle_orig + 400);
-
-
-    } else if (motor_id == GIMBAL_MOTOR_PIT) {
-
-        if (feedback_angle_orig <= 3004) gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * feedback_angle_orig - 52);
-        else gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle = (int)(-0.044 * feedback_angle_orig + 308);
-
-//        if (gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle > 0 && gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle < 2) LED_G_ON();
-//        else LED_G_OFF();
-//
-//        if (gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle > -2 && gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle < 0) LED_R_ON();
-//        else LED_R_OFF();
-
-    }
+    gimbal.motor[motor_id].actual_angle = (int16_t) (-1.0f * angle);
 
 }
 
@@ -90,104 +72,67 @@ static THD_FUNCTION(can_rx, p) {
 /* Transmit */
 void send_chassis_currents(void) {
 
-#ifndef MANUAL_DEBUG
-  ABS_LIMIT_FEEDBACK(chassis.target_current[0], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(chassis.target_current[1], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(chassis.target_current[2], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(chassis.target_current[3], CHASSIS_MOTOR_MAX_CURRENT, , LED_R_ON());
-#else
-  ABS_LIMIT(chassis.motor[0].target_current, CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor[1].target_current, CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor[2].target_current, CHASSIS_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(chassis.motor[3].target_current, CHASSIS_MOTOR_MAX_CURRENT);
-#endif
+    ABS_LIMIT(chassis.motor[0].target_current, CHASSIS_MOTOR_MAX_CURRENT);
+    ABS_LIMIT(chassis.motor[1].target_current, CHASSIS_MOTOR_MAX_CURRENT);
+    ABS_LIMIT(chassis.motor[2].target_current, CHASSIS_MOTOR_MAX_CURRENT);
+    ABS_LIMIT(chassis.motor[3].target_current, CHASSIS_MOTOR_MAX_CURRENT);
 
-  CANTxFrame txmsg;
-  txmsg.IDE = CAN_IDE_STD;
-  txmsg.SID = 0x200;
-  txmsg.RTR = CAN_RTR_DATA;
-  txmsg.DLC = 0x08;
-  txmsg.data8[0] = (uint8_t) (chassis.motor[0].target_current >> 8);
-  txmsg.data8[1] = (uint8_t) chassis.motor[0].target_current;
-  txmsg.data8[2] = (uint8_t) (chassis.motor[1].target_current >> 8);
-  txmsg.data8[3] = (uint8_t) chassis.motor[1].target_current;
-  txmsg.data8[4] = (uint8_t) (chassis.motor[2].target_current >> 8);
-  txmsg.data8[5] = (uint8_t) chassis.motor[2].target_current;
-  txmsg.data8[6] = (uint8_t) (chassis.motor[3].target_current >> 8);
-  txmsg.data8[7] = (uint8_t) chassis.motor[3].target_current;
+    CANTxFrame txmsg;
+    txmsg.IDE = CAN_IDE_STD;
+    txmsg.SID = 0x200;
+    txmsg.RTR = CAN_RTR_DATA;
+    txmsg.DLC = 0x08;
+    txmsg.data8[0] = (uint8_t) (chassis.motor[0].target_current >> 8);
+    txmsg.data8[1] = (uint8_t) chassis.motor[0].target_current;
+    txmsg.data8[2] = (uint8_t) (chassis.motor[1].target_current >> 8);
+    txmsg.data8[3] = (uint8_t) chassis.motor[1].target_current;
+    txmsg.data8[4] = (uint8_t) (chassis.motor[2].target_current >> 8);
+    txmsg.data8[5] = (uint8_t) chassis.motor[2].target_current;
+    txmsg.data8[6] = (uint8_t) (chassis.motor[3].target_current >> 8);
+    txmsg.data8[7] = (uint8_t) chassis.motor[3].target_current;
     canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
     canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
 void send_gimbal_currents(void) {
 
-#ifndef MANUAL_DEBUG
-  ABS_LIMIT_FEEDBACK(gimbal.target_current[GIMBAL_MOTOR_YAW], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
-  ABS_LIMIT_FEEDBACK(gimbal.target_current[GIMBAL_MOTOR_PIT], GIMBAL_MOTOR_MAX_CURRENT, , LED_R_ON());
+    ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
+    ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_PIT].target_current, GIMBAL_MOTOR_MAX_CURRENT);
 
-#else
-  ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
-  ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_PIT].target_current, GIMBAL_MOTOR_MAX_CURRENT);
-#endif
-  int16_t zero_current = 0;
+    int16_t zero_current = 0;
 
-  CANTxFrame txmsg;
-  txmsg.IDE = CAN_IDE_STD;
-  txmsg.SID = 0x1FF;
-  txmsg.RTR = CAN_RTR_DATA;
-  txmsg.DLC = 0x08;
-  txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
-  txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
-  txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_PIT].target_current >> 8);
-  txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
-  txmsg.data8[4] = (uint8_t) (zero_current >> 8);
-  txmsg.data8[5] = (uint8_t) zero_current;
-  txmsg.data8[6] = (uint8_t) (zero_current >> 8);
-  txmsg.data8[7] = (uint8_t) zero_current;
+    CANTxFrame txmsg;
+    txmsg.IDE = CAN_IDE_STD;
+    txmsg.SID = 0x1FF;
+    txmsg.RTR = CAN_RTR_DATA;
+    txmsg.DLC = 0x08;
+    txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
+    txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
+    txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_PIT].target_current >> 8);
+    txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
+    txmsg.data8[4] = (uint8_t) (zero_current >> 8);
+    txmsg.data8[5] = (uint8_t) zero_current;
+    txmsg.data8[6] = (uint8_t) (zero_current >> 8);
+    txmsg.data8[7] = (uint8_t) zero_current;
     canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
     canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
-
-/*static THD_WORKING_AREA(can_tx_wa, 256);
-
-static THD_FUNCTION(can_tx, p) {
-
-  (void)p;
-  chRegSetThreadName("can_transmitter");
-
-  while (true) {
-    send_chassis_currents();
-    send_gimbal_currents();
-    chThdSleepMilliseconds(10);
-  }
-}*/
-
-
-
 
 
 /* Initialization */
 
 void motor_can_init(void) {
     /*
-   * Activates the CAN drivers 1 and 2.
-   */
-    /*palSetPadMode(GPIOD, 0, PAL_MODE_ALTERNATE(9));
-    palSetPadMode(GPIOD, 1, PAL_MODE_ALTERNATE(9));
-    palSetPadMode(GPIOB, 12, PAL_MODE_ALTERNATE(9));
-    palSetPadMode(GPIOB, 13, PAL_MODE_ALTERNATE(9));*/
+     * Activates the CAN drivers 1 and 2.
+     */
     canStart(&CAND1, &cancfg);
     canStart(&CAND2, &cancfg);
 
     /*
-     * Starting the transmitter and receiver threads.
+     * Starting the receiver threads.
      */
-
-  //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
                       can_rx, &CAND1);
     chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
                       can_rx, &CAND2);
-    /*chThdCreateStatic(can_tx_wa, sizeof(can_tx_wa), NORMALPRIO + 7,
-                      can_tx, NULL);*/
 }

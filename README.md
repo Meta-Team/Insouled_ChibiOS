@@ -1,18 +1,23 @@
-### 安装CLion（教育邮箱注册免费）
+## Develop Environment Configuration
 
-### 安装OpenOCD
+### Mac
+
+#### 1. Install CLion
+Register with ZJU email to get free student licenses.
+
+[JetBrains](www.jetbrains.com)
+
+#### 2. Install OpenOCD (with HomeBrew)
 ```bash
 brew install OpenOCD
 ```
 
-### 下载此工程
+#### 3. Download or clone this project
 
-### 用CLion打开工程，右上角选择“STLink | Debug”
+#### 4. Open the project with CLion
+Just select the whole folder to open it. CLion will recognize the ```CMakeLists.txt```.
 
-### 点击左侧按钮Build编译并上传程序
+#### 5. Select "STLink | Debug" as build configuration
+![](doc/build config.png)
 
-不用ST-Link的请自行购买 ┐(ﾟ～ﾟ)┌
-
-不用Mac的请自行购买 ┐(ﾟ～ﾟ)┌
-
-…开个玩笑，之后将添加支持
+#### 6. Press "Build" on the left to compile and upload program.

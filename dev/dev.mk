@@ -4,6 +4,7 @@ DEVSRC = $(CHIBIOS)/dev/main.c \
 		 $(CHIBIOS)/dev/control/gimbal.c \
 		 $(CHIBIOS)/dev/control/mode_handle.c \
 		 $(CHIBIOS)/dev/control/pid.c \
+		 $(CHIBIOS)/dev/control/main_control_loop.c \
 		 $(CHIBIOS)/dev/info_interaction/led_debug.c \
 		 $(CHIBIOS)/dev/info_interaction/motor_interaction.c \
 		 $(CHIBIOS)/dev/info_interaction/remote.c \

@@ -29,7 +29,6 @@ void led_debug_init(void) {
     LED_R_OFF();
     LED_G_OFF();
 
-    //TODO: Understand and modify the priority of the thread.
     chThdCreateStatic(led_debug_wa, sizeof(led_debug_wa), LOWPRIO,
                       led_debug, NULL);
 }

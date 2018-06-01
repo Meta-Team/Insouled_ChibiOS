@@ -9,22 +9,44 @@
 
 #include "remote.h"
 
-#define EQUAL_ZERO(n) (n < 0.001f && n > -0.001f)
+/********** Chassis Behavior Parameters **********/
 
+/* Angles (degree) */
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
 #define GIMBAL_PIT_MAX_ANGLE  5
 #define GIMBAL_PIT_MIN_ANGLE (-15)
 
-#define GIMBAL_ANGLE_REMOTE_RATIO_YAW 30
-#define GIMBAL_ANGLE_REMOTE_RATIO_PIT_UP 2
-#define GIMBAL_ANGLE_REMOTE_RATIO_PIT_DOWN 2
+#define GIMBAL_YAW_DELTA_ANGLE 30
+#define GIMBAL_PIT_DELTA_ANGLE 2
 
-#define GIMBAL_YAW_CURRENT_ANGLE_RATIO 10
-#define GIMBAL_PITCH_CURRENT_ANGLE_RATIO 1.5
+/* PID Parameters */
+#define GIMBAL_YAW_PID_KP 5.0f
+#define GIMBAL_YAW_PID_KI 0.0f
+#define GIMBAL_YAW_PID_KD 0.0f
+#define GIMBAL_YAW_PID_I_LIMIT 0.0f
+#define GIMBAL_YAW_PID_OUT_LIMIT 4000.0f //Current (mA)
 
+#define GIMBAL_PIT_PID_KP 300.0f
+#define GIMBAL_PIT_PID_KI 1.0f
+#define GIMBAL_PIT_PID_KD 0.0f
+#define GIMBAL_PIT_PID_I_LIMIT 1000.0f
+#define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
+
+/********** Gimbal Structure Parameters **********/
+
+/* "Front" Angles (orig angle) */
+#ifdef INFANTRY1
+#define GIMBAL_FI_YAW_ORIG 904
+#define GIMBAL_FI_PIT_ORIG 7000
+#endif
+
+/* Motor Current (mA) */
 #define GIMBAL_MOTOR_MAX_CURRENT 4000 //5000
 
+/********** Gimbal Control Definitions **********/
+
+// These IDs are corresponding to motor IDs
 #define GIMBAL_MOTOR_YAW 0
 #define GIMBAL_MOTOR_PIT 1
 
@@ -47,6 +69,7 @@ extern gimbal_t gimbal;
     gimbal.motor[GIMBAL_MOTOR_PIT].target_current = 0; \
 }
 
+extern uint16_t gimbal_fi_orig[2];
 
 void gimbal_calc_init(void);
 void gimbal_calculate(void);

@@ -12,24 +12,23 @@
 
 #include <stdlib.h>
 
-#define MANUAL_DEBUG
+
+#define INFANTRY1
+
+
 
 #define ABS_LIMIT(n, limit) { \
     if (n > limit) n = limit; \
     if (n < -(limit)) n = -(limit); \
 }
 
-#define ABS_LIMIT_FEEDBACK(n, limit, in_command, out_command) { \
-    if (n <= limit && n >= -(limit)) { \
-        in_command; \
-    } else { \
-        if (n > limit) n = limit; \
-        else if (n < -(limit)) n = -(limit); \
-        out_command; \
-    } \
+#define VAL_LIMIT(n, max, min) { \
+    if (n > max) n = max; \
+    if (n < min) n = min; \
 }
 
 #define SIGN(n) (n == 0 ? 0 : (n > 0 ? 1 : -1))
+#define EQUAL_ZERO(n) (n < 0.001f && n > -0.001f)
 
 #define LED_G_ON() palClearPad(GPIOF, GPIOF_LED_G)
 #define LED_G_OFF() palSetPad(GPIOF, GPIOF_LED_G)

@@ -2,7 +2,6 @@
 // Created by Lan Tian on 18/03/2018.
 //
 
-#include "global.h"
 #include "remote.h"
 
 char remoteData[REMOTE_DATA_SIZE];

@@ -33,10 +33,12 @@ int main(void) {
 
     // Debug initialization
     led_debug_init();
+    serial_debug_init();
 
     // Communication initialization
     remote_init();
     motor_can_init();
+    pwm_init();
 
     // Parameter calculation initialization
     chassis_calc_init();
@@ -45,14 +47,9 @@ int main(void) {
     // Mode handle state machine initialization
     mode_handle_init();
 
-    serial_debug_init();
-
-    pwm_init();
-
     while (true) {
         // Main loop, runs mode handle state machine
-        mode_handle_calculate();
-        print("Hello World\n");
+        handle_global_mode();
         chThdSleepMilliseconds(100);
     }
 }

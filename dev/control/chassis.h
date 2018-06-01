@@ -8,20 +8,40 @@
 #include "global.h"
 #include "remote.h"
 #include "mode_handle.h"
+#include "pid.h"
 
-/* Chassis move speed (mm/s) */
+/********** Chassis Behavior Parameters **********/
+
+/* Chassis translation speed (mm/s) */
 #define CHASSIS_RC_MAX_SPEED_X  2000.0f //3300.0f
 #define CHASSIS_RC_MAX_SPEED_Y  2000.0f //3300.0f
 
-#define CHASSIS_PC_MAX_SPEED_X  2000.0f //3300.0f
-#define CHASSIS_PC_MAX_SPEED_Y  2000.0f //3300.0f
+#define CHASSIS_PC_BASE_SPEED_X  2000.0f //3300.0f
+#define CHASSIS_PC_BASE_SPEED_Y  2000.0f //3300.0f
 
 /* Chassis rotation speed (deg/s) */
 #define CHASSIS_RC_MAX_W 200.0f //300.0f
-#define CHASSIS_PC_MAX_W 200.0f //300.0f
 
-#define CHASSIS_MOTOE_MAX_SPEED 5000 //8500
+#define CHASSIS_PC_BASE_W 200.0f //300.0f
+
+/* Chassis motor speed (rad/min) */
+#define CHASSIS_MOTOR_MAX_RPM 5000 //8500
+
+/* Chassis motor current (mA) */
 #define CHASSIS_MOTOR_MAX_CURRENT 5000 //20000
+
+/* Chassis Speed Control Ratios */
+#define CHASSIS_SPEED_RATIO_SHIFT 2.0f
+#define CHASSIS_SPEED_RATIO_CTRL 0.5f
+
+/* Chassis PID parameters (mA) */
+#define CHASSIS_PID_KP 1.0f
+#define CHASSIS_PID_KI 0.0f
+#define CHASSIS_PID_KD 0.0f
+#define CHASSIS_PID_I_LIMIT 0.0f
+#define CHASSIS_PID_OUT_LIMIT 2000.0f //Current (mA)
+
+/********** Chassis Structure Parameters **********/
 
 #define CHASSIS_WHEEL_RADIUS     76 //mm
 #define CHASSIS_WHEEL_PERIMETER  478 //mm
@@ -38,8 +58,9 @@
 #define CHASSIS_RADIAN_COEF 57.3f
 
 
-// These IDs are corresponding to motor IDs
+/********** Chassis Control Definitions **********/
 
+// These IDs are corresponding to motor IDs
 #define CHASSIS_MOTOR_FR 0
 #define CHASSIS_MOTOR_FL 1
 #define CHASSIS_MOTOR_BL 2
@@ -63,12 +84,11 @@ typedef struct {
 extern chassis_t chassis;
 
 #define CHASSIS_ZERO_CURRENT() { \
-    chassis.motor[0].target_current = 0; \
-    chassis.motor[1].target_current = 0; \
-    chassis.motor[2].target_current = 0; \
-    chassis.motor[3].target_current = 0; \
+    chassis.motor[CHASSIS_MOTOR_FR].target_current = 0; \
+    chassis.motor[CHASSIS_MOTOR_FL].target_current = 0; \
+    chassis.motor[CHASSIS_MOTOR_BL].target_current = 0; \
+    chassis.motor[CHASSIS_MOTOR_BR].target_current = 0; \
 }
-
 
 void chassis_calculate(void);
 

@@ -9,11 +9,6 @@
 
 #include "remote.h"
 
-#include "chassis.h"
-#include "gimbal.h"
-
-#include "motor_interaction.h"
-
 typedef enum _global_mode_t {
     GLOBAL_MODE_INIT = 9,
     GLOBAL_MODE_SAFETY = 0,
@@ -23,7 +18,7 @@ typedef enum _global_mode_t {
 } global_mode_t;
 extern global_mode_t global_mode;
 
-void mode_handle_calculate(void);
+void handle_global_mode(void);
 void mode_handle_init(void);
 
 #endif //INSOULED_CHIBIOS_MODE_HANDLE_H
