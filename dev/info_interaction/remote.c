@@ -67,10 +67,10 @@ void remoteReceived(UARTDriver *uartp) {
     keyboard.press_s = (bool)(keycode >> 1 & 0x01);
     keyboard.press_a = (bool)(keycode >> 2 & 0x01);
     keyboard.press_d = (bool)(keycode >> 3 & 0x01);
-    keyboard.press_ctrl = (bool)(keycode >> 4 & 0x01);
-    keyboard.press_shift = (bool)(keycode >> 5 & 0x01);
-    keyboard.press_e = (bool)(keycode >> 6 & 0x01);
-    keyboard.press_q = (bool)(keycode >> 7 & 0x01);
+    keyboard.press_shift = (bool)(keycode >> 4 & 0x01);
+    keyboard.press_ctrl = (bool)(keycode >> 5 & 0x01);
+    keyboard.press_q = (bool)(keycode >> 6 & 0x01);
+    keyboard.press_e = (bool)(keycode >> 7 & 0x01);
     keyboard.press_r = (bool)(keycode >> 8 & 0x01);
     keyboard.press_f = (bool)(keycode >> 9 & 0x01);
     keyboard.press_g = (bool)(keycode >> 10 & 0x01);

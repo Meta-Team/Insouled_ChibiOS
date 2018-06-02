@@ -27,8 +27,8 @@
 #define GIMBAL_YAW_PID_I_LIMIT 0.0f
 #define GIMBAL_YAW_PID_OUT_LIMIT 4000.0f //Current (mA)
 
-#define GIMBAL_PIT_PID_KP 300.0f
-#define GIMBAL_PIT_PID_KI 1.0f
+#define GIMBAL_PIT_PID_KP 0.0f//300.0f
+#define GIMBAL_PIT_PID_KI 0.0f//1.0f
 #define GIMBAL_PIT_PID_KD 0.0f
 #define GIMBAL_PIT_PID_I_LIMIT 1000.0f
 #define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
@@ -73,6 +73,12 @@ extern uint16_t gimbal_fi_orig[2];
 
 void gimbal_calc_init(void);
 void gimbal_calculate(void);
+
+#ifdef DEBUG_GIMBAL_PID
+void gimbal_debug_change_operating_pid(int index);
+void gimbal_debug_print_pid_parameters(int operand);
+void gimbal_debug_change_pid_parameters(int operand, float delta);
+#endif
 
 #endif //INSOULED_GIMBAL_H
 

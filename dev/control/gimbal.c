@@ -11,6 +11,41 @@ struct pid_t pid_pit;
 
 gimbal_t gimbal;
 
+#ifdef DEBUG_GIMBAL_PID
+
+struct pid_t* debug_pid;
+
+void gimbal_debug_change_operating_pid(int index) {
+    if (index == 0) {
+        debug_pid = &pid_yaw;
+    } else {
+        debug_pid = &pid_pit;
+    }
+}
+
+void gimbal_debug_print_pid_parameters(int operand) {
+    if (debug_pid == &pid_yaw) print("[GIMBAL_PID_YAW]"); else print("[GIMBAL_PID_PIT]");
+    if (operand == 0) print("[kp]"); else print("kp");
+    print(" = %f, ", debug_pid->kp);
+    if (operand == 1) print("[ki]"); else print("ki");
+    print(" = %f, ", debug_pid->ki);
+    if (operand == 2) print("[kd]"); else print("kd");
+    print(" = %f, ", debug_pid->kd);
+    if (operand == 3) print("[i_limit]"); else print("i_limit");
+    print(" = %f, ", debug_pid->i_limit);
+    if (operand == 4) print("[out_limit]"); else print("out_limit");
+    print(" = %f.\n", debug_pid->out_limit);
+}
+
+void gimbal_debug_change_pid_parameters(int operand, float delta) {
+    if (operand == 0) debug_pid->kp += delta;
+    if (operand == 1) debug_pid->ki += delta;
+    if (operand == 2) debug_pid->kd += delta;
+    if (operand == 3) debug_pid->i_limit += delta;
+    if (operand == 4) debug_pid->out_limit += delta;
+}
+#endif
+
 static void calculate_gimbal(float yaw, float pitch) {
     chSysLock();
     if (!EQUAL_ZERO(yaw)) {
@@ -86,4 +121,5 @@ void gimbal_calc_init(void) {
 
     pid_init(&pid_yaw, GIMBAL_YAW_PID_KP, GIMBAL_YAW_PID_KI, GIMBAL_YAW_PID_KD, GIMBAL_YAW_PID_I_LIMIT, GIMBAL_YAW_PID_OUT_LIMIT);
     pid_init(&pid_pit, GIMBAL_PIT_PID_KP, GIMBAL_PIT_PID_KI, GIMBAL_PIT_PID_KD, GIMBAL_PIT_PID_I_LIMIT, GIMBAL_PIT_PID_OUT_LIMIT);
+
 }

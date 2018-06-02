@@ -94,8 +94,8 @@ void chassis_calculate(void) {
                 chassis.vx = 0.0f;
 
 
-            if (keyboard.press_q && !keyboard.press_e) chassis.w = CHASSIS_PC_BASE_W;
-            else if (keyboard.press_e && !keyboard.press_q) chassis.w = -CHASSIS_PC_BASE_W;
+            if (keyboard.press_q && !keyboard.press_e) chassis.w = -CHASSIS_PC_BASE_W;
+            else if (keyboard.press_e && !keyboard.press_q) chassis.w = CHASSIS_PC_BASE_W;
             else
                 chassis.w = 0.0f;
 
