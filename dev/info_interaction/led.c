@@ -1,4 +1,4 @@
-#include "led_debug.h"
+#include "led.h"
 
 static THD_WORKING_AREA(led_debug_wa, 256);
 
@@ -24,7 +24,8 @@ static THD_FUNCTION(led_debug, p) {
     }
 }
 
-void led_debug_init(void) {
+void led_init(void) {
+
     // Turn off LED initially
     LED_R_OFF();
     LED_G_OFF();

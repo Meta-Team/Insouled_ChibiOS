@@ -5,10 +5,10 @@
 #ifndef INSOULED_CHIBIOS_SHOOT_H
 #define INSOULED_CHIBIOS_SHOOT_H
 
-#include "global.h"
+#include "../global.h"
 
 #include "mode_handle.h"
-#include "remote.h"
+#include "../info_interaction/remote.h"
 
 #define FRICTION_WHEEL_PC_BASE_PCT 0.7f
 #define FRICTION_WHEEL_PC_SHIFT_PCT  1.0f

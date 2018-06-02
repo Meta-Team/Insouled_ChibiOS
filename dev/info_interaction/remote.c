@@ -71,6 +71,14 @@ void remoteReceived(UARTDriver *uartp) {
     keyboard.press_shift = (bool)(keycode >> 5 & 0x01);
     keyboard.press_e = (bool)(keycode >> 6 & 0x01);
     keyboard.press_q = (bool)(keycode >> 7 & 0x01);
+    keyboard.press_r = (bool)(keycode >> 8 & 0x01);
+    keyboard.press_f = (bool)(keycode >> 9 & 0x01);
+    keyboard.press_g = (bool)(keycode >> 10 & 0x01);
+    keyboard.press_z = (bool)(keycode >> 11 & 0x01);
+    keyboard.press_x = (bool)(keycode >> 12 & 0x01);
+    keyboard.press_c = (bool)(keycode >> 13 & 0x01);
+    keyboard.press_v = (bool)(keycode >> 14 & 0x01);
+    keyboard.press_b = (bool)(keycode >> 15 & 0x01);
 
     chSysUnlock();
 

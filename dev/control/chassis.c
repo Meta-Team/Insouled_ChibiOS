@@ -3,10 +3,39 @@
 //
 #include "chassis.h"
 
+#include "remote.h"
+#include "mode_handle.h"
+
+#include "pid.h"
+
 chassis_t chassis;
 
 struct pid_t chassis_pid[4];
 float pid_kp, pid_ki, pid_kd, pid_i_limit, pid_out_limit;
+
+#ifdef DEBUG_CHASSIS_PID
+void chassis_debug_print_pid_parameters(int operand) {
+    print("[CHASSIS_PID]");
+    if (operand == 0) print("[kp]"); else print("kp");
+    print(" = %f, ", pid_kp);
+    if (operand == 1) print("[ki]"); else print("ki");
+    print(" = %f, ", pid_ki);
+    if (operand == 2) print("[kd]"); else print("kd");
+    print(" = %f, ", pid_kd);
+    if (operand == 3) print("[i_limit]"); else print("i_limit");
+    print(" = %f, ", pid_i_limit);
+    if (operand == 4) print("[out_limit]"); else print("out_limit");
+    print(" = %f.\n", pid_out_limit);
+}
+
+void chassis_debug_change_pid_parameters(int operand, float delta) {
+    if (operand == 0) pid_kp += delta;
+    if (operand == 1) pid_ki += delta;
+    if (operand == 2) pid_kd += delta;
+    if (operand == 3) pid_i_limit += delta;
+    if (operand == 4) pid_out_limit += delta;
+}
+#endif
 
 static void calculate_current(void) {
 

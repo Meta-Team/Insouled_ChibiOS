@@ -53,10 +53,18 @@ typedef struct {
     bool press_s;
     bool press_a;
     bool press_d;
-    bool press_q;
-    bool press_e;
     bool press_shift;
     bool press_ctrl;
+    bool press_q;
+    bool press_e;
+    bool press_r;
+    bool press_f;
+    bool press_g;
+    bool press_z;
+    bool press_x;
+    bool press_c;
+    bool press_v;
+    bool press_b;
 } keyboard_info_t;
 extern keyboard_info_t keyboard;
 

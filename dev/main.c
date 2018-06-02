@@ -1,5 +1,14 @@
 #include "main.h"
 
+#include "remote.h"
+#include "can.h"
+
+#include "mode_handle.h"
+#include "chassis.h"
+#include "gimbal.h"
+
+#include "main_control_loop.h"
+
 int main(void) {
 
     /*** Default Initialization ***/
@@ -8,8 +17,9 @@ int main(void) {
     chSysInit();
 
     // Debug initialization
-    led_debug_init();
+    led_init();
     serial_debug_init();
+    debug_thread_init();
 
     // Communication initialization
     remote_init();

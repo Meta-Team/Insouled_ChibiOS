@@ -6,9 +6,6 @@
 #define INSOULED_CHASSIS_H
 
 #include "global.h"
-#include "remote.h"
-#include "mode_handle.h"
-#include "pid.h"
 
 /********** Chassis Behavior Parameters **********/
 
@@ -94,6 +91,10 @@ void chassis_calculate(void);
 
 void chassis_calc_init(void);
 
+#ifdef DEBUG_CHASSIS_PID
+void chassis_debug_print_pid_parameters(int operand);
+void chassis_debug_change_pid_parameters(int operand, float delta);
+#endif
 
 #endif //INSOULED_CHASSIS_H
 

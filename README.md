@@ -7,9 +7,11 @@ Register with ZJU email to get free student licenses.
 
 [JetBrains](www.jetbrains.com)
 
-#### 2. Install OpenOCD (with HomeBrew)
+#### 2. Install OpenOCD and compile toolchain(with HomeBrew)
 ```bash
 brew install OpenOCD
+brew tap PX4/px4
+brew install px4-dev
 ```
 
 #### 3. Download or clone this project
