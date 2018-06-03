@@ -44,6 +44,12 @@ void gimbal_debug_change_pid_parameters(int operand, float delta) {
     if (operand == 3) debug_pid->i_limit += delta;
     if (operand == 4) debug_pid->out_limit += delta;
 }
+
+void gimbal_debug_print_angle(void) {
+    if (debug_pid == &pid_yaw) print("[GIMBAL_YAW_ANGLE] actual = %d, target = %d\n", (int)gimbal.motor[GIMBAL_MOTOR_YAW].actual_angle, (int)gimbal.motor[GIMBAL_MOTOR_YAW].target_angle);
+    else print("[GIMBAL_PIT_ANGLE] actual = %d, target = %d\n", (int)gimbal.motor[GIMBAL_MOTOR_PIT].actual_angle, (int)gimbal.motor[GIMBAL_MOTOR_PIT].target_angle);
+}
+
 #endif
 
 static void calculate_gimbal(float yaw, float pitch) {

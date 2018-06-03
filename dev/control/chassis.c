@@ -65,8 +65,8 @@ static void calculate_current(void) {
 
     // Apply PIDs to calculate currents
     for (int i = 0; i < 4; i++) {
-        pid_calc(&chassis_pid[i], (float) chassis.motor[i].actual_rpm, (float) chassis.motor[i].target_rpm);
-        chassis.motor[i].target_current = (int16_t) chassis_pid[i].out;
+        pid_calc(&chassis_pid[i], (float)chassis.motor[i].actual_rpm, (float)chassis.motor[i].target_rpm);
+        chassis.motor[i].target_current = (int16_t)chassis_pid[i].out;
     }
 }
 
@@ -90,14 +90,12 @@ void chassis_calculate(void) {
 
             if (keyboard.press_w && !keyboard.press_s) chassis.vx = CHASSIS_PC_BASE_SPEED_X;
             else if (keyboard.press_s && !keyboard.press_w) chassis.vx = -CHASSIS_PC_BASE_SPEED_X;
-            else
-                chassis.vx = 0.0f;
+            else chassis.vx = 0.0f;
 
 
             if (keyboard.press_q && !keyboard.press_e) chassis.w = -CHASSIS_PC_BASE_W;
             else if (keyboard.press_e && !keyboard.press_q) chassis.w = CHASSIS_PC_BASE_W;
-            else
-                chassis.w = 0.0f;
+            else chassis.w = 0.0f;
 
 
             if (keyboard.press_shift && !keyboard.press_ctrl) {
@@ -122,6 +120,7 @@ void chassis_calculate(void) {
             chassis.w = remote.ch2 * CHASSIS_RC_MAX_W;
 
             calculate_current();
+
             break;
         }
 

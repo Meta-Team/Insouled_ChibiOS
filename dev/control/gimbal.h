@@ -14,23 +14,23 @@
 /* Angles (degree) */
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
-#define GIMBAL_PIT_MAX_ANGLE  5
-#define GIMBAL_PIT_MIN_ANGLE (-15)
+#define GIMBAL_PIT_MAX_ANGLE  15
+#define GIMBAL_PIT_MIN_ANGLE (-10)
 
 #define GIMBAL_YAW_DELTA_ANGLE 30
-#define GIMBAL_PIT_DELTA_ANGLE 2
+#define GIMBAL_PIT_DELTA_ANGLE 10
 
 /* PID Parameters */
-#define GIMBAL_YAW_PID_KP 5.0f
+#define GIMBAL_YAW_PID_KP 7.0f
 #define GIMBAL_YAW_PID_KI 0.0f
 #define GIMBAL_YAW_PID_KD 0.0f
-#define GIMBAL_YAW_PID_I_LIMIT 0.0f
+#define GIMBAL_YAW_PID_I_LIMIT 4000.0f
 #define GIMBAL_YAW_PID_OUT_LIMIT 4000.0f //Current (mA)
 
-#define GIMBAL_PIT_PID_KP 0.0f//300.0f
-#define GIMBAL_PIT_PID_KI 0.0f//1.0f
+#define GIMBAL_PIT_PID_KP 45.0f
+#define GIMBAL_PIT_PID_KI 1.000f
 #define GIMBAL_PIT_PID_KD 0.0f
-#define GIMBAL_PIT_PID_I_LIMIT 1000.0f
+#define GIMBAL_PIT_PID_I_LIMIT 4000.0f
 #define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
 
 /********** Gimbal Structure Parameters **********/
@@ -38,7 +38,7 @@
 /* "Front" Angles (orig angle) */
 #ifdef INFANTRY1
 #define GIMBAL_FI_YAW_ORIG 904
-#define GIMBAL_FI_PIT_ORIG 7000
+#define GIMBAL_FI_PIT_ORIG 7200
 #endif
 
 /* Motor Current (mA) */
@@ -78,6 +78,7 @@ void gimbal_calculate(void);
 void gimbal_debug_change_operating_pid(int index);
 void gimbal_debug_print_pid_parameters(int operand);
 void gimbal_debug_change_pid_parameters(int operand, float delta);
+void gimbal_debug_print_angle(void);
 #endif
 
 #endif //INSOULED_GIMBAL_H

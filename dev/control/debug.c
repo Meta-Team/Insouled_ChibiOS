@@ -82,6 +82,9 @@ static THD_FUNCTION(debug_thread, p) {
         }
 
         gimbal_debug_print_pid_parameters(gimbal_pid_operand);
+
+        //TODO: Change Location
+        gimbal_debug_print_angle();
 #endif
         chThdSleepMilliseconds(500);
     }

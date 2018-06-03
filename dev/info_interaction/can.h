@@ -9,6 +9,7 @@
 
 #include "chassis.h"
 #include "gimbal.h"
+#include "shoot.h"
 
 #include "remote.h"
 #include "mode_handle.h"
@@ -17,7 +18,7 @@ void process_chassis_feedback(CANRxFrame* rxmsg);
 void process_gimbal_feedback(CANRxFrame* rxmsg);
 
 void send_chassis_currents(void);
-void send_gimbal_currents(void);
+void send_gimbal_shoot_currents(void);
 
 void motor_can_init(void);
 

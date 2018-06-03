@@ -4,7 +4,7 @@
 
 #include "shoot.h"
 
-friction_wheels_t friction_wheels;
+shoot_mechanism_t shoot_mechanism;
 
 void shoot_calculate(void) {
 
@@ -16,17 +16,26 @@ void shoot_calculate(void) {
             break;
         }
         case GLOBAL_MODE_REMOTE_GIMBAL: {
-            friction_wheels.speed_pct = (remote.ch3 + 1.0f) / 2.0f;
+            shoot_mechanism.shoot_speed_pct = (remote.ch3 + 1.0f) / 2.0f;
+            if (shoot_mechanism.shoot_speed_pct > STIR_MOTOR_TRIGGER_SPEED_PCT) {
+                shoot_mechanism.stir_current = STIR_MOTOR_BASE_CURRENT;
+            } else {
+                shoot_mechanism.stir_current = 0;
+            }
             break;
         }
         case GLOBAL_MODE_PC: {
             if (mouse.press_left) {
                 if (keyboard.press_shift && !keyboard.press_ctrl)
-                    friction_wheels.speed_pct = FRICTION_WHEEL_PC_SHIFT_PCT;
+                    shoot_mechanism.shoot_speed_pct = FRICTION_WHEEL_PC_SHIFT_PCT;
                 else if (keyboard.press_ctrl && !keyboard.press_shift)
-                    friction_wheels.speed_pct = FRICTION_WHEEL_PC_CTRL_PCT;
+                    shoot_mechanism.shoot_speed_pct = FRICTION_WHEEL_PC_CTRL_PCT;
                 else
-                    friction_wheels.speed_pct = FRICTION_WHEEL_PC_BASE_PCT;
+                    shoot_mechanism.shoot_speed_pct = FRICTION_WHEEL_PC_BASE_PCT;
+
+                shoot_mechanism.stir_current = STIR_MOTOR_BASE_CURRENT;
+            } else {
+                SHOOT_ZERO_CURRENT();
             }
             break;
         }
@@ -36,9 +45,9 @@ void shoot_calculate(void) {
 
 void send_shoot_currents(void) {
     pwmEnableChannel(&FRICTION_WHEEL_PWM_TIM, FRICTION_WHEEL_PWM_CHANNEL0,
-                     PWM_PERCENTAGE_TO_WIDTH(&FRICTION_WHEEL_PWM_TIM, friction_wheels.speed_pct * 500 + 500));
+                     PWM_PERCENTAGE_TO_WIDTH(&FRICTION_WHEEL_PWM_TIM, shoot_mechanism.shoot_speed_pct * 500 + 500));
     pwmEnableChannel(&FRICTION_WHEEL_PWM_TIM, FRICTION_WHEEL_PWM_CHANNEL1,
-                     PWM_PERCENTAGE_TO_WIDTH(&FRICTION_WHEEL_PWM_TIM, friction_wheels.speed_pct * 500 + 500));
+                     PWM_PERCENTAGE_TO_WIDTH(&FRICTION_WHEEL_PWM_TIM, shoot_mechanism.shoot_speed_pct * 500 + 500));
 }
 
 static PWMConfig friction_wheels_pwmcfg = {

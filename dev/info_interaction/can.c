@@ -3,6 +3,7 @@
 //
 
 #include <can.h>
+#include <control/shoot.h>
 
 /* CAN Configurations */
 static const CANConfig cancfg = {
@@ -27,7 +28,7 @@ void process_gimbal_feedback(CANRxFrame *rxmsg) {
     int motor_id = rxmsg->SID - 0x205;
     uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
 
-    float angle = ((float) feedback_angle_orig - (float) gimbal_fi_orig[motor_id]) * 360.0f / 8192.0f;
+    float angle = ((float)feedback_angle_orig - (float)gimbal_fi_orig[motor_id]) * 360.0f / 8192.0f;
 
     if (gimbal_fi_orig[motor_id] > 4096 && feedback_angle_orig < gimbal_fi_orig[motor_id] - 4096) //Case I, Red Range
         angle += 360.0f;
@@ -37,6 +38,16 @@ void process_gimbal_feedback(CANRxFrame *rxmsg) {
     gimbal.motor[motor_id].actual_angle = (int16_t) (-1.0f * angle);
 
 }
+
+/* Receive */
+void process_stir_motor_feedback(CANRxFrame *rxmsg) {
+    //int motor_id = rxmsg->SID - 0x201;
+    uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
+    shoot_mechanism.stir_actual_angle = feedback_angle_orig / 8192;
+    shoot_mechanism.stir_actual_rpm = (int16_t) (rxmsg->data8[2] << 8 | rxmsg->data8[3]);
+    //print("[FEEDBACK] stir_actual_rpm = %d\n", (int)shoot_mechanism.stir_actual_rpm);
+}
+
 
 static THD_WORKING_AREA(can_rx1_wa, 256);
 static THD_WORKING_AREA(can_rx2_wa, 256);
@@ -63,6 +74,9 @@ static THD_FUNCTION(can_rx, p) {
                 case 0x205:
                 case 0x206:
                     process_gimbal_feedback(&rxmsg);
+                    break;
+                case 0x207:
+                    process_stir_motor_feedback(&rxmsg);
                     break;
             }
         }
@@ -94,7 +108,7 @@ void send_chassis_currents(void) {
     canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
-void send_gimbal_currents(void) {
+void send_gimbal_shoot_currents(void) {
 
     ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
     ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_PIT].target_current, GIMBAL_MOTOR_MAX_CURRENT);
@@ -110,8 +124,9 @@ void send_gimbal_currents(void) {
     txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
     txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_PIT].target_current >> 8);
     txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
-    txmsg.data8[4] = (uint8_t) (zero_current >> 8);
-    txmsg.data8[5] = (uint8_t) zero_current;
+    txmsg.data8[4] = (uint8_t) (shoot_mechanism.stir_current >> 8);
+    txmsg.data8[5] = (uint8_t) shoot_mechanism.stir_current;
+    print("%d\n", shoot_mechanism.stir_current);
     txmsg.data8[6] = (uint8_t) (zero_current >> 8);
     txmsg.data8[7] = (uint8_t) zero_current;
     canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));

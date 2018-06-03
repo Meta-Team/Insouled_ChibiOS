@@ -25,18 +25,10 @@ int main(void) {
     remote_init();
     motor_can_init();
 
-    /*** Enter INIT mode ***/
-    global_mode = GLOBAL_MODE_INIT;
-
     // Parameter calculation initialization
     chassis_calc_init();
     gimbal_calc_init();
     shoot_calc_init();
-
-    for(int i = 0; i < 30; i++) {
-        main_control_loop();
-        chThdSleepMilliseconds(100);
-    }
 
     /*** Enter normal operation mode ***/
 

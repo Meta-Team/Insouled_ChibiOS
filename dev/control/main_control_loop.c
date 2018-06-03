@@ -5,7 +5,7 @@
 #include "main_control_loop.h"
 
 void main_control_loop(void) {
-
+    
     handle_global_mode();
 
     switch (global_mode) {
@@ -13,6 +13,7 @@ void main_control_loop(void) {
             GIMBAL_ZERO_CURRENT();
             chassis_calculate();
             SHOOT_ZERO_CURRENT();
+
             break;
         case GLOBAL_MODE_REMOTE_GIMBAL:
             CHASSIS_ZERO_CURRENT();
@@ -31,6 +32,7 @@ void main_control_loop(void) {
     }
 
     send_chassis_currents();
-    send_gimbal_currents();
+    send_gimbal_shoot_currents();
     send_shoot_currents();
+
 }
