@@ -4,10 +4,10 @@ cmake_minimum_required(VERSION 3.8)
 project(Insouled_ChibiOS)
 
 ### Use make to build target STLink
-add_custom_target(STLink COMMAND make upload-stlink -C ${Insouled_ChibiOS_SOURCE_DIR}/dev
+add_custom_target(STLink COMMAND make upload-stlink -j -C ${Insouled_ChibiOS_SOURCE_DIR}/dev
         CLION_EXE_DIR=${PROJECT_BINARY_DIR})
 
-add_custom_target(JLink COMMAND make upload-jlink -C ${Insouled_ChibiOS_SOURCE_DIR}/dev
+add_custom_target(JLink COMMAND make upload-jlink -j -C ${Insouled_ChibiOS_SOURCE_DIR}/dev
         CLION_EXE_DIR=${PROJECT_BINARY_DIR})
 
 ### Append new source files to dev/dev.mk
