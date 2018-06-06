@@ -16,7 +16,8 @@
 #include "debug.h"
 
 // Vehicle Type
-#define INFANTRY1
+//#define INFANTRY1
+#define ENGINEER
 
 
 

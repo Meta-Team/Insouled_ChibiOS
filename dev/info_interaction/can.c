@@ -28,6 +28,14 @@ void process_gimbal_feedback(CANRxFrame *rxmsg) {
     int motor_id = rxmsg->SID - 0x205;
     uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
 
+#ifdef DEBUG_FEEDBACK_GIMBAL_ORIG_ANGLE
+    if (motor_id == GIMBAL_MOTOR_YAW) {
+        print("[GIMBAL_ORIG] Yaw = %d\n", (int)feedback_angle_orig);
+    } else if (motor_id == GIMBAL_MOTOR_PIT) {
+        print("[GIMBAL_ORIG] Pit = %d\n", (int)feedback_angle_orig);
+    }
+#endif
+
     float angle = ((float)feedback_angle_orig - (float)gimbal_fi_orig[motor_id]) * 360.0f / 8192.0f;
 
     if (gimbal_fi_orig[motor_id] > 4096 && feedback_angle_orig < gimbal_fi_orig[motor_id] - 4096) //Case I, Red Range

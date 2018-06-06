@@ -21,6 +21,7 @@
 #define GIMBAL_PIT_DELTA_ANGLE 10
 
 /* PID Parameters */
+#ifdef INFANTRY1
 #define GIMBAL_YAW_PID_KP 7.0f
 #define GIMBAL_YAW_PID_KI 0.0f
 #define GIMBAL_YAW_PID_KD 0.0f
@@ -32,6 +33,22 @@
 #define GIMBAL_PIT_PID_KD 0.0f
 #define GIMBAL_PIT_PID_I_LIMIT 4000.0f
 #define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
+#endif
+
+#ifdef ENGINEER
+#define GIMBAL_YAW_PID_KP 7.0f
+#define GIMBAL_YAW_PID_KI 0.0f
+#define GIMBAL_YAW_PID_KD 0.0f
+#define GIMBAL_YAW_PID_I_LIMIT 4000.0f
+#define GIMBAL_YAW_PID_OUT_LIMIT 4000.0f //Current (mA)
+
+#define GIMBAL_PIT_PID_KP 45.0f
+#define GIMBAL_PIT_PID_KI 1.000f
+#define GIMBAL_PIT_PID_KD 0.0f
+#define GIMBAL_PIT_PID_I_LIMIT 4000.0f
+#define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
+#endif
+
 
 /********** Gimbal Structure Parameters **********/
 
@@ -39,6 +56,11 @@
 #ifdef INFANTRY1
 #define GIMBAL_FI_YAW_ORIG 904
 #define GIMBAL_FI_PIT_ORIG 7200
+#endif
+
+#ifdef ENGINEER
+#define GIMBAL_FI_YAW_ORIG 0
+#define GIMBAL_FI_PIT_ORIG 0
 #endif
 
 /* Motor Current (mA) */
