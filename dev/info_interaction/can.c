@@ -3,7 +3,14 @@
 //
 
 #include <can.h>
-#include <control/shoot.h>
+#include <control/gimbal.h>
+
+#include "chassis.h"
+#include "gimbal.h"
+#include "shoot.h"
+
+#include "remote.h"
+#include "mode_handle.h"
 
 /* CAN Configurations */
 static const CANConfig cancfg = {
@@ -23,6 +30,7 @@ void process_chassis_feedback(CANRxFrame *rxmsg) {
 }
 
 /* Receive */
+
 void process_gimbal_feedback(CANRxFrame *rxmsg) {
 
     int motor_id = rxmsg->SID - 0x205;
@@ -43,7 +51,19 @@ void process_gimbal_feedback(CANRxFrame *rxmsg) {
     if (gimbal_fi_orig[motor_id] < 4096 && feedback_angle_orig > gimbal_fi_orig[motor_id] + 4096) //Case II, Red Range
         angle -= 360.0f;
 
-    gimbal.motor[motor_id].actual_angle = (int16_t) (-1.0f * angle);
+    int16_t new_angle = (int16_t) (-1.0f * angle + 360.0f * gimbal.motor[motor_id].actual_angle_base_round);
+    if (new_angle - gimbal.motor[motor_id].actual_angle_last > GIMBAL_MOTOR_MAX_DELTA_ANGLE) {
+        // From - to + across 180
+        gimbal.motor[motor_id].actual_angle_base_round--;
+        new_angle -= 360;
+    }
+    if (new_angle - gimbal.motor[motor_id].actual_angle_last < -GIMBAL_MOTOR_MAX_DELTA_ANGLE) {
+        // From + to - across 180
+        gimbal.motor[motor_id].actual_angle_base_round++;
+        new_angle += 360;
+    }
+    gimbal.motor[motor_id].actual_angle_last = gimbal.motor[motor_id].actual_angle;
+    gimbal.motor[motor_id].actual_angle = new_angle;
 
 }
 

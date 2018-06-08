@@ -5,9 +5,6 @@
 #define INSOULED_GIMBAL_H
 
 #include "global.h"
-#include "pid.h"
-
-#include "remote.h"
 
 /********** Chassis Behavior Parameters **********/
 
@@ -19,6 +16,8 @@
 
 #define GIMBAL_YAW_DELTA_ANGLE 30
 #define GIMBAL_PIT_DELTA_ANGLE 10
+
+#define GIMBAL_MOTOR_MAX_DELTA_ANGLE 180
 
 /* PID Parameters */
 #ifdef INFANTRY1
@@ -73,7 +72,8 @@
 #define GIMBAL_MOTOR_PIT 1
 
 typedef struct {
-    uint16_t default_angle_orig;
+    int16_t actual_angle_last; //last actual angle
+    int16_t actual_angle_base_round; // The number of round(s) that motor has rotated related to original position
     int16_t actual_angle;
     int16_t delta_angle;
     int16_t target_angle;
@@ -84,7 +84,6 @@ typedef struct {
     gimbal_motor motor[2];
 } gimbal_t;
 extern gimbal_t gimbal;
-
 
 #define GIMBAL_ZERO_CURRENT() { \
     gimbal.motor[GIMBAL_MOTOR_YAW].target_current = 0; \

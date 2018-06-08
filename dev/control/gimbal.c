@@ -4,6 +4,10 @@
 
 #include "gimbal.h"
 
+#include "pid.h"
+
+#include "remote.h"
+
 uint16_t gimbal_fi_orig[2];
 
 struct pid_t pid_yaw;
@@ -18,7 +22,7 @@ struct pid_t* debug_pid;
 void gimbal_debug_change_operating_pid(int index) {
     if (index == 0) {
         debug_pid = &pid_yaw;
-    } else {
+    } else (index == 1) {
         debug_pid = &pid_pit;
     }
 }
@@ -120,7 +124,8 @@ void gimbal_calc_init(void) {
     gimbal_fi_orig[GIMBAL_MOTOR_PIT] = GIMBAL_FI_PIT_ORIG;
 
     for (int i = 0; i < 2; ++i) {
-        gimbal.motor[i].actual_angle = 0;
+        gimbal.motor[i].actual_angle_base_round = 0;
+        gimbal.motor[i].actual_angle_last = gimbal.motor[i].actual_angle = 0;
         gimbal.motor[i].target_angle = 0;
         gimbal.motor[i].delta_angle = 0;
     }
