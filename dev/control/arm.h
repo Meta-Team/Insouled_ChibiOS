@@ -13,6 +13,7 @@
 void engineering_arm_calculate(void);
 inline int engineering_arm_angle_to_pwm(int angle);
 void engineering_arm_currents(int angle);
+void engineering_arm_pad(int speed);
 void engineering_arm_init(void);
 
 #endif

@@ -7,7 +7,7 @@ static PWMConfig engineering_arm_pwmcfg = {
         {
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
                 {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-                {PWM_OUTPUT_DISABLED, NULL},
+                {PWM_OUTPUT_ACTIVE_HIGH, NULL},
                 {PWM_OUTPUT_DISABLED, NULL}
         },
         0,
@@ -24,6 +24,7 @@ void engineering_arm_calculate() {
             break;
         case GLOBAL_MODE_ENGINEERING_ARM:
             engineering_arm_currents((remote.ch3 + 1.0f) * 90.0f);
+            engineering_arm_pad((1.0f - remote.ch1) * 90.0f);
             break;
     }
 }
@@ -41,16 +42,22 @@ void engineering_arm_currents(int angle) {
                      engineering_arm_angle_to_pwm(180 - angle)));
 }
 
+void engineering_arm_pad(int speed) {
+    pwmEnableChannel(&ENGINEERING_ARM_PWM_TIM, ENGINEERING_ARM_PWM_CENTER,
+                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM,
+                                             engineering_arm_angle_to_pwm(speed)));
+}
+
 void engineering_arm_init() {
     palSetPadMode(GPIOD, 12, PAL_MODE_ALTERNATE(2));
     palSetPadMode(GPIOD, 13, PAL_MODE_ALTERNATE(2));
     palSetPadMode(GPIOD, 14, PAL_MODE_ALTERNATE(2));
     pwmStart(&ENGINEERING_ARM_PWM_TIM, &engineering_arm_pwmcfg);
     pwmEnableChannel(&ENGINEERING_ARM_PWM_TIM, ENGINEERING_ARM_PWM_LEFT,
-                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM, 1000));
+                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM, 750));
     pwmEnableChannel(&ENGINEERING_ARM_PWM_TIM, ENGINEERING_ARM_PWM_RIGHT,
-                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM, 1000));
+                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM, 750));
     pwmEnableChannel(&ENGINEERING_ARM_PWM_TIM, ENGINEERING_ARM_PWM_CENTER,
-                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM, 1000));
+                     PWM_PERCENTAGE_TO_WIDTH(&ENGINEERING_ARM_PWM_TIM, 750));
 
 }
