@@ -7,6 +7,6 @@
 #define DEBUG_UART_PORT SD6
 
 void serial_debug_init(void);
-#define print(...) chprintf((BaseSequentialStream*) &DEBUG_UART_PORT, __VA_ARGS__)
+//#define print(...) chprintf((BaseSequentialStream*) &DEBUG_UART_PORT, __VA_ARGS__)
 
 #endif

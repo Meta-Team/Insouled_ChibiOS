@@ -8,7 +8,7 @@
 //#define DEBUG_CHASSIS_PID
 //#define DEBUG_GIMBAL_PID
 
-#define DEBUG_FEEDBACK_GIMBAL_ORIG_ANGLE
+//#define DEBUG_FEEDBACK_GIMBAL_ORIG_ANGLE
 
 void debug_thread_init(void);
 

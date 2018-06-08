@@ -64,7 +64,6 @@ void process_gimbal_feedback(CANRxFrame *rxmsg) {
     }
     gimbal.motor[motor_id].actual_angle_last = gimbal.motor[motor_id].actual_angle;
     gimbal.motor[motor_id].actual_angle = new_angle;
-
 }
 
 /* Receive */
@@ -78,7 +77,6 @@ void process_stir_motor_feedback(CANRxFrame *rxmsg) {
 
 
 static THD_WORKING_AREA(can_rx1_wa, 256);
-static THD_WORKING_AREA(can_rx2_wa, 256);
 
 static THD_FUNCTION(can_rx, p) {
     CANDriver *canp = p;
@@ -88,10 +86,10 @@ static THD_FUNCTION(can_rx, p) {
     chRegSetThreadName("can_receiver");
     chEvtRegister(&canp->rxfull_event, &el, 0);
     while (true) {
-        if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0) continue;
+        if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(100)) == 0) continue;
         while (canReceive(canp, CAN_ANY_MAILBOX, &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
             // Process message.
-
+            chSysLock();
             switch (rxmsg.SID) {
                 case 0x201:
                 case 0x202:
@@ -107,6 +105,7 @@ static THD_FUNCTION(can_rx, p) {
                     process_stir_motor_feedback(&rxmsg);
                     break;
             }
+            chSysUnlock();
         }
     }
 }
@@ -133,7 +132,6 @@ void send_chassis_currents(void) {
     txmsg.data8[6] = (uint8_t) (chassis.motor[3].target_current >> 8);
     txmsg.data8[7] = (uint8_t) chassis.motor[3].target_current;
     canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
-    canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
 void send_gimbal_shoot_currents(void) {
@@ -154,11 +152,9 @@ void send_gimbal_shoot_currents(void) {
     txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
     txmsg.data8[4] = (uint8_t) (shoot_mechanism.stir_current >> 8);
     txmsg.data8[5] = (uint8_t) shoot_mechanism.stir_current;
-    print("%d\n", shoot_mechanism.stir_current);
     txmsg.data8[6] = (uint8_t) (zero_current >> 8);
     txmsg.data8[7] = (uint8_t) zero_current;
     canTransmit(&CAND1, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
-    canTransmit(&CAND2, CAN_ANY_MAILBOX, &txmsg, MS2ST(10));
 }
 
 
@@ -169,13 +165,10 @@ void motor_can_init(void) {
      * Activates the CAN drivers 1 and 2.
      */
     canStart(&CAND1, &cancfg);
-    canStart(&CAND2, &cancfg);
 
     /*
      * Starting the receiver threads.
      */
-    chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO + 7,
+    chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO ,
                       can_rx, &CAND1);
-    chThdCreateStatic(can_rx2_wa, sizeof(can_rx2_wa), NORMALPRIO + 7,
-                      can_rx, &CAND2);
 }

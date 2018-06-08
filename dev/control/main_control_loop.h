@@ -17,5 +17,7 @@
 #include "can.h"
 
 void main_control_loop(void);
+void send_thread_init(void);
+void mode_handle_thread_init(void);
 
 #endif //INSOULED_CHIBIOS_MAIN_CONTROL_LOOP_H

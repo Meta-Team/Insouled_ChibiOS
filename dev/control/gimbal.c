@@ -115,6 +115,10 @@ void gimbal_calculate(void) {
 
             break;
         }
+        case GLOBAL_MODE_ENGINEERING_ARM: {
+            calculate_gimbal(0, 0);
+            break;
+        }
     }
 }
 

@@ -37,6 +37,9 @@ int main(void) {
     // Mode handle state machine initialization
     mode_handle_init();
 
+    mode_handle_thread_init();
+    send_thread_init();
+
     while (true) {
         // Main loop, runs mode handle state machine
         main_control_loop();

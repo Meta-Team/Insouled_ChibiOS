@@ -9,6 +9,8 @@
 /********** Chassis Behavior Parameters **********/
 
 /* Angles (degree) */
+
+#ifdef INFANTRY1
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
 #define GIMBAL_PIT_MAX_ANGLE  15
@@ -16,6 +18,17 @@
 
 #define GIMBAL_YAW_DELTA_ANGLE 30
 #define GIMBAL_PIT_DELTA_ANGLE 10
+#endif
+
+#ifdef ENGINEER
+#define GIMBAL_YAW_MAX_ANGLE  90
+#define GIMBAL_YAW_MIN_ANGLE (-90)
+#define GIMBAL_PIT_MAX_ANGLE  720
+#define GIMBAL_PIT_MIN_ANGLE (-720)
+
+#define GIMBAL_YAW_DELTA_ANGLE 15
+#define GIMBAL_PIT_DELTA_ANGLE 10
+#endif
 
 #define GIMBAL_MOTOR_MAX_DELTA_ANGLE 180
 
@@ -35,17 +48,17 @@
 #endif
 
 #ifdef ENGINEER
-#define GIMBAL_YAW_PID_KP 7.0f
+#define GIMBAL_YAW_PID_KP 9.0f
 #define GIMBAL_YAW_PID_KI 0.0f
-#define GIMBAL_YAW_PID_KD 0.0f
-#define GIMBAL_YAW_PID_I_LIMIT 4000.0f
-#define GIMBAL_YAW_PID_OUT_LIMIT 4000.0f //Current (mA)
+#define GIMBAL_YAW_PID_KD 0.8f
+#define GIMBAL_YAW_PID_I_LIMIT 3000.0f
+#define GIMBAL_YAW_PID_OUT_LIMIT 3000.0f //Current (mA)
 
-#define GIMBAL_PIT_PID_KP 45.0f
-#define GIMBAL_PIT_PID_KI 1.000f
+#define GIMBAL_PIT_PID_KP 12.0f
+#define GIMBAL_PIT_PID_KI 1.7f
 #define GIMBAL_PIT_PID_KD 0.0f
-#define GIMBAL_PIT_PID_I_LIMIT 4000.0f
-#define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
+#define GIMBAL_PIT_PID_I_LIMIT 2000.0f
+#define GIMBAL_PIT_PID_OUT_LIMIT 3000.0f //Current (mA)
 #endif
 
 
@@ -58,8 +71,8 @@
 #endif
 
 #ifdef ENGINEER
-#define GIMBAL_FI_YAW_ORIG 0
-#define GIMBAL_FI_PIT_ORIG 0
+#define GIMBAL_FI_YAW_ORIG 7080
+#define GIMBAL_FI_PIT_ORIG 3050
 #endif
 
 /* Motor Current (mA) */
