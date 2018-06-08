@@ -15,6 +15,7 @@ typedef enum _global_mode_t {
     GLOBAL_MODE_PC = 1,
     GLOBAL_MODE_REMOTE_CHASSIS = 2,
     GLOBAL_MODE_REMOTE_GIMBAL = 3,
+    GLOBAL_MODE_ENGINEERING_ARM = 4,
 } global_mode_t;
 extern global_mode_t global_mode;
 

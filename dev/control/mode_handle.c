@@ -8,7 +8,7 @@ global_mode_t global_mode;
 
 global_mode_t transistion_rules[3][3] = {
         {GLOBAL_MODE_SAFETY /*Up*/, GLOBAL_MODE_SAFETY         /*Down*/, GLOBAL_MODE_SAFETY        /*Middle*/}, //Up
-        {GLOBAL_MODE_SAFETY /*Up*/, GLOBAL_MODE_REMOTE_CHASSIS /*Down*/, GLOBAL_MODE_REMOTE_GIMBAL /*Middle*/}, //Down
+        {GLOBAL_MODE_ENGINEERING_ARM /*Up*/, GLOBAL_MODE_REMOTE_CHASSIS /*Down*/, GLOBAL_MODE_REMOTE_GIMBAL /*Middle*/}, //Down
         {GLOBAL_MODE_PC     /*Up*/, GLOBAL_MODE_PC             /*Down*/, GLOBAL_MODE_PC            /*Middle*/}  //Middle
 };
 
