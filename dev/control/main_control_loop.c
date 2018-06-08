@@ -25,11 +25,17 @@ void main_control_loop(void) {
             chassis_calculate();
             shoot_calculate();
             break;
+        case GLOBAL_MODE_ENGINEERING_ARM:
+            GIMBAL_ZERO_CURRENT();
+            CHASSIS_ZERO_CURRENT();
+            SHOOT_ZERO_CURRENT();
+            break;
         default:
             CHASSIS_ZERO_CURRENT();
             GIMBAL_ZERO_CURRENT();
             SHOOT_ZERO_CURRENT();
     }
+    engineering_arm_calculate();
 
     send_chassis_currents();
     send_gimbal_shoot_currents();

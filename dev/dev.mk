@@ -1,5 +1,6 @@
 # List of dev files.
 DEVSRC = $(CHIBIOS)/dev/main.c \
+		 $(CHIBIOS)/dev/control/arm.c \
 		 $(CHIBIOS)/dev/control/chassis.c \
 		 $(CHIBIOS)/dev/control/gimbal.c \
 		 $(CHIBIOS)/dev/control/mode_handle.c \
