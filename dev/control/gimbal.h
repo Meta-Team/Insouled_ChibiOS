@@ -49,15 +49,15 @@
 
 #ifdef ENGINEER
 #define GIMBAL_YAW_PID_KP 9.0f
-#define GIMBAL_YAW_PID_KI 0.0f
+#define GIMBAL_YAW_PID_KI 0.3f
 #define GIMBAL_YAW_PID_KD 0.8f
-#define GIMBAL_YAW_PID_I_LIMIT 3000.0f
+#define GIMBAL_YAW_PID_I_LIMIT 1000.0f
 #define GIMBAL_YAW_PID_OUT_LIMIT 3000.0f //Current (mA)
 
-#define GIMBAL_PIT_PID_KP 12.0f
-#define GIMBAL_PIT_PID_KI 1.7f
+#define GIMBAL_PIT_PID_KP 10.0f
+#define GIMBAL_PIT_PID_KI 1.0f
 #define GIMBAL_PIT_PID_KD 0.0f
-#define GIMBAL_PIT_PID_I_LIMIT 2000.0f
+#define GIMBAL_PIT_PID_I_LIMIT 1500.0f
 #define GIMBAL_PIT_PID_OUT_LIMIT 3000.0f //Current (mA)
 #endif
 
@@ -85,6 +85,7 @@
 #define GIMBAL_MOTOR_PIT 1
 
 typedef struct {
+    uint16_t actual_angle_orig;
     int16_t actual_angle_last; //last actual angle
     int16_t actual_angle_base_round; // The number of round(s) that motor has rotated related to original position
     int16_t actual_angle;

@@ -32,7 +32,7 @@
 #define CHASSIS_SPEED_RATIO_CTRL 0.5f
 
 /* Chassis PID parameters (mA) */
-#define CHASSIS_PID_KP 1.0f
+#define CHASSIS_PID_KP 0.8f
 #define CHASSIS_PID_KI 0.0f
 #define CHASSIS_PID_KD 0.0f
 #define CHASSIS_PID_I_LIMIT 0.0f
