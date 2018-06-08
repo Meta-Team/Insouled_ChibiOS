@@ -1,3 +1,4 @@
+#include <info_interaction/remote.h>
 #include "arm.h"
 
 static PWMConfig engineering_arm_pwmcfg = {
@@ -16,14 +17,28 @@ static PWMConfig engineering_arm_pwmcfg = {
 
 void engineering_arm_calculate() {
     switch (global_mode) {
-        case GLOBAL_MODE_INIT:
-        case GLOBAL_MODE_SAFETY:
-        case GLOBAL_MODE_REMOTE_CHASSIS:
-        case GLOBAL_MODE_REMOTE_GIMBAL:
         case GLOBAL_MODE_PC:
+            if(mouse.press_left) {
+                engineering_arm_currents(ENGINEERING_ARM_ANGLE_CLOSE);
+                engineering_arm_pad(0);
+            } else if(mouse.press_right) {
+                engineering_arm_currents(ENGINEERING_ARM_ANGLE_OPEN);
+                engineering_arm_pad(180);
+            } else {
+                engineering_arm_currents(ENGINEERING_ARM_ANGLE_DEFAULT);
+                engineering_arm_pad(90);
+            }
             break;
         case GLOBAL_MODE_ENGINEERING_ARM:
-            engineering_arm_currents((remote.ch3 + 1.0f) * 90.0f);
+            if(remote.ch3 > 0) {
+                engineering_arm_currents(
+                        remote.ch3 * (ENGINEERING_ARM_ANGLE_CLOSE - ENGINEERING_ARM_ANGLE_DEFAULT)
+                        + ENGINEERING_ARM_ANGLE_DEFAULT);
+            } else {
+                engineering_arm_currents(
+                        remote.ch3 * (ENGINEERING_ARM_ANGLE_DEFAULT - ENGINEERING_ARM_ANGLE_OPEN)
+                        + ENGINEERING_ARM_ANGLE_DEFAULT);
+            }
             engineering_arm_pad((1.0f - remote.ch1) * 90.0f);
             break;
     }

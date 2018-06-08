@@ -10,6 +10,10 @@
 #define ENGINEERING_ARM_PWM_RIGHT 1
 #define ENGINEERING_ARM_PWM_CENTER 2
 
+#define ENGINEERING_ARM_ANGLE_DEFAULT 90
+#define ENGINEERING_ARM_ANGLE_OPEN 45
+#define ENGINEERING_ARM_ANGLE_CLOSE 120
+
 void engineering_arm_calculate(void);
 inline int engineering_arm_angle_to_pwm(int angle);
 void engineering_arm_currents(int angle);
