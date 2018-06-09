@@ -13,13 +13,18 @@
 #define CHASSIS_RC_MAX_SPEED_X  2000.0f //3300.0f
 #define CHASSIS_RC_MAX_SPEED_Y  2000.0f //3300.0f
 
-#define CHASSIS_PC_BASE_SPEED_X  2000.0f //3300.0f
-#define CHASSIS_PC_BASE_SPEED_Y  2000.0f //3300.0f
+#define CHASSIS_PC_NORMAL_SPEED_X  2000.0f //3300.0f
+#define CHASSIS_PC_NORMAL_SPEED_Y  2000.0f //3300.0f
+
+#define CHASSIS_PC_ENGI_SPEED_X  800.0f
+#define CHASSIS_PC_ENGI_SPEED_Y  800.0f
 
 /* Chassis rotation speed (deg/s) */
 #define CHASSIS_RC_MAX_W 200.0f //300.0f
 
-#define CHASSIS_PC_BASE_W 200.0f //300.0f
+#define CHASSIS_PC_NORMAL_W 200.0f //300.0f
+
+#define CHASSIS_PC_ENGI_W 85.0f
 
 /* Chassis motor speed (rad/min) */
 #define CHASSIS_MOTOR_MAX_RPM 5000 //8500
@@ -27,16 +32,18 @@
 /* Chassis motor current (mA) */
 #define CHASSIS_MOTOR_MAX_CURRENT 5000 //20000
 
-/* Chassis Speed Control Ratios */
-#define CHASSIS_SPEED_RATIO_SHIFT 2.0f
-#define CHASSIS_SPEED_RATIO_CTRL 0.5f
-
 /* Chassis PID parameters (mA) */
-#define CHASSIS_PID_KP 0.8f
-#define CHASSIS_PID_KI 0.0f
-#define CHASSIS_PID_KD 0.0f
-#define CHASSIS_PID_I_LIMIT 0.0f
-#define CHASSIS_PID_OUT_LIMIT 2000.0f //Current (mA)
+#define CHASSIS_PID_KP_NORMAL 0.7f
+#define CHASSIS_PID_KI_NORMAL 0.0f
+#define CHASSIS_PID_KD_NORMAL 0.2f
+#define CHASSIS_PID_I_LIMIT_NORMAL 0.0f
+#define CHASSIS_PID_OUT_LIMIT_NORMAL 2000.0f //Current (mA)
+
+#define CHASSIS_PID_KP_ENGI 0.5f
+#define CHASSIS_PID_KI_ENGI 0.0f
+#define CHASSIS_PID_KD_ENGI 0.1f
+#define CHASSIS_PID_I_LIMIT_ENGI 0.0f
+#define CHASSIS_PID_OUT_LIMIT_ENGI 2000.0f //Current (mA)
 
 /********** Chassis Structure Parameters **********/
 
@@ -88,13 +95,8 @@ extern chassis_t chassis;
 }
 
 void chassis_calculate(void);
-
+void chassis_init_pid_based_on_pc_mode(void);
 void chassis_calc_init(void);
-
-#ifdef DEBUG_CHASSIS_PID
-void chassis_debug_print_pid_parameters(int operand);
-void chassis_debug_change_pid_parameters(int operand, float delta);
-#endif
 
 #endif //INSOULED_CHASSIS_H
 

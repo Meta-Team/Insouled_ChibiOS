@@ -39,7 +39,7 @@ void process_gimbal_feedback(CANRxFrame *rxmsg) {
 #ifdef DEBUG_FEEDBACK_GIMBAL_ORIG_ANGLE
     if (motor_id == GIMBAL_MOTOR_YAW) {
         print("[GIMBAL_ORIG] Yaw = %d\n", (int)feedback_angle_orig);
-    } else if (motor_id == GIMBAL_MOTOR_PIT) {
+    } else if (motor_id == GIMBAL_MOTOR_ROLL) {
         print("[GIMBAL_ORIG] Pit = %d\n", (int)feedback_angle_orig);
     }
 #endif
@@ -137,7 +137,7 @@ void send_chassis_currents(void) {
 void send_gimbal_shoot_currents(void) {
 
     ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_YAW].target_current, GIMBAL_MOTOR_MAX_CURRENT);
-    ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_PIT].target_current, GIMBAL_MOTOR_MAX_CURRENT);
+    ABS_LIMIT(gimbal.motor[GIMBAL_MOTOR_ROLL].target_current, GIMBAL_MOTOR_MAX_CURRENT);
 
     int16_t zero_current = 0;
 
@@ -148,8 +148,8 @@ void send_gimbal_shoot_currents(void) {
     txmsg.DLC = 0x08;
     txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
     txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
-    txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_PIT].target_current >> 8);
-    txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_PIT].target_current;
+    txmsg.data8[2] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_ROLL].target_current >> 8);
+    txmsg.data8[3] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_ROLL].target_current;
     txmsg.data8[4] = (uint8_t) (shoot_mechanism.stir_current >> 8);
     txmsg.data8[5] = (uint8_t) shoot_mechanism.stir_current;
     txmsg.data8[6] = (uint8_t) (zero_current >> 8);

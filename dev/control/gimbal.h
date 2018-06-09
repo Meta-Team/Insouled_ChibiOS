@@ -13,52 +13,66 @@
 #ifdef INFANTRY1
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
-#define GIMBAL_PIT_MAX_ANGLE  15
-#define GIMBAL_PIT_MIN_ANGLE (-10)
+#define GIMBAL_ROLL_MAX_ANGLE  15
+#define GIMBAL_ROLL_MIN_ANGLE (-10)
 
-#define GIMBAL_YAW_DELTA_ANGLE 30
-#define GIMBAL_PIT_DELTA_ANGLE 10
+#define GIMBAL_YAW_DELTA_ANGLE_NORMAL 30
+#define GIMBAL_ROLL_DELTA_ANGLE 10
 #endif
 
 #ifdef ENGINEER
 #define GIMBAL_YAW_MAX_ANGLE  90
 #define GIMBAL_YAW_MIN_ANGLE (-90)
-#define GIMBAL_PIT_MAX_ANGLE  720
-#define GIMBAL_PIT_MIN_ANGLE (-720)
+#define GIMBAL_ROLL_MAX_ANGLE  720
+#define GIMBAL_ROLL_MIN_ANGLE (-720)
 
-#define GIMBAL_YAW_DELTA_ANGLE 15
-#define GIMBAL_PIT_DELTA_ANGLE 10
+#define GIMBAL_YAW_DELTA_ANGLE_NORMAL 20
+#define GIMBAL_YAW_DELTA_ANGLE_ENGI 10
+
+#define GIMBAL_ROLL_DELTA_ANGLE 6
 #endif
 
 #define GIMBAL_MOTOR_MAX_DELTA_ANGLE 180
 
 /* PID Parameters */
 #ifdef INFANTRY1
-#define GIMBAL_YAW_PID_KP 7.0f
-#define GIMBAL_YAW_PID_KI 0.0f
-#define GIMBAL_YAW_PID_KD 0.0f
-#define GIMBAL_YAW_PID_I_LIMIT 4000.0f
-#define GIMBAL_YAW_PID_OUT_LIMIT 4000.0f //Current (mA)
+#define GIMBAL_YAW_PID_KP_EMPTY 7.0f
+#define GIMBAL_YAW_PID_KI_EMPTY 0.0f
+#define GIMBAL_YAW_PID_KD_EMPTY 0.0f
+#define GIMBAL_YAW_PID_I_LIMIT_EMPTY 4000.0f
+#define GIMBAL_YAW_PID_OUT_LIMIT_EMPTY 4000.0f //Current (mA)
 
-#define GIMBAL_PIT_PID_KP 45.0f
-#define GIMBAL_PIT_PID_KI 1.000f
-#define GIMBAL_PIT_PID_KD 0.0f
-#define GIMBAL_PIT_PID_I_LIMIT 4000.0f
-#define GIMBAL_PIT_PID_OUT_LIMIT 4000.0f //Current (mA)
+#define GIMBAL_ROLL_PID_KP_EMPTY 45.0f
+#define GIMBAL_ROLL_PID_KI_EMPTY 1.000f
+#define GIMBAL_ROLL_PID_KD_EMPTY 0.0f
+#define GIMBAL_ROLL_PID_I_LIMIT_EMPTY 4000.0f
+#define GIMBAL_ROLL_PID_OUT_LIMIT_EMPTY 4000.0f //Current (mA)
 #endif
 
 #ifdef ENGINEER
-#define GIMBAL_YAW_PID_KP 9.0f
-#define GIMBAL_YAW_PID_KI 0.3f
-#define GIMBAL_YAW_PID_KD 0.8f
-#define GIMBAL_YAW_PID_I_LIMIT 1000.0f
-#define GIMBAL_YAW_PID_OUT_LIMIT 3000.0f //Current (mA)
+#define GIMBAL_YAW_PID_KP_EMPTY 9.0f
+#define GIMBAL_YAW_PID_KI_EMPTY 0.0f
+#define GIMBAL_YAW_PID_KD_EMPTY 0.8f
+#define GIMBAL_YAW_PID_I_LIMIT_EMPTY 1000.0f
+#define GIMBAL_YAW_PID_OUT_LIMIT_EMPTY 3000.0f //Current (mA)
 
-#define GIMBAL_PIT_PID_KP 10.0f
-#define GIMBAL_PIT_PID_KI 1.0f
-#define GIMBAL_PIT_PID_KD 0.0f
-#define GIMBAL_PIT_PID_I_LIMIT 1500.0f
-#define GIMBAL_PIT_PID_OUT_LIMIT 3000.0f //Current (mA)
+#define GIMBAL_YAW_PID_KP_PICKED 9.0f
+#define GIMBAL_YAW_PID_KI_PICKED 0.3f
+#define GIMBAL_YAW_PID_KD_PICKED 0.8f
+#define GIMBAL_YAW_PID_I_LIMIT_PICKED 1000.0f
+#define GIMBAL_YAW_PID_OUT_LIMIT_PICKED 3000.0f //Current (mA)
+
+#define GIMBAL_ROLL_PID_KP_EMPTY 12.0f
+#define GIMBAL_ROLL_PID_KI_EMPTY 1.0f
+#define GIMBAL_ROLL_PID_KD_EMPTY 0.0f
+#define GIMBAL_ROLL_PID_I_LIMIT_EMPTY 400.0f
+#define GIMBAL_ROLL_PID_OUT_LIMIT_EMPTY 600.0f //Current (mA)
+
+#define GIMBAL_ROLL_PID_KP_PICKED 25.0f
+#define GIMBAL_ROLL_PID_KI_PICKED 0.0f
+#define GIMBAL_ROLL_PID_KD_PICKED 0.0f
+#define GIMBAL_ROLL_PID_I_LIMIT_PICKED 1200.0f
+#define GIMBAL_ROLL_PID_OUT_LIMIT_PICKED 2000.0f //Current (mA)
 #endif
 
 
@@ -67,12 +81,12 @@
 /* "Front" Angles (orig angle) */
 #ifdef INFANTRY1
 #define GIMBAL_FI_YAW_ORIG 904
-#define GIMBAL_FI_PIT_ORIG 7200
+#define GIMBAL_FI_ROLL_ORIG 7200
 #endif
 
 #ifdef ENGINEER
 #define GIMBAL_FI_YAW_ORIG 7080
-#define GIMBAL_FI_PIT_ORIG 3050
+#define GIMBAL_FI_ROLL_ORIG 3050
 #endif
 
 /* Motor Current (mA) */
@@ -82,7 +96,7 @@
 
 // These IDs are corresponding to motor IDs
 #define GIMBAL_MOTOR_YAW 0
-#define GIMBAL_MOTOR_PIT 1
+#define GIMBAL_MOTOR_ROLL 1
 
 typedef struct {
     uint16_t actual_angle_orig;
@@ -101,20 +115,14 @@ extern gimbal_t gimbal;
 
 #define GIMBAL_ZERO_CURRENT() { \
     gimbal.motor[GIMBAL_MOTOR_YAW].target_current = 0; \
-    gimbal.motor[GIMBAL_MOTOR_PIT].target_current = 0; \
+    gimbal.motor[GIMBAL_MOTOR_ROLL].target_current = 0; \
 }
 
 extern uint16_t gimbal_fi_orig[2];
 
 void gimbal_calc_init(void);
+void gimbal_init_pid_based_on_me_arm_mode(void);
 void gimbal_calculate(void);
-
-#ifdef DEBUG_GIMBAL_PID
-void gimbal_debug_change_operating_pid(int index);
-void gimbal_debug_print_pid_parameters(int operand);
-void gimbal_debug_change_pid_parameters(int operand, float delta);
-void gimbal_debug_print_angle(void);
-#endif
 
 #endif //INSOULED_GIMBAL_H
 

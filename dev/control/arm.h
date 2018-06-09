@@ -1,23 +1,25 @@
 #ifndef INSOULED_CHIBIOS_ARM_H
 #define INSOULED_CHIBIOS_ARM_H
 
-#include "../global.h"
-#include "mode_handle.h"
-#include "../info_interaction/remote.h"
+#include "global.h"
 
-#define ENGINEERING_ARM_PWM_TIM PWMD4
-#define ENGINEERING_ARM_PWM_LEFT 0
-#define ENGINEERING_ARM_PWM_RIGHT 1
-#define ENGINEERING_ARM_PWM_CENTER 2
+#define ME_ARM_PWM_TIM PWMD4
+#define ME_ARM_PWM_LEFT 0
+#define ME_ARM_PWM_RIGHT 1
+#define ME_ARM_PWM_CENTER 2
 
-#define ENGINEERING_ARM_ANGLE_DEFAULT 90
-#define ENGINEERING_ARM_ANGLE_OPEN 45
-#define ENGINEERING_ARM_ANGLE_CLOSE 120
+#define ME_ARM_ANGLE_DEFAULT 90
+#define ME_ARM_ANGLE_OPEN 45
+#define ME_ARM_ANGLE_CLOSE 120
 
-void engineering_arm_calculate(void);
-inline int engineering_arm_angle_to_pwm(int angle);
-void engineering_arm_currents(int angle);
-void engineering_arm_pad(int speed);
-void engineering_arm_init(void);
+typedef enum _me_arm_mode_t {
+    ME_ARM_MODE_EMPTY = 0,
+    ME_ARM_MODE_PICKED = 2
+} me_arm_mode_t;
+
+extern me_arm_mode_t me_arm_mode;
+
+void me_arm_handle(void);
+void me_arm_init(void);
 
 #endif

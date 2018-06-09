@@ -22,13 +22,13 @@ void main_control_loop(void) {
             gimbal_calculate();
             chassis_calculate();
             shoot_calculate();
-            engineering_arm_calculate();
+            me_arm_handle();
             break;
-        case GLOBAL_MODE_ENGINEERING_ARM:
+        case GLOBAL_MODE_REMOTE_ME_ARM:
             gimbal_calculate();
             CHASSIS_ZERO_CURRENT();
             SHOOT_ZERO_CURRENT();
-            engineering_arm_calculate();
+            me_arm_handle();
             break;
         default:
             CHASSIS_ZERO_CURRENT();
@@ -45,8 +45,7 @@ static THD_FUNCTION(mode_handle, p) {
     chRegSetThreadName("mode_handle");
 
     while (true) {
-        handle_global_mode();
-        // Todo: Find better way to handle safety mode
+        handle_modes();
         if (global_mode == GLOBAL_MODE_SAFETY) {
             CHASSIS_ZERO_CURRENT();
             GIMBAL_ZERO_CURRENT();

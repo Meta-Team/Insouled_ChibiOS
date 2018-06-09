@@ -13,30 +13,6 @@ chassis_t chassis;
 struct pid_t chassis_pid[4];
 float pid_kp, pid_ki, pid_kd, pid_i_limit, pid_out_limit;
 
-#ifdef DEBUG_CHASSIS_PID
-void chassis_debug_print_pid_parameters(int operand) {
-    print("[CHASSIS_PID]");
-    if (operand == 0) print("[kp]"); else print("kp");
-    print(" = %f, ", pid_kp);
-    if (operand == 1) print("[ki]"); else print("ki");
-    print(" = %f, ", pid_ki);
-    if (operand == 2) print("[kd]"); else print("kd");
-    print(" = %f, ", pid_kd);
-    if (operand == 3) print("[i_limit]"); else print("i_limit");
-    print(" = %f, ", pid_i_limit);
-    if (operand == 4) print("[out_limit]"); else print("out_limit");
-    print(" = %f.\n", pid_out_limit);
-}
-
-void chassis_debug_change_pid_parameters(int operand, float delta) {
-    if (operand == 0) pid_kp += delta;
-    if (operand == 1) pid_ki += delta;
-    if (operand == 2) pid_kd += delta;
-    if (operand == 3) pid_i_limit += delta;
-    if (operand == 4) pid_out_limit += delta;
-}
-#endif
-
 static void calculate_current(void) {
 
     //Calculate speeds of each wheel
@@ -83,29 +59,28 @@ void chassis_calculate(void) {
         case GLOBAL_MODE_PC: {
 
 
-            if (keyboard.press_a && !keyboard.press_d) chassis.vy = -CHASSIS_PC_BASE_SPEED_Y;
-            else if (keyboard.press_d && !keyboard.press_a) chassis.vy = CHASSIS_PC_BASE_SPEED_Y;
+            if (keyboard.press_a && !keyboard.press_d) chassis.vy = -1.0f;
+            else if (keyboard.press_d && !keyboard.press_a) chassis.vy = 1.0f;
             else chassis.vy = 0.0f;
 
 
-            if (keyboard.press_w && !keyboard.press_s) chassis.vx = CHASSIS_PC_BASE_SPEED_X;
-            else if (keyboard.press_s && !keyboard.press_w) chassis.vx = -CHASSIS_PC_BASE_SPEED_X;
+            if (keyboard.press_w && !keyboard.press_s) chassis.vx = 1.0f;
+            else if (keyboard.press_s && !keyboard.press_w) chassis.vx = -1.0f;
             else chassis.vx = 0.0f;
 
 
-            if (keyboard.press_q && !keyboard.press_e) chassis.w = -CHASSIS_PC_BASE_W;
-            else if (keyboard.press_e && !keyboard.press_q) chassis.w = CHASSIS_PC_BASE_W;
+            if (keyboard.press_q && !keyboard.press_e) chassis.w = -1.0f;
+            else if (keyboard.press_e && !keyboard.press_q) chassis.w = 1.0f;
             else chassis.w = 0.0f;
 
-
-            if (keyboard.press_shift && !keyboard.press_ctrl) {
-                chassis.vx *= CHASSIS_SPEED_RATIO_SHIFT;
-                chassis.vy *= CHASSIS_SPEED_RATIO_SHIFT;
-                chassis.w *= CHASSIS_SPEED_RATIO_SHIFT;
-            } else if (keyboard.press_ctrl && !keyboard.press_shift) {
-                chassis.vx *= CHASSIS_SPEED_RATIO_CTRL;
-                chassis.vy *= CHASSIS_SPEED_RATIO_CTRL;
-                chassis.w *= CHASSIS_SPEED_RATIO_CTRL;
+            if (pc_mode == PC_MODE_NORMAL) {
+                chassis.vy *= CHASSIS_PC_NORMAL_SPEED_Y;
+                chassis.vx *= CHASSIS_PC_NORMAL_SPEED_X;
+                chassis.w  *= CHASSIS_PC_NORMAL_W;
+            } else if (pc_mode == PC_MODE_ENGI) {
+                chassis.vy *= CHASSIS_PC_ENGI_SPEED_Y;
+                chassis.vx *= CHASSIS_PC_ENGI_SPEED_X;
+                chassis.w  *= CHASSIS_PC_ENGI_W;
             }
 
             calculate_current();
@@ -134,15 +109,27 @@ void chassis_calculate(void) {
 
 }
 
-void chassis_calc_init(void) {
+void chassis_init_pid_based_on_pc_mode(void) {
 
-    pid_kp = CHASSIS_PID_KP;
-    pid_ki = CHASSIS_PID_KI;
-    pid_kd = CHASSIS_PID_KD;
-    pid_i_limit = CHASSIS_PID_I_LIMIT;
-    pid_out_limit = CHASSIS_PID_OUT_LIMIT;
+    if (pc_mode == PC_MODE_NORMAL) {
+        pid_kp = CHASSIS_PID_KP_NORMAL;
+        pid_ki = CHASSIS_PID_KI_NORMAL;
+        pid_kd = CHASSIS_PID_KD_NORMAL;
+        pid_i_limit = CHASSIS_PID_I_LIMIT_NORMAL;
+        pid_out_limit = CHASSIS_PID_OUT_LIMIT_NORMAL;
+    } else if (pc_mode == PC_MODE_ENGI) {
+        pid_kp = CHASSIS_PID_KP_ENGI;
+        pid_ki = CHASSIS_PID_KI_ENGI;
+        pid_kd = CHASSIS_PID_KD_ENGI;
+        pid_i_limit = CHASSIS_PID_I_LIMIT_ENGI;
+        pid_out_limit = CHASSIS_PID_OUT_LIMIT_ENGI;
+    }
 
     for (int i = 0; i < 4; i++) {
         pid_init(&chassis_pid[i], pid_kp, pid_ki, pid_kd, pid_i_limit, pid_out_limit);
     }
+}
+
+void chassis_calc_init(void) {
+    chassis_init_pid_based_on_pc_mode();
 }

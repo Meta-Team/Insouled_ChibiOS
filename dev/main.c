@@ -26,16 +26,17 @@ int main(void) {
     remote_init();
     motor_can_init();
 
+    // Mode handle state machine initialization
+    mode_handle_init(); //NOTE: Initialize pc_mode
+
     // Parameter calculation initialization
-    chassis_calc_init();
-    gimbal_calc_init();
+    me_arm_init(); //NOTE: Initialize me_arm_mode
+    chassis_calc_init(); //NOTE: Based on pc_mode
+    gimbal_calc_init(); //NOTE: Based on me_arm_mode
     shoot_calc_init();
-    engineering_arm_init();
+
 
     /*** Enter normal operation mode ***/
-
-    // Mode handle state machine initialization
-    mode_handle_init();
 
     mode_handle_thread_init();
     send_thread_init();
