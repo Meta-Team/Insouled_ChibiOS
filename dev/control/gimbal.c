@@ -57,61 +57,38 @@ static inline void calculate_roll(float roll) {
     gimbal.motor[GIMBAL_MOTOR_ROLL].target_current = (int16_t) pid_pit.out;
 }
 
-void gimbal_calculate(void) {
-
-    switch (global_mode) {
-        case GLOBAL_MODE_INIT: {
-            GIMBAL_ZERO_CURRENT();
-
-            break;
-        }
-        case GLOBAL_MODE_SAFETY: {
-            GIMBAL_ZERO_CURRENT();
-
-            break;
-        }
-        case GLOBAL_MODE_PC: {
-
-            if (pc_mode == PC_MODE_NORMAL) {
-                calculate_yaw(mouse.x, GIMBAL_YAW_DELTA_ANGLE_NORMAL);
-            } else if (pc_mode == PC_MODE_ENGI) {
-                calculate_yaw(mouse.x, GIMBAL_YAW_DELTA_ANGLE_ENGI);
-            }
-
-            if (me_arm.mode == ME_ARM_MODE_PICKED) {
-                if (keyboard.press_g && !keyboard.press_f) {
-                    calculate_roll(-1.0f);
-                } else if (keyboard.press_f && !keyboard.press_g) {
-                    calculate_roll(+1.0f);
-                }
-
-            } else {
-                //TODO: Find a better way to organize functions
-                calculate_roll(0.0f/*useless parameter*/);
-            }
-
-            break;
-        }
-        case GLOBAL_MODE_REMOTE_CHASSIS: {
-            GIMBAL_ZERO_CURRENT();
-
-            break;
-        }
-        case GLOBAL_MODE_REMOTE_GIMBAL: {
-
-            calculate_yaw(remote.ch0, GIMBAL_YAW_DELTA_ANGLE_NORMAL);
-            calculate_roll(remote.ch1);
-
-            break;
-        }
-        case GLOBAL_MODE_REMOTE_ME_ARM: {
-            // TODO: to be be compatible
-            calculate_yaw(0.0f, GIMBAL_YAW_DELTA_ANGLE_NORMAL);
-            calculate_roll(0.0f);
-            break;
-        }
+void gimbal_calculate_pc(void) {
+    if (pc_mode == PC_MODE_NORMAL) {
+        calculate_yaw(mouse.x, GIMBAL_YAW_DELTA_ANGLE_NORMAL);
+    } else if (pc_mode == PC_MODE_ENGI) {
+        calculate_yaw(mouse.x, GIMBAL_YAW_DELTA_ANGLE_ENGI);
     }
+
+    if (me_arm.mode == ME_ARM_MODE_PICKED) {
+        if (keyboard.press_g && !keyboard.press_f) {
+            calculate_roll(-1.0f);
+        } else if (keyboard.press_f && !keyboard.press_g) {
+            calculate_roll(+1.0f);
+        }
+
+    } else {
+        //TODO: Find a better way to organize functions
+        calculate_roll(0.0f/*useless parameter*/);
+    }
+
 }
+
+void gimbal_calculate_remote(void) {
+    calculate_yaw(remote.ch0, GIMBAL_YAW_DELTA_ANGLE_NORMAL);
+    calculate_roll(remote.ch1);
+}
+
+void gimbal_calculate_hold(void) {
+    // TODO: to be be compatible
+    calculate_yaw(0.0f, GIMBAL_YAW_DELTA_ANGLE_NORMAL);
+    calculate_roll(0.0f);
+}
+
 
 void gimbal_init_pid_based_on_me_arm_mode(void) {
 

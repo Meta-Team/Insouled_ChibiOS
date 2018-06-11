@@ -46,67 +46,41 @@ static void calculate_current(void) {
     }
 }
 
-void chassis_calculate(void) {
-
-    switch (global_mode) {
-
-        case GLOBAL_MODE_INIT:
-        case GLOBAL_MODE_SAFETY: {
-            CHASSIS_ZERO_CURRENT();
-
-            break;
-        }
-        case GLOBAL_MODE_PC: {
+void chassis_calculate_pc(void) {
+    if (keyboard.press_a && !keyboard.press_d) chassis.vy = -1.0f;
+    else if (keyboard.press_d && !keyboard.press_a) chassis.vy = 1.0f;
+    else chassis.vy = 0.0f;
 
 
-            if (keyboard.press_a && !keyboard.press_d) chassis.vy = -1.0f;
-            else if (keyboard.press_d && !keyboard.press_a) chassis.vy = 1.0f;
-            else chassis.vy = 0.0f;
+    if (keyboard.press_w && !keyboard.press_s) chassis.vx = 1.0f;
+    else if (keyboard.press_s && !keyboard.press_w) chassis.vx = -1.0f;
+    else chassis.vx = 0.0f;
 
 
-            if (keyboard.press_w && !keyboard.press_s) chassis.vx = 1.0f;
-            else if (keyboard.press_s && !keyboard.press_w) chassis.vx = -1.0f;
-            else chassis.vx = 0.0f;
+    if (keyboard.press_q && !keyboard.press_e) chassis.w = -1.0f;
+    else if (keyboard.press_e && !keyboard.press_q) chassis.w = 1.0f;
+    else chassis.w = 0.0f;
 
-
-            if (keyboard.press_q && !keyboard.press_e) chassis.w = -1.0f;
-            else if (keyboard.press_e && !keyboard.press_q) chassis.w = 1.0f;
-            else chassis.w = 0.0f;
-
-            if (pc_mode == PC_MODE_NORMAL) {
-                chassis.vy *= CHASSIS_PC_NORMAL_SPEED_Y;
-                chassis.vx *= CHASSIS_PC_NORMAL_SPEED_X;
-                chassis.w  *= CHASSIS_PC_NORMAL_W;
-            } else if (pc_mode == PC_MODE_ENGI) {
-                chassis.vy *= CHASSIS_PC_ENGI_SPEED_Y;
-                chassis.vx *= CHASSIS_PC_ENGI_SPEED_X;
-                chassis.w  *= CHASSIS_PC_ENGI_W;
-            }
-
-            calculate_current();
-            break;
-        }
-
-        case GLOBAL_MODE_REMOTE_CHASSIS: {
-
-            // Calculate car speeds
-            chassis.vx = remote.ch1 * CHASSIS_RC_MAX_SPEED_X;
-            chassis.vy = remote.ch0 * CHASSIS_RC_MAX_SPEED_Y;
-            chassis.w = remote.ch2 * CHASSIS_RC_MAX_W;
-
-            calculate_current();
-
-            break;
-        }
-
-        case GLOBAL_MODE_REMOTE_GIMBAL: {
-            CHASSIS_ZERO_CURRENT();
-
-            break;
-        }
-
+    if (pc_mode == PC_MODE_NORMAL) {
+        chassis.vy *= CHASSIS_PC_NORMAL_SPEED_Y;
+        chassis.vx *= CHASSIS_PC_NORMAL_SPEED_X;
+        chassis.w  *= CHASSIS_PC_NORMAL_W;
+    } else if (pc_mode == PC_MODE_ENGI) {
+        chassis.vy *= CHASSIS_PC_ENGI_SPEED_Y;
+        chassis.vx *= CHASSIS_PC_ENGI_SPEED_X;
+        chassis.w  *= CHASSIS_PC_ENGI_W;
     }
 
+    calculate_current();
+}
+
+void chassis_calculate_remote(void) {
+    // Calculate car speeds
+    chassis.vx = remote.ch1 * CHASSIS_RC_MAX_SPEED_X;
+    chassis.vy = remote.ch0 * CHASSIS_RC_MAX_SPEED_Y;
+    chassis.w = remote.ch2 * CHASSIS_RC_MAX_W;
+
+    calculate_current();
 }
 
 void chassis_init_pid_based_on_pc_mode(void) {
