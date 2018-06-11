@@ -9,7 +9,7 @@
 
 #include "mode_handle.h"
 
-#include "arm.h"
+#include "me_arm.h"
 #include "chassis.h"
 #include "gimbal.h"
 #include "shoot.h"

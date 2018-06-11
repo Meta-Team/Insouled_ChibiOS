@@ -99,7 +99,7 @@ file(GLOB_RECURSE SHELL_SRC "os/various/shell.c" "os/various/evtimer.c" "os/vari
         "os/hal/lib/streams/memstreams.c" "os/hal/lib/streams/chprintf.c")
 include_directories(os/various os/hal/lib/streams)
 
-add_library(USER ${USER_SRC} dev/control/arm.c)
+add_library(USER ${USER_SRC} dev/control/me_arm.c)
 add_library(STARTUP ${STARTUP_SRC} os/common/startup/ARMCMx/compilers/GCC/crt0_v7m.s)
 add_library(HAL ${HAL_SRC})
 add_library(PLATFORM ${PLATFORM_SRC})

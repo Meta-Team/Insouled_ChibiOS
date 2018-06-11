@@ -12,12 +12,20 @@
 #define ME_ARM_ANGLE_OPEN 45
 #define ME_ARM_ANGLE_CLOSE 120
 
+#define ME_ARM_BAFFLE_TARGET_POSITION 30
+
 typedef enum _me_arm_mode_t {
-    ME_ARM_MODE_EMPTY = 0,
-    ME_ARM_MODE_PICKED = 2
+    ME_ARM_MODE_NORMAL = 0,
+    ME_ARM_MODE_OPEN = 1,
+    ME_ARM_MODE_PICKED = 9
 } me_arm_mode_t;
 
-extern me_arm_mode_t me_arm_mode;
+typedef struct {
+    me_arm_mode_t mode;
+    int baffle_position;
+} me_arm_t;
+
+extern me_arm_t me_arm;
 
 void me_arm_handle(void);
 void me_arm_init(void);

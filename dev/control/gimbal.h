@@ -85,8 +85,8 @@
 #endif
 
 #ifdef ENGINEER
-#define GIMBAL_FI_YAW_ORIG 7080
-#define GIMBAL_FI_ROLL_ORIG 3050
+#define GIMBAL_FI_YAW_ORIG 3800
+#define GIMBAL_FI_ROLL_ORIG 1590
 #endif
 
 /* Motor Current (mA) */

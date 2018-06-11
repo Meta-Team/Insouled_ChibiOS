@@ -9,7 +9,7 @@
 
 #include "remote.h"
 
-#include "arm.h"
+#include "me_arm.h"
 
 uint16_t gimbal_fi_orig[2];
 
@@ -37,7 +37,7 @@ static inline void calculate_yaw(float yaw, float delta_angle) {
 
 static inline void calculate_roll(float roll) {
 
-    if (me_arm_mode == ME_ARM_MODE_PICKED) {
+    if (me_arm.mode == ME_ARM_MODE_PICKED) {
         if (!EQUAL_ZERO(roll)) {
             gimbal.motor[GIMBAL_MOTOR_ROLL].delta_angle = (int16_t) (SIGN(roll) * GIMBAL_ROLL_DELTA_ANGLE);
             gimbal.motor[GIMBAL_MOTOR_ROLL].target_angle =
@@ -78,7 +78,7 @@ void gimbal_calculate(void) {
                 calculate_yaw(mouse.x, GIMBAL_YAW_DELTA_ANGLE_ENGI);
             }
 
-            if (me_arm_mode == ME_ARM_MODE_PICKED) {
+            if (me_arm.mode == ME_ARM_MODE_PICKED) {
                 if (keyboard.press_g && !keyboard.press_f) {
                     calculate_roll(-1.0f);
                 } else if (keyboard.press_f && !keyboard.press_g) {
@@ -115,7 +115,7 @@ void gimbal_calculate(void) {
 
 void gimbal_init_pid_based_on_me_arm_mode(void) {
 
-    if (me_arm_mode == ME_ARM_MODE_PICKED) {
+    if (me_arm.mode == ME_ARM_MODE_PICKED) {
         pid_init(&pid_yaw, GIMBAL_YAW_PID_KP_PICKED, GIMBAL_YAW_PID_KI_PICKED, GIMBAL_YAW_PID_KD_PICKED,
                  GIMBAL_YAW_PID_I_LIMIT_PICKED, GIMBAL_YAW_PID_OUT_LIMIT_PICKED);
         pid_init(&pid_pit, GIMBAL_ROLL_PID_KP_PICKED, GIMBAL_ROLL_PID_KI_PICKED, GIMBAL_ROLL_PID_KD_PICKED,
