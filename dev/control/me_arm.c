@@ -46,6 +46,7 @@ static inline void handle_baffle(void) {
             } else {
                 set_baffle(90); //Stop
             }
+            break;
         case GLOBAL_MODE_REMOTE_ME_ARM:
             set_baffle((int) ((1.0f - remote.ch1) * 90.0f));
             break;

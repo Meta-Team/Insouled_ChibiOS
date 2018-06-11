@@ -12,7 +12,7 @@
 #define ME_ARM_ANGLE_OPEN 45
 #define ME_ARM_ANGLE_CLOSE 120
 
-#define ME_ARM_BAFFLE_TARGET_POSITION 30
+#define ME_ARM_BAFFLE_TARGET_POSITION 10
 
 typedef enum _me_arm_mode_t {
     ME_ARM_MODE_NORMAL = 0,
