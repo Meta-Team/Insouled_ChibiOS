@@ -94,7 +94,8 @@ extern chassis_t chassis;
     chassis.motor[CHASSIS_MOTOR_BR].target_current = 0; \
 }
 
-void chassis_calculate(void);
+void chassis_calculate_pc(void);
+void chassis_calculate_remote(void);
 void chassis_init_pid_based_on_pc_mode(void);
 void chassis_calc_init(void);
 

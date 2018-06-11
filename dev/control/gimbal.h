@@ -122,7 +122,9 @@ extern uint16_t gimbal_fi_orig[2];
 
 void gimbal_calc_init(void);
 void gimbal_init_pid_based_on_me_arm_mode(void);
-void gimbal_calculate(void);
+void gimbal_calculate_pc(void);
+void gimbal_calculate_remote(void);
+void gimbal_calculate_hold(void);
 
 #endif //INSOULED_GIMBAL_H
 
