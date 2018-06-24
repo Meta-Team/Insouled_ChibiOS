@@ -18,11 +18,15 @@
 #define FRICTION_WHEEL_PWM_CHANNEL0 0
 #define FRICTION_WHEEL_PWM_CHANNEL1 1
 
-#define STIR_MOTOR_BASE_CURRENT 200
+#define STIR_MOTOR_BASE_CURRENT 700
 #define STIR_MOTOR_TRIGGER_SPEED_PCT 0.1f
+
+#define STIR_MOTOR_CHANGE_DIRECTION_CYCLE_COUNT 4
 
 typedef struct {
     float shoot_speed_pct;
+
+    bool stir_enable;
     int16_t stir_current;
     uint16_t stir_actual_angle;
     int16_t stir_actual_rpm;
@@ -30,6 +34,7 @@ typedef struct {
 extern shoot_mechanism_t shoot_mechanism;
 
 #define SHOOT_ZERO_CURRENT() { \
+    shoot_mechanism.stir_enable = false; \
     shoot_mechanism.shoot_speed_pct = 0.0f; \
     shoot_mechanism.stir_current = 0; \
 }

@@ -6,6 +6,9 @@
 
 shoot_mechanism_t shoot_mechanism;
 
+int stir_cycle_count = 0;
+int16_t stir_current = STIR_MOTOR_BASE_CURRENT;
+
 void shoot_calculate(void) {
 
     switch (global_mode) {
@@ -17,11 +20,7 @@ void shoot_calculate(void) {
         }
         case GLOBAL_MODE_REMOTE_GIMBAL: {
             shoot_mechanism.shoot_speed_pct = (remote.ch3 + 1.0f) / 2.0f;
-            if (shoot_mechanism.shoot_speed_pct > STIR_MOTOR_TRIGGER_SPEED_PCT) {
-                shoot_mechanism.stir_current = STIR_MOTOR_BASE_CURRENT;
-            } else {
-                shoot_mechanism.stir_current = 0;
-            }
+            shoot_mechanism.stir_enable = (shoot_mechanism.shoot_speed_pct > STIR_MOTOR_TRIGGER_SPEED_PCT);
             break;
         }
         case GLOBAL_MODE_PC: {
@@ -33,12 +32,23 @@ void shoot_calculate(void) {
                 else
                     shoot_mechanism.shoot_speed_pct = FRICTION_WHEEL_PC_BASE_PCT;
 
-                shoot_mechanism.stir_current = STIR_MOTOR_BASE_CURRENT;
+                shoot_mechanism.stir_enable = true;
             } else {
-                SHOOT_ZERO_CURRENT();
+                shoot_mechanism.stir_enable = false;
             }
             break;
         }
+    }
+
+    if (shoot_mechanism.stir_enable) {
+        shoot_mechanism.stir_current = stir_current;
+        stir_cycle_count++;
+        if (stir_cycle_count >= STIR_MOTOR_CHANGE_DIRECTION_CYCLE_COUNT) {
+            stir_current = -stir_current;
+            stir_cycle_count = 0;
+        }
+    } else {
+        SHOOT_ZERO_CURRENT();
     }
 
 }
