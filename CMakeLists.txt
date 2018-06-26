@@ -14,8 +14,8 @@ add_custom_target(JLink COMMAND make upload-jlink -j -C ${Insouled_ChibiOS_SOURC
 
 ### Following commands are only used to allow CLion work properly
 
-include_directories(dev dev/control dev/info_interaction dev/modules)
-file(GLOB_RECURSE USER_SRC "dev/*.c" "dev/control/*.c" "dev/info_interaction/*.c")
+include_directories(dev dev/control dev/info_interaction dev/modules dev/debug dev/component_handle)
+file(GLOB_RECURSE USER_SRC "dev/*.c" "dev/control/*.c" "dev/info_interaction/*.c" "dev/debug/*.c" "dev/component_handle/*.c")
 
 # include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk
 file(GLOB_RECURSE STARTUP_SRC "os/common/startup/ARMCMx/compilers/GCC/crt1.c" "os/common/startup/ARMCMx/compilers/GCC/vectors.c")
@@ -99,7 +99,7 @@ file(GLOB_RECURSE SHELL_SRC "os/various/shell.c" "os/various/evtimer.c" "os/vari
         "os/hal/lib/streams/memstreams.c" "os/hal/lib/streams/chprintf.c")
 include_directories(os/various os/hal/lib/streams)
 
-add_library(USER ${USER_SRC} dev/control/me_arm.c)
+add_library(USER ${USER_SRC})
 add_library(STARTUP ${STARTUP_SRC} os/common/startup/ARMCMx/compilers/GCC/crt0_v7m.s)
 add_library(HAL ${HAL_SRC})
 add_library(PLATFORM ${PLATFORM_SRC})

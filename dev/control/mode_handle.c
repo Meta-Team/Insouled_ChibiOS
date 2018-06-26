@@ -6,7 +6,7 @@
 
 #include "remote.h"
 
-#include "chassis.h"
+#include "component_handle/chassis.h"
 
 global_mode_t global_mode;
 
@@ -17,7 +17,7 @@ global_mode_t transistion_rules[3][3] = {
 };
 
 
-pc_mode_t pc_mode;\
+pc_mode_t pc_mode;
 
 pc_mode_t new_pc_mode;
 void handle_modes(void) {

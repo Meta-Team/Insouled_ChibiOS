@@ -9,11 +9,11 @@
 #include "ch.h"
 #include <stdlib.h>
 
-#include "led.h"
+#include "debug/led.h"
 #include "chprintf.h"
-#include "serial_debug.h"
+#include "debug/serial_debug.h"
 
-#include "debug.h"
+#include "debug/debug.h"
 
 // Vehicle Type
 //#define INFANTRY1

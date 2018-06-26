@@ -3,12 +3,9 @@
 //
 
 #include <can.h>
-#include <control/gimbal.h>
-#include <control/chassis.h>
+#include <component_handle/gimbal.h>
+#include <component_handle/chassis.h>
 #include <hal_can_lld.h>
-#include <control/shoot.h>
-
-#include "shoot.h"
 
 #include "remote.h"
 #include "mode_handle.h"
@@ -56,7 +53,6 @@ static inline void decode_gimbal_feedback(CANRxFrame *rxmsg) {
     // Regarding that motors won't go over a cycle during 20 times of feedback
     if (gimbal_feedback_counter > 20) {
 
-        //TODO: We need to fill the initial value of last_actual_angle_raw
         if (motor->actual_angle_raw + GIMBAL_MOTOR_MAX_DELTA_ANGLE < motor->last_actual_angle_raw) {
             // 8192 -> 0
             motor->round_count++;
@@ -108,24 +104,6 @@ static inline void decode_gimbal_feedback(CANRxFrame *rxmsg) {
 //    gimbal.motor[motor_id].actual_angle = new_angle;
 }
 
-/**
- * Decode and store raw data of stir motor
- * @param rxmsg
- */
-static inline void decode_stir_motor_feedback(CANRxFrame *rxmsg) {
-    chSysLock();
-    shoot_mechanism.stir_actual_angle_raw = rxmsg->data16[0];
-    shoot_mechanism.stir_actual_rpm = (int16_t) rxmsg->data16[1];
-    chSysUnlock();
-
-//    //int motor_id = rxmsg->SID - 0x201;
-//
-//    uint16_t feedback_angle_orig = (rxmsg->data8[0] << 8 | rxmsg->data8[1]);
-//    shoot_mechanism.stir_actual_angle = feedback_angle_orig / 8192;
-//    shoot_mechanism.stir_actual_rpm = (int16_t) (rxmsg->data8[2] << 8 | rxmsg->data8[3]);
-//    //print("[FEEDBACK] stir_actual_rpm = %d\n", (int)shoot_mechanism.stir_actual_rpm);
-}
-
 
 static THD_WORKING_AREA(can_rx1_wa, 256);
 
@@ -136,7 +114,7 @@ static THD_FUNCTION(can_rx, p) {
 
     chRegSetThreadName("can_receiver");
     chEvtRegister(&canp->rxfull_event, &el, 0);
-    while (true) {
+    while (!chThdShouldTerminateX()) {
         if (chEvtWaitAnyTimeout(ALL_EVENTS, MS2ST(10)) == 0) continue;
         while (canReceive(canp, CAN_ANY_MAILBOX, &rxmsg, TIME_IMMEDIATE) == MSG_OK) {
             switch (rxmsg.SID) {
@@ -149,9 +127,6 @@ static THD_FUNCTION(can_rx, p) {
                 case 0x205:
                 case 0x206:
                     decode_gimbal_feedback(&rxmsg);
-                    break;
-                case 0x207:
-                    decode_stir_motor_feedback(&rxmsg);
                     break;
                 default:
                     break;
@@ -206,7 +181,7 @@ void send_gimbal_shoot_currents(void) {
     txmsg.DLC = 0x08;
     txmsg.data16[0] = (uint16_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
     txmsg.data16[1] = (uint16_t) gimbal.motor[GIMBAL_MOTOR_ROLL].target_current;
-    txmsg.data16[2] = (uint16_t) shoot_mechanism.stir_current;
+    txmsg.data16[2] = 0;
     txmsg.data16[3] = 0;
 //    txmsg.data8[0] = (uint8_t) (gimbal.motor[GIMBAL_MOTOR_YAW].target_current >> 8);
 //    txmsg.data8[1] = (uint8_t) gimbal.motor[GIMBAL_MOTOR_YAW].target_current;
@@ -232,5 +207,5 @@ void can_init(void) {
     /*
      * Starting the receiver threads.
      */
-    chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO, can_rx, &CAND1);
+    chThdCreateStatic(can_rx1_wa, sizeof(can_rx1_wa), NORMALPRIO - 1, can_rx, &CAND1);
 }

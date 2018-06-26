@@ -5,8 +5,8 @@
 
 #include "mode_handle.h"
 #include "me_arm.h"
-#include "chassis.h"
-#include "gimbal.h"
+#include "component_handle/chassis.h"
+#include "component_handle/gimbal.h"
 
 #include "main_control_loop.h"
 
@@ -20,26 +20,24 @@ int main(void) {
     // Debug initialization
     led_init();
     serial_debug_init();
-    debug_thread_init();
 
     // Communication initialization
     remote_init();
     can_init();
 
     // Mode handle state machine initialization
-    mode_handle_init(); //NOTE: Initialize pc_mode
+    mode_handle_init();
 
-    // Parameter calculation initialization
-    me_arm_init(); //NOTE: Initialize me_arm_mode
-    chassis_calc_init(); //NOTE: Based on pc_mode
-    gimbal_calc_init(); //NOTE: Based on me_arm_mode
-    shoot_calc_init();
+    // Component handlers initialization
+    me_arm_init();
+    chassis_calc_init();
+    gimbal_calc_init();
 
+    //TODO: add period of GLOBAL_INIT_MODE
 
     /*** Enter normal operation mode ***/
 
     mode_handle_thread_init();
-    send_thread_init();
 
     while (true) {
         // Main loop, runs mode handle state machine

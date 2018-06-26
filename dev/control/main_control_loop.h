@@ -9,15 +9,13 @@
 
 #include "mode_handle.h"
 
-#include "me_arm.h"
-#include "chassis.h"
-#include "gimbal.h"
-#include "shoot.h"
+#include "component_handle/me_arm.h"
+#include "component_handle/chassis.h"
+#include "component_handle/gimbal.h"
 
 #include "can.h"
 
 void main_control_loop(void);
-void send_thread_init(void);
 void mode_handle_thread_init(void);
 
 #endif //INSOULED_CHIBIOS_MAIN_CONTROL_LOOP_H

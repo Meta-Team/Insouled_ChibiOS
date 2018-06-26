@@ -1,7 +1,7 @@
 #ifndef INSOULED_CHIBIOS_ARM_H
 #define INSOULED_CHIBIOS_ARM_H
 
-#include "global.h"
+#include "../global.h"
 
 #define ME_ARM_PWM_TIM PWMD4
 #define ME_ARM_PWM_LEFT 0

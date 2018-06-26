@@ -4,8 +4,8 @@
 #ifndef INSOULED_GIMBAL_H
 #define INSOULED_GIMBAL_H
 
-#include "global.h"
-#include "pid.h"
+#include "../global.h"
+#include "../modules/pid.h"
 
 /********** Chassis Behavior Parameters **********/
 

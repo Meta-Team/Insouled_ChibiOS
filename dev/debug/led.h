@@ -7,9 +7,6 @@
 
 #include "global.h"
 
-extern int _led_debug_index;
-extern int _led_debug_count;
-
 void led_init(void);
 
 #define LED_G_ON() palClearPad(GPIOF, GPIOF_LED_G)
@@ -18,6 +15,5 @@ void led_init(void);
 #define LED_R_ON() palClearPad(GPIOE, GPIOE_LED_R)
 #define LED_R_OFF() palSetPad(GPIOE, GPIOE_LED_R)
 #define LED_R_TOGGLE() palTogglePad(GPIOE, GPIOE_LED_R)
-#define LED_Blink(n) _led_debug_index = n
 
 #endif //INSOULED_CHIBIOS_LED_DEBUG_H

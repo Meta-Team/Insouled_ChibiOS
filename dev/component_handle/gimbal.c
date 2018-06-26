@@ -21,7 +21,7 @@ gimbal_t gimbal;
 /**
  * Convey raw angles to our coordinate
  */
-static inline void pre_process_gimbal_feedback() {
+static inline void pre_process_gimbal_feedback(void) {
 
     FOR_GIMBAL_MOTOR_INDEX(motor_id) {
 

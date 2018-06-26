@@ -3,7 +3,7 @@
 
 #include "mode_handle.h"
 #include "remote.h"
-#include "gimbal.h"
+#include "component_handle/gimbal.h"
 
 me_arm_t me_arm;
 
@@ -104,7 +104,7 @@ static inline void handle_arm_mode(void) {
 
         if (abs(me_arm.mode - new_me_arm_mode) > 2) {
             // Enter or leave ME_ARM_MODE_PICKED
-            gimbal_init_pid_based_on_me_arm_mode();
+            gimbal_change_pid_based_on_me_arm_mode();
         }
 
         me_arm.mode = new_me_arm_mode;

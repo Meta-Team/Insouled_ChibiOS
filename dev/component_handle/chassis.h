@@ -5,8 +5,8 @@
 #ifndef INSOULED_CHASSIS_H
 #define INSOULED_CHASSIS_H
 
-#include "global.h"
-#include "pid.h"
+#include "../global.h"
+#include "../modules/pid.h"
 
 /********** Chassis Behavior Parameters **********/
 
