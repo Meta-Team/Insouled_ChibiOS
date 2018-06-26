@@ -24,7 +24,7 @@
 typedef struct {
     float shoot_speed_pct;
     int16_t stir_current;
-    uint16_t stir_actual_angle;
+    uint16_t stir_actual_angle_raw;
     int16_t stir_actual_rpm;
 } shoot_mechanism_t;
 extern shoot_mechanism_t shoot_mechanism;

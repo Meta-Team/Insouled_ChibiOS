@@ -17,12 +17,10 @@ global_mode_t transistion_rules[3][3] = {
 };
 
 
-pc_mode_t pc_mode;
+pc_mode_t pc_mode;\
 
 pc_mode_t new_pc_mode;
-
 void handle_modes(void) {
-
 
     if(remote.left_lever >= 1 && remote.left_lever <= 3 &&
             remote.right_lever >= 1 && remote.right_lever <=3) {
@@ -39,7 +37,7 @@ void handle_modes(void) {
 
     if (pc_mode != new_pc_mode) {
         pc_mode = new_pc_mode;
-        chassis_init_pid_based_on_pc_mode();
+        chassis_change_pid_based_on_pc_mode();
     }
 }
 

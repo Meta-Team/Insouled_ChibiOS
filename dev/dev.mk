@@ -14,5 +14,6 @@ DEVSRC = $(CHIBIOS)/dev/main.c \
 		 $(CHIBIOS)/dev/info_interaction/shoot.c
 
 DEVINC = $(CHIBIOS)/dev \
+		 $(CHIBIOS)/dev/modules \
          $(CHIBIOS)/dev/control \
          $(CHIBIOS)/dev/info_interaction

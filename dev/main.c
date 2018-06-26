@@ -24,7 +24,7 @@ int main(void) {
 
     // Communication initialization
     remote_init();
-    motor_can_init();
+    can_init();
 
     // Mode handle state machine initialization
     mode_handle_init(); //NOTE: Initialize pc_mode

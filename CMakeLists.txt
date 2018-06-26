@@ -14,7 +14,7 @@ add_custom_target(JLink COMMAND make upload-jlink -j -C ${Insouled_ChibiOS_SOURC
 
 ### Following commands are only used to allow CLion work properly
 
-include_directories(dev dev/control dev/info_interaction)
+include_directories(dev dev/control dev/info_interaction dev/modules)
 file(GLOB_RECURSE USER_SRC "dev/*.c" "dev/control/*.c" "dev/info_interaction/*.c")
 
 # include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk

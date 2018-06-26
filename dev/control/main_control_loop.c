@@ -9,23 +9,23 @@ void main_control_loop(void) {
     switch (global_mode) {
         case GLOBAL_MODE_REMOTE_CHASSIS:
             GIMBAL_ZERO_CURRENT();
-            chassis_calculate_remote();
+            chassis_calc_remote();
             SHOOT_ZERO_CURRENT();
 
             break;
         case GLOBAL_MODE_REMOTE_GIMBAL:
             CHASSIS_ZERO_CURRENT();
-            gimbal_calculate_remote();
+            gimbal_calc_remote();
             shoot_calculate();
             break;
         case GLOBAL_MODE_PC:
-            gimbal_calculate_pc();
-            chassis_calculate_pc();
+            gimbal_calc_pc();
+            chassis_calc_pc();
             shoot_calculate();
             me_arm_handle();
             break;
         case GLOBAL_MODE_REMOTE_ME_ARM:
-            gimbal_calculate_hold();
+            gimbal_calc_hold();
             CHASSIS_ZERO_CURRENT();
             SHOOT_ZERO_CURRENT();
             me_arm_handle();

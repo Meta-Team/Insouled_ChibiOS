@@ -5,6 +5,7 @@
 #define INSOULED_GIMBAL_H
 
 #include "global.h"
+#include "pid.h"
 
 /********** Chassis Behavior Parameters **********/
 
@@ -94,22 +95,41 @@
 
 /********** Gimbal Control Definitions **********/
 
+#define GIMBAL_MOTOR_COUNT 2
 // These IDs are corresponding to motor IDs
 #define GIMBAL_MOTOR_YAW 0
 #define GIMBAL_MOTOR_ROLL 1
 
-typedef struct {
-    uint16_t actual_angle_orig;
-    int16_t actual_angle_last; //last actual angle
-    int16_t actual_angle_base_round; // The number of round(s) that motor has rotated related to original position
-    int16_t actual_angle;
-    int16_t delta_angle;
-    int16_t target_angle;
-    int16_t target_current;
-} gimbal_motor;
+#define FOR_GIMBAL_MOTOR_INDEX(i) for (int (i) = 0; (i) < GIMBAL_MOTOR_COUNT; (i)++)
 
 typedef struct {
-    gimbal_motor motor[2];
+
+    // Raw values storage
+    uint16_t actual_angle_raw;
+    uint16_t last_actual_angle_raw;
+
+    uint16_t fi_raw; // The raw angle of "forward"
+
+    // Normal values storage
+    int round_count;
+    int actual_angle;
+
+    int target_angle;
+    int target_current;
+
+    pid_unit pid;
+
+//    int16_t actual_angle_last; //last actual angle
+//    int16_t actual_angle_base_round; // The number of round(s) that motor has rotated related to original position
+//    int16_t actual_angle;
+//    int16_t delta_angle;
+//    int16_t target_angle;
+//    int16_t target_current;
+
+} gimbal_motor_t;
+
+typedef struct {
+    gimbal_motor_t motor[2];
 } gimbal_t;
 extern gimbal_t gimbal;
 
@@ -118,13 +138,14 @@ extern gimbal_t gimbal;
     gimbal.motor[GIMBAL_MOTOR_ROLL].target_current = 0; \
 }
 
-extern uint16_t gimbal_fi_orig[2];
+//extern uint16_t gimbal_fi_orig[2];
 
 void gimbal_calc_init(void);
-void gimbal_init_pid_based_on_me_arm_mode(void);
-void gimbal_calculate_pc(void);
-void gimbal_calculate_remote(void);
-void gimbal_calculate_hold(void);
+void gimbal_calc_load(void);
+void gimbal_change_pid_based_on_me_arm_mode(void);
+void gimbal_calc_pc(void);
+void gimbal_calc_remote(void);
+void gimbal_calc_hold(void);
 
 #endif //INSOULED_GIMBAL_H
 

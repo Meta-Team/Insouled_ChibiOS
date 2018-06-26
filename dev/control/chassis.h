@@ -6,6 +6,7 @@
 #define INSOULED_CHASSIS_H
 
 #include "global.h"
+#include "pid.h"
 
 /********** Chassis Behavior Parameters **********/
 
@@ -70,20 +71,35 @@
 #define CHASSIS_MOTOR_BL 2
 #define CHASSIS_MOTOR_BR 3
 
+#define CHASSIS_MOTOR_COUNT 4
+
 typedef struct {
-    int16_t target_rpm;
-    int16_t target_current;
-    uint16_t actual_angle;
+
+    // Raw values storage
+    uint16_t actual_angle_raw;
     int16_t actual_rpm;
     int16_t actual_current;
     uint8_t actual_temperature;
-} motor_t;
+
+
+    // Normal values storage
+
+    int target_rpm;
+    int target_current;
+
+    int actual_angle;
+
+    pid_unit pid;
+
+} chassis_motor_t;
 
 typedef struct {
+    // These velocities are for the whole chassis
     float vx;
     float vy;
     float w;
-    motor_t motor[4];
+
+    chassis_motor_t motor[4];
 } chassis_t;
 extern chassis_t chassis;
 
@@ -94,9 +110,11 @@ extern chassis_t chassis;
     chassis.motor[CHASSIS_MOTOR_BR].target_current = 0; \
 }
 
-void chassis_calculate_pc(void);
-void chassis_calculate_remote(void);
-void chassis_init_pid_based_on_pc_mode(void);
+#define FOR_CHASSIS_MOTOR_INDEX(i) for (int (i) = 0; (i) < CHASSIS_MOTOR_COUNT; (i)++)
+
+void chassis_calc_pc(void);
+void chassis_calc_remote(void);
+void chassis_change_pid_based_on_pc_mode(void);
 void chassis_calc_init(void);
 
 #endif //INSOULED_CHASSIS_H
