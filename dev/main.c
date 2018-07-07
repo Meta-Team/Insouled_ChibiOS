@@ -30,7 +30,7 @@ int main(void) {
     chassis_calc_init();
     gimbal_calc_init();
     shoot_calc_init();
-    engineering_arm_init();
+    //engineering_arm_init();
 
     /*** Enter normal operation mode ***/
 

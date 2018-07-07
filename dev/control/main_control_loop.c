@@ -22,13 +22,13 @@ void main_control_loop(void) {
             gimbal_calculate();
             chassis_calculate();
             shoot_calculate();
-            engineering_arm_calculate();
+            //engineering_arm_calculate();
             break;
         case GLOBAL_MODE_ENGINEERING_ARM:
             gimbal_calculate();
             CHASSIS_ZERO_CURRENT();
             SHOOT_ZERO_CURRENT();
-            engineering_arm_calculate();
+            //engineering_arm_calculate();
             break;
         default:
             CHASSIS_ZERO_CURRENT();
